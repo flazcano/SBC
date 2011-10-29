@@ -1,3 +1,4 @@
 sbc.log
 .pydevproject
 .project
+*.pyc
