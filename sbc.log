@@ -1,0 +1,13 @@
+2011-10-29 17:14:47,406 [SBC] INFO     - iniciando SBC
+2011-10-29 17:14:47,408 [MIS] INFO     - iniciando modulo MIS
+2011-10-29 17:14:47,413 [ME ] INFO     - iniciando modulo ME
+2011-10-29 17:22:22,419 [SBC] INFO     - iniciando SBC
+2011-10-29 17:22:22,420 [MIS] INFO     - iniciando modulo MIS
+2011-10-29 17:22:22,421 [ME ] INFO     - iniciando modulo ME
+2011-10-29 17:27:35,848 [SBC] INFO     - iniciando el Sistema Balanceador de Carga
+2011-10-29 17:27:35,849 [MIS] INFO     - iniciando modulo MIS
+2011-10-29 17:27:35,850 [ME ] INFO     - iniciando modulo ME
+2011-10-29 17:29:37,219 [SBC] INFO     - iniciando el Sistema Balanceador de Carga
+2011-10-29 17:29:37,220 [MIS] INFO     - iniciando modulo MIS
+2011-10-29 17:29:37,221 [ME ] INFO     - iniciando modulo ME
+2011-10-29 17:29:37,221 [MIS] DEBUG    - la db sbc.db parece estar correcta

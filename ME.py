@@ -13,7 +13,7 @@ import socket
 import sys
 from Logger import handler
 from threading import Thread
-from MIS import consultar_servidores
+from MIS import consulta
 
 class Servidor():
     def __init__(self):
@@ -44,7 +44,7 @@ class Servidor():
         running = 1
         while running:
             inputready,outputready,exceptready = select.select(input,[],[])
-
+            
             for server in inputready:
 
                 if server == self.server:
@@ -54,9 +54,9 @@ class Servidor():
                     # creando un hilo
                     self.threads.append(cliente);
 
-                elif server == sys.stdin:
+                # elif server == sys.stdin:
                     # manejando la entrada estandar del servidor
-                    junk = sys.stdin.readline();
+                    # junk = sys.stdin.readline();
 
         # cerrando los hilos
         if self.server:
@@ -91,9 +91,9 @@ class Cliente(Thread):
             if self.client:
                 self.client.close()
             
-class Consulta_estado(Thread, consultar_servidores()):
+def consultaEstadoServidores(Thread):
     try:
-        servidores = consultar_servidores()
+        servidores = consulta.servidores()
         print servidores
     except Exception, (message):
         handler.log.debug('error al consultar')
@@ -103,7 +103,5 @@ def run():
     handler.log.info('iniciando modulo ME')
     myservidor = Servidor()
     myservidor.run()
-    
-    Consulta_estado()
     
     
