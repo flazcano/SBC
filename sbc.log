@@ -1,0 +1,671 @@
+2011-10-23 18:03:53,732 INFO    MainThread - iniciando modulo ME
+2011-10-23 18:03:57,335 INFO    Thread-1 - conectado desde 192.168.0.6 por el puerto 57786
+2011-10-23 18:04:00,154 DEBUG   Thread-1 - 192.168.0.6: sadf
+
+2011-10-23 18:04:02,817 DEBUG   Thread-1 - 192.168.0.6: asdf
+
+2011-10-23 18:04:03,667 INFO    Thread-1 - desconectado desde 192.168.0.6 por el puerto 57786
+2011-10-23 18:06:28,061 INFO    MainThread - iniciando SBC
+2011-10-23 18:06:28,096 INFO    MainThread - iniciando modulo ME
+2011-10-23 18:08:04,237 INFO    Thread-1 - conectado desde 192.168.0.6 por el puerto 57810
+2011-10-23 18:08:06,218 INFO    Thread-1 - desconectado desde 192.168.0.6 por el puerto 57810
+2011-10-23 18:08:50,232 INFO    MainThread - iniciando SBC
+2011-10-23 18:08:50,345 INFO    MainThread - iniciando modulo ME
+2011-10-23 18:08:53,722 INFO    Thread-1 - conectado desde 192.168.0.6 por el puerto 57811
+2011-10-23 18:08:56,242 INFO    Thread-1 - desconectado desde 192.168.0.6 por el puerto 57811
+2011-10-23 18:09:50,009 INFO    MainThread - iniciando SBC
+2011-10-23 18:09:50,018 INFO    MainThread - iniciando modulo ME
+2011-10-23 18:09:50,019 CRITICAL MainThread - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-23 18:10:11,402 INFO    MainThread - iniciando SBC
+2011-10-23 18:10:11,413 INFO    MainThread - iniciando modulo ME
+2011-10-23 18:10:14,619 INFO    Thread-1 - conectado desde 192.168.0.6 por el puerto 57825
+2011-10-23 18:10:16,617 DEBUG   Thread-1 - 192.168.0.6: asdgh
+
+2011-10-23 18:10:17,370 INFO    Thread-1 - desconectado desde 192.168.0.6 por el puerto 57825
+2011-10-23 18:11:22,977 INFO    MainThread - iniciando SBC
+2011-10-23 18:11:22,987 INFO    MainThread - iniciando modulo ME
+2011-10-23 18:11:28,201 INFO    Thread-1 - conectado desde 192.168.0.6 por el puerto 57828
+2011-10-23 18:11:29,666 INFO    Thread-1 - desconectado desde 192.168.0.6 por el puerto 57828
+2011-10-23 18:14:51,394 INFO    MainThread - iniciando SBC
+2011-10-23 18:15:25,336 INFO    MainThread - iniciando SBC
+2011-10-23 18:15:25,366 INFO    MainThread - ME iniciado
+2011-10-23 18:15:25,449 INFO    Thread-1 - iniciando modulo ME
+2011-10-23 18:16:39,201 INFO    MainThread - iniciando SBC
+2011-10-23 18:16:39,227 INFO    MainThread - ME iniciado
+2011-10-23 18:16:39,309 INFO    Thread-1 - iniciando modulo ME
+2011-10-23 19:04:12,728 INFO    MainThread - iniciando SBC
+2011-10-23 19:04:12,752 INFO    MainThread - iniciando modulo ME
+2011-10-23 19:05:42,388 INFO    MainThread - iniciando SBC
+2011-10-23 19:05:42,389 INFO    Thread-1 - iniciando modulo ME
+2011-10-23 19:05:42,389 INFO    MainThread - ME iniciado
+2011-10-23 19:06:06,178 INFO    Thread-2 - conectado desde 192.168.0.6 por el puerto 58010
+2011-10-23 19:06:08,065 DEBUG   Thread-2 - 192.168.0.6: hola
+
+2011-10-23 19:06:14,449 INFO    Thread-2 - desconectado desde 192.168.0.6 por el puerto 58010
+2011-10-23 19:10:07,159 INFO    <module> - iniciando SBC
+2011-10-23 19:10:07,160 INFO    run - iniciando modulo ME
+2011-10-23 19:10:07,160 INFO    <module> - ME iniciado
+2011-10-23 19:10:42,935 INFO    SBS - iniciando SBC
+2011-10-23 19:10:42,935 INFO    ME - iniciando modulo ME
+2011-10-23 19:10:42,936 INFO    SBS - ME iniciado
+2011-10-23 19:11:45,314 [SBS] INFO     - iniciando SBC
+2011-10-23 19:11:45,315 [ME] INFO     - iniciando modulo ME
+2011-10-23 19:11:45,315 [SBS] INFO     - ME iniciado
+2011-10-23 19:12:01,278 [SBS   ] INFO     - iniciando SBC
+2011-10-23 19:12:01,279 [ME    ] INFO     - iniciando modulo ME
+2011-10-23 19:12:01,279 [SBS   ] INFO     - ME iniciado
+2011-10-23 19:12:32,142 [SBS] INFO     - iniciando SBC
+2011-10-23 19:12:32,143 [ME ] INFO     - iniciando modulo ME
+2011-10-23 19:12:32,143 [SBS] INFO     - ME iniciado
+2011-10-23 19:12:49,275 [ME ] INFO     - conectado desde 192.168.0.6 por el puerto 58145
+2011-10-23 19:12:52,353 [ME ] DEBUG    - 192.168.0.6: asdfg
+
+2011-10-23 19:12:58,353 [ME ] DEBUG    - 192.168.0.6: a
+
+2011-10-23 19:12:59,186 [ME ] INFO     - desconectado desde 192.168.0.6 por el puerto 58145
+2011-10-23 19:20:16,372 [SBS] INFO     - iniciando SBC
+2011-10-23 19:20:16,373 [ME ] INFO     - iniciando modulo ME
+2011-10-23 19:20:16,373 [SBS] INFO     - ME iniciado
+2011-10-23 19:20:22,888 [ME ] INFO     - conectado desde 192.168.0.6 por el puerto 58205
+2011-10-23 19:20:24,561 [ME ] DEBUG    - cliente 192.168.0.6 envia: asdfg
+
+2011-10-23 19:20:43,739 [ME ] INFO     - conectado desde 192.168.0.6 por el puerto 58206
+2011-10-23 19:20:45,345 [ME ] DEBUG    - cliente 192.168.0.6 envia: asdf
+
+2011-10-23 19:21:00,954 [ME ] INFO     - desconectado desde 192.168.0.6 por el puerto 58206
+2011-10-23 19:21:08,346 [ME ] INFO     - desconectado desde 192.168.0.6 por el puerto 58205
+2011-10-23 19:22:11,147 [SBS] INFO     - iniciando SBC
+2011-10-23 19:22:11,148 [ME ] INFO     - iniciando modulo ME
+2011-10-23 19:22:11,150 [SBS] INFO     - ME iniciado
+2011-10-23 19:22:14,041 [ME ] INFO     - conectado desde 192.168.0.6 por el puerto 58207
+2011-10-23 19:22:16,770 [ME ] DEBUG    - cliente 192.168.0.6:58207 envia: asdfg
+
+2011-10-23 19:22:24,338 [ME ] INFO     - desconectado desde 192.168.0.6 por el puerto 58207
+2011-10-23 19:23:04,125 [SBS] INFO     - iniciando SBC
+2011-10-23 19:23:04,127 [ME ] INFO     - iniciando modulo ME
+2011-10-23 19:23:04,128 [SBS] INFO     - ME iniciado
+2011-10-23 19:23:07,062 [ME ] INFO     - conectado desde 192.168.0.6:58208
+2011-10-23 19:23:09,833 [ME ] DEBUG    - cliente 192.168.0.6:58208 envia: asdfg
+
+2011-10-23 19:23:14,626 [ME ] INFO     - desconectado desde 192.168.0.6:58208
+2011-10-23 19:49:50,362 [SBS] INFO     - iniciando SBC
+2011-10-23 19:49:50,374 [ME ] INFO     - iniciando modulo ME
+2011-10-23 19:49:50,375 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:03:55,905 [SBS] INFO     - iniciando SBC
+2011-10-23 20:03:55,906 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:03:55,907 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-23 20:03:55,907 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:05:48,078 [SBS] INFO     - iniciando SBC
+2011-10-23 20:05:48,079 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:05:48,079 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:06:07,931 [SBS] INFO     - iniciando SBC
+2011-10-23 20:06:07,933 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:06:07,933 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-23 20:06:07,934 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:17:27,811 [SBS] INFO     - iniciando SBC
+2011-10-23 20:17:27,812 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:17:27,813 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:18:03,735 [SBS] INFO     - iniciando SBC
+2011-10-23 20:18:03,736 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:18:03,736 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:22:51,729 [SBS] INFO     - iniciando SBC
+2011-10-23 20:22:51,731 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:22:51,731 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-23 20:22:51,732 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:23:12,220 [ME ] INFO     - conectado desde 192.168.0.6:58735
+2011-10-23 20:23:14,570 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: hola
+
+2011-10-23 20:23:16,754 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: jpaC1
+
+2011-10-23 20:23:17,673 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: asd
+
+2011-10-23 20:23:18,753 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: asd
+
+2011-10-23 20:23:19,345 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: asd
+
+2011-10-23 20:23:20,025 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: fasd
+
+2011-10-23 20:23:20,897 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: afasd
+
+2011-10-23 20:23:21,625 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: asd
+
+2011-10-23 20:23:22,459 [ME ] DEBUG    - cliente 192.168.0.6:58735 envia: fas
+
+2011-10-23 20:26:33,915 [SBS] INFO     - iniciando SBC
+2011-10-23 20:26:33,916 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:26:33,917 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-23 20:26:33,917 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:26:33,918 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 20:27:46,727 [SBS] INFO     - iniciando SBC
+2011-10-23 20:27:46,737 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:27:46,738 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:27:46,739 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 20:29:22,858 [SBS] INFO     - iniciando SBC
+2011-10-23 20:29:22,859 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:29:22,860 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:29:22,860 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 20:30:34,284 [SBS] INFO     - iniciando SBC
+2011-10-23 20:30:34,285 [ME ] INFO     - iniciando modulo ME
+2011-10-23 20:30:34,286 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 20:30:34,286 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 20:30:34,286 [MIS] ERROR    - SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140735332567392 and this is thread id 4429553664
+2011-10-23 21:15:36,653 [SBS] INFO     - iniciando SBC
+2011-10-23 21:15:36,655 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:15:36,656 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:15:36,657 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:15:36,657 [MIS] ERROR    - SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140735332567392 and this is thread id 4560498688
+2011-10-23 21:17:01,217 [SBS] INFO     - iniciando SBC
+2011-10-23 21:17:01,219 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:17:01,219 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:17:01,220 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:17:01,220 [MIS] ERROR    - unbound method schemma() must be called with create instance as first argument (got nothing instead)
+2011-10-23 21:18:11,881 [SBS] INFO     - iniciando SBC
+2011-10-23 21:18:11,882 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:18:11,883 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:18:11,883 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:18:11,883 [MIS] ERROR    - unbound method schemma() must be called with create instance as first argument (got nothing instead)
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 31, in run
+    create.schemma()
+TypeError: unbound method schemma() must be called with create instance as first argument (got nothing instead)
+2011-10-23 21:21:02,167 [SBS] INFO     - iniciando SBC
+2011-10-23 21:21:02,168 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:21:02,168 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:21:02,169 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:21:02,169 [MIS] ERROR    - unbound method schemma() must be called with create instance as first argument (got nothing instead)
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 31, in run
+    create.schemma()
+TypeError: unbound method schemma() must be called with create instance as first argument (got nothing instead)
+2011-10-23 21:24:24,839 [SBS] INFO     - iniciando SBC
+2011-10-23 21:24:24,840 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:24:24,841 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:24:24,841 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:24:24,842 [MIS] ERROR    - unbound method schemma() must be called with create instance as first argument (got nothing instead)
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 32, in run
+    create.schemma()
+TypeError: unbound method schemma() must be called with create instance as first argument (got nothing instead)
+2011-10-23 21:25:06,340 [SBS] INFO     - iniciando SBC
+2011-10-23 21:25:06,342 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:25:06,342 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:25:06,343 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:25:06,343 [MIS] ERROR    - SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140735332567392 and this is thread id 4517048320
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 33, in run
+    crear.schemma()
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 23, in schemma
+    self.cursor_create.execute('CREATE TABLE IF NOT EXIST configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140735332567392 and this is thread id 4517048320
+2011-10-23 21:25:44,004 [SBS] INFO     - iniciando SBC
+2011-10-23 21:25:44,006 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:25:44,006 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:33:46,124 [SBS] INFO     - iniciando SBC
+2011-10-23 21:33:46,124 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:33:46,125 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:33:46,125 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:33:46,126 [MIS] ERROR    - Incorrect number of bindings supplied. The current statement uses 2, and there are 1 supplied.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 32, in run
+    result = cursor.execute("SELECT CASE WHEN tbl_name = ? THEN 1 ELSE 0 END FROM sqlite_master WHERE tbl_name = ? AND type = \"table\"", ("configuraciones" ,)).fetchall()
+ProgrammingError: Incorrect number of bindings supplied. The current statement uses 2, and there are 1 supplied.
+2011-10-23 21:35:00,246 [SBS] INFO     - iniciando SBC
+2011-10-23 21:35:00,248 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:35:00,249 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:35:00,249 [MIS] ERROR    - no se puede acceder a sbc.db
+2011-10-23 21:35:00,250 [MIS] ERROR    - SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140735332567392 and this is thread id 4502978560
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 35, in run
+    crear.schemma()
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 23, in schemma
+    self.cursor_create.execute('CREATE TABLE IF NOT EXIST configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140735332567392 and this is thread id 4502978560
+2011-10-23 21:37:08,813 [SBS] INFO     - iniciando SBC
+2011-10-23 21:37:08,817 [ME ] INFO     - iniciando modulo ME
+2011-10-23 21:37:08,818 [MIS] INFO     - iniciando modulo MIS
+2011-10-23 21:42:18,504 [MIS] ERROR    - no se puede crear esquema sbc.db
+2011-10-23 21:42:18,504 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 22, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:43:05,474 [MIS] ERROR    - no se puede crear esquema sbc.db
+2011-10-23 21:43:05,474 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 22, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:43:32,463 [MIS] ERROR    - no se puede crear esquema sbc.db
+2011-10-23 21:43:32,500 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 22, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:44:08,777 [MIS] ERROR    - no se puede crear esquema sbc.db
+2011-10-23 21:44:08,778 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 22, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:44:20,164 [MIS] ERROR    - no se puede crear esquema sbc.db
+2011-10-23 21:44:20,165 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 22, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:56:27,312 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-23 21:56:27,312 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:57:39,524 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-23 21:57:39,525 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:58:06,899 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-23 21:58:06,899 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-23 21:59:38,548 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-23 21:59:38,548 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in create
+    cursor_create.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:31:20,530 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:31:20,566 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:31:56,764 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:31:56,764 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:33:01,825 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:33:01,825 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:34:40,799 [SBC] INFO     - iniciando SBC
+2011-10-24 20:34:40,800 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:34:40,801 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:35:01,181 [ME ] INFO     - conectado desde 192.168.2.7:60924
+2011-10-24 20:35:07,956 [ME ] DEBUG    - cliente 192.168.2.7:60924 envia: hola
+
+2011-10-24 20:35:10,436 [ME ] DEBUG    - cliente 192.168.2.7:60924 envia: hola
+
+2011-10-24 20:35:11,453 [ME ] DEBUG    - cliente 192.168.2.7:60924 envia: asdasf
+
+2011-10-24 20:36:05,238 [ME ] INFO     - conectado desde 127.0.0.1:60925
+2011-10-24 20:36:10,164 [ME ] DEBUG    - cliente 127.0.0.1:60925 envia: hola
+
+2011-10-24 20:41:42,515 [ME ] INFO     - conectado desde 192.168.2.7:61061
+2011-10-24 20:41:44,948 [ME ] DEBUG    - cliente 192.168.2.7:61061 envia: asdf
+
+2011-10-24 20:43:49,199 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:43:49,199 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:46:09,774 [SBC] INFO     - iniciando SBC
+2011-10-24 20:46:09,775 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:46:09,776 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:47:14,674 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:47:14,676 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:48:03,803 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:48:03,803 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 21, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:48:42,920 [SBC] INFO     - iniciando SBC
+2011-10-24 20:48:42,921 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:48:42,922 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:49:58,821 [SBC] INFO     - iniciando SBC
+2011-10-24 20:49:58,822 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:49:58,823 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:50:36,644 [SBC] INFO     - iniciando SBC
+2011-10-24 20:50:36,646 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:50:36,647 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:50:43,997 [SBC] INFO     - iniciando SBC
+2011-10-24 20:50:43,998 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:50:43,999 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:51:23,275 [SBC] INFO     - iniciando SBC
+2011-10-24 20:51:23,277 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:51:23,278 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:51:59,315 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:51:59,316 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 41, in crear
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:52:44,092 [SBC] INFO     - iniciando SBC
+2011-10-24 20:52:44,093 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:52:44,096 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:54:33,594 [SBC] INFO     - iniciando SBC
+2011-10-24 20:54:33,595 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:54:33,596 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:54:53,828 [SBC] INFO     - iniciando SBC
+2011-10-24 20:54:53,829 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:54:53,830 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:54:53,831 [MIS] ERROR    - no se puede crear esquema de sbc.db
+2011-10-24 20:54:53,831 [MIS] ERROR    - table configuraciones already exists
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 40, in crear_esquema
+    cursor_crear.execute('CREATE TABLE configuraciones (Id INTEGER PRIMARY KEY, Date TEXT, Entry TEXT)')
+OperationalError: table configuraciones already exists
+2011-10-24 20:55:12,328 [SBC] INFO     - iniciando SBC
+2011-10-24 20:55:12,330 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:55:12,330 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:56:06,900 [SBC] INFO     - iniciando SBC
+2011-10-24 20:56:06,901 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:56:06,901 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:57:40,678 [SBC] INFO     - iniciando SBC
+2011-10-24 20:57:40,682 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:57:40,682 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:58:41,003 [SBC] INFO     - iniciando SBC
+2011-10-24 20:58:41,004 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:58:41,004 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:59:15,958 [SBC] INFO     - iniciando SBC
+2011-10-24 20:59:15,959 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:59:15,959 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 20:59:40,454 [SBC] INFO     - iniciando SBC
+2011-10-24 20:59:40,456 [ME ] INFO     - iniciando modulo ME
+2011-10-24 20:59:40,456 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:00:04,608 [SBC] INFO     - iniciando SBC
+2011-10-24 21:00:04,610 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:00:04,615 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:01:05,816 [SBC] INFO     - iniciando SBC
+2011-10-24 21:01:05,817 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:01:05,817 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:01:05,817 [MIS] DEBUG    - creando esquema en sbc.db
+2011-10-24 21:01:29,211 [SBC] INFO     - iniciando SBC
+2011-10-24 21:01:29,212 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:01:29,213 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:01:29,213 [MIS] DEBUG    - creando esquema en sbc.db
+2011-10-24 21:01:46,873 [SBC] INFO     - iniciando SBC
+2011-10-24 21:01:46,874 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:01:46,875 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:01:46,875 [MIS] DEBUG    - creando esquema en sbc.db
+2011-10-24 21:02:07,768 [SBC] INFO     - iniciando SBC
+2011-10-24 21:02:07,769 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:02:07,770 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:02:21,242 [SBC] INFO     - iniciando SBC
+2011-10-24 21:02:21,243 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:02:21,244 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:02:21,245 [MIS] DEBUG    - creando esquema en sbc.db
+2011-10-24 21:02:27,464 [SBC] INFO     - iniciando SBC
+2011-10-24 21:02:27,473 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:02:27,474 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:03:40,125 [ME ] INFO     - conectado desde 127.0.0.1:61235
+2011-10-24 21:03:42,757 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: hola
+
+2011-10-24 21:03:43,117 [ME ] INFO     - conectado desde 192.168.2.8:50936
+2011-10-24 21:03:58,048 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: h
+2011-10-24 21:03:58,242 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: o
+2011-10-24 21:03:58,411 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: l
+2011-10-24 21:03:58,506 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:00,031 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:00,132 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:00,328 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:00,424 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:00,589 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:00,684 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:00,847 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:00,959 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:01,120 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:01,228 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:01,424 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:02,273 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:02,356 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:02,577 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:02,689 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:02,851 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:02,994 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:03,184 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:03,321 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:03,580 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:03,699 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:06,731 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:06,855 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:07,051 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:07,218 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:07,391 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:07,522 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:07,695 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:07,866 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:08,014 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:08,172 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:08,337 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:08,498 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:08,664 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:08,820 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:09,049 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:09,198 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:09,407 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:09,568 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:09,751 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:09,882 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:10,095 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:10,261 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:10,452 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:10,613 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: s
+2011-10-24 21:04:11,829 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: h
+2011-10-24 21:04:11,944 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: o
+2011-10-24 21:04:12,127 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: l
+2011-10-24 21:04:12,301 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: a
+2011-10-24 21:04:19,404 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: asdf
+
+2011-10-24 21:04:22,233 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: h
+2011-10-24 21:04:22,998 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: o
+2011-10-24 21:04:24,209 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: h
+2011-10-24 21:04:24,545 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: o
+2011-10-24 21:04:25,062 [ME ] DEBUG    - cliente 192.168.2.8:50936 envia: l
+2011-10-24 21:10:11,374 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+
+2011-10-24 21:10:13,508 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+
+2011-10-24 21:10:14,748 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+
+2011-10-24 21:10:16,180 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+
+2011-10-24 21:12:07,545 [ME ] INFO     - conectado desde 192.168.2.7:61290
+2011-10-24 21:12:12,628 [ME ] INFO     - desconectado desde 192.168.2.7:61290
+2011-10-24 21:12:19,325 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+
+2011-10-24 21:12:25,212 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: ^]
+
+2011-10-24 21:12:31,157 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+2011-10-24 21:12:31,165 [ME ] DEBUG    - cliente 127.0.0.1:61235 envia: 
+2011-10-24 21:12:42,114 [ME ] INFO     - conectado desde 192.168.2.7:61291
+2011-10-24 21:12:44,796 [ME ] DEBUG    - cliente 192.168.2.7:61291 envia: asdf
+
+2011-10-24 21:16:34,993 [SBC] INFO     - iniciando SBC
+2011-10-24 21:16:35,009 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:16:35,011 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:16:35,011 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:17:03,321 [SBC] INFO     - iniciando SBC
+2011-10-24 21:17:03,324 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:17:03,327 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:17:10,900 [ME ] INFO     - conectado desde 192.168.2.7:61397
+2011-10-24 21:17:34,711 [ME ] INFO     - conectado desde 127.0.0.1:61398
+2011-10-24 21:17:38,317 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,319 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,320 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,322 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,356 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,356 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,360 [ME ] DEBUG    - cliente 127.0.0.1:61398 envia: 
+2011-10-24 21:17:38,363 [ME ] DEBUG    - error de conexion: [Errno 54] Connection reset by peer
+2011-10-24 21:21:03,403 [SBC] INFO     - iniciando SBC
+2011-10-24 21:21:03,404 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:21:03,404 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:21:03,404 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:21:17,797 [SBC] INFO     - iniciando SBC
+2011-10-24 21:21:17,798 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:21:17,798 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:21:17,799 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:21:23,633 [SBC] INFO     - iniciando SBC
+2011-10-24 21:21:23,635 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:21:23,636 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:21:23,636 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:23:09,231 [SBC] INFO     - iniciando SBC
+2011-10-24 21:23:09,232 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:23:09,232 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:23:12,642 [ME ] INFO     - conectado desde 192.168.2.7:61428
+2011-10-24 21:23:24,022 [ME ] INFO     - conectado desde 127.0.0.1:61429
+2011-10-24 21:23:32,377 [ME ] INFO     - conectado desde 192.168.2.7:61430
+2011-10-24 21:24:24,764 [ME ] DEBUG    - cliente 192.168.2.7:61430 envia: asdf
+
+2011-10-24 21:24:34,836 [ME ] DEBUG    - cliente 192.168.2.7:61428 envia: asdfg
+
+2011-10-24 21:24:51,662 [ME ] INFO     - desconectado desde 192.168.2.7:61428
+2011-10-24 21:24:57,556 [ME ] DEBUG    - cliente 192.168.2.7:61430 envia: asdf
+
+2011-10-24 21:25:04,122 [ME ] DEBUG    - cliente 127.0.0.1:61429 envia: 
+2011-10-24 21:25:04,124 [ME ] INFO     - desconectado desde 127.0.0.1:61429
+2011-10-24 21:26:16,748 [ME ] INFO     - conectado desde 127.0.0.1:61454
+2011-10-24 21:26:18,996 [ME ] DEBUG    - cliente 127.0.0.1:61454 envia: asdf
+
+2011-10-24 21:26:23,832 [ME ] DEBUG    - cliente 127.0.0.1:61454 envia: 
+2011-10-24 21:26:23,832 [ME ] DEBUG    - cliente 127.0.0.1:61454 envia: 
+2011-10-24 21:26:23,833 [ME ] DEBUG    - error de conexion de 127.0.0.1: [Errno 32] Broken pipe
+2011-10-24 21:27:53,388 [SBC] INFO     - iniciando SBC
+2011-10-24 21:27:53,390 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:27:53,390 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:27:53,391 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:04,880 [SBC] INFO     - iniciando SBC
+2011-10-24 21:28:04,882 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:28:04,882 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:28:04,883 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:06,531 [SBC] INFO     - iniciando SBC
+2011-10-24 21:28:06,532 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:28:06,533 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:28:06,534 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:07,480 [SBC] INFO     - iniciando SBC
+2011-10-24 21:28:07,481 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:28:07,481 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:28:07,484 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:08,443 [SBC] INFO     - iniciando SBC
+2011-10-24 21:28:08,444 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:28:08,445 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:28:08,445 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:09,526 [SBC] INFO     - iniciando SBC
+2011-10-24 21:28:09,528 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:28:09,528 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:28:09,528 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:36,085 [SBC] INFO     - iniciando SBC
+2011-10-24 21:28:36,089 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:28:36,090 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:28:51,265 [ME ] INFO     - conectado desde 192.168.2.7:61480
+2011-10-24 21:30:28,973 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:28,974 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:28,974 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:28,975 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:30,265 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:30,267 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:30,267 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:30,267 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:31,168 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:31,169 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:31,170 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:31,170 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:31,925 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:31,926 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:31,927 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:31,927 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:32,726 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:32,727 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:32,728 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:32,728 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:33,646 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:33,647 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:33,648 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:33,648 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:34,920 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:34,921 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:34,922 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:34,922 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:35,894 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:35,895 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:35,895 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:35,896 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:36,841 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:36,842 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:36,843 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:36,843 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:37,677 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:37,678 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:37,679 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:37,679 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:38,708 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:38,709 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:38,709 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:38,710 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:39,742 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:39,743 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:39,743 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:39,745 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:41,628 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:41,630 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:41,631 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:41,632 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:42,677 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:42,678 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:42,678 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-24 21:30:42,679 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:30:52,005 [SBC] INFO     - iniciando SBC
+2011-10-24 21:30:52,006 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:30:52,006 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:31:22,078 [SBC] INFO     - iniciando SBC
+2011-10-24 21:31:22,079 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:31:22,079 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:31:24,322 [ME ] INFO     - conectado desde 192.168.2.7:61494
+2011-10-24 21:31:32,304 [ME ] INFO     - desconectado desde 192.168.2.7:61494
+2011-10-24 21:31:56,114 [SBC] INFO     - iniciando SBC
+2011-10-24 21:31:56,115 [ME ] INFO     - iniciando modulo ME
+2011-10-24 21:31:56,116 [MIS] INFO     - iniciando modulo MIS
+2011-10-24 21:31:57,642 [ME ] INFO     - conectado desde 192.168.2.7:61495
+2011-10-24 21:32:04,185 [ME ] INFO     - desconectado desde 192.168.2.7:61495
+2011-10-24 21:56:16,641 [MIS] DEBUG    - creando esquema en sbc.db
+2011-10-24 21:56:16,642 [MIS] ERROR    - no se puede obtener listado de servidores de sbc.db
+2011-10-24 21:56:16,643 [MIS] ERROR    - no such table: servidores
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 55, in consultar_servidores
+    resultado = cursor_consultar_estado.execute('SELECT nombre, ip FROM servidores;')
+OperationalError: no such table: servidores
+2011-10-24 21:57:53,028 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-10-24 21:57:53,029 [MIS] ERROR    - no se puede obtener listado de servidores de sbc.db
+2011-10-24 21:57:53,029 [MIS] ERROR    - no such table: servidores
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 55, in consultar_servidores
+    resultado = cursor_consultar_estado.execute('SELECT nombre, ip FROM servidores;')
+OperationalError: no such table: servidores
+2011-10-24 21:57:53,029 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-10-24 21:57:53,030 [MIS] ERROR    - no se puede obtener listado de servidores de sbc.db
+2011-10-24 21:57:53,030 [MIS] ERROR    - no such table: servidores
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 55, in consultar_servidores
+    resultado = cursor_consultar_estado.execute('SELECT nombre, ip FROM servidores;')
+OperationalError: no such table: servidores
+2011-10-24 22:00:14,467 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-10-24 22:00:14,469 [MIS] ERROR    - no se puede obtener listado de servidores de sbc.db
+2011-10-24 22:00:14,469 [MIS] ERROR    - no such table: servidores
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/MIS.py", line 55, in consultar_servidores
+    resultado = cursor_consultar_estado.execute('SELECT nombre, ip FROM servidores;')
+OperationalError: no such table: servidores
