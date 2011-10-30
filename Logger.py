@@ -1,14 +1,13 @@
-#!/usr/bin/env python
-
 '''
 Created on 23/10/2011
 
 @author: Fernando
 
-Sub Modulo de gestion de Logs
+Sub-Modulo de Gestion de Logs
 '''
 
 import logging
+
 from sys import exit
 
 logFile = 'sbc.log'

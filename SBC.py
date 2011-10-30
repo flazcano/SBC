@@ -8,11 +8,13 @@ Created on 23/10/2011
 Sistema Balanceador de Carga
 '''
 
+from modulo import ME
+from modulo import MIS
+
 from sys import exit
 from threading import Thread;
+
 from Logger import handler;
-import ME
-import MIS
 
 class ThreadxMIS(Thread):
         def __init__(self):
