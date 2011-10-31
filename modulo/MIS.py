@@ -30,22 +30,22 @@ class crea():
             if cursor_crear:
                 cursor_crear.close()
 
-class consulta():
-    def servidores(self):
-        try:
-            handler.log.debug('consultando listado de servidores en ' + db)
-            connection_consultar_estado=sqlite3.connect(db, isolation_level=None)
-            cursor_consultar_estado=connection_consultar_estado.cursor()
-            resultado = cursor_consultar_estado.execute('SELECT nombre, ip FROM servidores;')
-            cursor_consultar_estado.close();
-            return resultado
-        except Exception, (message):
-            handler.log.error('no se puede obtener listado de servidores de ' + db)
-            handler.log.exception(message)
-            exit(1)
-        finally:
-            if cursor_consultar_estado:
-                cursor_consultar_estado.close()
+def consulta_servidores():
+    try:
+        handler.log.debug('consultando listado de servidores en ' + db)
+        #connection_consultar_estado=sqlite3.connect(db, isolation_level=None)
+        #cursor_consultar_estado=connection_consultar_estado.cursor()
+        #resultado = cursor_consultar_estado.execute('SELECT nombre, ip FROM servidores;')
+        #cursor_consultar_estado.close();
+        resultado = [('localhost', 54321), ('127.0.0.1', 54321)]
+        return resultado
+    except Exception, (message):
+        handler.log.error('no se puede obtener listado de servidores de ' + db)
+        handler.log.exception(message)
+        exit(1)
+    #finally:
+    #    if cursor_consultar_estado:
+    #        cursor_consultar_estado.close()
 
 def run():
     handler.log.info('iniciando modulo MIS')

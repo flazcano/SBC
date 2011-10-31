@@ -11,9 +11,10 @@ import socket
 
 from sys import exit, stdin
 from threading import Thread
+from time import sleep
 
 from Logger import handler
-from MIS import consulta
+from modulo import MIS
 
 class Servidor():
     def __init__(self):
@@ -80,7 +81,10 @@ class Cliente(Thread):
                 if data:
                     # confirmando la data recibida
                     handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + data)
-                    self.client.send('OK\n')
+                    # si se recibe 'HELLO', se agrega el HOST a las Servidores a Balancear
+                    if data == 'HELLO':
+                        handler.log.info('agregando nuevo cliente a balancear: ' + self.address[0])
+                         
                 else:
                     handler.log.info('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))
                     self.client.close()
@@ -91,18 +95,48 @@ class Cliente(Thread):
         finally:
             if self.client:
                 self.client.close()
-            
-def consultaEstadoServidores(Thread):
+
+class ThreadxLAV(Thread):
+        def __init__(self, host, puerto):
+            Thread.__init__(self)
+            self.host = host
+            self.puerto = puerto
+
+        def run(self):
+            try:
+                cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                cliente.connect((self.host, self.puerto))
+                cliente.send(':)')
+                LAVcliente = cliente.recv(1024)
+                handler.log.debug('obtenido LAV desde ' + self.host + ':' + str(self.puerto) + ': ' + LAVcliente)
+                # guardando la informacion del servidor a traves del MIS
+                
+                
+            except Exception, (message):
+                handler.log.error('no se pudo establecer la conexion con ' + self.host + ':' + str(self.puerto) + ': %s', message)
+                # marcando al servidor con problemas
+                
+                exit(1)
+                   
+def consultaEstadoServidores():
     try:
-        servidores = consulta.servidores()
-        print servidores
+        handler.log.info('consultando estado de servidores a balancear')
+        
+        # se revisa los servidores para obtener la carga de cada uno de ellos
+        servidores = MIS.consulta_servidores()
+        for servidor in servidores:
+            host = servidor[0]
+            puerto = servidor[1]
+        
+            ThreadxLAV(host, puerto).start()
+            sleep(1)       
+        
     except Exception, (message):
-        handler.log.debug('error al consultar')
+        handler.log.debug('error al consultar estado del servidor')
         handler.log.exception(message)
 
 def run():
     handler.log.info('iniciando modulo ME')
     myservidor = Servidor()
     myservidor.run()
-    
     

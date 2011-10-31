@@ -16,9 +16,9 @@ from Logger import handler
 from AOCMR import LAV
 
 class Servidor():
-    def __init__(self):
-        self.host = '0.0.0.0'
-        self.port = 54321
+    def __init__(self, host, puerto):
+        self.host = host
+        self.port = puerto
         self.timeout = None
         self.backlog = 5
         self.size = 1024
@@ -33,9 +33,9 @@ class Servidor():
             self.server.listen(5)
             self.server.settimeout(self.timeout)
         except socket.error, (message):
+            handler.log.critical('no se puede abrir el socket: %s', message)
             if self.server:
                 self.server.close()
-            handler.log.critical('no se puede abrir el socket: %s', message)
             exit(1)
 
     def run(self):
@@ -73,23 +73,25 @@ class Cliente(Thread):
 
     def run(self):
         try:
-            handler.log.info('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
+            handler.log.debug('SBC conectado desde ' + self.address[0] + ':' + str(self.address[1]));
             running = 1
             while running:
                 data = self.client.recv(self.size)
                 if data:
                     # enviando carga
-                    self.client.send(LAV())
+                    miLAV = LAV()
+                    handler.log.debug('enviando LAV:' + miLAV)
+                    self.client.send(miLAV)
                 self.client.close()    
                 break
-            handler.log.info('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))                    
+            handler.log.debug('SBC desconectado desde ' + self.address[0] + ':' + str(self.address[1]))
         except socket.error, (message):
             handler.log.debug('error de conexion de ' + self.address[0] + ':' + str(self.address[1]) + ': %s', message)
         finally:
             if self.client:
                 self.client.close()
 
-def run():
+def run(host, puerto):
     handler.log.info('iniciando modulo AOCME')
-    myservidor = Servidor()
+    myservidor = Servidor(host, puerto)
     myservidor.run()

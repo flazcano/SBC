@@ -10,9 +10,9 @@ Sistema Balanceador de Carga
 
 from sys import exit
 from threading import Thread;
+from time import sleep
 
-from modulo import ME
-from modulo import MIS
+from modulo import MIS, ME
 from Logger import handler;
 
 class ThreadxMIS(Thread):
@@ -45,3 +45,8 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error en el modulo')
         handler.log.exception(message)
         exit(1);
+    
+    while 1:
+        ME.consultaEstadoServidores()
+        sleep(15)
+    

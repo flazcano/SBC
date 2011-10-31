@@ -19,7 +19,7 @@ class handler(logging.getLoggerClass()):
 
         # Formato en python 2.4+:
         formatter = logging.Formatter(
-            "%(asctime)s [%(module)-3s] %(levelname)-8s - %(message)s")
+            "%(asctime)s [%(module)-5s] %(levelname)-6s - %(message)s")
         # Formato en python 3.2+:
         # formatter = logging.Formatter(
         #     "{asctime} {threadName:>11} {levelname} {message}", style='{')
