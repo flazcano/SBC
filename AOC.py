@@ -8,41 +8,49 @@ Created on 29/10/2011
 Agente de Obtencion de Cargas
 '''
 
-import Config, socket
-
-from threading import Thread
+# importaciones
+import socket, Config
 from time import sleep
-
+from threading import Thread
 from Logger import handler
-from modulo import AOCME
+from modulo import AOCMR, AOCME
 
+# definiciones
 configFile = 'aoc.conf'
-host = None
-puerto = None
-sbchost = None
-sbcpuerto = None
-sleeptime = 5
 
+# clases
 class ThreadxAOCME(Thread):
-        def __init__(self):
+        def __init__(self, HOST, PORT):
             Thread.__init__(self)
+            self.HOST = HOST
+            self.PORT = PORT
 
         def run(self):
-            AOCME.run(host, puerto)
+            AOCME.run(self.HOST, self.PORT)
 
+# funciones
+HOST = None
+PORT = None
+SBCHOST = None
+SBCPORT = None
+
+# main
 if __name__ == '__main__':
-    handler.log.info('iniciando el Agente de Obtencion de Cargas')
+    handler.log.info('iniciando el agente')
     
     # cargando configuraciones del agente
     try:
+        handler.log.info('cargando configuraciones')
         cfg = Config.load(configFile)
-        host = cfg["local_host"]
-        puerto = int(cfg["local_puerto"])
-        sbchost = cfg["sbc_host"]
-        sbcpuerto = int(cfg["sbc_puerto"])
+        LOG = cfg["LOG"]
+        HOST = cfg["HOST"]
+        PORT = int(cfg["PORT"])
+        SBCHOST = cfg["SBCHOST"]
+        SBCPORT = int(cfg["SBCPORT"])
         
     except KeyError, (message):
-        handler.log.error('no se ha podido encontrar la variable de configuracion necesaria: %s', message)
+        handler.log.critical('no se ha podido encontrar una variable de confifguracion necesaria: %s', message)
+        handler.log.exception(message)
         exit(1);
     except IOError, (message):
         handler.log.error('ha ocurrido un error al cargar el archivo de configuracion: ' + configFile)
@@ -52,29 +60,36 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al cargar el archivo de configuracion: ' + configFile)
         handler.log.exception(message)
         exit(1);
+    else: handler.log.info('configuraciones cargadas correctamente')
     
-    # ejecutando el modulo como hilo
-    try: tAOCME = ThreadxAOCME().start()
+    try: AOCMR.run()
     except Exception, (message):
-        handler.log.error('ha ocurrido un error en el modulo')
+        handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);
-    else: handler.log.info('el Agente de Obtencion de Cargas se ha iniciado correctamente')
+
+    # ejecutando el modulo AOCME como hilo
+    try: tAOCME = ThreadxAOCME(HOST, PORT).start()
+    except Exception, (message):
+        handler.log.error('ha ocurrido un error al cargar el modulo')
+        handler.log.exception(message)
+        exit(1);
     
-    # envia una notificacion al ME del SBC, para que este sepa que debe monitorizarme
+    handler.log.info('el agente se ha iniciado correctamente')
+    
+    # enviando alive a SBC
     sinconexion = 1
     while sinconexion:
         try:
-            sbcconexion = socket.socket()
-            sbcconexion.connect((sbchost, sbcpuerto))
-            sbcconexion.send('HELLO')  
+            handler.log.debug('enviando alive signal a SBC')
+            sbccon = socket.socket()
+            sbccon.connect((SBCHOST, SBCPORT))
+            sbccon.send('HELLO')
         except Exception, (message):
-            handler.log.error('no se ha podido conectar con SBC ' + sbchost + ':' + str(sbcpuerto) + ': %s', message)
-            sleep(sleeptime)
+            handler.log.error('no se pudo conectar al SBC: %s', message)
         else:
-            handler.log.info('conectado correctamente con SBC en: ' + sbchost + ':' + str(sbcpuerto))
+            handler.log.debug('alive signal enviado correctamente')
             sinconexion = 0
         finally:
-            if sbcconexion:
-                sbcconexion.close()
+            sleep(5)
     

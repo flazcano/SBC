@@ -6,19 +6,20 @@ Created on 29/10/2011
 Modulo de Escucha para Agente de Obtencion de Cargas (AOCME)
 '''
 
-import select
-import socket
-
+# importaciones
+import select, socket
 from sys import exit, stdin
 from threading import Thread
-
 from Logger import handler
 from AOCMR import LAV
 
+# definiciones
+
+# clases
 class Servidor():
-    def __init__(self, host, puerto):
-        self.host = host
-        self.port = puerto
+    def __init__(self, HOST, PORT):
+        self.host = HOST
+        self.port = PORT
         self.timeout = None
         self.backlog = 5
         self.size = 1024
@@ -33,9 +34,9 @@ class Servidor():
             self.server.listen(5)
             self.server.settimeout(self.timeout)
         except socket.error, (message):
-            handler.log.critical('no se puede abrir el socket: %s', message)
             if self.server:
                 self.server.close()
+            handler.log.critical('no se puede abrir el socket: %s', message)
             exit(1)
 
     def run(self):
@@ -73,25 +74,26 @@ class Cliente(Thread):
 
     def run(self):
         try:
-            handler.log.debug('SBC conectado desde ' + self.address[0] + ':' + str(self.address[1]));
+            handler.log.debug('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
             running = 1
             while running:
                 data = self.client.recv(self.size)
                 if data:
                     # enviando carga
-                    miLAV = LAV()
-                    handler.log.debug('enviando LAV:' + miLAV)
-                    self.client.send(miLAV)
+                    self.client.send(LAV())
                 self.client.close()    
                 break
-            handler.log.debug('SBC desconectado desde ' + self.address[0] + ':' + str(self.address[1]))
+            handler.log.debug('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))                    
         except socket.error, (message):
             handler.log.debug('error de conexion de ' + self.address[0] + ':' + str(self.address[1]) + ': %s', message)
         finally:
             if self.client:
                 self.client.close()
 
-def run(host, puerto):
-    handler.log.info('iniciando modulo AOCME')
-    myservidor = Servidor(host, puerto)
+# funciones
+def run(HOST, PORT):
+    handler.log.info('iniciando el modulo')
+    myservidor = Servidor(HOST, PORT)
     myservidor.run()
+    
+# main

@@ -6,16 +6,16 @@ Created on 23/10/2011
 Modulo de Escucha y Obtencion para AOC (ME)
 """
 
-import select
-import socket
-
+# importaciones
+import select, socket, MIS
 from sys import exit, stdin
 from threading import Thread
-from time import sleep
-
 from Logger import handler
-from modulo import MIS
 
+# definiciones
+CLIENTTIMEOUT = 5
+
+# clases
 class Servidor():
     def __init__(self):
         self.host = '0.0.0.0'
@@ -74,19 +74,20 @@ class Cliente(Thread):
 
     def run(self):
         try:
-            handler.log.info('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
+            handler.log.debug('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
             running = 1
             while running:
                 data = self.client.recv(self.size)
                 if data:
-                    # confirmando la data recibida
-                    handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + data)
-                    # si se recibe 'HELLO', se agrega el HOST a las Servidores a Balancear
                     if data == 'HELLO':
-                        handler.log.info('agregando nuevo cliente a balancear: ' + self.address[0])
-                         
+                        handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia alive signal')
+                        # se comunica con MIS para agregar cliente a servidores a balancear
+                        MIS.agregaServidor(self.address[0], self.address[1])
+                    else:
+                        pass
+                        #handler.log.debug('se descarta el mensaje, cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + data)
                 else:
-                    handler.log.info('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))
+                    handler.log.debug('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))
                     self.client.close()
                     # cerrando el hilo
                     running = 0
@@ -97,46 +98,53 @@ class Cliente(Thread):
                 self.client.close()
 
 class ThreadxLAV(Thread):
-        def __init__(self, host, puerto):
+        def __init__(self, HOST, PORT):
             Thread.__init__(self)
-            self.host = host
-            self.puerto = puerto
+            self.HOST = HOST
+            self.PORT = PORT
 
         def run(self):
             try:
-                cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                cliente.connect((self.host, self.puerto))
-                cliente.send(':)')
-                LAVcliente = cliente.recv(1024)
-                handler.log.debug('obtenido LAV desde ' + self.host + ':' + str(self.puerto) + ': ' + LAVcliente)
-                # guardando la informacion del servidor a traves del MIS
-                
-                
+                clientcon = socket.socket()
+                clientcon.settimeout(CLIENTTIMEOUT)
+                clientcon.connect((self.HOST, self.PORT))
+                clientcon.send(':)')
+                LAV = clientcon.recv(1024)
+                handler.log.debug('se obtuvo LAV desde ' + self.HOST + ':' +str(self.PORT) + ': ' + LAV)
+                # se comunica con MIS para agregar LAV
             except Exception, (message):
-                handler.log.error('no se pudo establecer la conexion con ' + self.host + ':' + str(self.puerto) + ': %s', message)
-                # marcando al servidor con problemas
+                handler.log.error('no se pudo conectar al servidor ' + self.HOST + ':' + str(self.PORT) + ': %s', message)
+                # se comunica con MIS para informar el problema
                 
-                exit(1)
-                   
-def consultaEstadoServidores():
+# funciones
+def obtieneEstadoServidor(HOST, PORT):
     try:
-        handler.log.info('consultando estado de servidores a balancear')
-        
-        # se revisa los servidores para obtener la carga de cada uno de ellos
-        servidores = MIS.consulta_servidores()
-        for servidor in servidores:
-            host = servidor[0]
-            puerto = servidor[1]
-        
-            ThreadxLAV(host, puerto).start()
-            sleep(1)       
-        
+        handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+        ThreadxLAV(HOST, PORT).start()
     except Exception, (message):
         handler.log.debug('error al consultar estado del servidor')
         handler.log.exception(message)
 
+def obtieneEstadoServidores():
+    try:
+        handler.log.info('iniciando obtencion de estado de servidores activos')
+        for total in MIS.consultaTotalServidores():
+            pass
+        handler.log.info('obtenidos %i servidores activos', total[0])
+        for servidor in MIS.consultaListaServidores():
+            obtieneEstadoServidor(servidor[0], servidor[1])
+    except Exception, (message):
+        handler.log.debug('error al obtener el estado de los servidores activos')
+        handler.log.exception(message)
+    finally:
+        handler.log.info('obtencion de estado de servidores activos finalizada')
+
+def valida():
+    pass
+    
 def run():
-    handler.log.info('iniciando modulo ME')
+    handler.log.info('iniciando modulo')
     myservidor = Servidor()
     myservidor.run()
     
+# main    

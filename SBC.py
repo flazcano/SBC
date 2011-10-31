@@ -8,13 +8,16 @@ Created on 23/10/2011
 Sistema Balanceador de Carga
 '''
 
+# importaciones
+from time import sleep
 from sys import exit
 from threading import Thread;
-from time import sleep
-
-from modulo import MIS, ME
+from modulo import MC, MIS, ME
 from Logger import handler;
 
+# definiciones
+
+# clases
 class ThreadxMIS(Thread):
         def __init__(self):
             Thread.__init__(self)
@@ -29,24 +32,36 @@ class ThreadxME(Thread):
         def run(self):
             ME.run()
 
+# funciones
+def valida():
+    pass
+
+# main
 if __name__ == '__main__':
-    handler.log.info('iniciando el Sistema Balanceador de Carga')
+    handler.log.info('iniciando el sistema SBC')
+    
+    try: MC.valida()
+    except Exception, (message):
+        handler.log.error('ha ocurrido un error al validar los modulos del sistema: %s', message)
+        exit(1)
     
     # ejecutando el modulo como hilo
     try: tMIS = ThreadxMIS().start()
     except Exception, (message):
-        handler.log.error('ha ocurrido un error en el modulo')
+        handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);
     
     # ejecutando el modulo como hilo
     try: tME = ThreadxME().start()
     except Exception, (message):
-        handler.log.error('ha ocurrido un error en el modulo')
+        handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);
-    
-    while 1:
-        ME.consultaEstadoServidores()
-        sleep(15)
-    
+        
+    handler.log.info('el sistema se ha iniciado correctamente')
+ 
+    obtenerestado = 1
+    while obtenerestado:
+        ME.obtieneEstadoServidores()
+        sleep(20)

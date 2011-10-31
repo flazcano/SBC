@@ -5,3 +5,19 @@ Created on 29/10/2011
 
 Modulo de Integracion para IPTables (MII)
 '''
+
+# importaciones
+from Logger import handler
+
+# definiciones
+
+# clases
+
+# funciones
+def valida():
+    pass
+
+def run():
+    handler.log.info('iniciando modulo')
+
+# main
