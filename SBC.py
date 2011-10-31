@@ -8,12 +8,11 @@ Created on 23/10/2011
 Sistema Balanceador de Carga
 '''
 
-from modulo import ME
-from modulo import MIS
-
 from sys import exit
 from threading import Thread;
 
+from modulo import ME
+from modulo import MIS
 from Logger import handler;
 
 class ThreadxMIS(Thread):
@@ -33,17 +32,15 @@ class ThreadxME(Thread):
 if __name__ == '__main__':
     handler.log.info('iniciando el Sistema Balanceador de Carga')
     
-    try:
-        tMIS = ThreadxMIS()
-        tMIS.start()
+    # ejecutando el modulo como hilo
+    try: tMIS = ThreadxMIS().start()
     except Exception, (message):
         handler.log.error('ha ocurrido un error en el modulo')
         handler.log.exception(message)
         exit(1);
     
-    try:
-        tME = ThreadxME()
-        tME.start()
+    # ejecutando el modulo como hilo
+    try: tME = ThreadxME().start()
     except Exception, (message):
         handler.log.error('ha ocurrido un error en el modulo')
         handler.log.exception(message)

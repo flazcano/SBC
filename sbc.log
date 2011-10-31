@@ -66,3 +66,78 @@
 2011-10-30 03:21:44,013 [AOCME] INFO     - iniciando modulo AOCME
 2011-10-30 03:21:49,349 [AOCME] INFO     - conectado desde 127.0.0.1:50328
 2011-10-30 03:21:52,761 [AOCME] INFO     - desconectado desde 127.0.0.1:50328
+2011-10-30 15:53:02,685 [AOCME] INFO     - iniciando modulo AOCME
+2011-10-30 18:00:55,419 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 18:00:55,493 [AOCME] INFO     - iniciando modulo AOCME
+2011-10-30 18:00:55,494 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-10-30 18:02:09,399 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 18:02:09,447 [AOCME] INFO     - iniciando modulo AOCME
+2011-10-30 18:02:38,828 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 18:02:38,829 [AOCME] INFO     - iniciando modulo AOCME
+2011-10-30 19:59:12,751 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 19:59:12,837 [AOCME] INFO     - iniciando modulo AOCME
+2011-10-30 19:59:12,838 [AOC] ERROR    - el Agente de Obtencion de Cargas se ha iniciado correctamente
+2011-10-30 19:59:57,233 [AOCME] INFO     - conectado desde 127.0.0.1:51664
+2011-10-30 20:00:01,084 [AOCME] INFO     - desconectado desde 127.0.0.1:51664
+2011-10-30 21:19:04,072 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:19:04,138 [AOC] ERROR    - ha ocurrido un error al cargar el archivo de configuracion: aoc.config
+2011-10-30 21:19:04,140 [AOC] ERROR    - [Errno 2] No such file or directory: 'aoc.config'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 32, in <module>
+    cfg = Config.load(configFile)
+  File "/Users/Fernando/Documents/Workspace/SBC/Config.py", line 16, in load
+    try: configfile = open(filename, "r")
+IOError: [Errno 2] No such file or directory: 'aoc.config'
+2011-10-30 21:21:18,219 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:21:18,240 [AOC] ERROR    - ha ocurrido un error al cargar el archivo de configuracion: aoc.config
+2011-10-30 21:21:18,241 [AOC] ERROR    - [Errno 2] No such file or directory: 'aoc.config'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 32, in <module>
+    cfg = Config.load(configFile)
+  File "/Users/Fernando/Documents/Workspace/SBC/Config.py", line 16, in load
+    try: configfile = open(filename, "r")
+IOError: [Errno 2] No such file or directory: 'aoc.config'
+2011-10-30 21:21:34,935 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:21:34,969 [AOC] ERROR    - ha ocurrido un error al cargar el archivo de configuracion: aoc.conf
+2011-10-30 21:21:34,969 [AOC] ERROR    - 'SOMEKEY'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 34, in <module>
+    print cfg["SOMEKEY"]
+KeyError: 'SOMEKEY'
+2011-10-30 21:22:27,229 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:22:27,230 [AOC] ERROR    - ha ocurrido un error al cargar el archivo de configuracion: aoc.config
+2011-10-30 21:22:27,230 [AOC] ERROR    - [Errno 2] No such file or directory: 'aoc.config'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 32, in <module>
+    cfg = Config.load(configFile)
+  File "/Users/Fernando/Documents/Workspace/SBC/Config.py", line 16, in load
+    try: configfile = open(filename, "r")
+IOError: [Errno 2] No such file or directory: 'aoc.config'
+2011-10-30 21:24:32,186 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:24:32,223 [AOC] ERROR    - ha ocurrido un error al cargar el archivo de configuracion: aoc.conf
+2011-10-30 21:24:32,223 [AOC] ERROR    - 'SOMEKEY'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 33, in <module>
+    cfg["SOMEKEY"]
+KeyError: 'SOMEKEY'
+2011-10-30 21:25:59,907 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:25:59,908 [AOC] ERROR    - no se ha podido encontrar una variable de confifguracion necesaria
+2011-10-30 21:25:59,908 [AOC] ERROR    - 'SOMEKEY'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 33, in <module>
+    cfg["SOMEKEY"]
+KeyError: 'SOMEKEY'
+2011-10-30 21:28:52,626 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:28:52,652 [AOC] ERROR    - no se ha podido encontrar una variable de confifguracion necesaria
+2011-10-30 21:28:52,653 [AOC] ERROR    - 'SOMEKEY'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 33, in <module>
+    cfg["SOMEKEY"]
+KeyError: 'SOMEKEY'
+2011-10-30 21:30:57,721 [AOC] INFO     - iniciando el Agente de Obtencion de Cargas
+2011-10-30 21:30:57,753 [AOC] ERROR    - no se ha podido encontrar una variable de confifguracion necesaria
+2011-10-30 21:30:57,754 [AOC] ERROR    - 'SOMEKEY'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 33, in <module>
+    cfg["SOMEKEY"]
+KeyError: 'SOMEKEY'

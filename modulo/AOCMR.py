@@ -6,7 +6,13 @@ Created on 29/10/2011
 Modulo de Monitorizacion de Recursos para Agente de Obtencion de Cargas (AOCMR)
 '''
 
-import psutil
+from sys import exit
+try:
+    import psutil
+except:
+    print 'no se encuentra python::psutil necesario para correr el modulo'
+    exit(1)
+    
 
 # devuelve el valor del % CPU utilizado, mas un arreglo de % utilizacion por CPU
 def CPU():
