@@ -37,13 +37,13 @@ class handler(logging.getLoggerClass()):
         streamhandler.setLevel(logging.DEBUG)
         streamhandler.setFormatter(formatter)
         log.addHandler(streamhandler)
-    except IOError, (message):
-        print 'no se puede escribir en ' + logFile
-        print message
+    except IOError as message:
+        print('no se puede escribir en ' + logFile)
+        print(message)
         exit(1)
-    except Exception, (message):
-        print 'error al instanciar el log del SBC'
-        print message
+    except Exception as message:
+        print('error al instanciar el log del SBC')
+        print (message)
         exit(1)
 
 # funciones

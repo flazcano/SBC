@@ -41,7 +41,7 @@ def valida():
         MA.valida()
     
         handler.log.info('validacion de los modulos finalizada')
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('la validacion finalizo con problemas: %s', message)
         exit(1)
 

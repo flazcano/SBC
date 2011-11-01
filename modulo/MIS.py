@@ -8,7 +8,6 @@ Modulo de Integracion para SQLite3 (MIS)
 
 # importaciones
 import sqlite3
-from exceptions import Exception
 from sys import exit
 from os import path
 from Logger import handler
@@ -34,40 +33,47 @@ def creaEsquema():
         cursor.execute('CREATE TABLE configuraciones (id INTEGER NOT NULL PRIMARY KEY, clave TEXT UNIQUE NOT NULL, valor TEXT NOT NULL, modificado TEXT NOT NULL, defvalor TEXT, prevalor TEXT);')
         cursor.execute('CREATE TABLE servidores (id INTEGER NOT NULL PRIMARY KEY, fqdn TEXT UNIQUE NOT NULL, puerto INTEGER NOT NULL, activo BOOLEAN DEFAULT TRUE, visto TEXT, modificado TEXT);')
         cursor.execute('CREATE TABLE infoservidores (id INTEGER NOT NULL PRIMARY KEY, servidorid CONSTRAINT fk_id_srv REFERENCES servidores(id) ON DELETE CASCADE, modificado TEXT);')
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('no se puede crear esquema de ' + db + ': %s', message)
         exit(1)
     finally:
-        if cursor: cursor.close()
+        #if cursor: cursor.close()
+        #if conexion: conexion.close()
+        pass
 
 def consultaListaServidores():
     try:
         handler.log.debug('consultando listado de servidores en ' + db)
         conexion=sqlite3.connect(db, isolation_level=None)
         cursor=conexion.cursor()
-        servidores = cursor.execute('SELECT id, fqdn, puerto FROM servidores WHERE activo = ?;', ('TRUE'))
+        servidores = cursor.execute('SELECT id, fqdn, puerto FROM servidores WHERE activo = "TRUE";')
         return servidores
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('no se puede obtener listado de servidores activos de ' + db + ': %s', message)
         exit(1)
     finally:
-        if cursor: cursor.close()
+        #if cursor: cursor.close()
+        #if conexion: conexion.close()
+        pass
 
 def consultaTotalServidores():
     try:
         handler.log.debug('consultando total de servidores activos en ' + db)
         conexion=sqlite3.connect(db, isolation_level=None)
         cursor=conexion.cursor()
-        total = cursor.execute('SELECT count(id) FROM servidores WHERE activo = ?;', ('TRUE'))
+        total = cursor.execute('SELECT count(id) FROM servidores WHERE activo = "TRUE";')
         return total
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('no se puede obtener total de servidores activos de ' + db + ': %s', message)
         exit(1)
     finally:
-        if cursor: cursor.close()
+        #if cursor: cursor.close()
+        #if conexion: conexion.close()
+        pass
 
 def agregaServidor(HOST, PORT):
     try:
+        PORT = 54321
         handler.log.debug('agregando servidor en ' + db)
         conexion=sqlite3.connect(db, isolation_level=None)
         cursor=conexion.cursor()
@@ -78,20 +84,22 @@ def agregaServidor(HOST, PORT):
         else: 
             handler.log.debug('agregando servidor')
             cursor.execute('INSERT INTO servidores (fqdn, puerto, activo) VALUES (?, ?, ?);', (HOST, PORT, 'TRUE'))
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('no se puede agregar servidor en ' + db + ': %s', message)
         handler.log.exception(message)
         exit(1)
     finally:
-        if cursor: cursor.close()
+        #if cursor: cursor.close()
+        #if conexion: conexion.close()
+        pass
 
 def valida():
     # se conecta a SQLite3
     try:
         # comprobando que la db existe
         fileDB = open(db,"r")
-        handler.log.debug('existe la base de datos sqlite3 en: '  + path.abspath(fileDB))
-    except Exception, (message):
+        handler.log.debug('existe la base de datos sqlite3 en: '  + path.abspath(db))
+    except Exception as message:
         fileDB = open(db,"w")
         handler.log.debug('creada la base de datos sqlite3 en: '  + path.abspath(db))
     finally: 
@@ -107,8 +115,7 @@ def valida():
         cont = cursor.execute('pragma table_info(configuraciones);').fetchall()
         if cont: handler.log.debug('la tabla %s parece bien', tabla)
         else:
-            creaEsquema()
-            exit(1)
+            pass
         
         # comprobando tabla servidores
         tabla = 'servidores'
@@ -116,19 +123,19 @@ def valida():
         if cont: handler.log.debug('la tabla %s parece bien', tabla)
         else:
             creaEsquema()
-            exit(1)
             
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un problema al validar la integridad del modulo: %s', message)
         handler.log.exception(message)
         exit(1)
     finally:
-        if cursor: cursor.close()
+        #if cursor: cursor.close()
+        #if conexion: conexion.close()
+        pass
 
 def run():
     handler.log.info('iniciando modulo')
 
 # main
 if __name__ == '__main__':
-    #valida()
-    agregaServidor('192.168.0.3', 54321)
+    pass

@@ -41,20 +41,20 @@ if __name__ == '__main__':
     handler.log.info('iniciando el sistema SBC')
     
     try: MC.valida()
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un error al validar los modulos del sistema: %s', message)
         exit(1)
     
     # ejecutando el modulo como hilo
     try: tMIS = ThreadxMIS().start()
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);
     
     # ejecutando el modulo como hilo
     try: tME = ThreadxME().start()
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);

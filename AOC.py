@@ -48,29 +48,29 @@ if __name__ == '__main__':
         SBCHOST = cfg["SBCHOST"]
         SBCPORT = int(cfg["SBCPORT"])
         
-    except KeyError, (message):
+    except KeyError as message:
         handler.log.critical('no se ha podido encontrar una variable de confifguracion necesaria: %s', message)
         handler.log.exception(message)
         exit(1);
-    except IOError, (message):
+    except IOError as message:
         handler.log.error('ha ocurrido un error al cargar el archivo de configuracion: ' + configFile)
         handler.log.exception(message)
         exit(1);
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un error al cargar el archivo de configuracion: ' + configFile)
         handler.log.exception(message)
         exit(1);
     else: handler.log.info('configuraciones cargadas correctamente')
     
     try: AOCMR.run()
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);
 
     # ejecutando el modulo AOCME como hilo
     try: tAOCME = ThreadxAOCME(HOST, PORT).start()
-    except Exception, (message):
+    except Exception as message:
         handler.log.error('ha ocurrido un error al cargar el modulo')
         handler.log.exception(message)
         exit(1);
@@ -84,12 +84,11 @@ if __name__ == '__main__':
             handler.log.debug('enviando alive signal a SBC')
             sbccon = socket.socket()
             sbccon.connect((SBCHOST, SBCPORT))
-            sbccon.send('HELLO')
-        except Exception, (message):
+            sbccon.send(str.encode('HELLO'))
+        except Exception as message:
             handler.log.error('no se pudo conectar al SBC: %s', message)
         else:
             handler.log.debug('alive signal enviado correctamente')
             sinconexion = 0
         finally:
             sleep(5)
-    

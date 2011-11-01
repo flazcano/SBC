@@ -11,7 +11,7 @@ import select, socket
 from sys import exit, stdin
 from threading import Thread
 from Logger import handler
-from AOCMR import LAV
+from modulo.AOCMR import LAV
 
 # definiciones
 
@@ -30,10 +30,11 @@ class Servidor():
         try:
             # instanciando el socket
             self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.server.bind((self.host,self.port))
+            self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            self.server.bind((self.host, self.port))
             self.server.listen(5)
             self.server.settimeout(self.timeout)
-        except socket.error, (message):
+        except socket.error as message:
             if self.server:
                 self.server.close()
             handler.log.critical('no se puede abrir el socket: %s', message)
@@ -44,20 +45,14 @@ class Servidor():
         input = [self.server,stdin]
         running = 1
         while running:
-            inputready,outputready,exceptready = select.select(input,[],[])
-            
+            inputready, outputready, exceptready = select.select(input,[],[])
             for server in inputready:
-
                 if server == self.server:
                     # manejando el socket del servidor
                     cliente = Cliente(self.server.accept());
                     cliente.start();
                     # creando un hilo
                     self.threads.append(cliente);
-
-                # elif server == sys.stdin:
-                    # manejando la entrada estandar del servidor
-                    # junk = sys.stdin.readline();
 
         # cerrando los hilos
         if self.server:
@@ -66,8 +61,9 @@ class Servidor():
             c.join()
 
 class Cliente(Thread):
-    def __init__(self,(client,address)):
+    def __init__(self, cliente):
         Thread.__init__(self)
+        client, address = cliente
         self.client = client
         self.address = address
         self.size = 1024
@@ -80,11 +76,11 @@ class Cliente(Thread):
                 data = self.client.recv(self.size)
                 if data:
                     # enviando carga
-                    self.client.send(LAV())
+                    self.client.send(str.encode(LAV()))
                 self.client.close()    
                 break
             handler.log.debug('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))                    
-        except socket.error, (message):
+        except socket.error as message:
             handler.log.debug('error de conexion de ' + self.address[0] + ':' + str(self.address[1]) + ': %s', message)
         finally:
             if self.client:

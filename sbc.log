@@ -14355,3 +14355,1046 @@ TypeError: obtieneEstadoServidor() takes exactly 2 arguments (1 given)
 2011-10-31 20:02:52,745 [MC ] DEBUG    - validando integridad de MIS
 2011-10-31 20:02:52,759 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
 2011-10-31 20:02:52,762 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 02:52:04,725 [AOC] INFO     - iniciando el agente
+2011-11-01 02:52:04,823 [AOC] INFO     - cargando configuraciones
+2011-11-01 02:52:04,825 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 02:52:04,825 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 02:52:04,825 [AOCME] INFO     - iniciando el modulo
+2011-11-01 02:52:04,825 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 02:52:04,826 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 02:52:04,826 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:52:04,829 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 02:53:48,101 [AOC] INFO     - iniciando el agente
+2011-11-01 02:53:48,101 [AOC] INFO     - cargando configuraciones
+2011-11-01 02:53:48,102 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 02:53:48,102 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 02:53:48,102 [AOCME] INFO     - iniciando el modulo
+2011-11-01 02:53:48,102 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 02:53:48,103 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:53:48,103 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 02:53:48,103 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:53:53,104 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:53:53,105 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:07,141 [AOC] INFO     - iniciando el agente
+2011-11-01 02:56:07,172 [AOC] INFO     - cargando configuraciones
+2011-11-01 02:56:07,176 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 02:56:07,176 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 02:56:07,177 [AOCME] INFO     - iniciando el modulo
+2011-11-01 02:56:07,177 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 02:56:07,177 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:07,178 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:12,179 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:12,180 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:17,181 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:17,183 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:22,184 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:22,184 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:27,185 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:27,186 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:32,187 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:32,188 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 02:56:37,189 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 02:56:37,190 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 03:19:29,587 [AOC] INFO     - iniciando el agente
+2011-11-01 03:19:29,588 [AOC] INFO     - cargando configuraciones
+2011-11-01 03:19:29,589 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 03:19:29,589 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 03:19:29,593 [AOCME] INFO     - iniciando el modulo
+2011-11-01 03:19:29,593 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 03:19:29,593 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 03:19:29,595 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 03:20:09,853 [AOC] INFO     - iniciando el agente
+2011-11-01 03:20:09,887 [AOC] INFO     - cargando configuraciones
+2011-11-01 03:20:09,888 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 03:20:09,888 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 03:20:09,889 [AOCME] INFO     - iniciando el modulo
+2011-11-01 03:20:09,889 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 03:20:09,889 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 03:20:09,890 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 03:21:47,939 [AOC] INFO     - iniciando el agente
+2011-11-01 03:21:47,939 [AOC] INFO     - cargando configuraciones
+2011-11-01 03:21:47,940 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 03:21:47,940 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 03:21:47,941 [AOCME] INFO     - iniciando el modulo
+2011-11-01 03:21:47,941 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 03:21:47,942 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 03:21:47,943 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 03:25:17,325 [AOC] INFO     - iniciando el agente
+2011-11-01 03:25:17,326 [AOC] INFO     - cargando configuraciones
+2011-11-01 03:25:17,326 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 03:25:17,326 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 03:25:17,327 [AOCME] INFO     - iniciando el modulo
+2011-11-01 03:25:17,327 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 03:25:17,327 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 03:25:17,328 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 03:30:40,495 [AOC] INFO     - iniciando el agente
+2011-11-01 03:30:40,540 [AOC] INFO     - cargando configuraciones
+2011-11-01 03:30:40,542 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 03:30:40,542 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 03:30:40,543 [AOCME] INFO     - iniciando el modulo
+2011-11-01 03:30:40,543 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 03:30:40,543 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 03:30:40,544 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 03:30:40,548 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 04:24:23,475 [AOC] INFO     - iniciando el agente
+2011-11-01 04:24:23,575 [AOC] INFO     - cargando configuraciones
+2011-11-01 04:24:23,594 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 04:24:23,595 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 04:24:23,595 [AOCME] INFO     - iniciando el modulo
+2011-11-01 04:24:23,595 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 04:24:23,595 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 04:24:23,596 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 04:24:23,596 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 04:24:53,835 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 04:24:53,835 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 04:24:53,835 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 04:24:53,922 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 04:24:53,923 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 04:24:53,979 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 04:24:53,979 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 04:24:53,979 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 04:24:53,979 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 04:24:53,979 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 04:24:53,980 [MIS] INFO     - iniciando modulo
+2011-11-01 04:24:53,980 [ME ] INFO     - iniciando modulo
+2011-11-01 04:24:53,980 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 04:24:53,981 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 04:24:53,981 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 04:24:53,982 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 04:24:53,982 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 04:24:53,983 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 04:25:13,984 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 04:25:13,984 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 04:25:13,985 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 04:25:13,985 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 04:25:13,986 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 04:25:33,987 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 04:25:33,987 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 04:25:33,988 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 04:25:33,988 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 04:25:33,989 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 04:40:16,752 [AOC] INFO     - iniciando el agente
+2011-11-01 04:40:16,755 [AOC] INFO     - cargando configuraciones
+2011-11-01 04:40:16,756 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 04:40:16,756 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 04:40:16,758 [AOCME] INFO     - iniciando el modulo
+2011-11-01 04:40:16,758 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 04:40:16,758 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 04:40:16,759 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 04:59:08,446 [AOC] INFO     - iniciando el agente
+2011-11-01 04:59:08,761 [AOC] INFO     - cargando configuraciones
+2011-11-01 04:59:08,777 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 04:59:08,777 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 04:59:08,778 [AOCME] INFO     - iniciando el modulo
+2011-11-01 04:59:08,778 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 04:59:08,779 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 04:59:08,779 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 04:59:08,779 [AOC] ERROR    - [Errno 61] Connection refused
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 86, in <module>
+    sbccon.connect((SBCHOST, SBCPORT))
+  File "<string>", line 1, in connect
+error: [Errno 61] Connection refused
+2011-11-01 05:02:27,086 [AOC] INFO     - iniciando el agente
+2011-11-01 05:02:27,086 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:02:27,091 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:02:27,091 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:02:27,092 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:02:27,093 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:02:27,093 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:02:27,094 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 05:02:27,094 [AOC] ERROR    - [Errno 61] Connection refused
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 86, in <module>
+    sbccon.connect((SBCHOST, SBCPORT))
+  File "<string>", line 1, in connect
+error: [Errno 61] Connection refused
+2011-11-01 05:03:03,703 [AOC] INFO     - iniciando el agente
+2011-11-01 05:03:03,703 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:03:03,704 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:03:03,704 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:03:03,704 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:03:03,704 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:03:03,705 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:03:03,706 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 05:03:03,706 [AOC] ERROR    - [Errno 61] Connection refused
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 86, in <module>
+    sbccon.connect((SBCHOST, SBCPORT))
+  File "<string>", line 1, in connect
+error: [Errno 61] Connection refused
+2011-11-01 05:03:08,707 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:03:08,707 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 05:03:08,708 [AOC] ERROR    - [Errno 61] Connection refused
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 86, in <module>
+    sbccon.connect((SBCHOST, SBCPORT))
+  File "<string>", line 1, in connect
+error: [Errno 61] Connection refused
+2011-11-01 05:03:13,709 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:03:13,709 [AOC] ERROR    - no se pudo conectar al SBC: [Errno 61] Connection refused
+2011-11-01 05:03:13,709 [AOC] ERROR    - [Errno 61] Connection refused
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/AOC.py", line 86, in <module>
+    sbccon.connect((SBCHOST, SBCPORT))
+  File "<string>", line 1, in connect
+error: [Errno 61] Connection refused
+2011-11-01 05:04:35,389 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:04:35,389 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:04:35,390 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:04:35,426 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:04:35,427 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:04:35,441 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:04:35,443 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:04:35,443 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:04:35,443 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:04:35,443 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:04:35,444 [MIS] INFO     - iniciando modulo
+2011-11-01 05:04:35,445 [ME ] INFO     - iniciando modulo
+2011-11-01 05:04:35,445 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 05:04:35,446 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:04:35,446 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:04:35,446 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:04:35,453 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:04:35,453 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:04:35,453 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:05:02,669 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:05:02,669 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:05:02,669 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:05:02,670 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:05:02,671 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:05:02,782 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:05:02,782 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:05:02,782 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:05:02,782 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:05:02,782 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:05:02,783 [MIS] INFO     - iniciando modulo
+2011-11-01 05:05:02,783 [ME ] INFO     - iniciando modulo
+2011-11-01 05:05:02,783 [ME ] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 05:05:02,784 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:05:02,784 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:05:02,784 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:05:02,785 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:05:02,785 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:05:02,785 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:05:22,787 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:05:22,787 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:05:22,787 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:05:22,788 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:05:22,788 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:05:42,790 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:05:42,790 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:05:42,791 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:05:42,791 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:05:42,792 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:06:02,793 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:06:02,793 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:06:02,794 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:06:02,794 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:06:02,795 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:06:22,795 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:06:22,795 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:06:22,796 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:06:22,796 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:06:22,804 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:06:38,796 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:06:38,797 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:06:38,797 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:06:38,798 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:06:38,799 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:06:38,806 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:06:38,806 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:06:38,806 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:06:38,806 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:06:38,806 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:06:38,807 [MIS] INFO     - iniciando modulo
+2011-11-01 05:06:38,807 [ME ] INFO     - iniciando modulo
+2011-11-01 05:06:38,807 [ME ] CRITICAL - no se puede abrir el socket: [Errno 47] Address family not supported by protocol family
+2011-11-01 05:06:38,807 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:06:38,808 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:06:38,808 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:06:38,808 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:06:38,810 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:06:38,812 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:22:57,985 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:22:58,121 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:22:58,124 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:22:58,168 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:22:58,169 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:22:58,195 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:22:58,195 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:22:58,195 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:22:58,196 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:22:58,196 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:22:58,196 [MIS] INFO     - iniciando modulo
+2011-11-01 05:22:58,196 [ME ] INFO     - iniciando modulo
+2011-11-01 05:22:58,197 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:22:58,197 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:22:58,197 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:22:58,198 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:22:58,198 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:22:58,198 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:23:00,350 [ME ] DEBUG    - conectado desde 192.168.85.128:41905
+2011-11-01 05:23:00,351 [ME ] DEBUG    - cliente 192.168.85.128:41905 envia alive signal
+2011-11-01 05:23:00,351 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:23:00,352 [MIS] DEBUG    - agregando servidor
+2011-11-01 05:23:18,200 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:23:18,200 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:23:18,201 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:23:18,201 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:23:18,202 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:23:18,202 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:23:18,202 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:23:38,204 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:23:38,204 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:23:38,204 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:23:38,205 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:23:38,205 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:23:38,205 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:23:38,206 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:23:58,207 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:23:58,207 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:23:58,208 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:23:58,208 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:23:58,209 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:23:58,209 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:23:58,209 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:24:28,598 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:24:28,598 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:24:28,598 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:24:28,598 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:24:28,600 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:24:28,610 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:24:28,610 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:24:28,611 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:24:28,611 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:24:28,611 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:24:28,612 [MIS] INFO     - iniciando modulo
+2011-11-01 05:24:28,612 [ME ] INFO     - iniciando modulo
+2011-11-01 05:24:28,612 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:24:28,612 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:24:28,613 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:24:28,613 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:24:28,614 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:24:28,614 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:24:46,551 [ME ] DEBUG    - conectado desde 192.168.85.128:41906
+2011-11-01 05:24:46,551 [ME ] DEBUG    - cliente 192.168.85.128:41906 envia alive signal
+2011-11-01 05:24:46,551 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:24:46,552 [MIS] DEBUG    - agregando servidor
+2011-11-01 05:24:48,616 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:24:48,616 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:24:48,617 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:24:48,617 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:24:48,617 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:24:48,617 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:24:48,618 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:25:08,619 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:25:08,619 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:25:08,620 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:25:08,620 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:25:08,620 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:25:08,620 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:25:08,621 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:25:28,622 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:25:28,622 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:25:28,623 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:25:28,623 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:25:28,623 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:25:28,624 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:25:28,624 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:25:48,625 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:25:48,625 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:25:48,626 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:25:48,627 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:25:48,627 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:25:48,627 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:25:48,628 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:26:08,630 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:26:08,630 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:26:08,631 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:26:08,631 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:26:08,632 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:26:08,632 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:26:08,632 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:26:24,648 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:26:24,648 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:26:24,649 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:26:24,649 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:26:24,650 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:26:24,655 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:26:24,656 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:26:24,656 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:26:24,656 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:26:24,656 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:26:24,656 [MIS] INFO     - iniciando modulo
+2011-11-01 05:26:24,657 [ME ] INFO     - iniciando modulo
+2011-11-01 05:26:24,657 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:26:24,657 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:26:24,658 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:26:24,658 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:26:24,658 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:26:24,659 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:26:30,909 [ME ] DEBUG    - conectado desde 192.168.85.128:41907
+2011-11-01 05:26:30,910 [ME ] DEBUG    - cliente 192.168.85.128:41907 envia alive signal
+2011-11-01 05:26:30,910 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:26:30,910 [MIS] DEBUG    - agregando servidor
+2011-11-01 05:26:44,660 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:26:44,660 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:26:44,661 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:26:44,661 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:26:44,662 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:26:44,662 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST)
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:26:44,663 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:27:04,664 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:27:04,664 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:27:04,664 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:27:04,665 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:27:04,665 [ME ] DEBUG    - error al consultar estado del servidor
+2011-11-01 05:27:04,665 [ME ] ERROR    - cannot concatenate 'str' and 'int' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/ME.py", line 121, in obtieneEstadoServidor
+    handler.log.debug('obteniendo estado de servidor ' + HOST)
+TypeError: cannot concatenate 'str' and 'int' objects
+2011-11-01 05:27:04,666 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:27:44,220 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:27:44,221 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:27:44,221 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:27:44,222 [MIS] DEBUG    - creada la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:27:44,222 [MIS] DEBUG    - creando esquema en sbc.db
+2011-11-01 05:27:44,356 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:27:44,356 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:27:44,356 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:27:44,356 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:27:44,357 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:27:44,357 [MIS] INFO     - iniciando modulo
+2011-11-01 05:27:44,358 [ME ] INFO     - iniciando modulo
+2011-11-01 05:27:44,358 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:27:44,358 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:27:44,358 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:27:44,359 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-01 05:27:44,359 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:27:44,360 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:27:50,402 [ME ] DEBUG    - conectado desde 192.168.85.128:41908
+2011-11-01 05:27:50,402 [ME ] DEBUG    - cliente 192.168.85.128:41908 envia alive signal
+2011-11-01 05:27:50,402 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:27:50,403 [MIS] DEBUG    - agregando servidor
+2011-11-01 05:28:04,362 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:28:04,362 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:28:04,362 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:28:04,363 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:28:04,363 [ME ] DEBUG    - obteniendo estado de servidor 1
+2011-11-01 05:28:04,364 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:28:24,365 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:28:24,365 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:28:24,365 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:28:24,366 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:28:24,366 [ME ] DEBUG    - obteniendo estado de servidor 1
+2011-11-01 05:28:24,367 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:28:44,369 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:28:44,369 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:28:44,370 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:28:44,370 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:28:44,370 [ME ] DEBUG    - obteniendo estado de servidor 1
+2011-11-01 05:28:44,371 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:29:04,372 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:29:04,372 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:29:04,372 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:29:04,373 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:29:04,373 [ME ] DEBUG    - obteniendo estado de servidor 1
+2011-11-01 05:29:04,373 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:30:32,761 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:30:32,761 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:30:32,761 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:30:32,761 [MIS] DEBUG    - existe la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:30:32,762 [MIS] DEBUG    - la tabla configuraciones parece bien
+2011-11-01 05:30:32,762 [MIS] DEBUG    - la tabla servidores parece bien
+2011-11-01 05:30:32,763 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:30:32,763 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:30:32,763 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:30:32,763 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:30:32,763 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:30:32,763 [MIS] INFO     - iniciando modulo
+2011-11-01 05:30:32,764 [ME ] INFO     - iniciando modulo
+2011-11-01 05:30:32,764 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:30:32,764 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:30:32,764 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:30:32,765 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:30:32,765 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:30:32,766 [ME ] DEBUG    - obteniendo estado de servidor 1:192.168.85.128
+2011-11-01 05:30:32,766 [ME ] ERROR    - no se pudo conectar al servidor 1:192.168.85.128: coercing to Unicode: need string or buffer, int found
+2011-11-01 05:30:32,767 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:30:52,767 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:30:52,767 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:30:52,768 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:30:52,768 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:30:52,768 [ME ] DEBUG    - obteniendo estado de servidor 1:192.168.85.128
+2011-11-01 05:30:52,769 [ME ] ERROR    - no se pudo conectar al servidor 1:192.168.85.128: coercing to Unicode: need string or buffer, int found
+2011-11-01 05:30:52,769 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:32:42,777 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:32:42,778 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:32:42,778 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:32:42,778 [MIS] DEBUG    - existe la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:32:42,779 [MIS] DEBUG    - la tabla configuraciones parece bien
+2011-11-01 05:32:42,780 [MIS] DEBUG    - la tabla servidores parece bien
+2011-11-01 05:32:42,780 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:32:42,780 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:32:42,780 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:32:42,780 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:32:42,780 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:32:42,781 [MIS] INFO     - iniciando modulo
+2011-11-01 05:32:42,781 [ME ] INFO     - iniciando modulo
+2011-11-01 05:32:42,781 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:32:42,783 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:32:42,783 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:32:42,784 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:32:42,784 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:32:42,785 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:32:43,174 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:32:43,175 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:33:03,176 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:33:03,176 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:33:03,177 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:33:03,177 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:33:03,178 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:33:03,178 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:33:03,178 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:33:23,179 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:33:23,179 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:33:23,180 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:33:23,180 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:33:23,180 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:33:23,181 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:33:23,181 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:33:43,182 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:33:43,183 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:33:43,183 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:33:43,183 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:33:43,184 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:33:43,184 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:33:43,185 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:34:03,186 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:34:03,186 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:34:03,187 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:34:03,187 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:34:03,187 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:34:03,188 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:34:03,188 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:34:23,189 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:34:23,189 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:34:23,190 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:34:23,190 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:34:23,191 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:34:23,191 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:34:23,192 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:34:43,193 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:34:43,193 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:34:43,194 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:34:43,194 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:34:43,195 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:34:43,195 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:34:43,196 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:35:00,994 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:35:00,994 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:35:00,994 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:35:00,994 [MIS] DEBUG    - existe la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:35:00,995 [MIS] DEBUG    - la tabla configuraciones parece bien
+2011-11-01 05:35:00,995 [MIS] DEBUG    - la tabla servidores parece bien
+2011-11-01 05:35:00,995 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:35:00,995 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:35:00,996 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:35:00,996 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:35:00,996 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:35:00,996 [MIS] INFO     - iniciando modulo
+2011-11-01 05:35:00,997 [ME ] INFO     - iniciando modulo
+2011-11-01 05:35:00,997 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:35:00,997 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:35:00,997 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:35:00,998 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:35:00,998 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:35:00,999 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:41908
+2011-11-01 05:35:01,017 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:35:01,017 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:41908: [Errno 61] Connection refused
+2011-11-01 05:35:06,798 [ME ] DEBUG    - conectado desde 192.168.85.128:41909
+2011-11-01 05:35:06,798 [ME ] DEBUG    - cliente 192.168.85.128:41909 envia alive signal
+2011-11-01 05:35:06,798 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:35:06,799 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:35:21,018 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:35:21,018 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:35:21,018 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:35:21,019 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:35:21,019 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:35:21,020 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:35:21,021 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 54] Connection reset by peer
+2011-11-01 05:35:21,031 [ME ] DEBUG    - desconectado desde 192.168.85.128:41909
+2011-11-01 05:35:41,021 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:35:41,022 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:35:41,022 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:35:41,022 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:35:41,023 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:35:41,025 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:35:41,025 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:36:01,026 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:36:01,027 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:36:01,027 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:36:01,027 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:36:01,028 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:36:01,029 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:36:01,029 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:36:21,030 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:36:21,031 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:36:21,039 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:36:21,039 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:36:21,039 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:36:21,040 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:36:21,040 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:36:41,041 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:36:41,041 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:36:41,042 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:36:41,042 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:36:41,042 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:36:41,043 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:36:41,043 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:37:01,044 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:37:01,045 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:37:01,045 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:37:01,045 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:37:01,046 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:37:01,047 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:37:01,047 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:37:21,048 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:37:21,048 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:37:21,049 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:37:21,049 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:37:21,049 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:37:21,050 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:37:21,050 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:37:41,051 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:37:41,051 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:37:41,051 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:37:41,052 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:37:41,052 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:37:41,053 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:37:41,053 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:39:22,458 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:39:22,459 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:39:22,459 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:39:22,459 [MIS] DEBUG    - existe la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:39:22,460 [MIS] DEBUG    - la tabla configuraciones parece bien
+2011-11-01 05:39:22,460 [MIS] DEBUG    - la tabla servidores parece bien
+2011-11-01 05:39:22,460 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:39:22,460 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:39:22,461 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:39:22,461 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:39:22,461 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:39:22,461 [MIS] INFO     - iniciando modulo
+2011-11-01 05:39:22,462 [ME ] INFO     - iniciando modulo
+2011-11-01 05:39:22,462 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:39:22,462 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:39:22,462 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:39:22,463 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:39:22,463 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:39:22,463 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:39:22,482 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:39:22,482 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:39:34,440 [ME ] DEBUG    - conectado desde 192.168.85.128:41910
+2011-11-01 05:39:34,440 [ME ] DEBUG    - cliente 192.168.85.128:41910 envia alive signal
+2011-11-01 05:39:34,440 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:39:34,441 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:39:42,484 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:39:42,484 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:39:42,484 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:39:42,485 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:39:42,485 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:39:42,486 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:39:44,496 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: 
+2011-11-01 05:40:02,487 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:40:02,487 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:40:02,488 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:40:02,488 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:40:02,488 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:40:02,489 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:40:04,498 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: 
+2011-11-01 05:40:22,490 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:40:22,491 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:40:22,491 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:40:22,491 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:40:22,492 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:40:22,492 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:40:24,503 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: 
+2011-11-01 05:40:26,399 [ME ] DEBUG    - desconectado desde 192.168.85.128:41910
+2011-11-01 05:40:30,081 [ME ] DEBUG    - conectado desde 192.168.85.128:41911
+2011-11-01 05:40:30,082 [ME ] DEBUG    - cliente 192.168.85.128:41911 envia alive signal
+2011-11-01 05:40:30,082 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:40:30,082 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:40:35,091 [ME ] DEBUG    - desconectado desde 192.168.85.128:41911
+2011-11-01 05:40:40,137 [ME ] DEBUG    - conectado desde 192.168.85.128:41912
+2011-11-01 05:40:40,138 [ME ] DEBUG    - cliente 192.168.85.128:41912 envia alive signal
+2011-11-01 05:40:40,138 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:40:40,139 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:40:42,494 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:40:42,494 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:40:42,495 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:40:42,495 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:40:42,495 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:40:42,496 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:40:42,496 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:40:45,148 [ME ] DEBUG    - desconectado desde 192.168.85.128:41912
+2011-11-01 05:41:02,497 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:41:02,498 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:41:02,498 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:41:02,498 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:41:02,499 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:41:02,499 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:41:02,500 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:41:22,501 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:41:22,501 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:41:22,502 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:41:22,502 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:41:22,502 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:41:22,503 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:41:22,503 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:41:42,504 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:41:42,504 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:41:42,505 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:41:42,505 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:41:42,506 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:41:42,506 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:41:42,507 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:42:02,507 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:42:02,508 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:42:02,508 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:42:02,508 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:42:02,509 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:42:02,509 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:42:02,509 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:42:16,772 [ME ] DEBUG    - conectado desde 192.168.85.128:41913
+2011-11-01 05:42:16,773 [ME ] DEBUG    - cliente 192.168.85.128:41913 envia alive signal
+2011-11-01 05:42:16,773 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:42:16,773 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:42:22,510 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:42:22,510 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:42:22,511 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:42:22,511 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:42:22,512 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:42:22,513 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:42:24,528 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 221310976, 30433280, 23.1], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698457088, 1320624128, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:42:42,514 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:42:42,514 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:42:42,515 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:42:42,515 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:42:42,516 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:42:42,516 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:42:44,541 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 221626368, 30117888, 23.2], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698469376, 1320611840, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:43:02,518 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:43:02,518 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:43:02,519 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:43:02,519 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:43:02,519 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:43:02,520 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:43:04,534 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 221687808, 30056448, 23.3], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698457088, 1320624128, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:43:22,521 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:43:22,521 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:43:22,522 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:43:22,522 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:43:22,523 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:43:22,524 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:43:24,544 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 221687808, 30056448, 23.2], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698457088, 1320624128, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:43:32,737 [ME ] DEBUG    - desconectado desde 192.168.85.128:41913
+2011-11-01 05:43:42,525 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:43:42,525 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:43:42,526 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:43:42,526 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:43:42,527 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:43:42,527 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:43:42,527 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:43:53,938 [ME ] DEBUG    - conectado desde 192.168.85.128:41914
+2011-11-01 05:43:53,938 [ME ] DEBUG    - cliente 192.168.85.128:41914 envia alive signal
+2011-11-01 05:43:53,938 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:43:53,939 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:44:02,528 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:44:02,529 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:44:02,529 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:44:02,530 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:44:02,530 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:44:02,533 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:44:04,547 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[1.0], [5.9]], [251744256, 222035968, 29708288, 23.4], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698461184, 1320620032, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:44:22,535 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:44:22,535 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:44:22,536 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:44:22,536 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:44:22,536 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:44:22,537 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:44:24,548 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[1.0], [1.0]], [251744256, 222003200, 29741056, 23.4], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698461184, 1320620032, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:44:42,539 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:44:42,539 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:44:42,539 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:44:42,540 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:44:42,540 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:44:42,541 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:44:44,550 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[1.0], [1.0]], [251744256, 222035968, 29708288, 23.4], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698461184, 1320620032, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:45:02,542 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:45:02,542 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:45:02,542 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:45:02,543 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:45:02,543 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:45:02,543 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:45:04,554 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[1.0], [1.0]], [251744256, 221687808, 30056448, 23.2], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698473472, 1320607744, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:45:22,545 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:45:22,545 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:45:22,545 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:45:22,546 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:45:22,546 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:45:22,547 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:45:24,615 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 221687808, 30056448, 23.2], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2698473472, 1320607744, 63.7], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:45:26,863 [ME ] DEBUG    - desconectado desde 192.168.85.128:41914
+2011-11-01 05:45:42,548 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:45:42,549 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:45:42,549 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:45:42,549 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:45:42,550 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:45:42,550 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:45:42,550 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:46:02,551 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:46:02,551 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:46:02,552 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:46:02,552 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:46:02,553 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:46:02,553 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:46:02,554 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:46:22,555 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:46:22,555 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:46:22,555 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:46:22,556 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:46:22,556 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:46:22,557 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:46:22,557 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:46:42,558 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:46:42,558 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:46:42,559 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:46:42,559 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:46:42,560 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:46:42,561 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:46:42,562 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:47:54,447 [AOC] INFO     - iniciando el agente
+2011-11-01 05:47:54,449 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:47:54,450 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:47:54,450 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:47:54,451 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:47:54,452 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:47:54,452 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:47:54,457 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 05:49:47,965 [AOC] INFO     - iniciando el agente
+2011-11-01 05:49:47,966 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:49:47,966 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:49:47,966 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:49:47,970 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:49:47,971 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:49:47,971 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:49:47,976 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 05:51:11,550 [AOC] INFO     - iniciando el agente
+2011-11-01 05:51:11,566 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:51:11,571 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:51:11,571 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:51:11,572 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:51:11,573 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:51:11,578 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:51:11,580 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 05:53:10,032 [AOC] INFO     - iniciando el agente
+2011-11-01 05:53:10,044 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:53:10,045 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:53:10,045 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:53:10,047 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:53:10,048 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 05:53:10,048 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:53:10,048 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:53:10,049 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 05:55:09,947 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:55:09,948 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:55:09,948 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:55:09,948 [MIS] DEBUG    - existe la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:55:09,949 [MIS] DEBUG    - la tabla configuraciones parece bien
+2011-11-01 05:55:09,949 [MIS] DEBUG    - la tabla servidores parece bien
+2011-11-01 05:55:09,949 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:55:09,949 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:55:09,949 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:55:09,949 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:55:09,950 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:55:09,950 [MIS] INFO     - iniciando modulo
+2011-11-01 05:55:09,950 [ME ] INFO     - iniciando modulo
+2011-11-01 05:55:09,951 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:55:09,951 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:55:09,951 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:55:09,951 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:55:09,952 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:55:09,952 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:55:09,972 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:55:09,973 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:55:29,974 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:55:29,975 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:55:29,976 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:55:29,976 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:55:29,976 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:55:29,977 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:55:29,977 [ME ] ERROR    - no se pudo conectar al servidor 192.168.85.128:54321: [Errno 61] Connection refused
+2011-11-01 05:55:43,545 [ME ] DEBUG    - conectado desde 192.168.85.128:41938
+2011-11-01 05:55:49,978 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:55:50,008 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:55:50,010 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:55:50,011 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:55:50,016 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:55:50,022 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:55:52,039 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 227463168, 24281088, 24.3], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2701598720, 1317482496, 63.8], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:56:10,040 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:56:10,040 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:56:10,041 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:56:10,041 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:56:10,042 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:56:10,043 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:56:12,057 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 227786752, 23957504, 24.4], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2701598720, 1317482496, 63.8], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:56:30,044 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:56:30,044 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:56:30,045 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:56:30,045 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:56:30,046 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:56:30,046 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:56:35,195 [SBC] INFO     - iniciando el sistema SBC
+2011-11-01 05:56:35,195 [MC ] INFO     - iniciando validacion de modulos
+2011-11-01 05:56:35,196 [MC ] DEBUG    - validando integridad de MIS
+2011-11-01 05:56:35,196 [MIS] DEBUG    - existe la base de datos sqlite3 en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-01 05:56:35,200 [MIS] DEBUG    - la tabla configuraciones parece bien
+2011-11-01 05:56:35,201 [MIS] DEBUG    - la tabla servidores parece bien
+2011-11-01 05:56:35,201 [MC ] DEBUG    - validando integridad de MII
+2011-11-01 05:56:35,201 [MC ] DEBUG    - validando integridad de ME
+2011-11-01 05:56:35,201 [MC ] DEBUG    - validando integridad de MIW
+2011-11-01 05:56:35,201 [MC ] DEBUG    - validando integridad de MA
+2011-11-01 05:56:35,202 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-01 05:56:35,203 [MIS] INFO     - iniciando modulo
+2011-11-01 05:56:35,207 [ME ] INFO     - iniciando modulo
+2011-11-01 05:56:35,208 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-01 05:56:35,209 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:56:35,209 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:56:35,213 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:56:35,215 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:56:35,216 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:56:35,243 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:56:37,310 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 227786752, 23957504, 24.4], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2701602816, 1317478400, 63.8], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:56:42,670 [ME ] DEBUG    - conectado desde 192.168.85.128:41939
+2011-11-01 05:56:42,670 [ME ] DEBUG    - cliente 192.168.85.128:41939 envia alive signal
+2011-11-01 05:56:42,670 [MIS] DEBUG    - agregando servidor en sbc.db
+2011-11-01 05:56:42,671 [MIS] DEBUG    - actualizando servidor
+2011-11-01 05:56:55,244 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:56:55,244 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:56:55,244 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:56:55,245 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:56:55,245 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:56:55,246 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:56:57,261 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 224374784, 27369472, 23.0], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2701602816, 1317478400, 63.8], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:57:15,247 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-01 05:57:15,247 [MIS] DEBUG    - consultando total de servidores activos en sbc.db
+2011-11-01 05:57:15,247 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-01 05:57:15,248 [MIS] DEBUG    - consultando listado de servidores en sbc.db
+2011-11-01 05:57:15,248 [ME ] DEBUG    - obteniendo estado de servidor 192.168.85.128:54321
+2011-11-01 05:57:15,256 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-01 05:57:17,271 [ME ] DEBUG    - se obtuvo LAV desde 192.168.85.128:54321: [[[100.0], [100.0]], [251744256, 224436224, 27308032, 23.0], [], [], [[/dev/disk/by-uuid/4a7ae017-42ba-4967-b734-6681ebaad526, 4234170368, 2701594624, 1317486592, 63.8], [/dev/sda4, 3149348864, 71802880, 2917564416, 2.3], [/dev/sda1, 534269952, 16244736, 490885120, 3.0], ]]
+2011-11-01 05:57:49,438 [AOC] INFO     - iniciando el agente
+2011-11-01 05:57:49,443 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:57:49,444 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:57:49,444 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:57:49,445 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:57:49,445 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 05:57:49,445 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:57:49,462 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:57:49,579 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 05:58:35,334 [AOC] INFO     - iniciando el agente
+2011-11-01 05:58:35,340 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:58:35,341 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:58:35,341 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:58:35,341 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:58:35,342 [AOCME] CRITICAL - no se puede abrir el socket: [Errno 48] Address already in use
+2011-11-01 05:58:35,342 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:58:35,342 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:58:35,345 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 05:59:48,499 [AOC] INFO     - iniciando el agente
+2011-11-01 05:59:48,514 [AOC] INFO     - cargando configuraciones
+2011-11-01 05:59:48,514 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 05:59:48,515 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 05:59:48,515 [AOCME] INFO     - iniciando el modulo
+2011-11-01 05:59:48,515 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 05:59:48,516 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 05:59:48,516 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 06:03:15,087 [AOC] INFO     - iniciando el agente
+2011-11-01 06:03:15,087 [AOC] INFO     - cargando configuraciones
+2011-11-01 06:03:15,088 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 06:03:15,088 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 06:03:15,093 [AOCME] INFO     - iniciando el modulo
+2011-11-01 06:03:15,095 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 06:03:15,095 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 06:03:15,096 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 06:04:05,941 [AOC] INFO     - iniciando el agente
+2011-11-01 06:04:05,941 [AOC] INFO     - cargando configuraciones
+2011-11-01 06:04:05,950 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 06:04:05,950 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 06:04:05,951 [AOCME] INFO     - iniciando el modulo
+2011-11-01 06:04:05,951 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 06:04:05,951 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 06:04:05,952 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 06:06:28,149 [AOC] INFO     - iniciando el agente
+2011-11-01 06:06:28,150 [AOC] INFO     - cargando configuraciones
+2011-11-01 06:06:28,151 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-01 06:06:28,151 [AOCMR] INFO     - iniciando el modulo
+2011-11-01 06:06:28,151 [AOCME] INFO     - iniciando el modulo
+2011-11-01 06:06:28,151 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-01 06:06:28,152 [AOC] DEBUG    - enviando alive signal a SBC
+2011-11-01 06:06:28,174 [AOC] DEBUG    - alive signal enviado correctamente
+2011-11-01 06:06:40,296 [AOCME] DEBUG    - conectado desde 192.168.85.128:55168
+2011-11-01 06:06:42,301 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55168
+2011-11-01 06:07:00,325 [AOCME] DEBUG    - conectado desde 192.168.85.128:55170
+2011-11-01 06:07:02,336 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55170
+2011-11-01 06:07:20,362 [AOCME] DEBUG    - conectado desde 192.168.85.128:55172
+2011-11-01 06:07:22,367 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55172
+2011-11-01 06:07:40,397 [AOCME] DEBUG    - conectado desde 192.168.85.128:55174
+2011-11-01 06:07:42,404 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55174
+2011-11-01 06:08:00,430 [AOCME] DEBUG    - conectado desde 192.168.85.128:55176
+2011-11-01 06:08:02,443 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55176
+2011-11-01 06:08:20,468 [AOCME] DEBUG    - conectado desde 192.168.85.128:55178
+2011-11-01 06:08:22,474 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55178
+2011-11-01 06:08:35,225 [AOCME] DEBUG    - conectado desde 192.168.85.128:55180
+2011-11-01 06:08:37,230 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55180
+2011-11-01 06:08:55,257 [AOCME] DEBUG    - conectado desde 192.168.85.128:55182
+2011-11-01 06:08:57,263 [AOCME] DEBUG    - desconectado desde 192.168.85.128:55182
