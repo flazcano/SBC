@@ -14,7 +14,7 @@ from Logger import handler
 # clases
 
 # funciones
-def valida():
+def Valida():
     pass
 
 def run():

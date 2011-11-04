@@ -22,23 +22,23 @@ def valida():
     try:
         # validando MIS
         handler.log.debug('validando integridad de MIS')
-        MIS.valida()
+        MIS.Valida()
         
         # validando MII
         handler.log.debug('validando integridad de MII')
-        MII.valida()
+        MII.Valida()
         
         # validando ME
         handler.log.debug('validando integridad de ME')
-        ME.valida()
+        ME.Valida()
         
         # validando MIW
         handler.log.debug('validando integridad de MIW')
-        MIW.valida()
+        MIW.Valida()
         
         # validando MA
         handler.log.debug('validando integridad de MA')
-        MA.valida()
+        MA.Valida()
     
         handler.log.info('validacion de los modulos finalizada')
     except Exception as message:

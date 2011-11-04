@@ -8,12 +8,15 @@ Modulo de Escucha para Agente de Obtencion de Cargas (AOCME)
 
 # importaciones
 import select, socket
+from time import sleep
 from sys import exit, stdin
 from threading import Thread
 from Logger import handler
 from modulo.AOCMR import LAV
 
 # definiciones
+SLEEPTIME = 30
+SBCTIMEOUT = 10
 
 # clases
 class Servidor():
@@ -87,6 +90,23 @@ class Cliente(Thread):
                 self.client.close()
 
 # funciones
+def AgenteVivo(SBCHOST, SBCPORT, PORT):
+    sinConexion = 1
+    while sinConexion:
+        try:
+            handler.log.debug('enviando keep alive a SBC')
+            sbccon = socket.socket()
+            sbccon.settimeout(SBCTIMEOUT)
+            sbccon.connect((SBCHOST, SBCPORT))
+            sbccon.send(str.encode('HELLO %', PORT))
+        except Exception as message:
+            handler.log.error('no se pudo conectar al SBC: %s', message)
+        else:
+            handler.log.debug('keep alive enviado correctamente')
+            sinConexion = 0
+        finally:
+            sleep(SLEEPTIME)
+
 def run(HOST, PORT):
     handler.log.info('iniciando el modulo')
     myservidor = Servidor(HOST, PORT)

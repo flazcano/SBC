@@ -8,13 +8,15 @@ Modulo de Escucha y Obtencion para AOC (ME)
 
 # importaciones
 import socket, select
+from time import sleep
 from sys import exit, stdin
 from threading import Thread
 from Logger import handler
 from modulo import MIS
 
 # definiciones
-CLIENTTIMEOUT = 5
+CLIENTTIMEOUT = 10
+SLEEPTIME = 30
 HOST = "0.0.0.0"
 PORT = 12345
 
@@ -79,10 +81,13 @@ class Cliente(Thread):
             while running:
                 data = self.cliente.recv(self.size)
                 if data:
-                    if data.decode() == 'HELLO':
-                        handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia alive signal')
+                    if 'HELLO' in data.decode():
+                        handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia keep alive')
+                        AOCHOST = self.address[0]
+                        AOCPORT = data.decode()[1]
+                        
                         # se comunica con MIS para agregar cliente a servidores a balancear
-                        MIS.agregaServidor(self.address[0], self.address[1])
+                        MIS.AgregaServidor(AOCHOST, AOCPORT)
                     else:
                         handler.log.debug('se descarta el mensaje, cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + data.decode())
                 else:
@@ -116,7 +121,7 @@ class ThreadxLAV(Thread):
                 # se comunica con MIS para informar el problema
                 
 # funciones
-def obtieneEstadoServidor(HOST, PORT):
+def ObtieneEstadoServidor(HOST, PORT):
     try:
         handler.log.debug('obteniendo estado de servidor ' + str(HOST) + ':' + str(PORT))
         ThreadxLAV(HOST, PORT).start()
@@ -124,22 +129,25 @@ def obtieneEstadoServidor(HOST, PORT):
         handler.log.debug('error al consultar estado del servidor')
         handler.log.exception(message)
 
-def obtieneEstadoServidores():
-    try:
-        handler.log.info('iniciando obtencion de estado de servidores activos')
-        total = MIS.consultaTotalServidores()
-        for cantidad in total:
-            pass
-        handler.log.info('obtenidos %i servidores activos', cantidad[0])
-        for servidor in MIS.consultaListaServidores():
-            obtieneEstadoServidor(servidor[1], servidor[2])
-    except Exception as message:
-        handler.log.debug('error al obtener el estado de los servidores activos')
-        handler.log.exception(message)
-    finally:
-        handler.log.info('obtencion de estado de servidores activos finalizada')
+def ObtieneEstadoServidores():
+    obtieneEstado = 1
+    while obtieneEstado:
+        try:
+            handler.log.info('iniciando obtencion de estado de servidores activos')
+            total = MIS.ConsultaTotalServidores()
+            for cantidad in total:
+                pass
+            handler.log.info('obtenidos %i servidores activos', cantidad[0])
+            for servidor in MIS.ConsultaListaServidores():
+                ObtieneEstadoServidor(servidor[1], servidor[2])
+        except Exception as message:
+            handler.log.error('error al obtener el estado de los servidores activos')
+            handler.log.exception(message)
+        finally:
+            handler.log.info('obtencion de estado de servidores activos finalizada')
+            sleep(SLEEPTIME)
 
-def valida():
+def Valida():
     pass
     
 def run():
