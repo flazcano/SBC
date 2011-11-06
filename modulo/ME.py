@@ -112,10 +112,11 @@ class ThreadxLAV(Thread):
                 clientcon = socket.socket()
                 clientcon.settimeout(CLIENTTIMEOUT)
                 clientcon.connect((self.HOST, self.PORT))
-                clientcon.send(str.encode(':)'))
+                clientcon.send(str.encode('HELLO'))
                 LAV = clientcon.recv(1024)
                 handler.log.debug('se obtuvo LAV desde ' + str(self.HOST) + ':' +str(self.PORT) + ': ' + LAV.decode())
                 # se comunica con MIS para agregar LAV
+                MIS.AgregaLAV(HOST, LAV.decode)
             except Exception as message:
                 handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
                 # se comunica con MIS para informar el problema
