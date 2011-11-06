@@ -7,24 +7,31 @@ Modulo de Monitorizacion de Recursos para Agente de Obtencion de Cargas (AOCMR)
 '''
 # importaciones
 from sys import exit
+from time import sleep
 from Logger import handler
-
 try: import psutil
 except: handler.log.critical('no se encuentra python::psutil necesario para correr el modulo'); exit(1)
 
 # definiciones
+SLEEPTIME = 10
+CPU = None
+MEM = None
+IO = None
+NET = None
+HDD = None
+HORA = None
 
 # clases
 
 # funciones
-def CPU(): # devuelve el valor del % CPU utilizado, mas un arreglo de % utilizacion por CPU
+def getCPU(): # devuelve el valor del % CPU utilizado, mas un arreglo de % utilizacion por CPU
     try:
         miCPU = '[' + '[' + str(psutil.cpu_percent(interval=1, percpu=False)) + ']' + ', ' + str(psutil.cpu_percent(interval=1, percpu=True)) + ']'
         return miCPU 
     except:
         return '[]'
 
-def MEM(): # devuelve un arreglo con la memoria fisica total, la memoria fisica utilizada, la memoria fisica disponible y el % de utilizacion
+def getMEM(): # devuelve un arreglo con la memoria fisica total, la memoria fisica utilizada, la memoria fisica disponible y el % de utilizacion
     try:
         getMEM = psutil.phymem_usage()
         miMEM = '[' + str(getMEM[0]) + ', ' + str(getMEM[1]) + ', ' + str(getMEM[2]) + ', ' + str(getMEM[3]) + ']'
@@ -32,7 +39,7 @@ def MEM(): # devuelve un arreglo con la memoria fisica total, la memoria fisica 
     except:
         return '[]'
 
-def IO(): # devuelve un arreglo con un contador de lecturas IO, un contador de escrituras IO, el total de bits escritos, el total bis leidos, el tiempo de lectura y el tiempo de escritura
+def getIO(): # devuelve un arreglo con un contador de lecturas IO, un contador de escrituras IO, el total de bits escritos, el total bis leidos, el tiempo de lectura y el tiempo de escritura
     try:
         getIO = psutil.disk_io_counters()
         miIO = '[' + str(getIO[0]) + ', ' + str(getIO[1]) + ', ' + str(getIO[2]) + ', ' +str(getIO[3]) + ']'
@@ -40,7 +47,7 @@ def IO(): # devuelve un arreglo con un contador de lecturas IO, un contador de e
     except:
         return '[]'
 
-def NET(): # devuelve un arreglo con la cantidad de bita enviados, la cantidad de bita recibidos, la cantidad de paquetes enviados y la cantidad de paquetes recibidos por las interfaces de red
+def getNET(): # devuelve un arreglo con la cantidad de bita enviados, la cantidad de bita recibidos, la cantidad de paquetes enviados y la cantidad de paquetes recibidos por las interfaces de red
     try:
         getNET = psutil.network_io_counters(pernic=False)
         miNET = '[' + str(getNET[0]) + ', ' + str(getNET[1]) + ', ' + str(getNET[2]) + ', ' + str(getNET[3]) + ']'
@@ -48,23 +55,70 @@ def NET(): # devuelve un arreglo con la cantidad de bita enviados, la cantidad d
     except:
         return '[]'
 
-def HDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con el device, el espacio total, el espacio utilizado, el espacio disponible y el % de espacio utilizado
+def getHDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con el device, el espacio total, el espacio utilizado, el espacio disponible y el % de espacio utilizado
     try:
         getDEV = psutil.disk_partitions()
         miHDD = '['
         for dev in range(0, len(getDEV)):
             getHDD = psutil.disk_usage(getDEV[dev][1])
             miHDD = miHDD + '[' + getDEV[dev][0] + ', ' + str(getHDD[0]) + ', ' + str(getHDD[1]) + ', ' + str(getHDD[2]) + ', ' + str(getHDD[3]) + ']' 
-            if dev < len(getDEV):
+            if (dev + 1) < len(getDEV):
                 miHDD = miHDD + ', '
         miHDD = miHDD + ']'
         return miHDD
     except:
         return '[]'
 
-def LAV():
-    return '[' + str(CPU()) + ', ' + str(MEM()) + ', ' + str(IO()) + ', ' + str(NET()) + ', ' + str(HDD()) + ']'
+def getLAV():
+    return '[[' + str(HORA) + '], '  + str(CPU) + ', ' + str(MEM) + ', ' + str(IO) + ', ' + str(NET) + ', ' + str(HDD) + ']'
+
+def ObtieneLAV():
+    obtieneLAV = 1
+    while obtieneLAV:
+        try:
+            handler.log.debug('obteniendo CPU')
+            global CPU; CPU = str(getCPU())
+            sleep(SLEEPTIME)
+            
+            handler.log.debug('obteniendo MEM')
+            global MEM; MEM = str(getMEM())
+            sleep(SLEEPTIME)
+            
+            handler.log.debug('obteniendo IO')
+            global IO; IO = str(getIO())
+            sleep(SLEEPTIME)
+            
+            handler.log.debug('obteniendo NET')
+            global NET; NET = str(getNET())
+            sleep(SLEEPTIME)
+            
+            handler.log.debug('obteniendo HDD')
+            global HDD; HDD = str(getHDD())
+            
+            global HORA;
+            
+            handler.log.debug('LAV: %s', getLAV())
+        except Exception as message:
+            handler.log.error('error al obtener LAV: %s', message)
+            handler.log.exception(message)
+        finally:
+            sleep(SLEEPTIME)
 
 def run():
     handler.log.info('iniciando el modulo')
+    
+    try:
+        global CPU; CPU = getCPU()
+        global MEM; MEM = str(getMEM())
+        global IO; IO = str(getIO())
+        global NET; NET = str(getNET()) 
+        global HDD; HDD = str(getHDD())
+        
+        global HORA;
+    except Exception as message:
+        handler.log.error('error al obtener LAV: %s', message)
+        exit(1)
+
 # main
+if __name__ == '__main__':
+    ObtieneLAV()

@@ -12,7 +12,7 @@ from time import sleep
 from sys import exit, stdin
 from threading import Thread
 from Logger import handler
-from modulo.AOCMR import LAV
+from modulo.AOCMR import getLAV
 
 # definiciones
 SLEEPTIME = 30
@@ -79,7 +79,7 @@ class Cliente(Thread):
                 data = self.client.recv(self.size)
                 if data:
                     # enviando carga
-                    self.client.send(str.encode(LAV()))
+                    self.client.send(str.encode(getLAV()))
                 self.client.close()    
                 break
             handler.log.debug('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))                    
@@ -99,13 +99,14 @@ def AgenteVivo(SBCHOST, SBCPORT, PORT):
             sbccon.settimeout(SBCTIMEOUT)
             sbccon.connect((SBCHOST, SBCPORT))
             sbccon.send(str.encode('HELLO %', PORT))
-        except Exception as message:
-            handler.log.error('no se pudo conectar al SBC: %s', message)
-        else:
             handler.log.debug('keep alive enviado correctamente')
             sinConexion = 0
-        finally:
+        except Exception as message:
+            handler.log.error('no se pudo conectar al SBC: %s', message)
             sleep(SLEEPTIME)
+        finally:
+            if sbccon:
+                sbccon.close()
 
 def run(HOST, PORT):
     handler.log.info('iniciando el modulo')

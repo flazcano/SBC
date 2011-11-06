@@ -88,4 +88,12 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al enviar signo de vida a SBC')
         handler.log.exception(message)
         exit(1);
+
+    try:
+        AOCMR.ObtieneLAV()
+    except Exception as message:
+        handler.log.error('ha ocurrido un error al obtener la carga del sistema')
+        handler.log.exception(message)
+        exit(1);
+        
     

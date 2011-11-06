@@ -8,6 +8,7 @@ Modulo de Integracion para SQLite3 (MIS)
 
 # importaciones
 import sqlite3
+from exceptions import Exception
 from sys import exit
 from os import path
 from Logger import handler
@@ -18,13 +19,6 @@ db = "sbc.db"
 conexion=sqlite3.connect(db, isolation_level=None)
 
 # clases
-class DBTableError(BaseException):
-    def __init__(self, tabla):
-        self.tabla = tabla
-        return
-        
-    def __str__(self):
-        return 'No existe la tabla ' + self.tabla
 
 # funciones
 def CreaEsquema():
@@ -68,7 +62,6 @@ def ConsultaTotalServidores():
 
 def AgregaServidor(HOST, PORT):
     try:
-        PORT = 54321
         handler.log.debug('agregando servidor')
         conexion=sqlite3.connect(db, isolation_level=None)
         cursor=conexion.cursor()
@@ -89,7 +82,7 @@ def Valida():
     try:
         # comprobando que la db existe
         fileDB = open(db,"r")
-        handler.log.debug('la base de datos existe, en: '  + path.abspath(db))
+        handler.log.debug('la base de datos existe, en: ' + path.abspath(db))
         fileDB.close()
         
         # se conecta a la db
@@ -101,18 +94,17 @@ def Valida():
         cont = cursor.execute('pragma table_info(configuraciones);').fetchall()
         if cont: handler.log.debug('la tabla %s parece bien', tabla)
         else:
-            raise DBTableError
+            raise ValueError, "no existe la tabla " + tabla
         
         # comprobando tabla servidores
         tabla = 'servidores'
         cont = cursor.execute('pragma table_info(servidores);').fetchall()
         if cont: handler.log.debug('la tabla %s parece bien', tabla)
         else:
-            raise DBTableError
+            raise ValueError("no existe la tabla " + tabla)
             
     except Exception as message:
         handler.log.error('ha ocurrido un problema al validar la integridad del modulo: %s', message)
-        handler.log.exception(message)
         exit(1)
 
 def run():
@@ -120,4 +112,4 @@ def run():
 
 # main
 if __name__ == '__main__':
-    pass
+    Valida()

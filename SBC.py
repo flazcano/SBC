@@ -53,7 +53,7 @@ if __name__ == '__main__':
     # comprobando los argumentos pasados desde la linea de comando
     if argv[1:]:
         parser = argparse.ArgumentParser(description='Sistema Balanceador de Carga')
-        parser.add_argument('-c', '--createdb', action='store_true', help='crea el esquema de la base de datos del SBC', type=MIS.creaEsquema())
+        parser.add_argument('-c', '--createdb', action='store_true', help='crea el esquema de la base de datos del SBC', type=MIS.CreaEsquema())
         args = parser.parse_args()
         
     # ejecutando la funcion de validacion de modulos desde MC 
