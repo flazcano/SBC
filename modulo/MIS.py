@@ -9,21 +9,22 @@ Modulo de Integracion para SQLite3 (MIS)
 # importaciones
 import sqlite3
 from exceptions import Exception
+from time import time
 from sys import exit
 from os import path
 from Logger import handler
 
 # definiciones
-db = "sbc.db"
+SBCDB = "sbc.db"
 
-conexion=sqlite3.connect(db, isolation_level=None)
+conexion=sqlite3.connect(SBCDB, isolation_level=None)
 
 # clases
 
 # funciones
 def CreaEsquema():
     try:
-        handler.log.info('creando esquema en ' + db)
+        handler.log.info('creando esquema en ' + SBCDB)
         cursor=conexion.cursor()
         cursor.execute('CREATE TABLE configuracion (id INTEGER NOT NULL PRIMARY KEY, clave TEXT UNIQUE NOT NULL, valor TEXT NOT NULL, modificado TEXT NOT NULL, defvalor TEXT, prevalor TEXT);')
         cursor.execute('CREATE TABLE servidor (id INTEGER NOT NULL PRIMARY KEY, fqdn TEXT UNIQUE NOT NULL, puerto INTEGER NOT NULL, activo BOOLEAN DEFAULT TRUE, visto TEXT, modificado TEXT);')
@@ -31,7 +32,7 @@ def CreaEsquema():
         handler.log.info('esquema creado correctamente')
         exit(0)
     except Exception as message:
-        handler.log.error('no se puede crear esquema de ' + db + ': %s', message)
+        handler.log.error('no se puede crear esquema de ' + SBCDB + ': %s', message)
         exit(1)
     finally:
         if cursor: cursor.close()
@@ -41,9 +42,9 @@ def CreaEsquema():
 def ConsultaListaServidores():
     try:
         handler.log.debug('consultando listado de servidores')
-        conexion=sqlite3.connect(db, isolation_level=None)
+        conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        servidores = cursor.execute('SELECT id, fqdn, puerto FROM servidores WHERE activo = "TRUE";')
+        servidores = cursor.execute('SELECT id, fqdn, puerto FROM servidor WHERE activo = "TRUE";')
         return servidores
     except Exception as message:
         handler.log.error('no se puede obtener listado de servidores activos: %s', message)
@@ -52,9 +53,9 @@ def ConsultaListaServidores():
 def ConsultaTotalServidores():
     try:
         handler.log.debug('consultando total de servidores activos')
-        conexion=sqlite3.connect(db, isolation_level=None)
+        conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        total = cursor.execute('SELECT count(id) FROM servidores WHERE activo = "TRUE";')
+        total = cursor.execute('SELECT count(id) FROM servidor WHERE activo = "TRUE";')
         return total
     except Exception as message:
         handler.log.error('no se puede obtener total de servidores activos: %s', message)
@@ -63,18 +64,18 @@ def ConsultaTotalServidores():
 def AgregaServidor(HOST, PORT):
     try:
         handler.log.debug('agregando servidor')
-        conexion=sqlite3.connect(db, isolation_level=None)
+        conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         PUERTO = cursor.execute('SELECT puerto FROM servidor WHERE fqdn = ?;', ([HOST])).fetchall()
         # si el servidor ya existe en la base dedatos
-        if PUERTO[0][0] > 0:
+        if PUERTO:
             # pero tiene distinto puerto al registrado
             if PORT is not PUERTO[0]:
                 handler.log.debug('actualizando puerto de servidor existente')
                 cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (PORT, HOST))
         # si el servidor no existe
-        else: 
-            handler.log.debug('agregando servidor nuevo')
+        else:
+            handler.log.debug('agregando servidor nuevo: ' + HOST + ':' + PORT)
             cursor.execute('INSERT INTO servidor (fqdn, puerto, activo) VALUES (?, ?, ?);', (HOST, PORT, 'TRUE'))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
@@ -83,7 +84,7 @@ def AgregaServidor(HOST, PORT):
 
 def AgregaLAV(HOST, LAV):
     try:
-        miLAV = LAV.split()
+        miLAV = LAV.split(" ")
         
         # obtiene HORA
         HORA = None; HORA = miLAV[0]
@@ -110,11 +111,10 @@ def AgregaLAV(HOST, LAV):
         handler.log.debug('IO: ' + IO)
         handler.log.debug('NET: ' + NET)
         handler.log.debug('HDD: ' + HDD)
-        
         pass
         
         handler.log.debug('agregando LAV de cliente')
-        conexion=sqlite3.connect(db, isolation_level=None)
+        conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         SERVERID = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([HOST])).fetchall()
         cursor.execute('INSERT INTO cargas (serverid, hora, cpu, mem) VALUES (?);', (SERVERID))
@@ -124,12 +124,12 @@ def AgregaLAV(HOST, LAV):
 def Valida():
     try:
         # comprobando que la db existe
-        fileDB = open(db,"r")
-        handler.log.debug('la base de datos existe, en: ' + path.abspath(db))
+        fileDB = open(SBCDB,"r")
+        handler.log.debug('la base de datos existe, en: ' + path.abspath(SBCDB))
         fileDB.close()
         
         # se conecta a la db
-        conexion=sqlite3.connect(db, isolation_level=None)
+        conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         
         # comprobando tabla configuracion
@@ -162,4 +162,6 @@ def run():
 
 # main
 if __name__ == '__main__':
+    global SBCDB;
+    SBCDB = "../sbc.db"
     Valida()

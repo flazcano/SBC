@@ -100,11 +100,12 @@ def AgenteVivo(SBCHOST, SBCPORT, PORT):
     sinConexion = 1
     while sinConexion:
         try:
-            handler.log.debug('enviando keep alive a SBC')
+            MSG = 'HELLO ' + str(PORT)
+            handler.log.debug('enviando keep alive a SBC: ' + MSG)
             sbccon = socket.socket()
             sbccon.settimeout(SBCTIMEOUT)
             sbccon.connect((SBCHOST, SBCPORT))
-            sbccon.send(str.encode('HELLO %', PORT))
+            sbccon.send(str.encode(MSG))
             handler.log.debug('keep alive enviado correctamente')
             sinConexion = 0
         except Exception as message:

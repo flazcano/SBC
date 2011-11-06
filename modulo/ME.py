@@ -84,7 +84,7 @@ class Cliente(Thread):
                     if 'HELLO' in data.decode():
                         handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia keep alive')
                         AOCHOST = self.address[0]
-                        AOCPORT = data.decode()[1]
+                        AOCPORT = data.decode().split(" ")[2,]
                         
                         # se comunica con MIS para agregar cliente a servidores a balancear
                         MIS.AgregaServidor(AOCHOST, AOCPORT)
