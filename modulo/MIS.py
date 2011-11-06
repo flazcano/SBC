@@ -72,7 +72,7 @@ def AgregaServidor(HOST, PORT):
             if PORT is not PUERTO[0]:
                 handler.log.debug('actualizando puerto de servidor existente')
                 cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (PORT, HOST))
-        #Êsi el servidor no existe
+        # si el servidor no existe
         else: 
             handler.log.debug('agregando servidor nuevo')
             cursor.execute('INSERT INTO servidor (fqdn, puerto, activo) VALUES (?, ?, ?);', (HOST, PORT, 'TRUE'))
@@ -100,7 +100,7 @@ def AgregaLAV(HOST, LAV):
         # obtiene NET
         NET = None; NET = miLAV[4]
         
-        #Êobtiene HDD
+        # obtiene HDD
         HDD = None; HDD = miLAV[5]
         
         handler.log.debug('LAV: ' + miLAV)
