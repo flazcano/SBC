@@ -79,17 +79,17 @@ class Cliente(Thread):
             handler.log.debug('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
             running = 1
             while running:
-                data = self.cliente.recv(self.size)
-                if data:
-                    if 'HELLO' in data.decode():
+                DATA = self.cliente.recv(self.size).decode()
+                if DATA:
+                    if 'HELLO' in DATA:
                         handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia keep alive')
                         AOCHOST = self.address[0]
-                        AOCPORT = data.decode().split(" ")[2,]
+                        AOCPORT = DATA.split("HELLO ")[1]
                         
                         # se comunica con MIS para agregar cliente a servidores a balancear
                         MIS.AgregaServidor(AOCHOST, AOCPORT)
                     else:
-                        handler.log.debug('se descarta el mensaje, cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + data.decode())
+                        handler.log.debug('se descarta el mensaje, cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + DATA)
                 else:
                     handler.log.debug('desconectado desde ' + self.address[0] + ':' + str(self.address[1]))
                     self.cliente.close()
@@ -114,6 +114,7 @@ class ThreadxLAV(Thread):
                 clientcon.connect((self.HOST, self.PORT))
                 clientcon.send(str.encode('HELLO'))
                 LAV = clientcon.recv(1024)
+                print LAV.decode()
                 handler.log.debug('se obtuvo LAV desde ' + str(self.HOST) + ':' +str(self.PORT) + ': ' + LAV.decode())
                 # se comunica con MIS para agregar LAV
                 MIS.AgregaLAV(HOST, LAV.decode)
@@ -139,8 +140,10 @@ def ObtieneEstadoServidores():
             for cantidad in total:
                 pass
             handler.log.info('obtenidos %i servidores activos', cantidad[0])
-            for servidor in MIS.ConsultaListaServidores():
-                ObtieneEstadoServidor(servidor[1], servidor[2])
+            for AOC in MIS.ConsultaListaServidores():
+                AOCHOST = AOC[0]
+                AOCPORT = AOC[1]
+                ObtieneEstadoServidor(AOCHOST, AOCPORT)
         except Exception as message:
             handler.log.error('error al obtener el estado de los servidores activos')
             handler.log.exception(message)

@@ -76,15 +76,15 @@ class Cliente(Thread):
             handler.log.debug('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
             running = 1
             while running:
-                data = self.client.recv(self.size)
-                if data:
-                    if 'HELLO' in data.decode():
+                DATA = self.client.recv(self.size).decode()
+                if DATA:
+                    if 'HELLO' in DATA:
                         handler.log.debug('SBC ' + self.address[0] + ':' + str(self.address[1]) + ' envia peticion de carga')
                         
                         # enviando carga
                         self.client.send(str.encode(getLAV()))
                     else:
-                        handler.log.debug('se descarta el mensaje, SBC ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + data.decode())
+                        handler.log.debug('se descarta el mensaje, SBC ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + DATA)
                     
                 self.client.close()    
                 break

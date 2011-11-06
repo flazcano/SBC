@@ -44,7 +44,7 @@ def ConsultaListaServidores():
         handler.log.debug('consultando listado de servidores')
         conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        servidores = cursor.execute('SELECT id, fqdn, puerto FROM servidor WHERE activo = "TRUE";')
+        servidores = cursor.execute('SELECT fqdn, puerto FROM servidor WHERE activo = "TRUE";')
         return servidores
     except Exception as message:
         handler.log.error('no se puede obtener listado de servidores activos: %s', message)
@@ -72,7 +72,8 @@ def AgregaServidor(HOST, PORT):
             # pero tiene distinto puerto al registrado
             if PORT is not PUERTO[0]:
                 handler.log.debug('actualizando puerto de servidor existente')
-                cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (PORT, HOST))
+                HORA = time()
+                cursor.execute('UPDATE servidor SET puerto = ? AND modificado = ? WHERE fqdn = ?;', (PORT, HORA, HOST))
         # si el servidor no existe
         else:
             handler.log.debug('agregando servidor nuevo: ' + HOST + ':' + PORT)
@@ -84,6 +85,7 @@ def AgregaServidor(HOST, PORT):
 
 def AgregaLAV(HOST, LAV):
     try:
+        print LAV
         miLAV = LAV.split(" ")
         
         # obtiene HORA
@@ -120,6 +122,7 @@ def AgregaLAV(HOST, LAV):
         cursor.execute('INSERT INTO cargas (serverid, hora, cpu, mem) VALUES (?);', (SERVERID))
     except Exception as message:
         handler.log.error('no se puede agregar LAV de cliente: %s', message)
+        handler.log.exception(message)
 
 def Valida():
     try:
@@ -162,6 +165,5 @@ def run():
 
 # main
 if __name__ == '__main__':
-    global SBCDB;
     SBCDB = "../sbc.db"
     Valida()

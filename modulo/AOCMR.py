@@ -10,7 +10,7 @@ from sys import exit
 from time import sleep, time
 from Logger import handler
 try: import psutil
-except: handler.log.critical('no se encuentra python::psutil necesario para correr el modulo'); exit(1)
+except: handler.log.critical('no se encuentra python-psutil necesario para correr el modulo'); exit(1)
 
 # definiciones
 SLEEPTIME = 10
@@ -69,7 +69,8 @@ def getHDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con 
         return ''
 
 def getLAV():
-    miLAV = str(HORA) + ' '  + str(CPU) + ' ' + str(MEM) + ' ' + str(IO) + ' ' + str(NET) + ' ' + str(HDD) 
+    miLAV = str(HORA) + ' '  + str(CPU) + ' ' + str(MEM) + ' ' + str(IO) + ' ' + str(NET) + ' ' + str(HDD)
+    handler.log.debug('LAV: ' + miLAV)
     return miLAV
 
 def ObtieneLAV():

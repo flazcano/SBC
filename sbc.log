@@ -245,3 +245,974 @@
 2011-11-06 17:00:20,324 [AOCMR] DEBUG    - obteniendo HDD
 2011-11-06 17:00:20,325 [AOCMR] DEBUG    - LAV: 1320609620.33 12.1,10.0,3.0 4294967296,4229619712,65347584,98.5 845840,686561,16239264256,85272735744 713329433,2360168910,1566411,2104193 /dev/disk0s2,249199591424,185214742528,63722704896,74.3
 2011-11-06 17:00:30,326 [AOCMR] DEBUG    - obteniendo CPU
+2011-11-06 17:00:42,330 [AOCMR] DEBUG    - obteniendo MEM
+2011-11-06 17:00:52,331 [AOCMR] DEBUG    - obteniendo IO
+2011-11-06 19:07:13,703 [AOC] INFO     - iniciando el agente
+2011-11-06 19:07:13,728 [AOC] INFO     - cargando configuraciones
+2011-11-06 19:07:13,752 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-06 19:07:13,752 [AOCMR] INFO     - iniciando el modulo
+2011-11-06 19:07:15,759 [AOCME] INFO     - iniciando el modulo
+2011-11-06 19:07:15,759 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-06 19:07:15,760 [AOCME] DEBUG    - enviando keep alive a SBC: HELLO 54321
+2011-11-06 19:07:15,760 [AOCMR] DEBUG    - obteniendo CPU
+2011-11-06 19:07:15,766 [AOCME] DEBUG    - keep alive enviado correctamente
+2011-11-06 19:07:27,768 [AOCMR] DEBUG    - obteniendo MEM
+2011-11-06 19:07:37,770 [AOCMR] DEBUG    - obteniendo IO
+2011-11-06 19:07:47,773 [AOCMR] DEBUG    - obteniendo NET
+2011-11-06 19:07:57,775 [AOCMR] DEBUG    - obteniendo HDD
+2011-11-06 19:07:57,775 [AOCMR] DEBUG    - LAV: 1320617277.78 6.5,11.0,28.3 4294967296,4074692608,220274688,94.9 880666,715596,16698895872,90364152832 721334240,2408565924,1612022,2162003 /dev/disk0s2,249199591424,185258582016,63678865408,74.3
+2011-11-06 19:08:07,776 [AOCMR] DEBUG    - obteniendo CPU
+2011-11-06 19:08:19,780 [AOCMR] DEBUG    - obteniendo MEM
+2011-11-06 19:08:29,781 [AOCMR] DEBUG    - obteniendo IO
+2011-11-06 19:08:39,786 [AOCMR] DEBUG    - obteniendo NET
+2011-11-06 19:08:49,787 [AOCMR] DEBUG    - obteniendo HDD
+2011-11-06 19:08:49,788 [AOCMR] DEBUG    - LAV: 1320617329.79 21.8,7.1,5.1 4294967296,4072071168,222896128,94.8 880691,715760,16699129344,90423958528 721363193,2408826868,1612209,2162265 /dev/disk0s2,249199591424,185258639360,63678808064,74.3
+2011-11-06 19:09:11,591 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:09:11,592 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:09:11,592 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:09:11,592 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:09:11,593 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:09:11,593 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:09:11,593 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:09:11,594 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:09:11,594 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:09:11,594 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:09:11,594 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:09:11,594 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:09:11,595 [MIS] INFO     - iniciando modulo
+2011-11-06 19:09:11,595 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:09:11,595 [ME ] INFO     - iniciando modulo
+2011-11-06 19:09:11,596 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:09:11,596 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:09:11,597 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-06 19:09:11,597 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:09:11,598 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:09:41,599 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:09:41,599 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:09:41,600 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-06 19:09:41,600 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:09:41,601 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:10:11,602 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:10:11,603 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:10:11,604 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-06 19:10:11,604 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:10:11,605 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:10:41,606 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:10:41,606 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:10:41,607 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-06 19:10:41,608 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:10:41,608 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:11:11,610 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:11:11,610 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:11:11,612 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-06 19:11:11,612 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:11:11,613 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:11:26,510 [ME ] DEBUG    - conectado desde 192.168.0.2:57249
+2011-11-06 19:11:26,511 [ME ] DEBUG    - cliente 192.168.0.2:57249 envia keep alive
+2011-11-06 19:11:26,705 [MIS] DEBUG    - agregando servidor
+2011-11-06 19:11:26,706 [MIS] DEBUG    - agregando servidor nuevo: 192.168.0.2: 54321
+2011-11-06 19:11:26,782 [ME ] DEBUG    - desconectado desde 192.168.0.2:57249
+2011-11-06 19:11:41,614 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:11:41,616 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:11:41,617 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:11:41,617 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:11:41,618 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:11:41,769 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:11:41,781 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618003.75     
+2011-11-06 19:11:41,781 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:12:11,770 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:12:11,771 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:12:11,773 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:12:11,773 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:12:11,773 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:12:11,774 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:12:11,780 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618043.76     
+2011-11-06 19:12:11,781 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:12:41,775 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:12:41,776 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:12:41,776 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:12:41,777 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:12:41,777 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:12:41,778 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:12:41,790 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618043.76     
+2011-11-06 19:12:41,790 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:13:59,077 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:13:59,078 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:13:59,078 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:13:59,078 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:13:59,079 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:13:59,079 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:13:59,079 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:13:59,079 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:13:59,079 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:13:59,079 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:13:59,080 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:13:59,080 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:13:59,080 [MIS] INFO     - iniciando modulo
+2011-11-06 19:13:59,081 [ME ] INFO     - iniciando modulo
+2011-11-06 19:13:59,081 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:13:59,082 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:13:59,082 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:13:59,084 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:13:59,084 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:13:59,085 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:13:59,103 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:13:59,105 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618143.83     
+2011-11-06 19:13:59,106 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:13:59,106 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 87, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:14:09,001 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:14:09,002 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:14:09,002 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:14:09,002 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:14:09,003 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:14:09,003 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:14:09,003 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:14:09,003 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:14:09,003 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:14:09,004 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:14:09,004 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:14:09,004 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:14:09,004 [MIS] INFO     - iniciando modulo
+2011-11-06 19:14:09,005 [ME ] INFO     - iniciando modulo
+2011-11-06 19:14:09,005 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:14:09,005 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:14:09,005 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:14:09,006 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:14:09,006 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:14:09,006 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:14:09,023 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:14:09,026 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618143.83     
+2011-11-06 19:14:09,026 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:14:09,026 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 87, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:14:39,025 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:14:39,025 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:14:39,026 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:14:39,027 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:14:39,027 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:14:39,028 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:14:39,032 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618193.87     
+2011-11-06 19:14:39,033 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:14:39,033 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 87, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:15:57,108 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:15:57,108 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:15:57,108 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:15:57,108 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:15:57,109 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:15:57,109 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:15:57,109 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:15:57,109 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:15:57,110 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:15:57,110 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:15:57,110 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:15:57,110 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:15:57,110 [MIS] INFO     - iniciando modulo
+2011-11-06 19:15:57,111 [ME ] INFO     - iniciando modulo
+2011-11-06 19:15:57,112 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:15:57,113 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:15:57,113 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:15:57,114 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:15:57,114 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:15:57,115 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:15:57,134 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:15:57,138 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618243.91     
+2011-11-06 19:15:57,138 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:15:57,138 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:17:29,645 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:17:29,645 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:17:29,645 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:17:29,645 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:17:29,646 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:17:29,646 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:17:29,646 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:17:29,646 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:17:29,647 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:17:29,647 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:17:29,647 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:17:29,647 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:17:29,647 [MIS] INFO     - iniciando modulo
+2011-11-06 19:17:29,648 [ME ] INFO     - iniciando modulo
+2011-11-06 19:17:29,648 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:17:29,649 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:17:29,649 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:17:29,650 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:17:29,650 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:17:29,650 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:17:29,671 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:17:29,679 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618343.97     
+2011-11-06 19:17:29,680 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:17:29,680 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:17:59,672 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:17:59,672 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:17:59,673 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:17:59,673 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:17:59,674 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:17:59,675 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:17:59,682 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618393.98     
+2011-11-06 19:17:59,683 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:17:59,683 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:18:29,677 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:18:29,677 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:18:29,678 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:18:29,679 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:18:29,679 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:18:29,680 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:18:29,687 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618393.98     
+2011-11-06 19:18:29,687 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:18:29,688 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:18:59,681 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:18:59,682 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:18:59,683 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:18:59,683 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:18:59,684 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:18:59,685 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:18:59,692 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618444.0     
+2011-11-06 19:18:59,692 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:18:59,693 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:19:29,685 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:19:29,686 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:19:29,687 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:19:29,687 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:19:29,688 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:19:29,688 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:19:29,696 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618444.0     
+2011-11-06 19:19:29,697 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:19:29,697 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:19:59,690 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:19:59,690 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:19:59,692 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:19:59,693 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:19:59,693 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:19:59,701 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:19:59,707 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618494.02     
+2011-11-06 19:19:59,707 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:19:59,707 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:20:29,702 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:20:29,703 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:20:29,704 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:20:29,704 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:20:29,705 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:20:29,705 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:20:29,713 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618544.06     
+2011-11-06 19:20:29,713 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:20:29,713 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:20:59,707 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:20:59,707 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:20:59,708 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:20:59,709 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:20:59,709 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:20:59,710 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:20:59,717 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618544.06     
+2011-11-06 19:20:59,717 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:20:59,718 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:21:29,711 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:21:29,712 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:21:29,713 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:21:29,713 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:21:29,714 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:21:29,714 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:21:29,718 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618594.1     
+2011-11-06 19:21:29,718 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:21:29,718 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:21:59,715 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:21:59,734 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:21:59,737 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:21:59,737 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:21:59,738 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:21:59,743 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:21:59,749 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618594.1     
+2011-11-06 19:21:59,749 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:21:59,749 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:22:29,744 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:22:29,745 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:22:29,746 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:22:29,747 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:22:29,747 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:22:29,748 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:22:29,756 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618644.14     
+2011-11-06 19:22:29,756 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:22:29,756 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:22:59,749 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:22:59,750 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:22:59,751 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:22:59,751 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:22:59,751 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:22:59,752 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:22:59,756 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618694.18     
+2011-11-06 19:22:59,756 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:22:59,756 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:23:29,753 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:23:29,754 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:23:29,755 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:23:29,756 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:23:29,756 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:23:29,757 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:23:29,765 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618694.18     
+2011-11-06 19:23:29,766 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:23:29,766 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:23:59,758 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:23:59,759 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:23:59,760 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:23:59,761 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:23:59,761 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:23:59,762 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:23:59,770 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618744.22     
+2011-11-06 19:23:59,771 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:23:59,771 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:24:29,763 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:24:29,763 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:24:29,765 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:24:29,765 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:24:29,766 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:24:29,766 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:24:29,776 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618744.22     
+2011-11-06 19:24:29,776 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:24:29,776 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:24:59,768 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:24:59,768 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:24:59,770 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:24:59,770 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:24:59,771 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:24:59,772 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:24:59,780 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618794.26     
+2011-11-06 19:24:59,780 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:24:59,780 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:25:29,773 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:25:29,774 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:25:29,775 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:25:29,775 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:25:29,776 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:25:29,777 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:25:29,783 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618844.3     
+2011-11-06 19:25:29,783 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:25:29,784 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:25:59,778 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:25:59,779 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:25:59,780 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:25:59,781 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:25:59,781 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:25:59,782 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:25:59,789 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618844.3     
+2011-11-06 19:25:59,790 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:25:59,790 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:26:29,783 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:26:29,784 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:26:29,786 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:26:29,786 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:26:29,787 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:26:29,787 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:26:29,800 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618894.35     
+2011-11-06 19:26:29,800 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:26:29,801 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:26:59,789 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:26:59,789 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:26:59,791 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:26:59,791 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:26:59,792 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:26:59,792 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:27:00,996 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618894.35     
+2011-11-06 19:27:00,996 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:27:00,996 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:27:29,797 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:27:29,797 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:27:29,798 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:27:29,798 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:27:29,798 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:27:29,799 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:27:29,801 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618944.39     
+2011-11-06 19:27:29,802 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:27:29,802 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:27:59,801 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:27:59,801 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:27:59,803 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:27:59,803 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:27:59,804 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:27:59,805 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:27:59,811 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618994.42     
+2011-11-06 19:27:59,811 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:27:59,812 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:28:29,806 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:28:29,806 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:28:29,807 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:28:29,808 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:28:29,808 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:28:29,809 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:28:29,812 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320618994.42     
+2011-11-06 19:28:29,812 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:28:29,812 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:28:59,810 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:28:59,811 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:28:59,812 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:28:59,813 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:28:59,813 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:28:59,814 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:28:59,817 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619044.46     
+2011-11-06 19:28:59,818 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:28:59,818 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:29:29,815 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:29:29,816 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:29:29,817 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:29:29,817 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:29:29,818 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:29:29,819 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:29:29,821 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619044.46     
+2011-11-06 19:29:29,822 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:29:29,822 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:29:59,820 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:29:59,821 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:29:59,822 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:29:59,822 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:29:59,823 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:29:59,824 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:29:59,826 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619094.51     
+2011-11-06 19:29:59,827 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:29:59,827 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:30:29,825 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:30:29,826 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:30:29,827 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:30:29,827 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:30:29,828 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:30:29,828 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:30:29,831 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619144.54     
+2011-11-06 19:30:29,832 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:30:29,832 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:30:59,830 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:30:59,830 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:30:59,831 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:30:59,832 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:30:59,832 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:30:59,843 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:30:59,854 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619144.54     
+2011-11-06 19:30:59,855 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:30:59,855 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:31:29,844 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:31:29,844 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:31:29,846 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:31:29,846 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:31:29,847 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:31:29,847 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:31:29,851 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619194.58     
+2011-11-06 19:31:29,851 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:31:29,851 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:31:59,848 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:31:59,848 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:31:59,850 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:31:59,850 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:31:59,851 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:31:59,851 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:31:59,854 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619194.58     
+2011-11-06 19:31:59,854 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:31:59,855 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:32:29,853 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:32:29,853 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:32:29,855 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:32:29,855 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:32:29,857 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:32:29,857 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:32:29,860 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619244.62     
+2011-11-06 19:32:29,860 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:32:29,860 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:32:59,859 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:32:59,859 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:32:59,860 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:32:59,861 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:32:59,861 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:32:59,862 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:32:59,865 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619294.66     
+2011-11-06 19:32:59,866 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:32:59,866 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:33:29,863 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:33:29,864 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:33:29,865 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:33:29,866 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:33:29,866 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:33:29,867 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:33:29,875 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619294.66     
+2011-11-06 19:33:29,875 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:33:29,875 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:33:59,868 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:33:59,869 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:33:59,870 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:33:59,870 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:33:59,871 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:33:59,872 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:33:59,875 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619344.7     
+2011-11-06 19:33:59,876 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:33:59,876 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:34:29,873 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:34:29,874 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:34:29,875 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:34:29,875 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:34:29,876 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:34:29,876 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:34:29,879 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619344.7     
+2011-11-06 19:34:29,879 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:34:29,880 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:34:59,878 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:34:59,878 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:34:59,879 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:34:59,879 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:34:59,880 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:34:59,880 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:34:59,887 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619394.74     
+2011-11-06 19:34:59,888 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:34:59,888 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:35:29,882 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:35:29,883 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:35:29,884 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:35:29,884 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:35:29,885 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:35:29,886 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:35:29,889 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619444.78     
+2011-11-06 19:35:29,889 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:35:29,889 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:35:59,886 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:35:59,887 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:35:59,888 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:35:59,888 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:35:59,889 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:35:59,889 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:35:59,892 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619444.78     
+2011-11-06 19:35:59,892 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:35:59,893 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:36:29,891 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:36:29,891 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:36:29,892 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:36:29,892 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:36:29,893 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:36:29,893 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:36:29,896 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619494.82     
+2011-11-06 19:36:29,897 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:36:29,897 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:36:59,895 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:36:59,896 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:36:59,897 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:36:59,897 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:36:59,898 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:36:59,898 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:36:59,902 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619494.82     
+2011-11-06 19:36:59,902 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:36:59,902 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:37:29,900 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:37:29,900 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:37:29,901 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:37:29,901 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:37:29,901 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:37:29,902 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:37:29,905 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619544.86     
+2011-11-06 19:37:29,905 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:37:29,905 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:37:59,903 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:37:59,904 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:37:59,906 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:37:59,906 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:37:59,906 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:37:59,907 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:37:59,910 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619594.9     
+2011-11-06 19:37:59,911 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:37:59,911 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:38:29,909 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:38:29,909 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:38:29,910 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:38:29,911 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:38:29,911 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:38:29,912 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:38:29,924 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619594.9     
+2011-11-06 19:38:29,925 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:38:29,925 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:38:59,913 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:38:59,914 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:38:59,915 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:38:59,916 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:38:59,916 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:38:59,917 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:38:59,919 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619644.94     
+2011-11-06 19:38:59,920 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:38:59,920 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:39:29,918 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:39:29,919 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:39:29,920 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:39:29,920 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:39:29,921 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:39:29,921 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:39:29,929 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619644.94     
+2011-11-06 19:39:29,930 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:39:29,930 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:39:59,923 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:39:59,923 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:39:59,925 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:39:59,925 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:39:59,926 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:39:59,926 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:39:59,932 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619694.98     
+2011-11-06 19:39:59,933 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:39:59,933 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:40:29,927 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:40:29,928 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:40:29,929 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:40:29,929 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:40:29,930 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:40:29,931 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:40:29,933 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619745.03     
+2011-11-06 19:40:29,933 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:40:29,934 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:40:59,932 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:40:59,932 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:40:59,934 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:40:59,934 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:40:59,935 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:40:59,935 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:40:59,939 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619745.03     
+2011-11-06 19:40:59,939 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:40:59,939 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 88, in AgregaLAV
+    print LAV
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:42:00,045 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:42:00,045 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:42:00,045 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:42:00,046 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:42:00,046 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:42:00,046 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:42:00,047 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:42:00,047 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:42:00,047 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:42:00,047 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:42:00,047 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:42:00,048 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:42:00,048 [MIS] INFO     - iniciando modulo
+2011-11-06 19:42:00,049 [ME ] INFO     - iniciando modulo
+2011-11-06 19:42:00,049 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:42:00,049 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:42:00,050 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:42:00,050 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:42:00,050 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:42:00,051 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:42:00,069 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:42:00,072 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320619795.07     
+2011-11-06 19:42:00,073 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:42:00,073 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:46:35,646 [AOC] INFO     - iniciando el agente
+2011-11-06 19:46:35,646 [AOC] INFO     - cargando configuraciones
+2011-11-06 19:46:35,647 [AOC] INFO     - configuraciones cargadas correctamente
+2011-11-06 19:46:35,647 [AOCMR] INFO     - iniciando el modulo
+2011-11-06 19:46:37,653 [AOCME] INFO     - iniciando el modulo
+2011-11-06 19:46:37,654 [AOC] INFO     - el agente se ha iniciado correctamente
+2011-11-06 19:46:37,654 [AOCME] DEBUG    - enviando keep alive a SBC: HELLO 54321
+2011-11-06 19:46:37,655 [AOCMR] DEBUG    - obteniendo CPU
+2011-11-06 19:46:37,660 [AOCME] DEBUG    - keep alive enviado correctamente
+2011-11-06 19:46:49,659 [AOCMR] DEBUG    - obteniendo MEM
+2011-11-06 19:46:59,660 [AOCMR] DEBUG    - obteniendo IO
+2011-11-06 19:47:09,663 [AOCMR] DEBUG    - obteniendo NET
+2011-11-06 19:47:19,665 [AOCMR] DEBUG    - obteniendo HDD
+2011-11-06 19:47:19,665 [AOCMR] DEBUG    - LAV: 1320619639.67 13.5,21.8,8.0 4294967296,4147171328,147795968,96.6 883329,723774,16757613568,91659231232 723229631,2421940067,1624123,2177429 /dev/disk0s2,249199591424,185282371584,63655075840,74.4
+2011-11-06 19:47:29,666 [AOCMR] DEBUG    - obteniendo CPU
+2011-11-06 19:47:41,671 [AOCMR] DEBUG    - obteniendo MEM
+2011-11-06 19:47:51,673 [AOCMR] DEBUG    - obteniendo IO
+2011-11-06 19:48:01,676 [AOCMR] DEBUG    - obteniendo NET
+2011-11-06 19:48:11,678 [AOCMR] DEBUG    - obteniendo HDD
+2011-11-06 19:48:11,678 [AOCMR] DEBUG    - LAV: 1320619691.68 9.5,9.9,6.0 4294967296,4147363840,147603456,96.6 883341,723930,16757711872,91664128000 723305311,2422272161,1624499,2177874 /dev/disk0s2,249199591424,185282322432,63655124992,74.4
+2011-11-06 19:50:14,198 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 19:50:14,198 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 19:50:14,199 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 19:50:14,199 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 19:50:14,199 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 19:50:14,200 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 19:50:14,200 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 19:50:14,200 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 19:50:14,200 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 19:50:14,200 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 19:50:14,200 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 19:50:14,201 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 19:50:14,201 [MIS] INFO     - iniciando modulo
+2011-11-06 19:50:14,201 [ME ] INFO     - iniciando modulo
+2011-11-06 19:50:14,202 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 19:50:14,202 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:50:14,203 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:50:14,203 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:50:14,203 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:50:14,204 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:50:14,220 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:50:14,226 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:54321: [Errno 61] Connection refused
+2011-11-06 19:50:24,453 [ME ] DEBUG    - conectado desde 192.168.0.2:54092
+2011-11-06 19:50:24,454 [ME ] DEBUG    - cliente 192.168.0.2:54092 envia keep alive
+2011-11-06 19:50:24,454 [MIS] DEBUG    - agregando servidor
+2011-11-06 19:50:24,455 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 19:50:24,458 [ME ] DEBUG    - desconectado desde 192.168.0.2:54092
+2011-11-06 19:50:44,222 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:50:44,222 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:50:44,223 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:50:44,223 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:50:44,224 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:50:44,224 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:50:44,225 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:51:14,226 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:51:14,226 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:51:14,227 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:51:14,228 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:51:14,228 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:51:14,229 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:51:14,229 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:51:44,231 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:51:44,231 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:51:44,232 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:51:44,233 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:51:44,233 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:51:44,234 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:51:44,235 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:52:14,236 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:52:14,237 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:52:14,238 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:52:14,239 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:52:14,239 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:52:14,240 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:52:14,241 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:52:44,242 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:52:44,243 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:52:44,244 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:52:44,244 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:52:44,245 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:52:44,245 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:52:44,246 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:53:14,247 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:53:14,248 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:53:14,249 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:53:14,249 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:53:14,250 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:53:14,250 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:53:14,251 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:53:44,252 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:53:44,253 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:53:44,254 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:53:44,254 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:53:44,255 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:53:44,256 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:53:44,256 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:54:14,257 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:54:14,258 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:54:14,259 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:54:14,259 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:54:14,260 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 19:54:14,260 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 19:54:14,261 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:54:44,262 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 19:54:44,263 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 19:54:44,264 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 19:54:44,264 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 19:54:44,265 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 19:54:44,265 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 19:54:44,272 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320620582.03     
+2011-11-06 19:54:44,273 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 19:54:44,273 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
