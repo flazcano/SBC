@@ -134,8 +134,8 @@ def AgregaLAV(fqdn, LAV):
         handler.log.debug('agregando LAV de ' + fqdn)
         conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        servidorid = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([fqdn])).fetchall()
-        print servidorid
+        ID = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([fqdn])).fetchall()
+        servidorid = ID[0][0]
         cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);', 
                         (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
     except Exception as message:

@@ -2572,3 +2572,360 @@ Traceback (most recent call last):
   File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 140, in AgregaLAV
     (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
 InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:19:54,963 [SBC] INFO     - iniciando el sistema SBC
+2011-11-07 00:19:54,963 [MC ] INFO     - iniciando validacion de modulos
+2011-11-07 00:19:54,963 [MC ] DEBUG    - validando integridad de MIS
+2011-11-07 00:19:54,964 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-07 00:19:54,964 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-07 00:19:54,964 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-07 00:19:54,964 [MC ] DEBUG    - validando integridad de MII
+2011-11-07 00:19:54,965 [MC ] DEBUG    - validando integridad de ME
+2011-11-07 00:19:54,965 [MC ] DEBUG    - validando integridad de MIW
+2011-11-07 00:19:54,965 [MC ] DEBUG    - validando integridad de MA
+2011-11-07 00:19:54,965 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-07 00:19:54,969 [MIS] INFO     - iniciando modulo
+2011-11-07 00:19:54,969 [ME ] INFO     - iniciando modulo
+2011-11-07 00:19:54,969 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-07 00:19:54,970 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:19:54,970 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:19:54,971 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:19:54,971 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:19:54,971 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:19:54,987 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:19:54,995 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636506.16     
+2011-11-07 00:19:54,995 [MIS] DEBUG    - LAV: 1320636506.16     
+2011-11-07 00:19:54,996 [MIS] DEBUG    - HORA: 1320636506.16
+2011-11-07 00:19:54,996 [MIS] DEBUG    - CPU: 
+2011-11-07 00:19:54,996 [MIS] DEBUG    - MEM: 
+2011-11-07 00:19:54,996 [MIS] DEBUG    - IO: 
+2011-11-07 00:19:54,996 [MIS] DEBUG    - NET: 
+2011-11-07 00:19:54,996 [MIS] DEBUG    - HDD: 
+2011-11-07 00:19:54,996 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:19:54,997 [MIS] ERROR    - no se puede agregar LAV de cliente: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:19:54,997 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 140, in AgregaLAV
+    (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:20:24,989 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:20:24,989 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:20:24,991 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:20:24,991 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:20:24,991 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:20:24,992 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:20:25,000 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636506.16     
+2011-11-07 00:20:25,000 [MIS] DEBUG    - LAV: 1320636506.16     
+2011-11-07 00:20:25,001 [MIS] DEBUG    - HORA: 1320636506.16
+2011-11-07 00:20:25,001 [MIS] DEBUG    - CPU: 
+2011-11-07 00:20:25,001 [MIS] DEBUG    - MEM: 
+2011-11-07 00:20:25,001 [MIS] DEBUG    - IO: 
+2011-11-07 00:20:25,002 [MIS] DEBUG    - NET: 
+2011-11-07 00:20:25,002 [MIS] DEBUG    - HDD: 
+2011-11-07 00:20:25,002 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:20:25,003 [MIS] ERROR    - no se puede agregar LAV de cliente: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:20:25,003 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 140, in AgregaLAV
+    (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:20:48,756 [SBC] INFO     - iniciando el sistema SBC
+2011-11-07 00:20:48,757 [MC ] INFO     - iniciando validacion de modulos
+2011-11-07 00:20:48,757 [MC ] DEBUG    - validando integridad de MIS
+2011-11-07 00:20:48,757 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-07 00:20:48,758 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-07 00:20:48,758 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-07 00:20:48,758 [MC ] DEBUG    - validando integridad de MII
+2011-11-07 00:20:48,758 [MC ] DEBUG    - validando integridad de ME
+2011-11-07 00:20:48,759 [MC ] DEBUG    - validando integridad de MIW
+2011-11-07 00:20:48,759 [MC ] DEBUG    - validando integridad de MA
+2011-11-07 00:20:48,759 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-07 00:20:48,759 [MIS] INFO     - iniciando modulo
+2011-11-07 00:20:48,760 [ME ] INFO     - iniciando modulo
+2011-11-07 00:20:48,760 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-07 00:20:48,760 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:20:48,760 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:20:48,761 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:20:48,761 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:20:48,762 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:20:48,778 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:20:48,784 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636556.2     
+2011-11-07 00:20:48,785 [MIS] DEBUG    - LAV: 1320636556.2     
+2011-11-07 00:20:48,785 [MIS] DEBUG    - HORA: 1320636556.2
+2011-11-07 00:20:48,785 [MIS] DEBUG    - CPU: 
+2011-11-07 00:20:48,785 [MIS] DEBUG    - MEM: 
+2011-11-07 00:20:48,785 [MIS] DEBUG    - IO: 
+2011-11-07 00:20:48,785 [MIS] DEBUG    - NET: 
+2011-11-07 00:20:48,786 [MIS] DEBUG    - HDD: 
+2011-11-07 00:20:48,786 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:20:48,786 [MIS] ERROR    - no se puede agregar LAV de cliente: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:20:48,787 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 140, in AgregaLAV
+    (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:21:18,780 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:21:18,780 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:21:18,781 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:21:18,781 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:21:18,782 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:21:18,782 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:21:18,785 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636556.2     
+2011-11-07 00:21:18,786 [MIS] DEBUG    - LAV: 1320636556.2     
+2011-11-07 00:21:18,786 [MIS] DEBUG    - HORA: 1320636556.2
+2011-11-07 00:21:18,786 [MIS] DEBUG    - CPU: 
+2011-11-07 00:21:18,786 [MIS] DEBUG    - MEM: 
+2011-11-07 00:21:18,787 [MIS] DEBUG    - IO: 
+2011-11-07 00:21:18,787 [MIS] DEBUG    - NET: 
+2011-11-07 00:21:18,787 [MIS] DEBUG    - HDD: 
+2011-11-07 00:21:18,787 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:21:18,788 [MIS] ERROR    - no se puede agregar LAV de cliente: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:21:18,788 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 140, in AgregaLAV
+    (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-07 00:21:36,062 [SBC] INFO     - iniciando el sistema SBC
+2011-11-07 00:21:36,071 [MC ] INFO     - iniciando validacion de modulos
+2011-11-07 00:21:36,072 [MC ] DEBUG    - validando integridad de MIS
+2011-11-07 00:21:36,074 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-07 00:21:36,075 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-07 00:21:36,076 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-07 00:21:36,077 [MC ] DEBUG    - validando integridad de MII
+2011-11-07 00:21:36,078 [MC ] DEBUG    - validando integridad de ME
+2011-11-07 00:21:36,079 [MC ] DEBUG    - validando integridad de MIW
+2011-11-07 00:21:36,080 [MC ] DEBUG    - validando integridad de MA
+2011-11-07 00:21:36,081 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-07 00:21:36,082 [MIS] INFO     - iniciando modulo
+2011-11-07 00:21:36,083 [ME ] INFO     - iniciando modulo
+2011-11-07 00:21:36,083 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-07 00:21:36,085 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:21:36,087 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:21:36,088 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:21:36,089 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:21:36,090 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:21:36,110 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:21:36,117 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636606.22     
+2011-11-07 00:21:36,118 [MIS] DEBUG    - LAV: 1320636606.22     
+2011-11-07 00:21:36,120 [MIS] DEBUG    - HORA: 1320636606.22
+2011-11-07 00:21:36,121 [MIS] DEBUG    - CPU: 
+2011-11-07 00:21:36,122 [MIS] DEBUG    - MEM: 
+2011-11-07 00:21:36,124 [MIS] DEBUG    - IO: 
+2011-11-07 00:21:36,125 [MIS] DEBUG    - NET: 
+2011-11-07 00:21:36,127 [MIS] DEBUG    - HDD: 
+2011-11-07 00:21:36,128 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:21:36,130 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:21:36,133 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    (servidorid[0][0], time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:22:06,112 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:22:06,114 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:22:06,116 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:22:06,117 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:22:06,117 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:22:06,119 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:22:06,124 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636606.22     
+2011-11-07 00:22:06,124 [MIS] DEBUG    - LAV: 1320636606.22     
+2011-11-07 00:22:06,124 [MIS] DEBUG    - HORA: 1320636606.22
+2011-11-07 00:22:06,125 [MIS] DEBUG    - CPU: 
+2011-11-07 00:22:06,125 [MIS] DEBUG    - MEM: 
+2011-11-07 00:22:06,125 [MIS] DEBUG    - IO: 
+2011-11-07 00:22:06,125 [MIS] DEBUG    - NET: 
+2011-11-07 00:22:06,125 [MIS] DEBUG    - HDD: 
+2011-11-07 00:22:06,125 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:22:06,126 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:22:06,126 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    (servidorid[0][0], time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:22:36,120 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:22:36,120 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:22:36,121 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:22:36,122 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:22:36,122 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:22:36,123 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:22:36,131 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636656.26     
+2011-11-07 00:22:36,131 [MIS] DEBUG    - LAV: 1320636656.26     
+2011-11-07 00:22:36,131 [MIS] DEBUG    - HORA: 1320636656.26
+2011-11-07 00:22:36,132 [MIS] DEBUG    - CPU: 
+2011-11-07 00:22:36,132 [MIS] DEBUG    - MEM: 
+2011-11-07 00:22:36,132 [MIS] DEBUG    - IO: 
+2011-11-07 00:22:36,132 [MIS] DEBUG    - NET: 
+2011-11-07 00:22:36,132 [MIS] DEBUG    - HDD: 
+2011-11-07 00:22:36,132 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:22:36,133 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:22:36,134 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:23:06,124 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:23:06,125 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:23:06,126 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:23:06,126 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:23:06,127 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:23:06,128 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:23:06,132 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636656.26     
+2011-11-07 00:23:06,132 [MIS] DEBUG    - LAV: 1320636656.26     
+2011-11-07 00:23:06,132 [MIS] DEBUG    - HORA: 1320636656.26
+2011-11-07 00:23:06,133 [MIS] DEBUG    - CPU: 
+2011-11-07 00:23:06,133 [MIS] DEBUG    - MEM: 
+2011-11-07 00:23:06,133 [MIS] DEBUG    - IO: 
+2011-11-07 00:23:06,133 [MIS] DEBUG    - NET: 
+2011-11-07 00:23:06,133 [MIS] DEBUG    - HDD: 
+2011-11-07 00:23:06,134 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:23:06,135 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:23:06,135 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:23:36,129 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:23:36,130 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:23:36,131 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:23:36,131 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:23:36,132 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:23:36,133 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:23:36,141 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636706.29     
+2011-11-07 00:23:36,142 [MIS] DEBUG    - LAV: 1320636706.29     
+2011-11-07 00:23:36,142 [MIS] DEBUG    - HORA: 1320636706.29
+2011-11-07 00:23:36,143 [MIS] DEBUG    - CPU: 
+2011-11-07 00:23:36,143 [MIS] DEBUG    - MEM: 
+2011-11-07 00:23:36,143 [MIS] DEBUG    - IO: 
+2011-11-07 00:23:36,143 [MIS] DEBUG    - NET: 
+2011-11-07 00:23:36,143 [MIS] DEBUG    - HDD: 
+2011-11-07 00:23:36,143 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:23:36,144 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:23:36,145 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:24:06,134 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:24:06,135 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:24:06,137 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:24:06,137 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:24:06,138 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:24:06,138 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:24:06,146 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636756.31     
+2011-11-07 00:24:06,146 [MIS] DEBUG    - LAV: 1320636756.31     
+2011-11-07 00:24:06,146 [MIS] DEBUG    - HORA: 1320636756.31
+2011-11-07 00:24:06,147 [MIS] DEBUG    - CPU: 
+2011-11-07 00:24:06,147 [MIS] DEBUG    - MEM: 
+2011-11-07 00:24:06,147 [MIS] DEBUG    - IO: 
+2011-11-07 00:24:06,147 [MIS] DEBUG    - NET: 
+2011-11-07 00:24:06,147 [MIS] DEBUG    - HDD: 
+2011-11-07 00:24:06,147 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:24:06,148 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:24:06,149 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:24:36,139 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:24:36,140 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:24:36,141 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:24:36,142 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:24:36,142 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:24:36,143 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:24:36,155 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636756.31     
+2011-11-07 00:24:36,155 [MIS] DEBUG    - LAV: 1320636756.31     
+2011-11-07 00:24:36,155 [MIS] DEBUG    - HORA: 1320636756.31
+2011-11-07 00:24:36,156 [MIS] DEBUG    - CPU: 
+2011-11-07 00:24:36,156 [MIS] DEBUG    - MEM: 
+2011-11-07 00:24:36,156 [MIS] DEBUG    - IO: 
+2011-11-07 00:24:36,156 [MIS] DEBUG    - NET: 
+2011-11-07 00:24:36,156 [MIS] DEBUG    - HDD: 
+2011-11-07 00:24:36,157 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:24:36,158 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:24:36,158 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:25:06,143 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:25:06,144 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:25:06,145 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:25:06,146 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:25:06,146 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:25:06,147 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:25:06,157 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636806.34     
+2011-11-07 00:25:06,157 [MIS] DEBUG    - LAV: 1320636806.34     
+2011-11-07 00:25:06,158 [MIS] DEBUG    - HORA: 1320636806.34
+2011-11-07 00:25:06,158 [MIS] DEBUG    - CPU: 
+2011-11-07 00:25:06,158 [MIS] DEBUG    - MEM: 
+2011-11-07 00:25:06,159 [MIS] DEBUG    - IO: 
+2011-11-07 00:25:06,159 [MIS] DEBUG    - NET: 
+2011-11-07 00:25:06,159 [MIS] DEBUG    - HDD: 
+2011-11-07 00:25:06,159 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:25:06,160 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:25:06,160 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:25:36,148 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:25:36,149 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:25:36,150 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:25:36,150 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:25:36,151 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:25:36,152 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:25:36,158 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636806.34     
+2011-11-07 00:25:36,158 [MIS] DEBUG    - LAV: 1320636806.34     
+2011-11-07 00:25:36,159 [MIS] DEBUG    - HORA: 1320636806.34
+2011-11-07 00:25:36,159 [MIS] DEBUG    - CPU: 
+2011-11-07 00:25:36,159 [MIS] DEBUG    - MEM: 
+2011-11-07 00:25:36,159 [MIS] DEBUG    - IO: 
+2011-11-07 00:25:36,159 [MIS] DEBUG    - NET: 
+2011-11-07 00:25:36,160 [MIS] DEBUG    - HDD: 
+2011-11-07 00:25:36,160 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:25:36,161 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:25:36,161 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:26:06,153 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:26:06,154 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:26:06,155 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:26:06,155 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:26:06,156 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:26:06,157 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:26:06,163 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636856.38     
+2011-11-07 00:26:06,164 [MIS] DEBUG    - LAV: 1320636856.38     
+2011-11-07 00:26:06,164 [MIS] DEBUG    - HORA: 1320636856.38
+2011-11-07 00:26:06,164 [MIS] DEBUG    - CPU: 
+2011-11-07 00:26:06,164 [MIS] DEBUG    - MEM: 
+2011-11-07 00:26:06,165 [MIS] DEBUG    - IO: 
+2011-11-07 00:26:06,165 [MIS] DEBUG    - NET: 
+2011-11-07 00:26:06,165 [MIS] DEBUG    - HDD: 
+2011-11-07 00:26:06,165 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:26:06,166 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:26:06,166 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
+2011-11-07 00:26:36,158 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-07 00:26:36,159 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-07 00:26:36,160 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-07 00:26:36,161 [MIS] DEBUG    - consultando listado de servidores
+2011-11-07 00:26:36,161 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-07 00:26:36,162 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-07 00:26:36,168 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320636906.41     
+2011-11-07 00:26:36,169 [MIS] DEBUG    - LAV: 1320636906.41     
+2011-11-07 00:26:36,169 [MIS] DEBUG    - HORA: 1320636906.41
+2011-11-07 00:26:36,169 [MIS] DEBUG    - CPU: 
+2011-11-07 00:26:36,169 [MIS] DEBUG    - MEM: 
+2011-11-07 00:26:36,170 [MIS] DEBUG    - IO: 
+2011-11-07 00:26:36,170 [MIS] DEBUG    - NET: 
+2011-11-07 00:26:36,170 [MIS] DEBUG    - HDD: 
+2011-11-07 00:26:36,170 [MIS] DEBUG    - agregando LAV de 192.168.0.2
+2011-11-07 00:26:36,171 [MIS] ERROR    - no se puede agregar LAV de cliente: cargas.cpu_total may not be NULL
+2011-11-07 00:26:36,171 [MIS] ERROR    - cargas.cpu_total may not be NULL
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 139, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+IntegrityError: cargas.cpu_total may not be NULL
