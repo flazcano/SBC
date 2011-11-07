@@ -13,7 +13,7 @@ from sys import exit, argv
 from threading import Thread;
 from modulo import MC, MIS, ME
 from Logger import handler;
-try: import argparse
+try: import argparse #@UnresolvedImport
 except: handler.log.critical('no se encuentra python::argparse necesario para correr el modulo'); exit(1)
 
 # definiciones

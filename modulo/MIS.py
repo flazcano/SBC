@@ -16,6 +16,7 @@ from Logger import handler
 
 # definiciones
 SBCDB = "sbc.db"
+SBCDUMP = "sbc.sql"
 
 conexion=sqlite3.connect(SBCDB, isolation_level=None)
 
@@ -25,10 +26,12 @@ conexion=sqlite3.connect(SBCDB, isolation_level=None)
 def CreaEsquema():
     try:
         handler.log.info('creando esquema en ' + SBCDB)
+        fileSBCDUMP = open(SBCDUMP)
+        ESQUEMA = fileSBCDUMP.read()
+        conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        cursor.execute('CREATE TABLE configuracion (id INTEGER NOT NULL PRIMARY KEY, clave TEXT UNIQUE NOT NULL, valor TEXT NOT NULL, modificado TEXT NOT NULL, defvalor TEXT, prevalor TEXT);')
-        cursor.execute('CREATE TABLE servidor (id INTEGER NOT NULL PRIMARY KEY, fqdn TEXT UNIQUE NOT NULL, puerto INTEGER NOT NULL, activo BOOLEAN DEFAULT TRUE, visto TEXT, modificado TEXT);')
-        cursor.execute('CREATE TABLE cargas (id INTEGER NOT NULL PRIMARY KEY, servidorid CONSTRAINT fk_id_srv REFERENCES servidores(id) ON DELETE CASCADE, modificado TEXT);')
+        for sql in ESQUEMA.split(";"):
+            cursor.execute(sql)
         handler.log.info('esquema creado correctamente')
         exit(0)
     except Exception as message:
@@ -61,59 +64,80 @@ def ConsultaTotalServidores():
         handler.log.error('no se puede obtener total de servidores activos: %s', message)
         exit(1)
 
-def AgregaServidor(HOST, PORT):
+def AgregaServidor(fqdn, puerto):
     try:
-        handler.log.debug('agregando servidor: ' + HOST + ':' + str(PORT))
+        handler.log.debug('agregando servidor: ' + fqdn + ':' + str(puerto))
         conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        PUERTO = cursor.execute('SELECT puerto FROM servidor WHERE fqdn = ?;', ([HOST])).fetchall()
-        # si el servidor ya existe en la base dedatos
+        PUERTO = cursor.execute('SELECT puerto FROM servidor WHERE fqdn = ?;', ([fqdn])).fetchall()
+        modificado = time()
+        # si el servidor ya existe en la base de datos
         if PUERTO:
             # pero tiene distinto puerto al registrado
-            if PORT is not str(PUERTO[0][0]):
-                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTO[0][0])+ ' a ' + PORT)
-                cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (PORT, HOST))
-                HORA = time()
-                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (HORA, HOST))
+            if puerto is not str(PUERTO[0][0]):
+                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTO[0][0])+ ' a ' + puerto)
+                cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (puerto, fqdn))
+                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (modificado, fqdn))
         # si el servidor no existe
         else:
-            handler.log.debug('agregando servidor nuevo: ' + HOST + ':' + PORT)
-            cursor.execute('INSERT INTO servidor (fqdn, puerto, activo) VALUES (?, ?, ?);', (HOST, PORT, 'TRUE'))
+            handler.log.debug('agregando servidor nuevo: ' + fqdn + ':' + puerto)
+            cursor.execute('INSERT INTO servidor (fqdn, puerto, activo, modificado) VALUES (?, ?, ?, ?);', (fqdn, puerto, 'TRUE', modificado))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
         exit(1)
 
-def AgregaLAV(HOST, LAV):
+def AgregaLAV(fqdn, LAV):
     try:
-        
         miLAV = LAV.split(" "); handler.log.debug('LAV: ' + LAV)
         
         # obtiene HORA
         HORA = None; HORA = str(miLAV[0]); handler.log.debug('HORA: ' + HORA)
+        time_unix = HORA
         
         # obtiene CPU
         CPU = None; CPU = str(miLAV[1]); handler.log.debug('CPU: ' + CPU)
+        cpu_total = None
+        cpu_cores = None
         
         # obtiene MEM
         MEM = None; MEM = str(miLAV[2]); handler.log.debug('MEM: ' + MEM)
+        mem_total = None
+        mem_used = None
+        mem_free = None
+        mem_percent = None
         
         # obtiene IO
         IO = None; IO = str(miLAV[3]); handler.log.debug('IO: ' + IO)
+        io_read_count = None
+        io_write_count = None
+        io_read_bytes = None
+        io_write_bytes = None
+        io_read_time = None
+        io_write_time = None
         
         # obtiene NET
         NET = None; NET = str(miLAV[4]); handler.log.debug('NET: ' + NET)
+        net_bytes_sent = None
+        net_bytes_recv = None
+        net_packets_sent = None
+        net_packets_recv = None
         
         # obtiene HDD
         HDD = None; HDD = str(miLAV[5]); handler.log.debug('HDD: ' + HDD)
+        hdd_device = None
+        hdd_total = None
+        hdd_used = None
+        hdd_free = None
+        hdd_percent = None
         
-        pass
-        
-        handler.log.debug('agregando LAV de cliente')
+        handler.log.debug('agregando LAV de ' + fqdn)
         conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        SERVERID = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([HOST])).fetchall()
-        cursor.execute('INSERT INTO cargas (serverid, hora, cpu, mem) VALUES (?);', (SERVERID))
+        servidorid = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([fqdn])).fetchall()
+        print servidorid
+        cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);', 
+                        (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
     except Exception as message:
         handler.log.error('no se puede agregar LAV de cliente: %s', message)
         handler.log.exception(message)
@@ -121,9 +145,8 @@ def AgregaLAV(HOST, LAV):
 def Valida():
     try:
         # comprobando que la db existe
-        fileDB = open(SBCDB,"r")
-        handler.log.debug('la base de datos existe, en: ' + path.abspath(SBCDB))
-        fileDB.close()
+        if not path.exists(SBCDB):
+            raise ValueError("no existe la BD en " + path.abspath(SBCDB))
         
         # se conecta a la db
         conexion=sqlite3.connect(SBCDB, isolation_level=None)
@@ -152,6 +175,7 @@ def Valida():
         
     except Exception as message:
         handler.log.error('ha ocurrido un problema al validar la integridad del modulo: %s', message)
+        handler.log.exception(message)
         exit(1)
 
 def run():
@@ -159,5 +183,4 @@ def run():
 
 # main
 if __name__ == '__main__':
-    SBCDB = "../sbc.db"
     Valida()

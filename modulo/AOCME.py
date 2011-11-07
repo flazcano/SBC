@@ -45,10 +45,10 @@ class Servidor():
 
     def run(self):
         self.open_socket()
-        input = [self.server,stdin]
+        input = [self.server,stdin] #@ReservedAssignment
         running = 1
         while running:
-            inputready, outputready, exceptready = select.select(input,[],[])
+            inputready, outputready, exceptready = select.select(input,[],[]) #@UnusedVariable
             for server in inputready:
                 if server == self.server:
                     # manejando el socket del servidor

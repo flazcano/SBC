@@ -47,10 +47,10 @@ class Servidor():
 
     def run(self):
         self.open_socket()
-        input = [self.server,stdin]
+        input = [self.server,stdin] #@ReservedAssignment
         running = 1
         while running:
-            inputready, outputready, exceptready = select.select(input,[],[])
+            inputready, outputready, exceptready = select.select(input,[],[]) #@UnusedVariable
             for server in inputready:
                 if server == self.server:
                     # manejando el socket del servidor
@@ -116,7 +116,7 @@ class ThreadxLAV(Thread):
                 LAV = clientcon.recv(1024).decode()
                 handler.log.debug('se obtuvo LAV desde ' + str(self.HOST) + ':' +str(self.PORT) + ': ' + LAV)
                 # se comunica con MIS para agregar LAV
-                MIS.AgregaLAV(HOST, LAV)
+                MIS.AgregaLAV(self.HOST, LAV)
             except Exception as message:
                 handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
                 # se comunica con MIS para informar el problema
@@ -124,7 +124,7 @@ class ThreadxLAV(Thread):
 # funciones
 def ObtieneEstadoServidor(HOST, PORT):
     try:
-        handler.log.debug('obteniendo estado de servidor ' + str(HOST) + ':' + str(PORT))
+        handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
         ThreadxLAV(HOST, PORT).start()
     except Exception as message:
         handler.log.debug('error al consultar estado del servidor')
