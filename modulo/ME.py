@@ -82,9 +82,9 @@ class Cliente(Thread):
                 DATA = self.cliente.recv(self.size).decode()
                 if DATA:
                     if 'HELLO' in DATA:
-                        handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia keep alive')
+                        handler.log.debug('cliente ' + self.address[0] + ':' + str(self.address[1]) + ' envia keep alive: ' + DATA)
                         AOCHOST = self.address[0]
-                        AOCPORT = DATA.split("HELLO ")[1]
+                        AOCPORT = DATA.replace("HELLO ", "", 1)
                         
                         # se comunica con MIS para agregar cliente a servidores a balancear
                         MIS.AgregaServidor(AOCHOST, AOCPORT)
@@ -113,11 +113,10 @@ class ThreadxLAV(Thread):
                 clientcon.settimeout(CLIENTTIMEOUT)
                 clientcon.connect((self.HOST, self.PORT))
                 clientcon.send(str.encode('HELLO'))
-                LAV = clientcon.recv(1024)
-                print LAV.decode()
-                handler.log.debug('se obtuvo LAV desde ' + str(self.HOST) + ':' +str(self.PORT) + ': ' + LAV.decode())
+                LAV = clientcon.recv(1024).decode()
+                handler.log.debug('se obtuvo LAV desde ' + str(self.HOST) + ':' +str(self.PORT) + ': ' + LAV)
                 # se comunica con MIS para agregar LAV
-                MIS.AgregaLAV(HOST, LAV.decode)
+                MIS.AgregaLAV(HOST, LAV)
             except Exception as message:
                 handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
                 # se comunica con MIS para informar el problema

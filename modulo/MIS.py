@@ -63,17 +63,18 @@ def ConsultaTotalServidores():
 
 def AgregaServidor(HOST, PORT):
     try:
-        handler.log.debug('agregando servidor')
+        handler.log.debug('agregando servidor: ' + HOST + ':' + str(PORT))
         conexion=sqlite3.connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         PUERTO = cursor.execute('SELECT puerto FROM servidor WHERE fqdn = ?;', ([HOST])).fetchall()
         # si el servidor ya existe en la base dedatos
         if PUERTO:
             # pero tiene distinto puerto al registrado
-            if PORT is not PUERTO[0]:
-                handler.log.debug('actualizando puerto de servidor existente')
+            if PORT is not str(PUERTO[0][0]):
+                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTO[0][0])+ ' a ' + PORT)
+                cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (PORT, HOST))
                 HORA = time()
-                cursor.execute('UPDATE servidor SET puerto = ? AND modificado = ? WHERE fqdn = ?;', (PORT, HORA, HOST))
+                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (HORA, HOST))
         # si el servidor no existe
         else:
             handler.log.debug('agregando servidor nuevo: ' + HOST + ':' + PORT)
@@ -85,34 +86,27 @@ def AgregaServidor(HOST, PORT):
 
 def AgregaLAV(HOST, LAV):
     try:
-        print LAV
-        miLAV = LAV.split(" ")
+        
+        miLAV = LAV.split(" "); handler.log.debug('LAV: ' + LAV)
         
         # obtiene HORA
-        HORA = None; HORA = miLAV[0]
+        HORA = None; HORA = str(miLAV[0]); handler.log.debug('HORA: ' + HORA)
         
         # obtiene CPU
-        CPU = None; CPU = miLAV[1]
+        CPU = None; CPU = str(miLAV[1]); handler.log.debug('CPU: ' + CPU)
         
         # obtiene MEM
-        MEM = None; MEM = miLAV[2]
+        MEM = None; MEM = str(miLAV[2]); handler.log.debug('MEM: ' + MEM)
         
         # obtiene IO
-        IO = None; IO = miLAV[3]
+        IO = None; IO = str(miLAV[3]); handler.log.debug('IO: ' + IO)
         
         # obtiene NET
-        NET = None; NET = miLAV[4]
+        NET = None; NET = str(miLAV[4]); handler.log.debug('NET: ' + NET)
         
         # obtiene HDD
-        HDD = None; HDD = miLAV[5]
+        HDD = None; HDD = str(miLAV[5]); handler.log.debug('HDD: ' + HDD)
         
-        handler.log.debug('LAV: ' + miLAV)
-        handler.log.debug('HORA: ' + HORA)
-        handler.log.debug('CPU: ' + CPU)
-        handler.log.debug('MEM: ' + MEM)
-        handler.log.debug('IO: ' + IO)
-        handler.log.debug('NET: ' + NET)
-        handler.log.debug('HDD: ' + HDD)
         pass
         
         handler.log.debug('agregando LAV de cliente')

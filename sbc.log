@@ -1216,3 +1216,1225 @@ Traceback (most recent call last):
   File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
     miLAV = LAV.split(" ")
 AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 20:05:19,610 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:05:19,610 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:05:19,610 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:05:19,610 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:05:19,611 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:05:19,611 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:05:19,611 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:05:19,612 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:05:19,612 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:05:19,612 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:05:19,612 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:05:19,612 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:05:19,613 [MIS] INFO     - iniciando modulo
+2011-11-06 20:05:19,613 [ME ] INFO     - iniciando modulo
+2011-11-06 20:05:19,613 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:05:19,615 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:05:19,615 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:05:19,617 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:05:19,617 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:05:19,618 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 20:05:19,634 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:05:19,643 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320621227.51     
+2011-11-06 20:05:19,644 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 20:05:19,644 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 20:05:39,459 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:05:39,459 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:05:39,459 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:05:39,460 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:05:39,460 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:05:39,461 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:05:39,461 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:05:39,461 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:05:39,461 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:05:39,461 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:05:39,461 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:05:39,461 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:05:39,462 [MIS] INFO     - iniciando modulo
+2011-11-06 20:05:39,462 [ME ] INFO     - iniciando modulo
+2011-11-06 20:05:39,463 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:05:39,464 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:05:39,464 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:05:39,465 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:05:39,465 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:05:39,465 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 20:05:39,486 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:05:39,492 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320621227.51     
+2011-11-06 20:05:39,492 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 20:05:39,492 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 20:05:49,063 [ME ] DEBUG    - conectado desde 192.168.0.2:46309
+2011-11-06 20:05:49,064 [ME ] DEBUG    - cliente 192.168.0.2:46309 envia keep alive
+2011-11-06 20:05:49,064 [MIS] DEBUG    - agregando servidor
+2011-11-06 20:05:49,065 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 20:05:49,068 [ME ] DEBUG    - desconectado desde 192.168.0.2:46309
+2011-11-06 20:06:09,487 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:06:09,488 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:06:09,490 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:06:09,490 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:06:09,491 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:06:09,491 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:06:09,491 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:06:39,493 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:06:39,494 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:06:39,495 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:06:39,495 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:06:39,496 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:06:39,496 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:06:39,497 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:09:21,122 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:09:21,122 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:09:21,122 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:09:21,122 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:09:21,123 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:09:21,123 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:09:21,123 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:09:21,123 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:09:21,123 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:09:21,124 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:09:21,124 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:09:21,124 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:09:21,124 [MIS] INFO     - iniciando modulo
+2011-11-06 20:09:21,125 [ME ] INFO     - iniciando modulo
+2011-11-06 20:09:21,126 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:09:21,126 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:09:21,127 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:09:21,127 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:09:21,127 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:09:21,128 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:09:21,145 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:09:21,145 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:09:33,385 [ME ] DEBUG    - conectado desde 192.168.0.2:39963
+2011-11-06 20:09:33,386 [ME ] DEBUG    - cliente 192.168.0.2:39963 envia keep alive
+2011-11-06 20:09:51,147 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:09:51,147 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:09:51,149 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:09:51,149 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:09:51,150 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:09:51,150 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:09:51,151 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:10:21,152 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:10:21,153 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:10:21,155 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:10:21,155 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:10:21,156 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:10:21,156 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:10:21,156 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:10:51,158 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:10:51,159 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:10:51,161 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:10:51,161 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:10:51,161 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:10:51,162 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:10:51,162 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:11:02,867 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:11:02,868 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:11:02,868 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:11:02,869 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:11:02,869 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:11:02,870 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:11:02,870 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:11:02,870 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:11:02,870 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:11:02,871 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:11:02,871 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:11:02,871 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:11:02,871 [MIS] INFO     - iniciando modulo
+2011-11-06 20:11:02,872 [ME ] INFO     - iniciando modulo
+2011-11-06 20:11:02,872 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:11:02,873 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:11:02,873 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:11:02,873 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:11:02,874 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:11:02,874 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:11:02,892 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:11:02,893 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:11:24,268 [ME ] DEBUG    - conectado desde 192.168.0.2:39964
+2011-11-06 20:11:24,269 [ME ] DEBUG    - cliente 192.168.0.2:39964 envia keep alive
+2011-11-06 20:11:24,269 [MIS] DEBUG    - agregando servidor
+2011-11-06 20:11:24,270 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 20:11:24,270 [MIS] ERROR    - no se puede agregar servidor: Error binding parameter 0 - probably unsupported type.
+2011-11-06 20:11:24,270 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 76, in AgregaServidor
+    cursor.execute('UPDATE servidor SET puerto = ? AND modificado = ? WHERE fqdn = ?;', (PORT, HORA, HOST))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-06 20:11:32,894 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:11:32,894 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:11:32,895 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:11:32,895 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:11:32,896 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:11:32,897 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:11:32,897 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:12:02,898 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:12:02,899 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:12:02,899 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:12:02,900 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:12:02,900 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:12:02,901 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:12:02,901 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:12:32,902 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:12:32,902 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:12:32,903 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:12:32,903 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:12:32,903 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:12:32,904 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:12:32,904 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:12:44,470 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:12:44,471 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:12:44,471 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:12:44,471 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:12:44,472 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:12:44,472 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:12:44,472 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:12:44,472 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:12:44,472 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:12:44,472 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:12:44,473 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:12:44,473 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:12:44,473 [MIS] INFO     - iniciando modulo
+2011-11-06 20:12:44,473 [ME ] INFO     - iniciando modulo
+2011-11-06 20:12:44,474 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:12:44,474 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:12:44,474 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:12:44,475 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:12:44,475 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:12:44,476 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:12:44,491 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:12:44,492 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:12:55,813 [ME ] DEBUG    - conectado desde 192.168.0.2:38451
+2011-11-06 20:12:55,813 [ME ] DEBUG    - cliente 192.168.0.2:38451 envia keep alive: HELLO 54321
+2011-11-06 20:12:55,813 [MIS] DEBUG    - agregando servidor
+2011-11-06 20:12:55,814 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 20:12:55,814 [MIS] ERROR    - no se puede agregar servidor: Error binding parameter 0 - probably unsupported type.
+2011-11-06 20:12:55,814 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 76, in AgregaServidor
+    cursor.execute('UPDATE servidor SET puerto = ? AND modificado = ? WHERE fqdn = ?;', (PORT, HORA, HOST))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-06 20:13:49,653 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:13:49,654 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:13:49,654 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:13:49,654 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:13:49,654 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:13:49,655 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:13:49,655 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:13:49,655 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:13:49,655 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:13:49,655 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:13:49,655 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:13:49,655 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:13:49,656 [MIS] INFO     - iniciando modulo
+2011-11-06 20:13:49,656 [ME ] INFO     - iniciando modulo
+2011-11-06 20:13:49,657 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:13:49,658 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:13:49,659 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:13:49,659 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:13:49,659 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:13:49,660 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:13:49,677 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:13:49,677 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:14:03,639 [ME ] DEBUG    - conectado desde 192.168.0.2:38452
+2011-11-06 20:14:03,640 [ME ] DEBUG    - cliente 192.168.0.2:38452 envia keep alive: HELLO 54321
+2011-11-06 20:14:03,640 [MIS] ERROR    - no se puede agregar servidor: cannot concatenate 'str' and 'list' objects
+2011-11-06 20:14:03,640 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 66, in AgregaServidor
+    handler.log.debug('agregando servidor: ' + HOST + ':' + PORT)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 20:14:19,679 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:14:19,679 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:14:19,680 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:14:19,680 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:14:19,681 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:14:19,682 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:14:19,682 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:14:31,819 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 20:14:31,820 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 20:14:31,820 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 20:14:31,820 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 20:14:31,821 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 20:14:31,821 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 20:14:31,821 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 20:14:31,821 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 20:14:31,821 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 20:14:31,821 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 20:14:31,822 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 20:14:31,822 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 20:14:31,822 [MIS] INFO     - iniciando modulo
+2011-11-06 20:14:31,822 [ME ] INFO     - iniciando modulo
+2011-11-06 20:14:31,823 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 20:14:31,823 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 20:14:31,823 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 20:14:31,824 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 20:14:31,824 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 20:14:31,825 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 20:14:31,841 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 20:14:31,841 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 20:14:40,345 [ME ] DEBUG    - conectado desde 192.168.0.2:38453
+2011-11-06 20:14:40,345 [ME ] DEBUG    - cliente 192.168.0.2:38453 envia keep alive: HELLO 54321
+2011-11-06 20:14:40,345 [MIS] DEBUG    - agregando servidor: 192.168.0.2:[u'', u'54321']
+2011-11-06 20:14:40,346 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 20:14:40,346 [MIS] ERROR    - no se puede agregar servidor: Error binding parameter 0 - probably unsupported type.
+2011-11-06 20:14:40,347 [MIS] ERROR    - Error binding parameter 0 - probably unsupported type.
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 76, in AgregaServidor
+    cursor.execute('UPDATE servidor SET puerto = ? AND modificado = ? WHERE fqdn = ?;', (PORT, HORA, HOST))
+InterfaceError: Error binding parameter 0 - probably unsupported type.
+2011-11-06 21:05:49,223 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:05:49,312 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:05:49,313 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:05:49,313 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:05:49,314 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:05:49,314 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:05:49,314 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:05:49,314 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:05:49,315 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:05:49,315 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:05:49,315 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:05:49,315 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:05:49,315 [MIS] INFO     - iniciando modulo
+2011-11-06 21:05:49,316 [ME ] INFO     - iniciando modulo
+2011-11-06 21:05:49,316 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:05:49,316 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:05:49,317 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:05:49,317 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:05:49,317 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:05:49,318 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:05:49,672 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:05:49,672 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:06:01,816 [ME ] DEBUG    - conectado desde 192.168.0.2:42058
+2011-11-06 21:06:01,816 [ME ] DEBUG    - cliente 192.168.0.2:42058 envia keep alive: HELLO 54321
+2011-11-06 21:06:01,817 [MIS] DEBUG    - agregando servidor: 192.168.0.2:54321
+2011-11-06 21:06:01,817 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 21:06:01,940 [ME ] DEBUG    - desconectado desde 192.168.0.2:42058
+2011-11-06 21:06:19,673 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:06:19,673 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:06:19,674 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:06:19,674 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:06:19,675 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:06:19,676 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:06:19,676 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:06:49,677 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:06:49,678 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:06:49,678 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:06:49,678 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:06:49,679 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:06:49,679 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:06:49,680 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:07:19,681 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:07:19,681 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:07:19,682 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:07:19,682 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:07:19,682 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:07:19,683 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:07:19,683 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:07:49,684 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:07:49,684 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:07:49,685 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:07:49,685 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:07:49,686 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:07:49,687 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:07:49,687 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:07:56,352 [ME ] DEBUG    - conectado desde 192.168.0.2:57053
+2011-11-06 21:07:56,352 [ME ] DEBUG    - cliente 192.168.0.2:57053 envia keep alive: HELLO 54321
+2011-11-06 21:07:56,352 [MIS] DEBUG    - agregando servidor: 192.168.0.2:54321
+2011-11-06 21:07:56,353 [MIS] DEBUG    - actualizando puerto de servidor existente
+2011-11-06 21:07:56,356 [ME ] DEBUG    - desconectado desde 192.168.0.2:57053
+2011-11-06 21:08:19,706 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:08:19,706 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:08:19,707 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:08:19,707 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:08:19,708 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:08:19,708 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:08:19,709 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:08:49,779 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:08:49,779 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:08:49,780 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:08:49,780 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:08:49,781 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:08:49,781 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:08:49,781 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:09:11,135 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:09:11,136 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:09:11,136 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:09:11,136 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:09:11,137 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:09:11,137 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:09:11,137 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:09:11,137 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:09:11,138 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:09:11,138 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:09:11,138 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:09:11,138 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:09:11,138 [MIS] INFO     - iniciando modulo
+2011-11-06 21:09:11,139 [ME ] INFO     - iniciando modulo
+2011-11-06 21:09:11,139 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:09:11,139 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:09:11,140 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:09:11,140 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:09:11,140 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:09:11,141 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:09:11,157 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:09:11,157 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:09:20,626 [ME ] DEBUG    - conectado desde 192.168.0.2:57054
+2011-11-06 21:09:20,626 [ME ] DEBUG    - cliente 192.168.0.2:57054 envia keep alive: HELLO 54321
+2011-11-06 21:09:20,626 [MIS] DEBUG    - agregando servidor: 192.168.0.2:54321
+2011-11-06 21:09:20,627 [MIS] ERROR    - no se puede agregar servidor: cannot concatenate 'str' and 'tuple' objects
+2011-11-06 21:09:20,628 [MIS] ERROR    - cannot concatenate 'str' and 'tuple' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 74, in AgregaServidor
+    handler.log.debug('actualizando puerto de servidor existente, de ' + PUERTO[0]+ ' a ' + PORT)
+TypeError: cannot concatenate 'str' and 'tuple' objects
+2011-11-06 21:09:41,159 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:09:41,159 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:09:41,160 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:09:41,160 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:09:41,161 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:09:41,162 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:09:41,162 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:10:02,468 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:10:02,468 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:10:02,468 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:10:02,468 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:10:02,469 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:10:02,469 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:10:02,469 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:10:02,470 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:10:02,470 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:10:02,470 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:10:02,470 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:10:02,470 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:10:02,470 [MIS] INFO     - iniciando modulo
+2011-11-06 21:10:02,471 [ME ] INFO     - iniciando modulo
+2011-11-06 21:10:02,471 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:10:02,472 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:10:02,472 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:10:02,473 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:10:02,473 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:10:02,473 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:10:02,492 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:10:02,492 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:10:13,705 [ME ] DEBUG    - conectado desde 192.168.0.2:57055
+2011-11-06 21:10:13,706 [ME ] DEBUG    - cliente 192.168.0.2:57055 envia keep alive: HELLO 54321
+2011-11-06 21:10:13,706 [MIS] DEBUG    - agregando servidor: 192.168.0.2:54321
+2011-11-06 21:10:13,707 [MIS] DEBUG    - actualizando puerto de servidor existente, de (0,) a 54321
+2011-11-06 21:10:13,710 [ME ] DEBUG    - desconectado desde 192.168.0.2:57055
+2011-11-06 21:10:32,494 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:10:32,494 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:10:32,495 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:10:32,495 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:10:32,496 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:10:32,497 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:10:32,497 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:11:02,498 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:11:02,499 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:11:02,500 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:11:02,500 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:11:02,501 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:11:02,501 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:11:02,501 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:11:32,502 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:11:32,502 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:11:32,503 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:11:32,504 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:11:32,504 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:11:32,505 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:11:32,505 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:12:02,506 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:12:02,507 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:12:02,508 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:12:02,508 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:12:02,508 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:12:02,509 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:12:02,509 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:12:11,194 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:12:11,194 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:12:11,194 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:12:11,194 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:12:11,195 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:12:11,195 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:12:11,195 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:12:11,195 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:12:11,195 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:12:11,195 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:12:11,196 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:12:11,196 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:12:11,196 [MIS] INFO     - iniciando modulo
+2011-11-06 21:12:11,197 [ME ] INFO     - iniciando modulo
+2011-11-06 21:12:11,197 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:12:11,197 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:12:11,198 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:12:11,198 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:12:11,198 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:12:11,199 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:0
+2011-11-06 21:12:11,219 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.2:0: [Errno 49] Can't assign requested address
+2011-11-06 21:12:11,219 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:12:22,625 [ME ] DEBUG    - conectado desde 192.168.0.2:54013
+2011-11-06 21:12:22,625 [ME ] DEBUG    - cliente 192.168.0.2:54013 envia keep alive: HELLO 54321
+2011-11-06 21:12:22,625 [MIS] DEBUG    - agregando servidor: 192.168.0.2:54321
+2011-11-06 21:12:22,627 [MIS] DEBUG    - actualizando puerto de servidor existente, de 0 a 54321
+2011-11-06 21:12:22,632 [ME ] DEBUG    - desconectado desde 192.168.0.2:54013
+2011-11-06 21:12:41,220 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:12:41,221 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:12:41,222 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:12:41,222 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:12:41,223 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:12:41,223 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:12:41,226 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625260.4     
+2011-11-06 21:12:41,226 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:12:41,226 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 90, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:13:11,225 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:13:11,225 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:13:11,226 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:13:11,226 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:13:11,227 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:13:11,228 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:13:11,235 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625300.44     
+2011-11-06 21:13:11,235 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:13:11,235 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 90, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:13:41,229 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:13:41,230 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:13:41,230 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:13:41,231 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:13:41,231 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:13:41,248 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:13:41,249 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625300.44     
+2011-11-06 21:13:41,249 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:13:41,249 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 90, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:14:11,249 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:14:11,250 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:14:11,250 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:14:11,251 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:14:11,251 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:14:11,252 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:14:11,259 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625350.48     
+2011-11-06 21:14:11,260 [MIS] ERROR    - no se puede agregar LAV de cliente: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:14:11,260 [MIS] ERROR    - 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 90, in AgregaLAV
+    miLAV = LAV.split(" ")
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2011-11-06 21:14:45,699 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:14:45,699 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:14:45,699 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:14:45,699 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:14:45,700 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:14:45,700 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:14:45,700 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:14:45,700 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:14:45,700 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:14:45,700 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:14:45,701 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:14:45,701 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:14:45,707 [MIS] INFO     - iniciando modulo
+2011-11-06 21:14:45,708 [ME ] INFO     - iniciando modulo
+2011-11-06 21:14:45,708 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:14:45,709 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:14:45,709 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:14:45,709 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:14:45,710 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:14:45,710 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:14:45,727 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:14:45,733 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625400.52     
+2011-11-06 21:14:45,734 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:14:45,734 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:15:15,728 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:15:15,729 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:15:15,730 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:15:15,730 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:15:15,730 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:15:15,731 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:15:15,737 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625400.52     
+2011-11-06 21:15:15,738 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:15:15,738 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:15:45,732 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:15:45,732 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:15:45,734 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:15:45,734 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:15:45,734 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:15:45,735 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:15:45,741 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625450.56     
+2011-11-06 21:15:45,742 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:15:45,742 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:16:15,736 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:16:15,737 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:16:15,738 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:16:15,738 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:16:15,739 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:16:15,739 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:16:15,745 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625450.56     
+2011-11-06 21:16:15,746 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:16:15,746 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:16:22,585 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:16:22,585 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:16:22,585 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:16:22,586 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:16:22,586 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:16:22,586 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:16:22,587 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:16:22,587 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:16:22,587 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:16:22,587 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:16:22,587 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:16:22,587 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:16:22,588 [MIS] INFO     - iniciando modulo
+2011-11-06 21:16:22,588 [ME ] INFO     - iniciando modulo
+2011-11-06 21:16:22,588 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:16:22,589 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:16:22,589 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:16:22,590 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:16:22,590 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:16:22,591 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:16:22,604 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:16:22,615 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625450.56     
+2011-11-06 21:16:22,615 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:16:22,615 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:16:52,609 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:16:52,609 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:16:52,610 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:16:52,610 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:16:52,611 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:16:52,611 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:16:52,618 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625500.6     
+2011-11-06 21:16:52,619 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:16:52,619 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:17:36,356 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:17:36,443 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:17:36,444 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:17:36,445 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:17:36,448 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:17:36,449 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:17:36,449 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:17:36,449 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:17:36,449 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:17:36,450 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:17:36,450 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:17:36,450 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:17:36,450 [MIS] INFO     - iniciando modulo
+2011-11-06 21:17:36,451 [ME ] INFO     - iniciando modulo
+2011-11-06 21:17:36,451 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:17:36,451 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:17:36,452 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:17:36,452 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:17:36,452 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:17:36,453 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:17:36,466 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:17:36,477 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625550.64     
+2011-11-06 21:17:36,477 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:17:36,477 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:18:06,470 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:18:06,471 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:18:06,472 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:18:06,472 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:18:06,473 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:18:06,473 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:18:06,479 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625600.68     
+2011-11-06 21:18:06,480 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:18:06,480 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 110, in AgregaLAV
+    handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:20:19,385 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:20:19,385 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:20:19,385 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:20:19,386 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:20:19,386 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:20:19,386 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:20:19,386 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:20:19,387 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:20:19,387 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:20:19,387 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:20:19,387 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:20:19,387 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:20:19,388 [MIS] INFO     - iniciando modulo
+2011-11-06 21:20:19,388 [ME ] INFO     - iniciando modulo
+2011-11-06 21:20:19,388 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:20:19,389 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:20:19,389 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:20:19,390 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:20:19,390 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:20:19,390 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:20:19,408 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:20:19,415 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625700.76     
+2011-11-06 21:20:19,415 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:20:19,415 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:20:49,410 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:20:49,410 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:20:49,410 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:20:49,411 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:20:49,411 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:20:49,412 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:20:49,414 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625750.8     
+2011-11-06 21:20:49,415 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:20:49,415 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + miLAV)
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:21:19,413 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:21:19,413 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:21:19,414 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:21:19,414 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:21:19,415 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:21:19,416 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:21:19,423 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625750.8     
+2011-11-06 21:21:19,423 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:21:19,423 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:21:49,417 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:21:49,425 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:21:49,429 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:21:49,429 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:21:49,429 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:21:49,431 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:21:49,442 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625800.84     
+2011-11-06 21:21:49,442 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:21:49,442 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:22:19,432 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:22:19,433 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:22:19,434 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:22:19,434 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:22:19,435 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:22:19,435 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:22:19,437 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625850.88     
+2011-11-06 21:22:19,438 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:22:19,438 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:22:49,437 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:22:49,455 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:22:49,456 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:22:49,456 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:22:49,457 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:22:49,457 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:22:49,460 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625850.88     
+2011-11-06 21:22:49,460 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:22:49,461 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:23:19,459 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:23:19,477 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:23:19,478 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:23:19,478 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:23:19,479 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:23:19,479 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:23:19,484 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625900.92     
+2011-11-06 21:23:19,484 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:23:19,485 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:23:49,481 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:23:49,481 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:23:49,482 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:23:49,482 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:23:49,483 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:23:49,483 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:23:49,488 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625900.92     
+2011-11-06 21:23:49,488 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:23:49,488 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:24:19,484 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:24:19,499 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:24:19,500 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:24:19,500 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:24:19,501 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:24:19,502 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:24:19,509 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320625950.96     
+2011-11-06 21:24:19,509 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:24:19,510 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:24:49,503 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:24:49,503 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:24:49,505 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:24:49,505 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:24:49,506 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:24:49,506 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:24:49,508 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626001.0     
+2011-11-06 21:24:49,509 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:24:49,509 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:25:19,508 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:25:19,508 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:25:19,509 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:25:19,509 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:25:19,510 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:25:19,510 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:25:19,512 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626001.0     
+2011-11-06 21:25:19,513 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:25:19,513 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:25:49,511 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:25:49,511 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:25:49,512 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:25:49,512 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:25:49,513 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:25:49,513 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:25:49,521 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626051.04     
+2011-11-06 21:25:49,522 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:25:49,522 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:26:19,515 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:26:19,532 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:26:19,533 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:26:19,533 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:26:19,534 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:26:19,534 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:26:19,540 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626051.04     
+2011-11-06 21:26:19,540 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:26:19,540 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:26:49,535 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:26:49,536 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:26:49,537 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:26:49,537 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:26:49,538 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:26:49,539 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:26:49,545 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626101.08     
+2011-11-06 21:26:49,545 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:26:49,546 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:27:19,540 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:27:19,540 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:27:19,541 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:27:19,541 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:27:19,542 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:27:19,543 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:27:19,545 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626151.12     
+2011-11-06 21:27:19,545 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:27:19,545 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:27:49,544 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:27:49,544 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:27:49,545 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:27:49,545 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:27:49,545 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:27:49,546 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:27:49,553 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626151.12     
+2011-11-06 21:27:49,553 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:27:49,553 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:28:19,547 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:28:19,547 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:28:19,548 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:28:19,549 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:28:19,549 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:28:19,550 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:28:19,558 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626201.16     
+2011-11-06 21:28:19,558 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:28:19,558 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:28:49,551 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:28:49,551 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:28:49,552 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:28:49,553 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:28:49,553 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:28:49,554 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:28:49,561 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626201.16     
+2011-11-06 21:28:49,562 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:28:49,562 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:29:19,556 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:29:19,556 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:29:19,557 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:29:19,557 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:29:19,558 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:29:19,558 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:29:19,566 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626251.2     
+2011-11-06 21:29:19,566 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:29:19,566 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:29:49,560 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:29:49,560 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:29:49,561 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:29:49,561 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:29:49,561 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:29:49,562 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:29:49,565 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626301.24     
+2011-11-06 21:29:49,565 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:29:49,565 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:30:19,563 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:30:19,563 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:30:19,564 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:30:19,564 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:30:19,565 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:30:19,565 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:30:19,573 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626301.24     
+2011-11-06 21:30:19,574 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:30:19,574 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:30:49,566 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:30:49,566 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:30:49,567 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:30:49,568 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:30:49,568 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:30:49,569 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:30:49,575 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626351.28     
+2011-11-06 21:30:49,575 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:30:49,575 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:31:19,570 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:31:19,570 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:31:19,571 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:31:19,571 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:31:19,572 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:31:19,573 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:31:19,579 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626351.28     
+2011-11-06 21:31:19,579 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:31:19,580 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:31:49,574 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:31:49,574 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:31:49,575 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:31:49,575 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:31:49,575 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:31:49,576 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:31:49,584 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626401.32     
+2011-11-06 21:31:49,585 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:31:49,585 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:32:19,577 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:32:19,610 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:32:19,611 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:32:19,611 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:32:19,612 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:32:19,612 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:32:19,616 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626451.36     
+2011-11-06 21:32:19,617 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:32:19,617 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:32:49,613 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:32:49,614 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:32:49,615 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:32:49,615 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:32:49,616 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:32:49,616 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:32:49,619 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626451.36     
+2011-11-06 21:32:49,619 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:32:49,620 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:33:19,618 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:33:19,618 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:33:19,619 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:33:19,619 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:33:19,619 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:33:19,620 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:33:19,634 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626501.4     
+2011-11-06 21:33:19,635 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:33:19,635 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:33:49,621 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:33:49,622 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:33:49,623 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:33:49,623 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:33:49,624 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:33:49,624 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:33:49,627 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626501.4     
+2011-11-06 21:33:49,627 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:33:49,628 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:34:19,626 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:34:19,626 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:34:19,627 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:34:19,627 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:34:19,628 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:34:19,629 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:34:19,667 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626551.44     
+2011-11-06 21:34:19,668 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:34:19,668 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:34:49,629 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:34:49,630 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:34:49,631 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:34:49,631 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:34:49,632 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:34:49,633 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:34:49,640 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626601.48     
+2011-11-06 21:34:49,641 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:34:49,641 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:35:19,634 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:35:19,634 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:35:19,635 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:35:19,636 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:35:19,636 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:35:19,637 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:35:19,639 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626601.48     
+2011-11-06 21:35:19,640 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:35:19,640 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:35:49,638 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:35:49,638 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:35:49,639 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:35:49,639 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:35:49,640 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:35:49,640 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:35:49,643 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626651.52     
+2011-11-06 21:35:49,644 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:35:49,644 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:36:19,641 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:36:19,676 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:36:19,677 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:36:19,677 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:36:19,678 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:36:19,679 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:36:19,691 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626651.52     
+2011-11-06 21:36:19,691 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:36:19,691 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:36:49,680 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:36:49,680 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:36:49,681 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:36:49,681 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:36:49,682 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:36:49,683 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:36:49,686 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626701.56     
+2011-11-06 21:36:49,687 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:36:49,687 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:37:19,684 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:37:19,684 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:37:19,685 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:37:19,685 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:37:19,686 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:37:19,687 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:37:19,691 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626751.6     
+2011-11-06 21:37:19,692 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:37:19,692 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:37:49,688 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:37:49,688 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:37:49,689 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:37:49,690 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:37:49,690 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:37:49,691 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:37:49,694 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626751.6     
+2011-11-06 21:37:49,695 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:37:49,695 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:38:19,693 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:38:19,693 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:38:19,694 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:38:19,694 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:38:19,694 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:38:19,695 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:38:19,699 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626801.64     
+2011-11-06 21:38:19,700 [MIS] ERROR    - no se puede agregar LAV de cliente: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:38:19,700 [MIS] ERROR    - cannot concatenate 'str' and 'list' objects
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 89, in AgregaLAV
+    miLAV = LAV.split(" "); handler.log.debug('LAV: ' + str(miLAV))
+TypeError: cannot concatenate 'str' and 'list' objects
+2011-11-06 21:38:50,666 [SBC] INFO     - iniciando el sistema SBC
+2011-11-06 21:38:50,666 [MC ] INFO     - iniciando validacion de modulos
+2011-11-06 21:38:50,666 [MC ] DEBUG    - validando integridad de MIS
+2011-11-06 21:38:50,666 [MIS] DEBUG    - la base de datos existe, en: /Users/Fernando/Documents/Workspace/SBC/sbc.db
+2011-11-06 21:38:50,667 [MIS] DEBUG    - la tabla configuracion parece bien
+2011-11-06 21:38:50,667 [MIS] DEBUG    - la tabla servidor parece bien
+2011-11-06 21:38:50,667 [MIS] DEBUG    - la tabla cargas parece bien
+2011-11-06 21:38:50,668 [MC ] DEBUG    - validando integridad de MII
+2011-11-06 21:38:50,668 [MC ] DEBUG    - validando integridad de ME
+2011-11-06 21:38:50,668 [MC ] DEBUG    - validando integridad de MIW
+2011-11-06 21:38:50,668 [MC ] DEBUG    - validando integridad de MA
+2011-11-06 21:38:50,669 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-06 21:38:50,673 [MIS] INFO     - iniciando modulo
+2011-11-06 21:38:50,673 [ME ] INFO     - iniciando modulo
+2011-11-06 21:38:50,674 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-06 21:38:50,674 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:38:50,675 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:38:50,675 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:38:50,676 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:38:50,676 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:38:50,806 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:38:50,814 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626801.64     
+2011-11-06 21:38:50,815 [MIS] DEBUG    - LAV: 1320626801.64     
+2011-11-06 21:38:50,815 [MIS] DEBUG    - HORA: 1320626801.64
+2011-11-06 21:38:50,815 [MIS] DEBUG    - CPU: 
+2011-11-06 21:38:50,815 [MIS] DEBUG    - MEM: 
+2011-11-06 21:38:50,816 [MIS] DEBUG    - IO: 
+2011-11-06 21:38:50,816 [MIS] DEBUG    - NET: 
+2011-11-06 21:38:50,816 [MIS] DEBUG    - HDD: 
+2011-11-06 21:38:50,816 [MIS] DEBUG    - agregando LAV de cliente
+2011-11-06 21:38:50,825 [MIS] ERROR    - no se puede agregar LAV de cliente: 1 values for 4 columns
+2011-11-06 21:38:50,825 [MIS] ERROR    - 1 values for 4 columns
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 116, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (serverid, hora, cpu, mem) VALUES (?);', (SERVERID))
+OperationalError: 1 values for 4 columns
+2011-11-06 21:39:20,807 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-06 21:39:20,808 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-06 21:39:20,809 [ME ] INFO     - obtenidos 1 servidores activos
+2011-11-06 21:39:20,809 [MIS] DEBUG    - consultando listado de servidores
+2011-11-06 21:39:20,810 [ME ] DEBUG    - obteniendo estado de servidor 192.168.0.2:54321
+2011-11-06 21:39:20,810 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-06 21:39:20,818 [ME ] DEBUG    - se obtuvo LAV desde 192.168.0.2:54321: 1320626851.68     
+2011-11-06 21:39:20,819 [MIS] DEBUG    - LAV: 1320626851.68     
+2011-11-06 21:39:20,819 [MIS] DEBUG    - HORA: 1320626851.68
+2011-11-06 21:39:20,819 [MIS] DEBUG    - CPU: 
+2011-11-06 21:39:20,820 [MIS] DEBUG    - MEM: 
+2011-11-06 21:39:20,820 [MIS] DEBUG    - IO: 
+2011-11-06 21:39:20,820 [MIS] DEBUG    - NET: 
+2011-11-06 21:39:20,820 [MIS] DEBUG    - HDD: 
+2011-11-06 21:39:20,820 [MIS] DEBUG    - agregando LAV de cliente
+2011-11-06 21:39:20,821 [MIS] ERROR    - no se puede agregar LAV de cliente: 1 values for 4 columns
+2011-11-06 21:39:20,821 [MIS] ERROR    - 1 values for 4 columns
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MIS.py", line 116, in AgregaLAV
+    cursor.execute('INSERT INTO cargas (serverid, hora, cpu, mem) VALUES (?);', (SERVERID))
+OperationalError: 1 values for 4 columns
