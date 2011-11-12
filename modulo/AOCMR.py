@@ -10,7 +10,7 @@ from sys import exit
 from time import sleep, time
 from Logger import handler
 try: import psutil #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-psutil necesario para correr el modulo'); exit(1)
+except: handler.log.critical('no se encuentra python-psutil necesario para correr el modulo AOCMR'); exit(1)
 
 # definiciones
 SLEEPTIME = 10

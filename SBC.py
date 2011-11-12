@@ -11,10 +11,10 @@ Sistema Balanceador de Carga
 # importaciones
 from sys import exit, argv
 from threading import Thread;
-from modulo import MC, MIS, ME
+from modulo import MC, MIS, MII, ME
 from Logger import handler;
 try: import argparse #@UnresolvedImport
-except: handler.log.critical('no se encuentra python::argparse necesario para correr el modulo'); exit(1)
+except: handler.log.critical('no se encuentra python::argparse necesario para correr el SBC'); exit(1)
 
 # definiciones
 
@@ -35,6 +35,13 @@ class ThreadxME(Thread):
 
         def run(self):
             ME.run()
+
+class ThreadxMII(Thread):
+        def __init__(self):
+            Thread.__init__(self)
+
+        def run(self):
+            MII.run()
 
 class ThreadxObtieneEstadoServidores(Thread):
         def __init__(self):
@@ -69,7 +76,14 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al cargar el modulo MIS')
         handler.log.exception(message)
         exit(1);
-    
+
+    # ejecutando el modulo ME como hilo
+    try: tMII = ThreadxMII().start()
+    except Exception as message:
+        handler.log.error('ha ocurrido un error al cargar el modulo MII')
+        handler.log.exception(message)
+        exit(1);
+            
     # ejecutando el modulo ME como hilo
     try: tME = ThreadxME().start()
     except Exception as message:
