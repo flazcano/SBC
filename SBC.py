@@ -11,7 +11,7 @@ Sistema Balanceador de Carga
 # importaciones
 from sys import exit, argv
 from threading import Thread;
-from modulo import MC, MIS, MII, ME
+from modulo import MC, MIS, MII, ME, MA
 from Logger import handler;
 try: import argparse #@UnresolvedImport
 except: handler.log.critical('no se encuentra python::argparse necesario para correr el SBC'); exit(1)
@@ -99,3 +99,5 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al obtener el estadode los servidores')
         handler.log.exception(message)
         exit(1);
+        
+    MA.EnviaJabber("flazcano@paperlessla.com")
