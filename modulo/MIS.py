@@ -7,18 +7,18 @@ Modulo de Integracion para SQLite3 (MIS)
 """
 
 # importaciones
-import sqlite3
+from sqlite3 import connect  #@UnusedImport
 from exceptions import Exception
 from time import time
-from sys import exit
 from os import path
 from Logger import handler
+from sys import exit
 
 # definiciones
 SBCDB = "sbc.db"
 SBCDUMP = "sbc.sql"
-
-conexion=sqlite3.connect(SBCDB, isolation_level=None)
+NUMEROINTENTOS = 3
+# conexion = connect(SBCDB, isolation_level=None)
 
 # clases
 
@@ -28,7 +28,7 @@ def CreaEsquema():
         handler.log.info('creando esquema en ' + SBCDB)
         fileSBCDUMP = open(SBCDUMP)
         ESQUEMA = fileSBCDUMP.read()
-        conexion=sqlite3.connect(SBCDB, isolation_level=None)
+        conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         for sql in ESQUEMA.split(";"):
             cursor.execute(sql)
@@ -42,21 +42,32 @@ def CreaEsquema():
         if conexion: conexion.close()
 
         
-def ConsultaListaServidores():
+def ConsultaServidoresActivos():
     try:
-        handler.log.debug('consultando listado de servidores')
-        conexion=sqlite3.connect(SBCDB, isolation_level=None)
+        handler.log.debug('consultando servidores activos')
+        conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         servidores = cursor.execute('SELECT fqdn, puerto FROM servidor WHERE activo = "TRUE";')
         return servidores
     except Exception as message:
-        handler.log.error('no se puede obtener listado de servidores activos: %s', message)
+        handler.log.error('no se puede obtener servidores activos: %s', message)
         exit(1)
 
-def ConsultaTotalServidores():
+def ConsultaServidoresInactivos():
+    try:
+        handler.log.debug('consultando servidores inactivos')
+        conexion = connect(SBCDB, isolation_level=None)
+        cursor=conexion.cursor()
+        servidores = cursor.execute('SELECT fqdn, puerto FROM servidor WHERE activo = "FALSE";')
+        return servidores
+    except Exception as message:
+        handler.log.error('no se puede obtener servidores inactivos: %s', message)
+        exit(1)
+
+def ConsultaTotalServidoresActivos():
     try:
         handler.log.debug('consultando total de servidores activos')
-        conexion=sqlite3.connect(SBCDB, isolation_level=None)
+        conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         total = cursor.execute('SELECT count(id) FROM servidor WHERE activo = "TRUE";')
         return total
@@ -64,30 +75,54 @@ def ConsultaTotalServidores():
         handler.log.error('no se puede obtener total de servidores activos: %s', message)
         exit(1)
 
-def AgregaServidor(fqdn, puerto):
+def ConsultaTotalServidoresInactivos():
     try:
-        handler.log.debug('agregando servidor: ' + fqdn + ':' + str(puerto))
-        conexion=sqlite3.connect(SBCDB, isolation_level=None)
+        handler.log.debug('consultando total de servidores inactivos')
+        conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        PUERTO = cursor.execute('SELECT puerto FROM servidor WHERE fqdn = ?;', ([fqdn])).fetchall()
-        modificado = time()
+        total = cursor.execute('SELECT count(id) FROM servidor WHERE activo = "FALSE";')
+        return total
+    except Exception as message:
+        handler.log.error('no se puede obtener total de servidores inactivos: %s', message)
+        exit(1)
+
+def AgregaServidor(FQDN, PUERTO):
+    try:
+        handler.log.debug('agregando servidor: ' + FQDN + ':' + str(PUERTO))
+        conexion = connect(SBCDB, isolation_level=None)
+        cursor=conexion.cursor()
+        PUERTO = cursor.execute('SELECT puerto FROM servidor WHERE fqdn = ?;', ([FQDN])).fetchall()
+        MODIFICADO = time()
         # si el servidor ya existe en la base de datos
         if PUERTO:
             # pero tiene distinto puerto al registrado
-            if puerto is not str(PUERTO[0][0]):
-                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTO[0][0])+ ' a ' + puerto)
-                cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (puerto, fqdn))
-                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (modificado, fqdn))
+            if PUERTO is not str(PUERTO[0][0]):
+                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTO[0][0]) + ' a ' + PUERTO)
+                cursor.execute('UPDATE servidor SET puerto = ? WHERE fqdn = ?;', (PUERTO, FQDN))
+                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
+            cursor.execute('UPDATE servidor SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
         # si el servidor no existe
         else:
-            handler.log.debug('agregando servidor nuevo: ' + fqdn + ':' + puerto)
-            cursor.execute('INSERT INTO servidor (fqdn, puerto, activo, modificado) VALUES (?, ?, ?, ?);', (fqdn, puerto, 'TRUE', modificado))
+            handler.log.debug('agregando servidor nuevo: ' + FQDN + ':' + PUERTO)
+            cursor.execute('INSERT INTO servidor (fqdn, puerto, activo, modificado) VALUES (?, ?, ?, ?);', (FQDN, PUERTO, 'TRUE', MODIFICADO))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
         exit(1)
 
-def AgregaLAV(fqdn, LAV):
+def ServidorVuelveActivo(FQDN, PUERTO):
+    try:
+        handler.log.debug('servidor vuelve a actividad: ' + FQDN + ':' + str(PUERTO))
+        conexion = connect(SBCDB, isolation_level=None)
+        cursor=conexion.cursor()
+        cursor.execute('UPDATE servidor SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
+    except Exception as message:
+        handler.log.error('no se puede agregar servidor: %s', message)
+        handler.log.exception(message)
+        exit(1)
+
+
+def AgregaLAV(FQDN, LAV):
     try:
         miLAV = LAV.split(" "); handler.log.debug('LAV: ' + LAV)
         
@@ -131,16 +166,40 @@ def AgregaLAV(fqdn, LAV):
         hdd_free = None
         hdd_percent = None
         
-        handler.log.debug('agregando LAV de ' + fqdn)
-        conexion=sqlite3.connect(SBCDB, isolation_level=None)
+        handler.log.debug('agregando LAV de ' + FQDN)
+        conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        ID = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([fqdn])).fetchall()
+        ID = cursor.execute('SELECT id FROM servidor WHERE fqdn = ?;', ([FQDN])).fetchall()
         servidorid = ID[0][0]
         cursor.execute('INSERT INTO cargas (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);', 
                         (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
     except Exception as message:
         handler.log.error('no se puede agregar LAV de cliente: %s', message)
         handler.log.exception(message)
+
+def ServidorConProblemas(FQDN, PUERTO):
+    try:
+        handler.log.debug('servidor con problemas: ' + FQDN + ':' + str(PUERTO))
+        conexion = connect(SBCDB, isolation_level=None)
+        cursor=conexion.cursor()
+        INTENTO = cursor.execute('SELECT intento FROM servidor WHERE fqdn = ?;', ([FQDN])).fetchall()
+        MODIFICADO = time()
+        if INTENTO:
+            # si se ha intentado menos de NUMEROINTENTOS veces consultar el servidor
+            if INTENTO < NUMEROINTENTOS:
+                handler.log.debug('actualizando intentos con problemas de servidor a ' + (INTENTO + 1))
+                cursor.execute('UPDATE servidor SET intento = ? WHERE fqdn = ?;', ((INTENTO + 1), FQDN))
+                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
+            # si se ha intentado menos de NUMEROINTENTOS veces consultar el servidor
+            else:
+                handler.log.debug('actualizando a inactivo estado de servidor')
+                cursor.execute('UPDATE servidor SET activo = ? WHERE fqdn = ?;', ('FALSE', FQDN))
+                cursor.execute('UPDATE servidor SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
+    except Exception as message:
+        handler.log.error('no se puede modificar estado de servidor: %s', message)
+        handler.log.exception(message)
+        exit(1)
+
 
 def Valida():
     try:
@@ -149,7 +208,7 @@ def Valida():
             raise ValueError("no existe la BD en " + path.abspath(SBCDB))
         
         # se conecta a la db
-        conexion=sqlite3.connect(SBCDB, isolation_level=None)
+        conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         
         # comprobando tabla configuracion
@@ -169,6 +228,20 @@ def Valida():
         # comprobando tabla cargas
         tabla = 'cargas'
         cont = cursor.execute('pragma table_info(cargas);').fetchall()
+        if cont: handler.log.debug('la tabla %s parece bien', tabla)
+        else:
+            raise ValueError("no existe la tabla " + tabla)
+        
+        # comprobando tabla operador
+        tabla = 'operador'
+        cont = cursor.execute('pragma table_info(operador);').fetchall()
+        if cont: handler.log.debug('la tabla %s parece bien', tabla)
+        else:
+            raise ValueError("no existe la tabla " + tabla)
+        
+        # comprobando tabla alerta
+        tabla = 'alerta'
+        cont = cursor.execute('pragma table_info(alerta);').fetchall()
         if cont: handler.log.debug('la tabla %s parece bien', tabla)
         else:
             raise ValueError("no existe la tabla " + tabla)

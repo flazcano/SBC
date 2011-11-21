@@ -7,13 +7,11 @@ Modulo de Alertas (MA)
 '''
 
 # importaciones
-import smtplib
+from smtplib import SMTP
 from Logger import handler
 from email import Utils
 from email.mime.multipart import MIMEMultipart #@UnresolvedImport
 from email.mime.text import MIMEText #@UnresolvedImport
-#try: from google.appengine.api import xmpp #@UnresolvedImport
-#except: handler.log.critical('no se encuentra google-api necesario para correr el modulo MII'); exit(1)
 try: import xmpp #@UnresolvedImport
 except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MII'); exit(1)
 
@@ -36,7 +34,7 @@ XMPPPASS = 'nirvana1234'
 def EnviaCorreo(TOADDRESS):
     handler.log.error('enviando alerta por correo a ' + TOADDRESS)
     try:
-        mailServer = smtplib.SMTP(SMTPHOST, SMTPPORT)
+        mailServer = SMTP(SMTPHOST, SMTPPORT)
         mailServer.set_debuglevel(SMTPDEBUGLEVEL)
         mailServer.ehlo()
         mailServer.starttls()
@@ -83,21 +81,6 @@ def EnviaCorreo(TOADDRESS):
         handler.log.exception(message)
     finally:
         mailServer.close()
-
-def EnviaGTalk(TOGTALKID):
-    handler.log.error('enviando alerta por GTalk a ' + TOGTALKID)
-    try:
-        chat_message_sent = False
-        if xmpp.get_presence(TOGTALKID):
-            msg = "Someone has sent you a gift on Example.com. To view: http://example.com/gifts/"
-            status_code = xmpp.send_message(TOGTALKID, msg)
-            chat_message_sent = (status_code != xmpp.NO_ERROR)
-        if not chat_message_sent:
-            # Send an email message instead...
-            pass
-    except Exception as message:
-        handler.log.error('error al enviar alerta por correo')
-        handler.log.exception(message)
 
 def EnviaJabber(TOJID):
     handler.log.error('enviando alerta por Jabber a ' + TOJID)

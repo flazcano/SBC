@@ -1,0 +1,12 @@
+{% extends "skel/index.html" %}
+
+{% block title %}Lista de alertas{% endblock %}
+
+{% block content %}
+    <h1>Lista de Alertas</h1>
+    <ul>
+    {% for alerta in object_list %}
+        <li><a href="{{ alerta.id }}">{{ alerta.mensaje }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

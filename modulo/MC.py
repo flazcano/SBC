@@ -16,7 +16,7 @@ from sys import exit
 # clases
 
 # funciones
-def valida():
+def Valida():
     handler.log.info('iniciando validacion de modulos')
     
     try:
@@ -47,4 +47,4 @@ def valida():
 
 # main
 if __name__ == '__main__':
-    miValidacion = valida()
+    miValidacion = Valida()

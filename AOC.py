@@ -9,7 +9,7 @@ Agente de Obtencion de Cargas
 '''
 
 # importaciones
-import Config
+from Config import Load
 from threading import Thread
 from Logger import handler
 from modulo import AOCMR, AOCME
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     # cargando configuraciones del agente
     try:
         handler.log.info('cargando configuraciones')
-        cfg = Config.load(CONFIGFILE)
+        cfg = Load(CONFIGFILE)
         LOG = cfg["LOG"]
         HOST = cfg["HOST"]
         PORT = int(cfg["PORT"])
@@ -90,10 +90,9 @@ if __name__ == '__main__':
         exit(1);
 
     try:
-        AOCMR.ObtieneLAV()
+        AOCMR.ObtieneCarga()
     except Exception as message:
         handler.log.error('ha ocurrido un error al obtener la carga del sistema')
         handler.log.exception(message)
         exit(1);
         
-    

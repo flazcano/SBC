@@ -7,7 +7,8 @@ Modulo de Escucha y Obtencion para AOC (ME)
 """
 
 # importaciones
-import socket, select
+import socket
+from select import select
 from time import sleep
 from sys import exit, stdin
 from threading import Thread
@@ -16,7 +17,8 @@ from modulo import MIS
 
 # definiciones
 CLIENTTIMEOUT = 10
-SLEEPTIME = 30
+SLEEPSERVIDORESACTIVOS = 30
+SLEEPSERVIDORESINACTIVOS = 15
 HOST = "0.0.0.0"
 PORT = 12345
 
@@ -47,10 +49,10 @@ class Servidor():
 
     def run(self):
         self.open_socket()
-        input = [self.server,stdin] #@ReservedAssignment
+        input = [self.server, stdin] #@ReservedAssignment
         running = 1
         while running:
-            inputready, outputready, exceptready = select.select(input,[],[]) #@UnusedVariable
+            inputready, outputready, exceptready = select(input,[],[]) #@UnusedVariable
             for server in inputready:
                 if server == self.server:
                     # manejando el socket del servidor
@@ -101,7 +103,7 @@ class Cliente(Thread):
             if self.cliente:
                 self.cliente.close()
 
-class ThreadxLAV(Thread):
+class ThreadxCarga(Thread):
         def __init__(self, HOST, PORT):
             Thread.__init__(self)
             self.HOST = HOST
@@ -120,36 +122,82 @@ class ThreadxLAV(Thread):
             except Exception as message:
                 handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
                 # se comunica con MIS para informar el problema
-                
+                MIS.ServidorConProblemas(self.HOST, self.PORT)
+
+class ThreadxConexion(Thread):
+        def __init__(self, HOST, PORT):
+            Thread.__init__(self)
+            self.HOST = HOST
+            self.PORT = PORT
+
+        def run(self):
+            try:
+                clientcon = socket.socket()
+                clientcon.settimeout(CLIENTTIMEOUT)
+                clientcon.connect((self.HOST, self.PORT))
+                handler.log.debug('se pudo volver a conectar al servidor ' + str(self.HOST) + ':' +str(self.PORT))
+                # se comunica con MIS para agregar LAV
+                MIS.ServidorVuelveActivo(self.HOST, self.PORT)
+            except Exception as message:
+                handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
+                                
 # funciones
-def ObtieneEstadoServidor(HOST, PORT):
+def ObtieneCargaServidor(HOST, PORT):
     try:
-        handler.log.debug('obteniendo estado de servidor ' + HOST + ':' + str(PORT))
-        ThreadxLAV(HOST, PORT).start()
+        handler.log.debug('obteniendo carga de servidor ' + HOST + ':' + str(PORT))
+        ThreadxCarga(HOST, PORT).start()
     except Exception as message:
-        handler.log.debug('error al consultar estado del servidor')
+        handler.log.debug('error al consultar carga del servidor')
         handler.log.exception(message)
 
-def ObtieneEstadoServidores():
+def ObtieneConexionServidorInactivo(HOST, PORT):
+    try:
+        handler.log.debug('obteniendo carga de servidor ' + HOST + ':' + str(PORT))
+        ThreadxConexion(HOST, PORT).start()
+    except Exception as message:
+        handler.log.debug('error al consultar carga del servidor')
+        handler.log.exception(message)
+        
+def ObtieneEstadoServidoresActivos():
     obtieneEstado = 1
     while obtieneEstado:
         try:
             handler.log.info('iniciando obtencion de estado de servidores activos')
-            total = MIS.ConsultaTotalServidores()
+            total = MIS.ConsultaTotalServidoresActivos()
             for cantidad in total:
                 pass
             handler.log.info('obtenidos %i servidores activos', cantidad[0])
-            for AOC in MIS.ConsultaListaServidores():
+            for AOC in MIS.ConsultaServidoresActivos():
                 AOCHOST = AOC[0]
                 AOCPORT = AOC[1]
-                ObtieneEstadoServidor(AOCHOST, AOCPORT)
+                ObtieneCargaServidor(AOCHOST, AOCPORT)
         except Exception as message:
             handler.log.error('error al obtener el estado de los servidores activos')
             handler.log.exception(message)
         finally:
             handler.log.info('obtencion de estado de servidores activos finalizada')
-            sleep(SLEEPTIME)
+            sleep(SLEEPSERVIDORESACTIVOS)
 
+def ObtieneEstadoServidoresInactivos():
+    obtieneEstado = 1
+    while obtieneEstado:
+        try:
+            handler.log.info('iniciando obtencion de estado de servidores inactivos')
+            total = MIS.ConsultaTotalServidoresInactivos()
+            for cantidad in total:
+                pass
+            handler.log.info('obtenidos %i servidores inactivos', cantidad[0])
+            for AOC in MIS.ConsultaServidoresInactivos():
+                AOCHOST = AOC[0]
+                AOCPORT = AOC[1]
+                ObtieneConexionServidorInactivo(AOCHOST, AOCPORT)
+        except Exception as message:
+            handler.log.error('error al obtener el estado de los servidores inactivos')
+            handler.log.exception(message)
+        finally:
+            handler.log.info('obtencion de estado de servidores inactivos finalizada')
+            sleep(SLEEPSERVIDORESINACTIVOS)
+            
 def Valida():
     pass
     

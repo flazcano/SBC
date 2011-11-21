@@ -11,47 +11,46 @@ Sistema Balanceador de Carga
 # importaciones
 from sys import exit, argv
 from threading import Thread;
-from modulo import MC, MIS, MII, ME, MA
+from modulo import MC, MIS, MII, ME
 from Logger import handler;
-try: import argparse #@UnresolvedImport
+try: from argparse import ArgumentParser #@UnresolvedImport
 except: handler.log.critical('no se encuentra python::argparse necesario para correr el SBC'); exit(1)
 
 # definiciones
 
 # clases
-def usage():
-    pass
-
 class ThreadxMIS(Thread):
         def __init__(self):
             Thread.__init__(self)
-
         def run(self):
             MIS.run()
 
 class ThreadxME(Thread):
         def __init__(self):
             Thread.__init__(self)
-
         def run(self):
             ME.run()
 
 class ThreadxMII(Thread):
         def __init__(self):
             Thread.__init__(self)
-
         def run(self):
             MII.run()
 
-class ThreadxObtieneEstadoServidores(Thread):
+class ThreadxObtieneEstadoServidoresActivos(Thread):
         def __init__(self):
             Thread.__init__(self)
-
         def run(self):
-            ME.ObtieneEstadoServidores()
+            ME.ObtieneEstadoServidoresActivos()
 
+class ThreadxObtieneEstadoServidoresInactivos(Thread):
+        def __init__(self):
+            Thread.__init__(self)
+        def run(self):
+            ME.ObtieneEstadoServidoresInactivos()
+            
 # funciones
-def valida():
+def Valida():
     pass
 
 # main
@@ -60,12 +59,12 @@ if __name__ == '__main__':
     
     # comprobando los argumentos pasados desde la linea de comando
     if argv[1:]:
-        parser = argparse.ArgumentParser(description='Sistema Balanceador de Carga')
+        parser = ArgumentParser(description='Sistema Balanceador de Carga')
         parser.add_argument('-c', '--createdb', action='store_true', help='crea el esquema de la base de datos del SBC', type=MIS.CreaEsquema())
         args = parser.parse_args()
         
     # ejecutando la funcion de validacion de modulos desde MC 
-    try: MC.valida()
+    try: MC.Valida()
     except Exception as message:
         handler.log.error('ha ocurrido un error al validar los modulos del sistema: %s', message)
         exit(1)
@@ -93,11 +92,17 @@ if __name__ == '__main__':
         
     handler.log.info('el sistema se ha iniciado correctamente')
  
-    # ejecutando el proceso de Obtencion de Estado de los Servidores como hilo
-    try: tObtieneEstadoServidores = ThreadxObtieneEstadoServidores().start()
+    # ejecutando el proceso de obtencion de estado de los servidores activos como hilo
+    try: tObtieneEstadoServidoresActivos = ThreadxObtieneEstadoServidoresActivos().start()
     except Exception as message:
-        handler.log.error('ha ocurrido un error al obtener el estadode los servidores')
+        handler.log.error('ha ocurrido un error al obtener el estado de los servidores activos')
         handler.log.exception(message)
         exit(1);
         
-    MA.EnviaJabber("flazcano@paperlessla.com")
+    # ejecutando el proceso de obtencion de estado de los servidores inactivos como hilo
+    try: tObtieneEstadoServidoresInactivos = ThreadxObtieneEstadoServidoresInactivos().start()
+    except Exception as message:
+        handler.log.error('ha ocurrido un error al obtener el estado de los servidores inactivos')
+        handler.log.exception(message)
+        exit(1);
+    

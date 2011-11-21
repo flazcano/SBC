@@ -68,12 +68,12 @@ def getHDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con 
     except:
         return ''
 
-def getLAV():
+def getCarga():
     miLAV = str(HORA) + ' '  + str(CPU) + ' ' + str(MEM) + ' ' + str(IO) + ' ' + str(NET) + ' ' + str(HDD)
     handler.log.debug('LAV: ' + miLAV)
     return miLAV
 
-def ObtieneLAV():
+def ObtieneCarga():
     obtieneLAV = 1
     while obtieneLAV:
         try:
@@ -98,9 +98,9 @@ def ObtieneLAV():
             
             global HORA; HORA = time()
             
-            handler.log.debug('LAV: %s', getLAV())
+            handler.log.debug('LAV: %s', getCarga())
         except Exception as message:
-            handler.log.error('error al obtener LAV: %s', message)
+            handler.log.error('error al obtener carga: %s', message)
             handler.log.exception(message)
         finally:
             sleep(SLEEPTIME)
@@ -117,9 +117,9 @@ def run():
         
         global HORA; HORA = time()
     except Exception as message:
-        handler.log.error('error al obtener LAV: %s', message)
+        handler.log.error('error al obtener carga: %s', message)
         exit(1)
 
 # main
 if __name__ == '__main__':
-    getLAV()
+    getCarga()
