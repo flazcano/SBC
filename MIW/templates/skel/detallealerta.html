@@ -1,0 +1,21 @@
+{% extends "skel/index.html" %}
+
+{% block title %}Alerta{% endblock %}
+
+{% block content %}
+    <h1>Detalle de Alerta</h1>
+
+    <div class="alerta">
+        <div class="title">
+            {{ alerta.tipo }}
+            -
+            {{ alerta.enviado }}
+        </div>
+        <div class="posted">
+            Posted: {{ alerta.enviado|date:"d-M-Y" }}
+        </div>
+        <div class="description">
+            {{ alerta.mensaje }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,552 @@
+2011-11-24 22:45:07,597 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:46:10,581 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:49:01,407 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:50:15,217 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:50:15,426 [MA ] CRITICAL - no se encuentra python-email necesario para correr el modulo MA
+2011-11-24 22:50:15,459 [MA ] CRITICAL - no se encuentra python-smtplib necesario para correr el modulo MA
+2011-11-24 22:50:15,496 [MA ] CRITICAL - no se encuentra python-xmpp necesario para correr el modulo MA
+2011-11-24 22:50:15,722 [SBC] INFO     - iniciando el sistema SBC
+2011-11-24 22:50:15,723 [MC ] INFO     - iniciando validacion de modulos
+2011-11-24 22:50:15,723 [MC ] DEBUG    - validando integridad de MIS
+2011-11-24 22:50:15,724 [MIS] DEBUG    - la tabla Web_configuracion parece bien
+2011-11-24 22:50:15,724 [MIS] DEBUG    - la tabla Web_servidor parece bien
+2011-11-24 22:50:15,724 [MIS] DEBUG    - la tabla Web_cargas parece bien
+2011-11-24 22:50:15,724 [MIS] DEBUG    - la tabla Web_operador parece bien
+2011-11-24 22:50:15,725 [MIS] DEBUG    - la tabla Web_alerta parece bien
+2011-11-24 22:50:15,725 [MC ] DEBUG    - validando integridad de MII
+2011-11-24 22:50:15,725 [MII] INFO     - limpiando reglas: PREROUTING
+2011-11-24 22:50:15,725 [MII] ERROR    - error al limpiar las reglas
+2011-11-24 22:50:15,725 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 112, in LimpiaReglas
+    chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
+NameError: global name 'iptc' is not defined
+2011-11-24 22:50:15,725 [MII] INFO     - aplicando regla por defecto
+2011-11-24 22:50:15,726 [MII] INFO     - creando regla: 0.0.0.0/0.0.0.0:80 -> 192.168.0.6:80 tcp
+2011-11-24 22:50:15,726 [MII] ERROR    - no se pudo crear la regla
+2011-11-24 22:50:15,726 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 28, in CreaRegla
+    rule = iptc.Rule()
+NameError: global name 'iptc' is not defined
+2011-11-24 22:50:15,726 [MC ] DEBUG    - validando integridad de ME
+2011-11-24 22:50:15,726 [MC ] DEBUG    - validando integridad de MIW
+2011-11-24 22:50:15,726 [MC ] DEBUG    - validando integridad de MA
+2011-11-24 22:50:15,726 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-24 22:50:15,727 [MIS] INFO     - iniciando modulo
+2011-11-24 22:50:15,727 [MII] INFO     - iniciando modulo
+2011-11-24 22:50:15,728 [ME ] INFO     - iniciando modulo
+2011-11-24 22:50:15,728 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-24 22:50:15,728 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:50:15,728 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:50:15,729 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:50:15,729 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:50:15,741 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:50:15,741 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:50:15,741 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:50:15,741 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:50:15,742 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:50:15,742 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:50:30,743 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:50:30,744 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:50:30,746 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:50:30,747 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:50:30,748 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:50:45,743 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:50:45,744 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:50:45,746 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:50:45,746 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:50:45,747 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:50:45,748 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:50:45,749 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:50:45,750 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:50:45,750 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:50:45,751 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:51:00,752 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:51:00,753 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:51:00,754 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:51:00,754 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:51:00,755 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:51:15,749 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:51:15,750 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:51:15,751 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:51:15,752 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:51:15,753 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:51:15,756 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:51:15,756 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:51:15,757 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:51:15,757 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:51:15,759 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:51:30,760 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:51:30,761 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:51:30,763 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:51:30,763 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:51:30,764 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:51:45,754 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:51:45,754 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:51:45,755 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:51:45,756 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:51:45,756 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:51:45,765 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:51:45,765 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:51:45,766 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:51:45,767 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:51:45,767 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:52:00,769 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:52:00,795 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:52:00,796 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:52:00,796 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:52:00,797 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:52:15,758 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:52:15,758 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:52:15,760 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:52:15,761 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:52:15,762 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:52:15,798 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:52:15,798 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:52:15,799 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:52:15,800 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:52:15,801 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:52:30,802 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:52:30,802 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:52:30,803 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:52:30,804 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:52:30,805 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:52:45,763 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:52:45,764 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:52:45,765 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:52:45,766 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:52:45,767 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:52:45,805 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:52:45,806 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:52:45,807 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:52:45,807 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:52:45,808 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:53:00,810 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:53:00,810 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:53:00,811 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:53:00,812 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:53:00,813 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:53:15,768 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:53:15,800 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:53:15,801 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:53:15,801 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:53:15,802 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:53:15,814 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:53:15,814 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:53:15,815 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:53:15,816 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:53:15,817 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:54:29,876 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:54:30,207 [MA ] CRITICAL - no se encuentra python-email necesario para correr el modulo MA
+2011-11-24 22:54:30,231 [MA ] CRITICAL - no se encuentra python-smtplib necesario para correr el modulo MA
+2011-11-24 22:54:30,232 [MA ] CRITICAL - no se encuentra python-xmpp necesario para correr el modulo MA
+2011-11-24 22:54:30,415 [SBC] INFO     - iniciando el sistema SBC
+2011-11-24 22:54:30,415 [MC ] INFO     - iniciando validacion de modulos
+2011-11-24 22:54:30,415 [MC ] DEBUG    - validando integridad de MIS
+2011-11-24 22:54:30,416 [MIS] DEBUG    - la tabla Web_configuracion parece bien
+2011-11-24 22:54:30,416 [MIS] DEBUG    - la tabla Web_servidor parece bien
+2011-11-24 22:54:30,417 [MIS] DEBUG    - la tabla Web_cargas parece bien
+2011-11-24 22:54:30,417 [MIS] DEBUG    - la tabla Web_operador parece bien
+2011-11-24 22:54:30,417 [MIS] DEBUG    - la tabla Web_alerta parece bien
+2011-11-24 22:54:30,417 [MC ] DEBUG    - validando integridad de MII
+2011-11-24 22:54:30,417 [MII] INFO     - limpiando reglas: PREROUTING
+2011-11-24 22:54:30,418 [MII] ERROR    - error al limpiar las reglas
+2011-11-24 22:54:30,418 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 112, in LimpiaReglas
+    chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
+NameError: global name 'iptc' is not defined
+2011-11-24 22:54:30,418 [MII] INFO     - aplicando regla por defecto
+2011-11-24 22:54:30,418 [MII] INFO     - creando regla: 0.0.0.0/0.0.0.0:80 -> 192.168.0.6:80 tcp
+2011-11-24 22:54:30,418 [MII] ERROR    - no se pudo crear la regla
+2011-11-24 22:54:30,418 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 28, in CreaRegla
+    rule = iptc.Rule()
+NameError: global name 'iptc' is not defined
+2011-11-24 22:54:30,419 [MC ] DEBUG    - validando integridad de ME
+2011-11-24 22:54:30,419 [MC ] DEBUG    - validando integridad de MIW
+2011-11-24 22:54:30,419 [MC ] DEBUG    - validando integridad de MA
+2011-11-24 22:54:30,419 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-24 22:54:30,419 [MIS] INFO     - iniciando modulo
+2011-11-24 22:54:30,420 [MII] INFO     - iniciando modulo
+2011-11-24 22:54:30,420 [ME ] INFO     - iniciando modulo
+2011-11-24 22:54:30,420 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-24 22:54:30,421 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:54:30,421 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:54:30,421 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:54:30,421 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:54:30,422 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:54:30,422 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:54:30,423 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:54:30,423 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:54:30,424 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:54:30,424 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:54:45,425 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:54:45,455 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:54:45,457 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:54:45,458 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:54:45,459 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:55:00,425 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:55:00,426 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:55:00,428 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:55:00,428 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:55:00,429 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:55:00,460 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:55:00,460 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:55:00,462 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:55:00,462 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:55:00,463 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:55:15,464 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:55:15,465 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:55:15,466 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:55:15,466 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:55:15,467 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:55:41,258 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:55:41,600 [MA ] CRITICAL - no se encuentra python-email necesario para correr el modulo MA
+2011-11-24 22:55:41,623 [MA ] CRITICAL - no se encuentra python-smtplib necesario para correr el modulo MA
+2011-11-24 22:55:41,624 [MA ] CRITICAL - no se encuentra python-xmpp necesario para correr el modulo MA
+2011-11-24 22:55:41,863 [SBC] INFO     - iniciando el sistema SBC
+2011-11-24 22:55:41,864 [MC ] INFO     - iniciando validacion de modulos
+2011-11-24 22:55:41,864 [MC ] DEBUG    - validando integridad de MIS
+2011-11-24 22:55:41,865 [MIS] DEBUG    - la tabla Web_configuracion parece bien
+2011-11-24 22:55:41,865 [MIS] DEBUG    - la tabla Web_servidor parece bien
+2011-11-24 22:55:41,865 [MIS] DEBUG    - la tabla Web_cargas parece bien
+2011-11-24 22:55:41,865 [MIS] DEBUG    - la tabla Web_operador parece bien
+2011-11-24 22:55:41,866 [MIS] DEBUG    - la tabla Web_alerta parece bien
+2011-11-24 22:55:41,866 [MC ] DEBUG    - validando integridad de MII
+2011-11-24 22:55:41,866 [MII] INFO     - limpiando reglas: PREROUTING
+2011-11-24 22:55:41,866 [MII] ERROR    - error al limpiar las reglas
+2011-11-24 22:55:41,866 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 112, in LimpiaReglas
+    chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
+NameError: global name 'iptc' is not defined
+2011-11-24 22:55:41,867 [MII] INFO     - aplicando regla por defecto
+2011-11-24 22:55:41,867 [MII] INFO     - creando regla: 0.0.0.0/0.0.0.0:80 -> 192.168.0.6:80 tcp
+2011-11-24 22:55:41,867 [MII] ERROR    - no se pudo crear la regla
+2011-11-24 22:55:41,867 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 28, in CreaRegla
+    rule = iptc.Rule()
+NameError: global name 'iptc' is not defined
+2011-11-24 22:55:41,867 [MC ] DEBUG    - validando integridad de ME
+2011-11-24 22:55:41,867 [MC ] DEBUG    - validando integridad de MIW
+2011-11-24 22:55:41,867 [MC ] DEBUG    - validando integridad de MA
+2011-11-24 22:55:41,867 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-24 22:55:41,868 [MIS] INFO     - iniciando modulo
+2011-11-24 22:55:41,868 [MII] INFO     - iniciando modulo
+2011-11-24 22:55:41,869 [ME ] INFO     - iniciando modulo
+2011-11-24 22:55:41,869 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-24 22:55:41,869 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:55:41,869 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:55:41,870 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:55:41,870 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:55:41,870 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:55:41,871 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:55:41,871 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:55:41,871 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:55:41,872 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:55:42,152 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:55:42,153 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:55:52,153 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.6:54321: timed out
+2011-11-24 22:55:52,180 [MIS] DEBUG    - servidor con problemas: 192.168.0.6:54321
+2011-11-24 22:55:52,182 [MIS] DEBUG    - actualizando a inactivo estado de servidor
+2011-11-24 22:55:57,153 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:55:57,153 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:55:57,154 [ME ] INFO     - obtenidos 1 servidores inactivos
+2011-11-24 22:55:57,155 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:55:57,155 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:55:57,156 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:56:07,157 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.6:54321: timed out
+2011-11-24 22:56:12,154 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:56:12,154 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:56:12,155 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:56:12,155 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:56:12,156 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:56:12,157 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:56:12,157 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:56:12,158 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:56:12,158 [ME ] INFO     - obtenidos 1 servidores inactivos
+2011-11-24 22:56:12,159 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:56:12,159 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:56:12,160 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:56:31,042 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:56:31,418 [MA ] CRITICAL - no se encuentra python-email necesario para correr el modulo MA
+2011-11-24 22:56:31,448 [MA ] CRITICAL - no se encuentra python-smtplib necesario para correr el modulo MA
+2011-11-24 22:56:31,449 [MA ] CRITICAL - no se encuentra python-xmpp necesario para correr el modulo MA
+2011-11-24 22:56:31,692 [SBC] INFO     - iniciando el sistema SBC
+2011-11-24 22:56:31,692 [MC ] INFO     - iniciando validacion de modulos
+2011-11-24 22:56:31,693 [MC ] DEBUG    - validando integridad de MIS
+2011-11-24 22:56:31,694 [MIS] DEBUG    - la tabla Web_configuracion parece bien
+2011-11-24 22:56:31,694 [MIS] DEBUG    - la tabla Web_servidor parece bien
+2011-11-24 22:56:31,694 [MIS] DEBUG    - la tabla Web_cargas parece bien
+2011-11-24 22:56:31,694 [MIS] DEBUG    - la tabla Web_operador parece bien
+2011-11-24 22:56:31,695 [MIS] DEBUG    - la tabla Web_alerta parece bien
+2011-11-24 22:56:31,695 [MC ] DEBUG    - validando integridad de MII
+2011-11-24 22:56:31,695 [MII] INFO     - limpiando reglas: PREROUTING
+2011-11-24 22:56:31,695 [MII] ERROR    - error al limpiar las reglas
+2011-11-24 22:56:31,695 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 112, in LimpiaReglas
+    chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
+NameError: global name 'iptc' is not defined
+2011-11-24 22:56:31,695 [MII] INFO     - aplicando regla por defecto
+2011-11-24 22:56:31,696 [MII] INFO     - creando regla: 0.0.0.0/0.0.0.0:80 -> 192.168.0.6:80 tcp
+2011-11-24 22:56:31,696 [MII] ERROR    - no se pudo crear la regla
+2011-11-24 22:56:31,696 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 28, in CreaRegla
+    rule = iptc.Rule()
+NameError: global name 'iptc' is not defined
+2011-11-24 22:56:31,696 [MC ] DEBUG    - validando integridad de ME
+2011-11-24 22:56:31,696 [MC ] DEBUG    - validando integridad de MIW
+2011-11-24 22:56:31,696 [MC ] DEBUG    - validando integridad de MA
+2011-11-24 22:56:31,696 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-24 22:56:31,697 [MIS] INFO     - iniciando modulo
+2011-11-24 22:56:31,697 [MII] INFO     - iniciando modulo
+2011-11-24 22:56:31,698 [ME ] INFO     - iniciando modulo
+2011-11-24 22:56:31,698 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-24 22:56:31,698 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:56:31,698 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:56:31,699 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:56:31,699 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:56:31,699 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:56:31,700 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:56:31,700 [ME ] INFO     - obtenidos 1 servidores inactivos
+2011-11-24 22:56:31,700 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:56:31,701 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:56:31,708 [MIS] ERROR    - no se puede obtener servidores activos: no such column: TRUE
+2011-11-24 22:56:31,859 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:56:31,860 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:59:20,598 [MII] CRITICAL - no se encuentra python-iptc necesario para correr el modulo MII
+2011-11-24 22:59:21,035 [MA ] CRITICAL - no se encuentra python-email necesario para correr el modulo MA
+2011-11-24 22:59:21,066 [MA ] CRITICAL - no se encuentra python-smtplib necesario para correr el modulo MA
+2011-11-24 22:59:21,066 [MA ] CRITICAL - no se encuentra python-xmpp necesario para correr el modulo MA
+2011-11-24 22:59:21,388 [SBC] INFO     - iniciando el sistema SBC
+2011-11-24 22:59:21,388 [MC ] INFO     - iniciando validacion de modulos
+2011-11-24 22:59:21,388 [MC ] DEBUG    - validando integridad de MIS
+2011-11-24 22:59:21,389 [MIS] DEBUG    - la tabla Web_configuracion parece bien
+2011-11-24 22:59:21,390 [MIS] DEBUG    - la tabla Web_servidor parece bien
+2011-11-24 22:59:21,390 [MIS] DEBUG    - la tabla Web_cargas parece bien
+2011-11-24 22:59:21,390 [MIS] DEBUG    - la tabla Web_operador parece bien
+2011-11-24 22:59:21,390 [MIS] DEBUG    - la tabla Web_alerta parece bien
+2011-11-24 22:59:21,390 [MC ] DEBUG    - validando integridad de MII
+2011-11-24 22:59:21,391 [MII] INFO     - limpiando reglas: PREROUTING
+2011-11-24 22:59:21,391 [MII] ERROR    - error al limpiar las reglas
+2011-11-24 22:59:21,391 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 112, in LimpiaReglas
+    chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
+NameError: global name 'iptc' is not defined
+2011-11-24 22:59:21,391 [MII] INFO     - aplicando regla por defecto
+2011-11-24 22:59:21,391 [MII] INFO     - creando regla: 0.0.0.0/0.0.0.0:80 -> 192.168.0.6:80 tcp
+2011-11-24 22:59:21,391 [MII] ERROR    - no se pudo crear la regla
+2011-11-24 22:59:21,392 [MII] ERROR    - global name 'iptc' is not defined
+Traceback (most recent call last):
+  File "/Users/Fernando/Documents/Workspace/SBC/modulo/MII.py", line 28, in CreaRegla
+    rule = iptc.Rule()
+NameError: global name 'iptc' is not defined
+2011-11-24 22:59:21,392 [MC ] DEBUG    - validando integridad de ME
+2011-11-24 22:59:21,392 [MC ] DEBUG    - validando integridad de MIW
+2011-11-24 22:59:21,392 [MC ] DEBUG    - validando integridad de MA
+2011-11-24 22:59:21,392 [MC ] INFO     - validacion de los modulos finalizada
+2011-11-24 22:59:21,392 [MIS] INFO     - iniciando modulo
+2011-11-24 22:59:21,393 [MII] INFO     - iniciando modulo
+2011-11-24 22:59:21,393 [ME ] INFO     - iniciando modulo
+2011-11-24 22:59:21,393 [SBC] INFO     - el sistema se ha iniciado correctamente
+2011-11-24 22:59:21,394 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:59:21,394 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:59:21,394 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:59:21,395 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:59:21,396 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:59:21,396 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:59:21,396 [ME ] INFO     - obtenidos 1 servidores inactivos
+2011-11-24 22:59:21,396 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:59:21,397 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:59:21,397 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:59:21,622 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:59:31,622 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.6:54321: timed out
+2011-11-24 22:59:36,623 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:59:36,623 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:59:36,624 [ME ] INFO     - obtenidos 1 servidores inactivos
+2011-11-24 22:59:36,624 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:59:36,625 [ME ] DEBUG    - obteniendo carga de servidor 192.168.0.6:54321
+2011-11-24 22:59:36,625 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 22:59:46,626 [ME ] ERROR    - no se pudo conectar al servidor 192.168.0.6:54321: timed out
+2011-11-24 22:59:51,398 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 22:59:51,398 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 22:59:51,400 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 22:59:51,400 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 22:59:51,401 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 22:59:51,627 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 22:59:51,627 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 22:59:51,628 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 22:59:51,628 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 22:59:51,629 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:00:06,630 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:00:06,655 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:00:06,656 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:00:06,657 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:00:06,657 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:00:21,402 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:00:21,402 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:00:21,403 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:00:21,403 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:00:21,404 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:00:21,658 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:00:21,659 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:00:21,660 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:00:21,660 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:00:21,661 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:00:36,663 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:00:36,678 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:00:36,679 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:00:36,679 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:00:36,680 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:00:51,405 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:00:51,439 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:00:51,441 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:00:51,441 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:00:51,442 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:00:51,681 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:00:51,681 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:00:51,682 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:00:51,683 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:00:51,683 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:01:06,685 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:01:06,685 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:01:06,688 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:01:06,688 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:01:06,690 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:01:21,443 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:01:21,444 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:01:21,445 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:01:21,446 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:01:21,447 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:01:21,691 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:01:21,691 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:01:21,692 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:01:21,693 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:01:21,693 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:01:36,695 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:01:36,696 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:01:36,697 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:01:36,697 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:01:36,699 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:01:51,448 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:01:51,449 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:01:51,450 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:01:51,450 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:01:51,451 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:01:51,700 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:01:51,701 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:01:51,702 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:01:51,702 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:01:51,703 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:02:06,704 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:02:06,733 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:02:06,734 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:02:06,734 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:02:06,736 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:02:21,453 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:02:21,453 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:02:21,455 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:02:21,455 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:02:21,456 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:02:21,737 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:02:21,737 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:02:21,738 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:02:21,738 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:02:21,739 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:02:36,740 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:02:36,741 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:02:36,742 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:02:36,742 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:02:36,744 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:02:51,457 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:02:51,457 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:02:51,458 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:02:51,459 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:02:51,460 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:02:51,744 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:02:51,745 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:02:51,747 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:02:51,747 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:02:51,748 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:03:06,749 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:03:06,750 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:03:06,752 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:03:06,752 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:03:06,753 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:03:21,460 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:03:21,493 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:03:21,494 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:03:21,494 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:03:21,495 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:03:21,754 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:03:21,755 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:03:21,756 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:03:21,756 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:03:21,757 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:03:36,757 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:03:36,758 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:03:36,759 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:03:36,759 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:03:36,760 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:03:51,496 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:03:51,496 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:03:51,497 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:03:51,497 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:03:51,498 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:03:51,761 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:03:51,762 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:03:51,763 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:03:51,763 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:03:51,764 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:04:06,765 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:04:06,788 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:04:06,790 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:04:06,790 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:04:06,791 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:04:21,499 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:04:21,526 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:04:21,528 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:04:21,530 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:04:21,531 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:04:21,793 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:04:21,793 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:04:21,794 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:04:21,794 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:04:21,795 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:04:36,796 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:04:36,796 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:04:36,797 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:04:36,797 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:04:36,798 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:04:51,533 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:04:51,552 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:04:51,553 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:04:51,553 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:04:51,554 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:04:51,799 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:04:51,799 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:04:51,800 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:04:51,800 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:04:51,801 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:05:06,803 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:05:06,835 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:05:06,838 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:05:06,838 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:05:06,839 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada
+2011-11-24 23:05:21,555 [ME ] INFO     - iniciando obtencion de estado de servidores activos
+2011-11-24 23:05:21,555 [MIS] DEBUG    - consultando total de servidores activos
+2011-11-24 23:05:21,556 [ME ] INFO     - obtenidos 0 servidores activos
+2011-11-24 23:05:21,556 [MIS] DEBUG    - consultando servidores activos
+2011-11-24 23:05:21,557 [ME ] INFO     - obtencion de estado de servidores activos finalizada
+2011-11-24 23:05:21,840 [ME ] INFO     - iniciando obtencion de estado de servidores inactivos
+2011-11-24 23:05:21,841 [MIS] DEBUG    - consultando total de servidores inactivos
+2011-11-24 23:05:21,842 [ME ] INFO     - obtenidos 0 servidores inactivos
+2011-11-24 23:05:21,842 [MIS] DEBUG    - consultando servidores inactivos
+2011-11-24 23:05:21,844 [ME ] INFO     - obtencion de estado de servidores inactivos finalizada

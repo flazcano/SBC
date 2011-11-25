@@ -10,7 +10,7 @@ Modulo de Integracion para IPTables (MII)
 from Logger import handler
 from sys import exit
 try: import iptc #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-iptc necesario para correr el modulo MII'); exit(1)
+except: handler.log.critical('no se encuentra python-iptc necesario para correr el modulo MII'); pass
 
 # definiciones
 IFACE = "eth0"

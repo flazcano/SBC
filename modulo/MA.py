@@ -7,13 +7,16 @@ Modulo de Alertas (MA)
 '''
 
 # importaciones
-from smtplib import SMTP
 from Logger import handler
-from email import Utils
-from email.mime.multipart import MIMEMultipart #@UnresolvedImport
-from email.mime.text import MIMEText #@UnresolvedImport
+try:
+    from email import Utils
+    from email.mime.multipart import MIMEMultipart #@UnresolvedImport
+    from email.mime.text import MIMEText #@UnresolvedImport
+except: handler.log.critical('no se encuentra python-email necesario para correr el modulo MA'); pass
+try: from smtplib import SMTP
+except: handler.log.critical('no se encuentra python-smtplib necesario para correr el modulo MA'); pass
 try: import xmpp #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MII'); exit(1)
+except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MA'); pass
 
 # definiciones
 SMTPHOST = "smtp.gmail.com"

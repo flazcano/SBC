@@ -6,15 +6,22 @@ from Web.models import operador, alerta
 def index(request):
     return render_to_response('skel/index.html')
 
-def alertas(request):
-    object_list = alerta.objects.order_by('-enviado')[:10]
-    return render_to_response('skel/alerta_list.html',
-                              {'object_list': object_list})
-
-def detail(request, object_id):
-    alerta = get_object_or_404(alerta, pk=alerta_id)
-    return render_to_response('skel/alerta_detail.html',
-                              {'object': alerta})
-
 def about(request):
     return HttpResponse("About")
+
+def alertas(request):
+    listadealertas = alerta.objects.all()
+    return render_to_response('skel/alertas.html', {'alertas': listadealertas})
+
+def detallealerta(request, id):
+    unaalerta = get_object_or_404(alerta, pk=id)
+    return render_to_response('skel/detallealerta.html', {'alerta': unaalerta})
+
+def servidores(request):
+    listadeservidores = sbc.alerta.objects.all()
+    return render_to_response('skel/alertas.html', {'alertas': listadealertas})
+
+
+def detallealertasoperador(request, opid):
+    alertas = get_object_or_404(alerta, opid)
+    return render_to_response('skel/alertas_operador.html', {'object': alertas})
