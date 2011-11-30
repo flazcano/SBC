@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "manage.py", line 14, in <module>
+    execute_manager(settings)
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/core/management/__init__.py", line 438, in execute_manager
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/core/management/__init__.py", line 379, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/core/management/__init__.py", line 261, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/core/management/__init__.py", line 67, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/core/management/commands/runserver.py", line 8, in <module>
+    from django.core.handlers.wsgi import WSGIHandler
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 10, in <module>
+    from django import http
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/http/__init__.py", line 122, in <module>
+    from django.utils.http import cookie_date
+  File "/Library/Python/2.7/site-packages/Django-1.3.1-py2.7.egg/django/utils/http.py", line 7, in <module>
+    from email.Utils import formatdate
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/email/__init__.py", line 79, in __getattr__
+    __import__(self.__name__)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/email/utils.py", line 27, in <module>
+    import random
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/random.py", line 45, in <module>
+    from math import log as _log, exp as _exp, pi as _pi, e as _e, ceil as _ceil
+ImportError: dlopen(/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/lib-dynload/math.so, 2): Symbol not found: __PyLong_AsScaledDouble
+  Referenced from: /System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/lib-dynload/math.so
+  Expected in: flat namespace
+ in /System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/lib-dynload/math.so

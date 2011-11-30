@@ -2,24 +2,24 @@ from django.db import models
 
 class configuracion(models.Model):
     agente              = models.CharField(max_length=30, null=False, blank=False)
-    clave               = models.CharField(max_length=30, null=False, blank=False)
+    clave               = models.CharField(max_length=30, null=False, blank=False, unique=True)
     valor               = models.CharField(max_length=30, null=False, blank=False)
     modificado          = models.CharField(max_length=30, null=False, blank=False)
     defvalor            = models.CharField(max_length=30, null=False, blank=False)
     prevalor            = models.CharField(max_length=30, null=False, blank=False)
 
     def __str__(self):
-        pass
+        return "%s, %s, %s, %s" % (self.agente, self.clave, self.valor, self.modificado)
 
 class servidor(models.Model):
-    fqdn                = models.CharField(max_length=30, null=False, blank=False)
+    fqdn                = models.CharField(max_length=30, null=False, blank=False, unique=True)
     puerto              = models.IntegerField(null=False, default=54321)
     activo              = models.BooleanField(null=False, blank=False, default=True)
     modificado          = models.CharField(max_length=30, null=False, blank=False)
     intento             = models.IntegerField(null=False, default=0)
 
     def __str__(self):
-        pass
+        return "%d, %s, %d, %s, %s" % (self.id, self.fqdn, self.puerto, self.activo, self.modificado)
 
 class cargas(models.Model):
     servidorid          = models.ForeignKey(servidor)
@@ -47,16 +47,16 @@ class cargas(models.Model):
     hdd_percent         = models.CharField(max_length=30, null=False, blank=False)
 
     def __str__(self):
-        pass
+        return "%d, %s, %f, %s" % (self.servidorid, self.puerto, self.cpu_total, self.cpu_cores)
 
 class operador(models.Model):
-    nombre              = models.CharField(max_length=30, null=False, blank=False)
+    nombre              = models.CharField(max_length=30, null=False, blank=False, unique=True)
     clave               = models.CharField(max_length=10, null=False, blank=False)
     correo              = models.CharField(max_length=20, null=False, blank=False)
     jid                 = models.CharField(max_length=20, null=False, blank=False)
 
     def __str__(self):
-        return "%s, %s, %s, %s, %s" % (self.id, self.nombre, self.clave, self.correo, self.jid)
+        return "%d, %s, %s, %s, %s" % (self.id, self.time_unix, self.clave, self.correo, self.jid)
 
 class alerta(models.Model):
     operadorid          = models.ForeignKey(operador)
@@ -66,8 +66,8 @@ class alerta(models.Model):
     enviado             = models.DateField()
 
     def __str__(self):
-        return "%s, %s, %s, %s" % (self.tipo, self.nivel, self.mensaje, self.enviado)
+        return "%d, %s, %s, %s, %s" % (self.operadorid, self.tipo, self.nivel, self.mensaje, self.enviado)
 
     def getOpEn(self):
-        return "%s %s" % (self.operadorid, self.enviado)
+        return "%d, %s" % (self.operadorid, self.enviado)
 

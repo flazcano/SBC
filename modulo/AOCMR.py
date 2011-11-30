@@ -70,7 +70,6 @@ def getHDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con 
 
 def getCarga():
     miLAV = str(HORA) + ' '  + str(CPU) + ' ' + str(MEM) + ' ' + str(IO) + ' ' + str(NET) + ' ' + str(HDD)
-    handler.log.debug('LAV: ' + miLAV)
     return miLAV
 
 def ObtieneCarga():
@@ -98,7 +97,8 @@ def ObtieneCarga():
             
             global HORA; HORA = time()
             
-            handler.log.debug('LAV: %s', getCarga())
+            handler.log.debug('carga obtenida correctamente')
+            #handler.log.debug('LAV: %s', getCarga())
         except Exception as message:
             handler.log.error('error al obtener carga: %s', message)
             handler.log.exception(message)

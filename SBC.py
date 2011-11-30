@@ -48,6 +48,12 @@ class ThreadxObtieneEstadoServidoresInactivos(Thread):
             Thread.__init__(self)
         def run(self):
             ME.ObtieneEstadoServidoresInactivos()
+
+class ThreadxModificaReglas(Thread):
+        def __init__(self):
+            Thread.__init__(self)
+        def run(self):
+            MII.ModificaReglas()
             
 # funciones
 def Valida():
@@ -105,4 +111,10 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al obtener el estado de los servidores inactivos')
         handler.log.exception(message)
         exit(1);
-    
+
+    # ejecutando el proceso de balance por reglas como hilo
+    try: tModificaReglas = ThreadxModificaReglas().start()
+    except Exception as message:
+        handler.log.error('ha ocurrido un error al modificar las reglas de IPTABLES')
+        handler.log.exception(message)
+        exit(1);    

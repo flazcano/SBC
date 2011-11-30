@@ -17,8 +17,8 @@ from modulo import MIS
 
 # definiciones
 CLIENTTIMEOUT = 10
-SLEEPSERVIDORESACTIVOS = 30
-SLEEPSERVIDORESINACTIVOS = 15
+SLEEPSERVIDORESACTIVOS = 40
+SLEEPSERVIDORESINACTIVOS = 25
 HOST = "0.0.0.0"
 PORT = 12345
 
@@ -152,10 +152,10 @@ def ObtieneCargaServidor(HOST, PORT):
 
 def ObtieneConexionServidorInactivo(HOST, PORT):
     try:
-        handler.log.debug('obteniendo carga de servidor ' + HOST + ':' + str(PORT))
+        handler.log.debug('obteniendo conexion con servidor ' + HOST + ':' + str(PORT))
         ThreadxConexion(HOST, PORT).start()
     except Exception as message:
-        handler.log.debug('error al consultar carga del servidor')
+        handler.log.debug('error al consultar conexion del servidor')
         handler.log.exception(message)
         
 def ObtieneEstadoServidoresActivos():

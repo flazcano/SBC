@@ -44,8 +44,7 @@ def CreaEsquema():
     finally:
         if cursor: cursor.close()
         if conexion: conexion.close()
-
-        
+ 
 def ConsultaServidoresActivos():
     try:
         handler.log.debug('consultando servidores activos')
@@ -95,20 +94,21 @@ def AgregaServidor(FQDN, PUERTO):
         handler.log.debug('agregando servidor: ' + FQDN + ':' + str(PUERTO))
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        PUERTO = cursor.execute('SELECT puerto FROM ' + TABLA_SERVIDOR + ' WHERE fqdn = ?;', ([FQDN])).fetchall()
+        PUERTODB = cursor.execute('SELECT puerto FROM ' + TABLA_SERVIDOR + ' WHERE fqdn = ?;', ([FQDN])).fetchall()
         MODIFICADO = time()
         # si el servidor ya existe en la base de datos
-        if PUERTO:
+        if PUERTODB:
             # pero tiene distinto puerto al registrado
-            if PUERTO is not str(PUERTO[0][0]):
-                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTO[0][0]) + ' a ' + PUERTO)
+            if PUERTO is not str(PUERTODB[0][0]):
+                handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTODB[0][0]) + ' a ' + PUERTO)
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET puerto = ? WHERE fqdn = ?;', (PUERTO, FQDN))
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
             cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
+            cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
         # si el servidor no existe
         else:
-            handler.log.debug('agregando servidor nuevo: ' + FQDN + ':' + PUERTO)
-            cursor.execute('INSERT INTO ' + TABLA_SERVIDOR + ' (fqdn, puerto, activo, modificado) VALUES (?, ?, ?, ?);', (FQDN, PUERTO, 'TRUE', MODIFICADO))
+            handler.log.debug('agregando servidor nuevo: ' + FQDN + ':' + str(PUERTO))
+            cursor.execute('INSERT INTO ' + TABLA_SERVIDOR + ' (fqdn, puerto, activo, modificado, intento) VALUES (?, ?, ?, ?, ?);', (FQDN, PUERTO, 'TRUE', MODIFICADO, 0))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
@@ -120,6 +120,7 @@ def ServidorVuelveActivo(FQDN, PUERTO):
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
+        cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
@@ -128,55 +129,62 @@ def ServidorVuelveActivo(FQDN, PUERTO):
 
 def AgregaLAV(FQDN, LAV):
     try:
-        miLAV = LAV.split(" "); handler.log.debug('LAV: ' + LAV)
+        miLAV = LAV.split(" "); 
+        # handler.log.debug('LAV: ' + LAV)
         
         # obtiene HORA
         HORA = None; HORA = str(miLAV[0]); handler.log.debug('HORA: ' + HORA)
         time_unix = HORA
         
         # obtiene CPU
-        CPU = None; CPU = str(miLAV[1]); handler.log.debug('CPU: ' + CPU)
-        cpu_total = None
-        cpu_cores = None
+        CPU = None; CPU = str(miLAV[1]);
+        handler.log.debug('CPU: ' + CPU)
+        cpu_total = None; cpu_total = str(CPU).split(",", )[0]; handler.log.debug('cpu_total: ' + cpu_total)
+        cpu_cores = None; cpu_cores = str(CPU).split(",", 1)[1]; handler.log.debug('cpu_cores: ' + cpu_cores)
         
         # obtiene MEM
         MEM = None; MEM = str(miLAV[2]); handler.log.debug('MEM: ' + MEM)
-        mem_total = None
-        mem_used = None
-        mem_free = None
-        mem_percent = None
+        mem_total = None; mem_total = str(MEM).split(",", )[0]; handler.log.debug('mem_total: ' + mem_total)
+        mem_used = None; mem_used = str(MEM).split(",", )[1]; handler.log.debug('mem_used: ' + mem_used)
+        mem_free = None; mem_free = str(MEM).split(",", )[2]; handler.log.debug('mem_free: ' + mem_free)
+        mem_percent = None; mem_percent = str(MEM).split(",", )[3]; handler.log.debug('mem_percent: ' + mem_percent)
         
         # obtiene IO
         IO = None; IO = str(miLAV[3]); handler.log.debug('IO: ' + IO)
-        io_read_count = None
-        io_write_count = None
-        io_read_bytes = None
-        io_write_bytes = None
-        io_read_time = None
-        io_write_time = None
+        io_read_count = None; io_read_count = str(IO).split(",", )[0]; handler.log.debug('io_read_count: ' + io_read_count)
+        io_write_count = None; io_write_count = str(IO).split(",", )[1]; handler.log.debug('io_write_count: ' + io_write_count)
+        io_read_bytes = None; io_read_bytes = str(IO).split(",", )[2]; handler.log.debug('io_read_bytes: ' + io_read_bytes)
+        io_write_bytes = None; io_write_bytes = str(IO).split(",", )[3]; handler.log.debug('io_write_bytes: ' + io_write_bytes)
+        io_read_time = None; io_read_time = str(IO).split(",", )[4]; handler.log.debug('io_read_time: ' + io_read_time)
+        io_write_time = None; io_write_time = str(IO).split(",", )[5]; handler.log.debug('io_write_time: ' + io_write_time)
         
         # obtiene NET
         NET = None; NET = str(miLAV[4]); handler.log.debug('NET: ' + NET)
-        net_bytes_sent = None
-        net_bytes_recv = None
-        net_packets_sent = None
-        net_packets_recv = None
+        net_bytes_sent = None; net_bytes_sent = str(NET).split(",", )[0]; handler.log.debug('net_bytes_sent: ' + net_bytes_sent)
+        net_bytes_recv = None; net_bytes_recv = str(NET).split(",", )[1]; handler.log.debug('net_bytes_recv: ' + net_bytes_recv)
+        net_packets_sent = None; net_packets_sent = str(NET).split(",", )[2]; handler.log.debug('net_packets_sent: ' + net_packets_sent)
+        net_packets_recv = None; net_packets_recv = str(NET).split(",", )[3]; handler.log.debug('net_packets_recv: ' + net_packets_recv)
         
         # obtiene HDD
         HDD = None; HDD = str(miLAV[5]); handler.log.debug('HDD: ' + HDD)
-        hdd_device = None
-        hdd_total = None
-        hdd_used = None
-        hdd_free = None
-        hdd_percent = None
+        hdd_device = None; hdd_device = str(HDD).split(",", )[0]; handler.log.debug('hdd_device: ' + hdd_device)
+        hdd_total = None; hdd_total = str(HDD).split(",", )[1]; handler.log.debug('hdd_total: ' + hdd_total)
+        hdd_used = None; hdd_used = str(HDD).split(",", )[2]; handler.log.debug('hdd_used: ' + hdd_used)
+        hdd_free = None; hdd_free = str(HDD).split(",", )[3]; handler.log.debug('hdd_free: ' + hdd_free)
+        hdd_percent = None; hdd_percent = str(HDD).split(",", )[4]; handler.log.debug('hdd_percent: ' + hdd_percent)
         
         handler.log.debug('agregando LAV de ' + FQDN)
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
+        # actualiza intentos de chequeo a 0
+        cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
+        # obtiene identificador del host, para agregar carga
         ID = cursor.execute('SELECT id FROM ' + TABLA_SERVIDOR + ' WHERE fqdn = ?;', ([FQDN])).fetchall()
-        servidorid = ID[0][0]
-        cursor.execute('INSERT INTO ' + TABLA_CARGAS + ' (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);', 
-                        (servidorid, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+        servidorid_id = ID[0][0]
+        # agrega carga a la DB
+        cursor.execute('INSERT INTO ' + TABLA_CARGAS + ' (servidorid_id, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);', 
+                        (servidorid_id, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent))
+        handler.log.debug('LAV agregado correctamente para ' + FQDN)
     except Exception as message:
         handler.log.error('no se puede agregar LAV de cliente: %s', message)
         handler.log.exception(message)
@@ -204,6 +212,20 @@ def ServidorConProblemas(FQDN, PUERTO):
         handler.log.exception(message)
         exit(1)
 
+def ConsultaMejorServidor():
+    try:
+        handler.log.debug('consultando por mejor servidores')
+        conexion = connect(SBCDB, isolation_level=None)
+        cursor=conexion.cursor()
+        # se obtiene el mejor servidor del momento en base a las cargas entregadas
+        mejorservidor = cursor.execute('SELECT fqdn FROM (SELECT fqdn, min(cpu) AS cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id));').fetchall()
+        handler.log.debug('mejor servidor: %s', mejorservidor[0][0])
+    except Exception as message:
+        handler.log.error('no se puede obtener mejor servidor: %s', message)
+        handler.log.exception(message)
+        exit(1)
+    finally:
+        return mejorservidor[0][0]
 
 def Valida():
     try:
@@ -218,11 +240,9 @@ def Valida():
         # comprobando tabla configuracion
         for TABLA in (TABLA_CONFIGURACION, TABLA_SERVIDOR, TABLA_CARGAS, TABLA_OPERADOR, TABLA_ALERTA):
             cont = cursor.execute('pragma table_info(' + TABLA + ');').fetchall()
-            if cont: handler.log.debug('la tabla %s parece bien', TABLA)
+            if cont: handler.log.debug('la tabla %s parece estar bien', TABLA)
             else:
-                raise ValueError, "no existe la tabla " + TABLA
-        
-        
+                raise ValueError, "no existe la tabla " + TABLA      
     except Exception as message:
         handler.log.error('ha ocurrido un problema al validar la integridad del modulo: %s', message)
         handler.log.exception(message)

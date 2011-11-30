@@ -12,11 +12,11 @@ try:
     from email import Utils
     from email.mime.multipart import MIMEMultipart #@UnresolvedImport
     from email.mime.text import MIMEText #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-email necesario para correr el modulo MA'); pass
+except: handler.log.critical('no se encuentra python-email necesario para correr el modulo MA'); exit(1)
 try: from smtplib import SMTP
-except: handler.log.critical('no se encuentra python-smtplib necesario para correr el modulo MA'); pass
+except: handler.log.critical('no se encuentra python-smtplib necesario para correr el modulo MA'); exit(1)
 try: import xmpp #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MA'); pass
+except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MA'); exit(1)
 
 # definiciones
 SMTPHOST = "smtp.gmail.com"
