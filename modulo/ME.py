@@ -16,17 +16,17 @@ from Logger import handler
 from modulo import MIS
 
 # definiciones
-CLIENTTIMEOUT = 10
-SLEEPSERVIDORESACTIVOS = 40
-SLEEPSERVIDORESINACTIVOS = 25
-HOST = "0.0.0.0"
-PORT = 12345
+CLIENTTIMEOUT        = None
+SLEEPSERVERACTIVOS   = None
+SLEEPSERVERINACTIVOS = None
+BINDADDRESS          = None
+MEPORT               = None
 
 # clases
 class Servidor():
     def __init__(self):
-        self.host = HOST
-        self.port = PORT
+        self.host = BINDADDRESS
+        self.port = MEPORT
         self.timeout = None
         self.backlog = 5
         self.size = 1024
@@ -176,7 +176,7 @@ def ObtieneEstadoServidoresActivos():
             handler.log.exception(message)
         finally:
             handler.log.info('obtencion de estado de servidores activos finalizada')
-            sleep(SLEEPSERVIDORESACTIVOS)
+            sleep(float(SLEEPSERVERACTIVOS))
 
 def ObtieneEstadoServidoresInactivos():
     obtieneEstado = 1
@@ -196,7 +196,7 @@ def ObtieneEstadoServidoresInactivos():
             handler.log.exception(message)
         finally:
             handler.log.info('obtencion de estado de servidores inactivos finalizada')
-            sleep(SLEEPSERVIDORESINACTIVOS)
+            sleep(float(SLEEPSERVERINACTIVOS))
             
 def Valida():
     pass
@@ -206,6 +206,26 @@ def run():
     myservidor = Servidor()
     myservidor.run()
     
+def setCLIENTTIMEOUT(VALUE):
+    global CLIENTTIMEOUT; CLIENTTIMEOUT = VALUE
+    handler.log.debug('CLIENTTIMEOUT: ' + str(CLIENTTIMEOUT))
+
+def setSLEEPSERVERACTIVOS(VALUE):
+    global SLEEPSERVERACTIVOS; SLEEPSERVERACTIVOS = VALUE
+    handler.log.debug('SLEEPSERVERACTIVOS: ' + str(SLEEPSERVERACTIVOS))
+
+def setSLEEPSERVERINACTIVOS(VALUE):
+    global SLEEPSERVERINACTIVOS; SLEEPSERVERINACTIVOS = int(VALUE)
+    handler.log.debug('SLEEPSERVERINACTIVOS: ' + str(SLEEPSERVERINACTIVOS))
+
+def setBINDADDRESS(VALUE):
+    global BINDADDRESS; BINDADDRESS = VALUE
+    handler.log.debug('BINDADDRESS: ' + BINDADDRESS)
+
+def setMEPORT(VALUE):
+    global MEPORT; MEPORT = VALUE
+    handler.log.debug('MEPORT: ' + str(MEPORT))
+
 # main
 if __name__ == '__main__':
     run()

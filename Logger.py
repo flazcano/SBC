@@ -12,7 +12,8 @@ from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL, FATAL #@UnusedImport
 from sys import exit
 
 # definiciones
-logFile = 'sbc.log'
+LOGFILE = "run.log"
+LOGLEVEL = DEBUG
 
 # clases
 class handler(getLoggerClass()):
@@ -22,24 +23,24 @@ class handler(getLoggerClass()):
 
         # Formato en python 2.4+:
         formatter = Formatter(
-            "%(asctime)s [%(module)-3s] %(levelname)-8s - %(message)s")
+            "%(asctime)s [%(module)-5s] %(levelname)-6s - %(message)s")
         # Formato en python 3.2+:
         # formatter = logging.Formatter(
         #     "{asctime} {threadName:>11} {levelname} {message}", style='{')
     
         # Log a archivo
-        filehandler = FileHandler(logFile)
-        filehandler.setLevel(DEBUG)
+        filehandler = FileHandler(LOGFILE)
+        filehandler.setLevel(LOGLEVEL)
         filehandler.setFormatter(formatter)
         log.addHandler(filehandler)
     
         # Log a stdout
         streamhandler = StreamHandler()
-        streamhandler.setLevel(DEBUG)
+        streamhandler.setLevel(LOGLEVEL)
         streamhandler.setFormatter(formatter)
         log.addHandler(streamhandler)
     except IOError as message:
-        print('no se puede escribir en ' + logFile)
+        print('no se puede escribir en ' + LOGFILE)
         print(message)
         exit(1)
     except Exception as message:
@@ -48,5 +49,10 @@ class handler(getLoggerClass()):
         exit(1)
 
 # funciones
+def setLOGFILE(VALUE):
+    global LOGFILE; LOGFILE = VALUE
+
+def setLOGLEVEL(VALUE):
+    global LOGLEVEL; LOGLEVEL = DEBUG
 
 # main

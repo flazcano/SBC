@@ -13,16 +13,17 @@ from time import time
 from os import path
 from Logger import handler
 from sys import exit
+import MA
 
 # definiciones
-SBCDB = "MIW/sbc.db"
-SBCDUMP = "sbc.sql"
-NUMEROINTENTOS = 3
-TABLA_CONFIGURACION = "Web_configuracion"
-TABLA_SERVIDOR = "Web_servidor"
-TABLA_CARGAS = "Web_cargas"
-TABLA_OPERADOR = "Web_operador"
-TABLA_ALERTA = "Web_alerta"
+SBCDB               = None
+SBCDUMP             = None
+INTENTOSSERVERDOWN  = None
+TABLA_CONFIGURACION = None
+TABLA_SERVIDOR      = None
+TABLA_CARGAS        = None
+TABLA_OPERADOR      = None
+TABLA_ALERTA        = None
 
 # clases
 
@@ -121,6 +122,9 @@ def ServidorVuelveActivo(FQDN, PUERTO):
         cursor=conexion.cursor()
         cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
         cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
+        MA.EnviaJabber("fernandojavierlazcano@gmail.com")
+        MA.EnviaCorreo("fernandojavierlazcano@gmail.com")
+
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
@@ -198,7 +202,7 @@ def ServidorConProblemas(FQDN, PUERTO):
         MODIFICADO = time()
         if INTENTO:
             # si se ha intentado menos de NUMEROINTENTOS veces consultar el servidor
-            if INTENTO < NUMEROINTENTOS:
+            if INTENTO < INTENTOSSERVERDOWN:
                 handler.log.debug('actualizando intentos con problemas de servidor a ' + (INTENTO + 1))
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', ((INTENTO + 1), FQDN))
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
@@ -207,6 +211,8 @@ def ServidorConProblemas(FQDN, PUERTO):
                 handler.log.debug('actualizando a inactivo estado de servidor')
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('FALSE', FQDN))
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
+                MA.EnviaJabber("fernandojavierlazcano@gmail.com")
+                MA.EnviaCorreo("fernandojavierlazcano@gmail.com")
     except Exception as message:
         handler.log.error('no se puede modificar estado de servidor: %s', message)
         handler.log.exception(message)
@@ -219,7 +225,6 @@ def ConsultaMejorServidor():
         cursor=conexion.cursor()
         # se obtiene el mejor servidor del momento en base a las cargas entregadas
         mejorservidor = cursor.execute('SELECT fqdn FROM (SELECT fqdn, min(cpu) AS cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id));').fetchall()
-        handler.log.debug('mejor servidor: %s', mejorservidor[0][0])
     except Exception as message:
         handler.log.error('no se puede obtener mejor servidor: %s', message)
         handler.log.exception(message)
@@ -250,6 +255,38 @@ def Valida():
 
 def run():
     handler.log.info('iniciando modulo')
+
+def setSBCDB(VALUE):
+    global SBCDB; SBCDB = VALUE
+    handler.log.debug('SBCDB: ' + SBCDB)
+
+def setSBCDUMP(VALUE):
+    global SBCDUMP; SBCDUMP = VALUE
+    handler.log.debug('SBCDUMP: ' + SBCDUMP)
+
+def setINTENTOSSERVERDOWN(VALUE):
+    global INTENTOSSERVERDOWN; INTENTOSSERVERDOWN = VALUE
+    handler.log.debug('INTENTOSSERVERDOWN: ' + str(INTENTOSSERVERDOWN))
+
+def setTABLA_CONFIGURACION(VALUE):
+    global TABLA_CONFIGURACION; TABLA_CONFIGURACION = VALUE
+    handler.log.debug('TABLA_CONFIGURACION: ' + TABLA_CONFIGURACION)
+
+def setTABLA_SERVIDOR(VALUE):
+    global TABLA_SERVIDOR; TABLA_SERVIDOR = VALUE
+    handler.log.debug('TABLA_SERVIDOR: ' + TABLA_SERVIDOR)
+
+def setTABLA_CARGAS(VALUE):
+    global TABLA_CARGAS; TABLA_CARGAS = VALUE
+    handler.log.debug('TABLA_CARGAS: ' + TABLA_CARGAS)
+
+def setTABLA_OPERADOR(VALUE):
+    global TABLA_OPERADOR; TABLA_OPERADOR = VALUE
+    handler.log.debug('TABLA_OPERADOR: ' + TABLA_OPERADOR)
+
+def setTABLA_ALERTA(VALUE):
+    global TABLA_ALERTA; TABLA_ALERTA = VALUE
+    handler.log.debug('TABLA_ALERTA: ' + TABLA_ALERTA)
 
 # main
 if __name__ == '__main__':

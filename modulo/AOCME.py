@@ -16,8 +16,8 @@ from Logger import handler
 from modulo.AOCMR import getCarga
 
 # definiciones
-SLEEPTIME = 30
-SBCTIMEOUT = 10
+AOCMESLEEPTIME = None
+SBCTIMEOUT     = None
 
 # clases
 class Servidor():
@@ -111,7 +111,7 @@ def AgenteVivo(SBCHOST, SBCPORT, PORT):
             sinConexion = 0
         except Exception as message:
             handler.log.error('no se pudo conectar al SBC: %s', message)
-            sleep(SLEEPTIME)
+            sleep(float(AOCMESLEEPTIME))
         finally:
             if sbccon:
                 sbccon.close()
@@ -121,4 +121,12 @@ def run(HOST, PORT):
     myservidor = Servidor(HOST, PORT)
     myservidor.run()
     
+def setAOCMESLEEPTIME(VALUE):
+    global AOCMESLEEPTIME; AOCMESLEEPTIME = VALUE
+    handler.log.debug('AOCMESLEEPTIME : ' + str(AOCMESLEEPTIME))
+
+def setSBCTIMEOUT(VALUE):
+    global SBCTIMEOUT; SBCTIMEOUT = VALUE
+    handler.log.debug('SBCTIMEOUT     : ' + str(SBCTIMEOUT))
+
 # main

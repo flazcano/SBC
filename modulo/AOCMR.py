@@ -13,13 +13,13 @@ try: import psutil #@UnresolvedImport
 except: handler.log.critical('no se encuentra python-psutil necesario para correr el modulo AOCMR'); exit(1)
 
 # definiciones
-SLEEPTIME = 10
-CPU = None
-MEM = None
-IO = None
-NET = None
-HDD = None
-HORA = None
+AOCMRSLEEPTIME = None
+CPU            = None
+MEM            = None
+IO             = None
+NET            = None
+HDD            = None
+HORA           = None
 
 # clases
 
@@ -78,19 +78,19 @@ def ObtieneCarga():
         try:
             handler.log.debug('obteniendo CPU')
             global CPU; CPU = str(getCPU())
-            sleep(SLEEPTIME)
+            sleep(float(AOCMRSLEEPTIME))
             
             handler.log.debug('obteniendo MEM')
             global MEM; MEM = str(getMEM())
-            sleep(SLEEPTIME)
+            sleep(float(AOCMRSLEEPTIME))
             
             handler.log.debug('obteniendo IO')
             global IO; IO = str(getIO())
-            sleep(SLEEPTIME)
+            sleep(float(AOCMRSLEEPTIME))
             
             handler.log.debug('obteniendo NET')
             global NET; NET = str(getNET())
-            sleep(SLEEPTIME)
+            sleep(float(AOCMRSLEEPTIME))
             
             handler.log.debug('obteniendo HDD')
             global HDD; HDD = str(getHDD())
@@ -103,7 +103,7 @@ def ObtieneCarga():
             handler.log.error('error al obtener carga: %s', message)
             handler.log.exception(message)
         finally:
-            sleep(SLEEPTIME)
+            sleep(float(AOCMRSLEEPTIME))
 
 def run():
     handler.log.info('iniciando el modulo')
@@ -111,7 +111,7 @@ def run():
     try:
         global CPU; CPU = getCPU()
         global MEM; MEM = str(getMEM())
-        global IO; IO = str(getIO())
+        global IO ; IO  = str(getIO())
         global NET; NET = str(getNET()) 
         global HDD; HDD = str(getHDD())
         
@@ -120,6 +120,10 @@ def run():
         handler.log.error('error al obtener carga: %s', message)
         exit(1)
 
+def setAOCMRSLEEPTIME(VALUE):
+    global AOCMRSLEEPTIME; AOCMRSLEEPTIME = VALUE
+    handler.log.debug('AOCMRSLEEPTIME : ' + str(AOCMRSLEEPTIME))
+    
 # main
 if __name__ == '__main__':
     getCarga()

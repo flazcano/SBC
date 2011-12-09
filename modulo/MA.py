@@ -19,23 +19,23 @@ try: import xmpp #@UnresolvedImport
 except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MA'); exit(1)
 
 # definiciones
-SMTPHOST = "smtp.gmail.com"
-SMTPPORT = 587
-SMTPUSER = "fernandojavierlazcano@gmail.com"
-SMTPPASS = "nirvana1234"
-SMTPDEBUGLEVEL = 1
-XMPPCLIENT = "gmail.com"
-XMPPHOST = "talk.google.com"
-XMPPRESOURCE = "SBC"
-XMPPPORT = 5223
-XMPPUSER = 'fernandojavierlazcano@gmail.com'
-XMPPPASS = 'nirvana1234'
+SMTPHOST       = None
+SMTPPORT       = None
+SMTPUSER       = None
+SMTPPASS       = None
+SMTPDEBUGLEVEL = None
+XMPPCLIENT     = None
+XMPPHOST       = None
+XMPPRESOURCE   = None
+XMPPPORT       = None
+XMPPUSER       = None
+XMPPPASS       = None
 
 # clases
 
 # funciones
 def EnviaCorreo(TOADDRESS):
-    handler.log.error('enviando alerta por correo a ' + TOADDRESS)
+    handler.log.info('enviando alerta por correo a ' + TOADDRESS)
     try:
         mailServer = SMTP(SMTPHOST, SMTPPORT)
         mailServer.set_debuglevel(SMTPDEBUGLEVEL)
@@ -86,7 +86,7 @@ def EnviaCorreo(TOADDRESS):
         mailServer.close()
 
 def EnviaJabber(TOJID):
-    handler.log.error('enviando alerta por Jabber a ' + TOJID)
+    handler.log.info('enviando alerta por Jabber a ' + TOJID)
     try:
         txt = "Hola"
         jid  = xmpp.protocol.JID(XMPPUSER)
@@ -111,5 +111,49 @@ def Valida():
 
 def run():
     handler.log.info('iniciando modulo')
+
+def setSMTPHOST(VALUE):
+    global SMTPHOST; SMTPHOST = VALUE
+    handler.log.debug('SMTPHOST: ' + SMTPHOST)
+
+def setSMTPPORT(VALUE):
+    global SMTPPORT; SMTPPORT = VALUE
+    handler.log.debug('SMTPPORT: ' + str(SMTPPORT))
+
+def setSMTPUSER(VALUE):
+    global SMTPUSER; SMTPUSER = VALUE
+    handler.log.debug('SMTPUSER: ' + SMTPUSER)
+
+def setSMTPPASS(VALUE):
+    global SMTPPASS; SMTPPASS = VALUE
+    handler.log.debug('SMTPPASS: ' + SMTPPASS)
+
+def setSMTPDEBUGLEVEL(VALUE):
+    global SMTPDEBUGLEVEL; SMTPDEBUGLEVEL = VALUE
+    handler.log.debug('SMTPDEBUGLEVEL: ' + str(SMTPDEBUGLEVEL))
+
+def setXMPPCLIENT(VALUE):
+    global XMPPCLIENT; XMPPCLIENT = VALUE
+    handler.log.debug('XMPPCLIENT: ' + XMPPCLIENT)
+
+def setXMPPHOST(VALUE):
+    global XMPPHOST; XMPPHOST = VALUE
+    handler.log.debug('XMPPHOST: ' + XMPPHOST)
+
+def setXMPPRESOURCE(VALUE):
+    global XMPPRESOURCE; XMPPRESOURCE = VALUE
+    handler.log.debug('XMPPRESOURCE: ' + XMPPRESOURCE)
+
+def setXMPPPORT(VALUE):
+    global XMPPPORT; XMPPPORT = VALUE
+    handler.log.debug('XMPPPORT: ' + str(XMPPPORT))
+
+def setXMPPUSER(VALUE):
+    global XMPPUSER; XMPPUSER = VALUE
+    handler.log.debug('XMPPUSER: ' + XMPPUSER)
+
+def setXMPPPASS(VALUE):
+    global XMPPPASS; XMPPPASS = VALUE
+    handler.log.debug('XMPPPASS: ' + XMPPPASS)
 
 # main

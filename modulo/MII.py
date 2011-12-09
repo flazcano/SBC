@@ -4,25 +4,32 @@ Created on 29/10/2011
 @author: Fernando
 
 Modulo de Integracion para IPTables (MII)
+
+es necesario tener cargados los modulos:
+
+modprobe ip_conntrack
+modprobe ip_conntrack_ftp
+modprobe iptable_nat
 '''
 
 # importaciones
 from Logger import handler
 from sys import exit
 from time import sleep
-try: import iptc #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-iptc necesario para correr el modulo MII'); exit(1)
 from modulo import MIS
+from commands import getoutput as execute
 
 # definiciones
-IFACE = "eth0"
-CHAINNAME = "PREROUTING"
-TARGETNAME = "REDIRECT"
-IPINICIAL = "192.168.0.2"
-PUERTODEFECTO = 80             # puerto a redireccionar
-PROTOCOLODEFECTO = "tcp"
-ORIGENDEFECTO = "0.0.0.0/0.0.0.0"
-SLEEPREGLAMEJORSERVIDOR = 30
+IFACE                   = None
+IPSBC                   = None
+PRECHAIN                = None
+POSTCHAIN               = None
+TABLENAME               = None
+TARGETNAME              = None
+IPINICIAL               = None
+PUERTODEFECTO           = None # puerto a redireccionar
+PROTOCOLODEFECTO        = None
+SLEEPREGLAMEJORSERVIDOR = None
 
 # clases
 
@@ -30,95 +37,52 @@ SLEEPREGLAMEJORSERVIDOR = 30
 def CreaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
     handler.log.info('creando regla: ' + IPORIGEN + ':' + str(PUERTODESTINO) + ' -> ' + IPDESTINO + ':' + str(PUERTODESTINO) + ' ' + PROTO)
     try:
-        # se crea la regla
-        rule = iptc.Rule()
-        # IP de origen de la peticion
-        rule.src = IPORIGEN
-        # IP hacia donde se envia la peticion, un servidor balanceado
-        rule.dst = IPDESTINO
-        # PROTOCOLO de transmicion, suele ser TCP
-        rule.protocol = PROTO
-        # INTERFAS FISICA DE RED que realiza el enrutamiento
-        rule.in_interface = IFACE
+        EXEC='iptables -t ' + TABLENAME + ' -A ' + PRECHAIN + ' -p ' + PROTO + ' -s 0/0 -d ' + IPSBC + ' --dport ' + str(PUERTODESTINO) + ' -j DNAT --to ' + IPDESTINO + ':' + str(PUERTODESTINO)
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
         
-        # regla
-        match = iptc.Match(rule, PROTO)
-        # PUERTO hacia donde va la peticion
-        match.dport = str(PUERTODESTINO)
-        rule.add_match(match)
+        EXEC='iptables -t ' + TABLENAME + ' -A ' + POSTCHAIN + ' -o ' + IFACE + ' -d ' + IPDESTINO + ' -j SNAT --to-source ' + IPSBC
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
         
-        # objetivo de la regla, DNAT o NAT Dinamico
-        target = iptc.Target(rule, TARGETNAME)
-        rule.target = target
-        
-        # cadena a utilizar, siempre se utiliza PRERUTEO para el DNAT
-        chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
-        target.reset()
-        # IP y PUERTO a donde redirigir la peticion
-        target.to_ports = str(PUERTODESTINO)
-        rule.target = target
-        chain.insert_rule(rule)
         handler.log.info('regla aplicada correctamente')
     except Exception as message:
             handler.log.error('no se pudo crear la regla')
             handler.log.exception(message)
 
-
 def EliminaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
     handler.log.info('eliminando regla: ' + IPORIGEN + ':' + str(PUERTODESTINO) + ' -> ' + IPDESTINO + ':' + str(PUERTODESTINO) + ' ' + PROTO)
     try:
-        # se crea la regla
-        rule = iptc.Rule()
-        # IP de origen de la peticion
-        rule.src = IPORIGEN
-        # IP hacia donde se envia la peticion, un servidor balanceado
-        rule.dst = IPDESTINO
-        # INTERFAS FISICA DE RED que realiza el enrutamiento
-        rule.protocol = PROTO
-        # INTERFAS FISICA DE RED que realiza el enrutamiento
-        rule.in_interface = IFACE
-        
-        # regla
-        match = iptc.Match(rule, PROTO)
-        # PUERTO hacia donde va la peticion
-        match.dport = str(PUERTODESTINO)
-        rule.add_match(match)
-        
-        # objetivo de la regla, DNAT o NAT Dinamico
-        target = iptc.Target(rule, TARGETNAME)
-        rule.target = target
-        
-        # cadena a utilizar, siempre se utiliza PRERUTEO para el DNAT
-        chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
-        target.reset()
-        # IP y PUERTO a donde redirigir la peticion
-        target.to_ports = str(PUERTODESTINO)
-        rule.target = target
-        chain.delete_rule(rule)
+        pass
         handler.log.info('regla eliminada correctamente')
     except Exception as message:
             handler.log.error('no se pudo eliminar la regla')
             handler.log.exception(message)
     
 def MuestraReglas():
-    handler.log.info('mostrando reglas: %s', CHAINNAME)
+    handler.log.info('mostrando reglas: %s', PRECHAIN)
     try:
-        chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
-        for r in chain.rules:
-            #print r.src, "->", r.dst, "L4:", r.protocol,
-            for m in r.matches:
-                #print "match:", m.name,
-                #print "target:", r.target.name
-                handler.log.debug(r.src + ' -> ' + r.dst + ' L4: ' + r.protocol + ' match: ' + m.name + ' target: ' + r.target.name)
+        pass
     except Exception as message:
             handler.log.error('error al obtener las reglas')
             handler.log.exception(message)
 
 def LimpiaReglas():
-    handler.log.info('limpiando reglas: %s', CHAINNAME)
+    handler.log.info('limpiando reglas: %s', PRECHAIN)
     try:
-        chain = iptc.Chain(iptc.TABLE_NAT, CHAINNAME)
-        chain.flush()
+        EXEC='iptables -t ' + TABLENAME + ' -F '
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        
+        
+        EXEC='iptables -t ' + TABLENAME + ' -F ' + PRECHAIN
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        
+        EXEC='iptables -t ' + TABLENAME + ' -F ' + POSTCHAIN
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        
         handler.log.info('las reglas fueron limpiadas')
     except Exception as message:
             handler.log.error('error al limpiar las reglas')
@@ -126,7 +90,7 @@ def LimpiaReglas():
 
 def ReglaInicial():
     handler.log.info('aplicando regla por defecto')
-    CreaRegla(ORIGENDEFECTO, IPINICIAL, PROTOCOLODEFECTO, PUERTODEFECTO)
+    CreaRegla(IPSBC, IPINICIAL, PROTOCOLODEFECTO, PUERTODEFECTO)
 
 def ReglasEspeciales():
     pass
@@ -137,13 +101,14 @@ def ModificaReglas():
         try:
             handler.log.info('obteniendo mejor servidor para reglas de IPTABLES')
             DESTINO = MIS.ConsultaMejorServidor()
+            handler.log.debug('mejor servidor: ' + str(DESTINO))
             LimpiaReglas()
-            if DESTINO:
-                handler.log.info('modificando reglas de IPTABLES con mejor servidor %s', DESTINO)
-                CreaRegla(ORIGENDEFECTO, DESTINO, PROTOCOLODEFECTO, PUERTODEFECTO)
-            else:
+            if str(DESTINO) == 'None':
                 handler.log.info('modificando reglas de IPTABLES con servidor por defecto')
                 ReglaInicial()
+            else:
+                handler.log.info('modificando reglas de IPTABLES con mejor servidor %s', DESTINO)
+                CreaRegla(IPSBC, DESTINO, PROTOCOLODEFECTO, PUERTODEFECTO)
             handler.log.info('aplicando reglas especiales en IPTABLES')
             #ReglasEspeciales()
         except Exception as message:
@@ -151,7 +116,7 @@ def ModificaReglas():
             handler.log.exception(message)
         finally:
             #MuestraReglas()
-            sleep(SLEEPREGLAMEJORSERVIDOR)
+            sleep(float(SLEEPREGLAMEJORSERVIDOR))
 
 def Valida():
     try:
@@ -164,7 +129,47 @@ def Valida():
 
 def run():
     handler.log.info('iniciando modulo')
-    
+
+def setIFACE(VALUE):
+    global IFACE; IFACE = VALUE
+    handler.log.debug('IFACE: ' + IFACE)
+
+def setIPSBC(VALUE):
+    global IPSBC; IPSBC = VALUE
+    handler.log.debug('IPSBC: ' + IPSBC)
+
+def setPRECHAIN(VALUE):
+    global PRECHAIN; PRECHAIN = VALUE
+    handler.log.debug('PRECHAIN: ' + PRECHAIN)
+
+def setPOSTCHAIN(VALUE):
+    global POSTCHAIN; POSTCHAIN = VALUE
+    handler.log.debug('POSTCHAIN: ' + POSTCHAIN)
+
+def setTABLENAME(VALUE):
+    global TABLENAME; TABLENAME = VALUE
+    handler.log.debug('TABLENAME: ' + TABLENAME)
+
+def setTARGETNAME(VALUE):
+    global TARGETNAME; TARGETNAME = VALUE
+    handler.log.debug('TARGETNAME: ' + TARGETNAME)
+
+def setIPINICIAL(VALUE):
+    global IPINICIAL; IPINICIAL = VALUE
+    handler.log.debug('IPINICIAL: ' + IPINICIAL)
+
+def setPUERTODEFECTO(VALUE):
+    global PUERTODEFECTO; PUERTODEFECTO = VALUE
+    handler.log.debug('PUERTODEFECTO: ' + str(PUERTODEFECTO))
+
+def setPROTOCOLODEFECTO(VALUE):
+    global PROTOCOLODEFECTO; PROTOCOLODEFECTO = VALUE
+    handler.log.debug('PROTOCOLODEFECTO: ' + PROTOCOLODEFECTO)
+
+def setSLEEPREGLAMEJORSERVIDOR(VALUE):
+    global SLEEPREGLAMEJORSERVIDOR; SLEEPREGLAMEJORSERVIDOR = VALUE
+    handler.log.debug('SLEEPREGLAMEJORSERVIDOR: ' + str(SLEEPREGLAMEJORSERVIDOR))
+
 # main
 if __name__ == '__main__':
     run()

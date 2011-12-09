@@ -12,9 +12,9 @@ from Logger import handler
 
 
 # definiciones
-DJANGOAPP="Web"
-DJANGOADDRESSS="0.0.0.0"
-DJANGOPORT=8080
+DJANGOAPP          = None
+DJANGOBINDADDRESSS = None
+DJANGOPORT         = None
 
 # clases
 
@@ -25,7 +25,7 @@ def LevantaDjango():
         #run('python ../MIW/manage.py syncdb')
     
         handler.log.info('iniciando servidor django para aplicacion %s', DJANGOAPP)
-        popen("cd .. && sh MIW.sh " + DJANGOADDRESSS + " " + str(DJANGOPORT))
+        popen("cd .. && sh MIW.sh " + DJANGOBINDADDRESSS + " " + str(DJANGOPORT))
     except Exception as message:
         handler.log.error('no se pudo levantar el servidor: %s', message)
 
@@ -35,6 +35,18 @@ def Valida():
 def run():
     handler.log.info('iniciando modulo')
     LevantaDjango()
+
+def setDJANGOAPP(VALUE):
+    global DJANGOAPP; DJANGOAPP = VALUE
+    handler.log.debug('DJANGOAPP: ' + DJANGOAPP)
+
+def setDJANGOBINDADDRESSS(VALUE):
+    global DJANGOBINDADDRESSS; DJANGOBINDADDRESSS = VALUE
+    handler.log.debug('DJANGOBINDADDRESSS: ' + DJANGOBINDADDRESSS)
+
+def setDJANGOPORT(VALUE):
+    global DJANGOPORT; DJANGOPORT = VALUE
+    handler.log.debug('DJANGOPORT: ' + str(DJANGOPORT))
 
 # main
 if __name__ == '__main__':
