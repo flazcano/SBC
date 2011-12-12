@@ -7,7 +7,7 @@ Modulo de Interfaz Web (MIW)
 '''
 
 # importaciones
-from os import popen
+from commands import getoutput as execute
 from Logger import handler
 
 
@@ -25,9 +25,17 @@ def LevantaDjango():
         #run('python ../MIW/manage.py syncdb')
     
         handler.log.info('iniciando servidor django para aplicacion %s', DJANGOAPP)
-        popen("cd .. && sh MIW.sh " + DJANGOBINDADDRESSS + " " + str(DJANGOPORT))
+        EXEC = "cd .. && sh MIW.sh " + DJANGOBINDADDRESSS + " " + str(DJANGOPORT) 
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
     except Exception as message:
         handler.log.error('no se pudo levantar el servidor: %s', message)
+
+def BajaDjango():
+    pass
+
+def RecargaDjango():
+    pass
 
 def Valida():
     pass

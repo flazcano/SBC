@@ -7,18 +7,19 @@ Modulo de Alertas (MA)
 '''
 
 # importaciones
-from Logger import handler
-try:
-    from email import Utils
-    from email.mime.multipart import MIMEMultipart #@UnresolvedImport
-    from email.mime.text import MIMEText #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-email necesario para correr el modulo MA'); exit(1)
+import warnings
 try: from smtplib import SMTP
-except: handler.log.critical('no se encuentra python-smtplib necesario para correr el modulo MA'); exit(1)
-try: import xmpp #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-xmpp necesario para correr el modulo MA'); exit(1)
+except: print 'no se encuentra python-smtplib necesario para correr el modulo MA'; exit(1)
+try: from email import Utils; from email.mime.multipart import MIMEMultipart; from email.mime.text import MIMEText #@UnresolvedImport
+except: print 'no se encuentra python-email necesario para correr el modulo MA'; exit(1)
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore", category=DeprecationWarning)
+    try: import xmpp #@UnresolvedImport
+    except: print 'no se encuentra python-xmpp necesario para correr el modulo MA'; exit(1)
+from Logger import handler
 
 # definiciones
+XMPPDEBUG      = 0
 SMTPHOST       = None
 SMTPPORT       = None
 SMTPUSER       = None
@@ -34,7 +35,7 @@ XMPPPASS       = None
 # clases
 
 # funciones
-def EnviaCorreo(TOADDRESS):
+def EnviaCorreo(TOADDRESS, HOST, TIPO):
     handler.log.info('enviando alerta por correo a ' + TOADDRESS)
     try:
         mailServer = SMTP(SMTPHOST, SMTPPORT)
@@ -50,21 +51,36 @@ def EnviaCorreo(TOADDRESS):
         msg['To'] = TOADDRESS
         msg['Date'] = Utils.formatdate(localtime = 1)
         msg['Message-ID'] = Utils.make_msgid()
-        msg['Subject'] = "Alerta SBC"
-        
-        # Create the body of the message (a plain-text and an HTML version).
-        text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.python.org"
-        html = """\
-        <html>
-          <head></head>
-          <body>
-            <p>Hi!<br>
-               How are you?<br>
-               Here is the <a href="http://www.python.org">link</a> you wanted.
-            </p>
-          </body>
-        </html>
-        """
+        msg['Subject'] = "Alerta SBC - " + HOST
+        if TIPO == 0:
+            
+            # Create the body of the message (a plain-text and an HTML version).
+            text = "Estimado " + TOADDRESS + "!\n\n el servidor " + HOST + " ha vuelto a estar en linea"
+            html = """\
+            <html>
+              <head></head>
+              <body>
+                <p>Estimado usuario!<br><br>
+                   el servidor ha vuelto a estar en linea
+                </p>
+              </body>
+            </html>
+            """
+        elif TIPO == 1:
+            # Create the body of the message (a plain-text and an HTML version).
+            text = "Estimado " + TOADDRESS + "!\n\n el servidor " + HOST + " esta fuera de linea"
+            html = """\
+            <html>
+              <head></head>
+              <body>
+                <p>Estimado usuario!<br><br>
+                   el servidor esta fuera de linea
+                </p>
+              </body>
+            </html>
+            """
+        else:
+            handler.log.info('el tipo ' + TIPO + ' no es un valor valido')
         
         # Record the MIME types of both parts - text/plain and text/html.
         part1 = MIMEText(text, 'plain')
@@ -85,25 +101,36 @@ def EnviaCorreo(TOADDRESS):
     finally:
         mailServer.close()
 
-def EnviaJabber(TOJID):
+def EnviaJabber(TOJID, HOST, TIPO):
     handler.log.info('enviando alerta por Jabber a ' + TOJID)
     try:
-        txt = "Hola"
-        jid  = xmpp.protocol.JID(XMPPUSER)
-        jabber = xmpp.Client(jid.getDomain(), debug=[])
-        connection = jabber.connect(('talk.google.com',5222))
-        if not connection:
-            raise IOError('no se pudo conectar a ' + XMPPCLIENT)
-        jabber.auth(jid.getNode(), XMPPPASS, XMPPRESOURCE)
-        if not jabber.auth:
-            raise IOError('no se pudo autentificar con ' + XMPPCLIENT)
-        jabber.sendInitPresence(requestRoster=1)
-        jabber.send(xmpp.Message(TOJID ,txt))
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=DeprecationWarning)
+            jid  = xmpp.protocol.JID(TOJID)
+            jabber = xmpp.Client(XMPPCLIENT, debug=XMPPDEBUG)
+            handler.log.debug('domain: ' + jid.getDomain())
+            connection = jabber.connect((XMPPHOST, XMPPPORT))
+            if not connection:
+                raise IOError('no se pudo conectar a ' + XMPPCLIENT)
+            jabber.auth(XMPPUSER, XMPPPASS, XMPPRESOURCE)
+            if not jabber.auth:
+                raise IOError('no se pudo autentificar con ' + XMPPCLIENT)
+            jabber.sendInitPresence(requestRoster=1)
+            if int(TIPO) == 0:
+                MSG = xmpp.Message(TOJID, 'El Servidor ' + HOST + ' se encuentra en linea')
+                MSG.setAttr('type', 'chat')
+                jabber.send(MSG)
+            elif int(TIPO) == 1:
+                MSG = xmpp.Message(TOJID, 'El Servidor ' + HOST + ' se encuentra fuera de linea')
+                MSG.setAttr('type', 'chat')
+                jabber.send(MSG)
+            else:
+                handler.log.error('el tipo ' + TIPO + ' no es un valor valido')
     except Exception as message:
         handler.log.error('error al enviar alerta por Jabber')
-        handler.log.exception(message) 
+        handler.log.exception(message)
 
-def EnviaSMS(TONUMBER):
+def EnviaSMS(TONUMBER, HOST, TIPO):
     pass
     
 def Valida():

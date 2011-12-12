@@ -7,13 +7,11 @@ Modulo de Integracion para SQLite3 (MIS)
 """
 
 # importaciones
-from sqlite3 import connect  #@UnusedImport
-from exceptions import Exception
-from time import time
-from os import path
-from Logger import handler
 from sys import exit
-import MA
+from os import path
+from time import time
+from sqlite3 import connect  #@UnusedImport
+from Logger import handler
 
 # definiciones
 SBCDB               = None
@@ -122,9 +120,6 @@ def ServidorVuelveActivo(FQDN, PUERTO):
         cursor=conexion.cursor()
         cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
         cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
-        MA.EnviaJabber("fernandojavierlazcano@gmail.com")
-        MA.EnviaCorreo("fernandojavierlazcano@gmail.com")
-
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
@@ -211,8 +206,6 @@ def ServidorConProblemas(FQDN, PUERTO):
                 handler.log.debug('actualizando a inactivo estado de servidor')
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('FALSE', FQDN))
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
-                MA.EnviaJabber("fernandojavierlazcano@gmail.com")
-                MA.EnviaCorreo("fernandojavierlazcano@gmail.com")
     except Exception as message:
         handler.log.error('no se puede modificar estado de servidor: %s', message)
         handler.log.exception(message)

@@ -7,10 +7,10 @@ Modulo de Escucha para Agente de Obtencion de Cargas (AOCME)
 '''
 
 # importaciones
+from sys import exit, stdin
+from time import sleep
 import socket
 from select import select
-from time import sleep
-from sys import exit, stdin
 from threading import Thread
 from Logger import handler
 from modulo.AOCMR import getCarga
@@ -46,10 +46,11 @@ class Servidor():
 
     def run(self):
         self.open_socket()
-        input = [self.server,stdin] #@ReservedAssignment
         running = 1
         while running:
-            inputready, outputready, exceptready = select(input,[],[]) #@UnusedVariable
+            inputready  = select([self.server, stdin], [], [])
+            outputready = select([self.server, stdin], [], []) #@UnusedVariable
+            exceptready = select([self.server, stdin], [], []) #@UnusedVariable
             for server in inputready:
                 if server == self.server:
                     # manejando el socket del servidor
@@ -83,7 +84,9 @@ class Cliente(Thread):
                         handler.log.debug('SBC ' + self.address[0] + ':' + str(self.address[1]) + ' envia peticion de carga')
                         
                         # enviando carga
-                        self.client.send(str.encode(getCarga()))
+                        LAV = getCarga()
+                        handler.log.debug('enviando: ' + LAV)
+                        self.client.send(str.encode(LAV))
                     else:
                         handler.log.debug('se descarta el mensaje, SBC ' + self.address[0] + ':' + str(self.address[1]) + ' envia: ' + DATA)
                     

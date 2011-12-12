@@ -7,13 +7,14 @@ Modulo de Escucha y Obtencion para AOC (ME)
 """
 
 # importaciones
+from sys import exit, stdin
+from time import sleep
 import socket
 from select import select
-from time import sleep
-from sys import exit, stdin
 from threading import Thread
 from Logger import handler
 from modulo import MIS
+from MA import EnviaCorreo, EnviaJabber
 
 # definiciones
 CLIENTTIMEOUT        = None
@@ -49,10 +50,11 @@ class Servidor():
 
     def run(self):
         self.open_socket()
-        input = [self.server, stdin] #@ReservedAssignment
         running = 1
         while running:
-            inputready, outputready, exceptready = select(input,[],[]) #@UnusedVariable
+            inputready  = select([self.server, stdin],[],[])
+            outputready = select([self.server, stdin],[],[]) #@UnusedVariable
+            exceptready = select([self.server, stdin],[],[]) #@UnusedVariable
             for server in inputready:
                 if server == self.server:
                     # manejando el socket del servidor
@@ -123,6 +125,8 @@ class ThreadxCarga(Thread):
                 handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
                 # se comunica con MIS para informar el problema
                 MIS.ServidorConProblemas(self.HOST, self.PORT)
+                EnviaJabber("flazcano@paperlessla.com", self.HOST, 1)
+                EnviaCorreo("flazcano@paperlessla.com", self.HOST, 1)
 
 class ThreadxConexion(Thread):
         def __init__(self, HOST, PORT):
@@ -138,6 +142,8 @@ class ThreadxConexion(Thread):
                 handler.log.debug('se pudo volver a conectar al servidor ' + str(self.HOST) + ':' +str(self.PORT))
                 # se comunica con MIS para agregar LAV
                 MIS.ServidorVuelveActivo(self.HOST, self.PORT)
+                EnviaJabber("flazcano@paperlessla.com", self.HOST, 0)
+                EnviaCorreo("flazcano@paperlessla.com", self.HOST, 0)
             except Exception as message:
                 handler.log.error('no se pudo conectar al servidor ' + str(self.HOST) + ':' + str(self.PORT) + ': %s', message)
                                 
@@ -164,8 +170,7 @@ def ObtieneEstadoServidoresActivos():
         try:
             handler.log.info('iniciando obtencion de estado de servidores activos')
             total = MIS.ConsultaTotalServidoresActivos()
-            for cantidad in total:
-                pass
+            for cantidad in total: pass                
             handler.log.info('obtenidos %i servidores activos', cantidad[0])
             for AOC in MIS.ConsultaServidoresActivos():
                 AOCHOST = AOC[0]
@@ -215,7 +220,7 @@ def setSLEEPSERVERACTIVOS(VALUE):
     handler.log.debug('SLEEPSERVERACTIVOS: ' + str(SLEEPSERVERACTIVOS))
 
 def setSLEEPSERVERINACTIVOS(VALUE):
-    global SLEEPSERVERINACTIVOS; SLEEPSERVERINACTIVOS = int(VALUE)
+    global SLEEPSERVERINACTIVOS; SLEEPSERVERINACTIVOS = VALUE
     handler.log.debug('SLEEPSERVERINACTIVOS: ' + str(SLEEPSERVERINACTIVOS))
 
 def setBINDADDRESS(VALUE):

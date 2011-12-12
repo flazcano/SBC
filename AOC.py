@@ -9,9 +9,9 @@ Agente de Obtencion de Cargas
 '''
 
 # importaciones
-from Config import Load
 from threading import Thread
 from Logger import setLOGFILE, setLOGLEVEL
+from Config import Load
 from modulo import AOCMR, AOCME
 
 # definiciones
@@ -63,14 +63,18 @@ try:
     cfg = Load(CONFIGFILE)
     LOGFILE = cfg["LOGFILE"]; setLOGFILE(LOGFILE)
     LOGLEVEL = cfg["LOGLEVEL"]; setLOGLEVEL(LOGLEVEL)
+    # se importa el Logger una ves instanciados los parametros necesarios para su ejecucion
     from Logger import handler
+
     handler.log.info('cargando configuraciones')
     AOCHOST = cfg["AOCHOST"]; setAOCHOST(AOCHOST)
     AOCPORT = int(cfg["AOCPORT"]); setAOCPORT(AOCPORT)
     SBCHOST = cfg["SBCHOST"]; setSBCHOST(SBCHOST)
     SBCPORT = int(cfg["SBCPORT"]); setSBCPORT(SBCPORT)
+
     AOCMESLEEPTIME = cfg["AOCMESLEEPTIME"]; AOCME.setAOCMESLEEPTIME(AOCMESLEEPTIME)
     SBCTIMEOUT = int(cfg["SBCTIMEOUT"]); AOCME.setSBCTIMEOUT(SBCTIMEOUT)
+    
     AOCMRSLEEPTIME = cfg["AOCMRSLEEPTIME"]; AOCMR.setAOCMRSLEEPTIME(AOCMRSLEEPTIME)
 except KeyError as message:
     handler.log.critical('no se ha podido encontrar una variable de configuracion necesaria: %s', message)

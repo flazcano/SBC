@@ -8,9 +8,9 @@ Modulo de Monitorizacion de Recursos para Agente de Obtencion de Cargas (AOCMR)
 # importaciones
 from sys import exit
 from time import sleep, time
-from Logger import handler
 try: import psutil #@UnresolvedImport
-except: handler.log.critical('no se encuentra python-psutil necesario para correr el modulo AOCMR'); exit(1)
+except: print 'no se encuentra python-psutil necesario para correr el modulo AOCMR'; exit(1)
+from Logger import handler
 
 # definiciones
 AOCMRSLEEPTIME = None
@@ -69,7 +69,13 @@ def getHDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con 
         return ''
 
 def getCarga():
-    miLAV = str(HORA) + ' '  + str(CPU) + ' ' + str(MEM) + ' ' + str(IO) + ' ' + str(NET) + ' ' + str(HDD)
+    handler.log.debug('HORA ' + str(HORA))
+    handler.log.debug('CPU ' + str(CPU))
+    handler.log.debug('MEM ' + str(MEM))
+    handler.log.debug('IO ' + str(IO))
+    handler.log.debug('NET ' + str(NET))
+    handler.log.debug('HDD ' + str(HDD))
+    miLAV = "" + str(HORA) + " "  + str(CPU) + " " + str(MEM) + " " + str(IO) + " " + str(NET) + " " + str(HDD)
     return miLAV
 
 def ObtieneCarga():
@@ -98,7 +104,7 @@ def ObtieneCarga():
             global HORA; HORA = time()
             
             handler.log.debug('carga obtenida correctamente')
-            #handler.log.debug('LAV: %s', getCarga())
+            handler.log.debug('LAV: %s', getCarga())
         except Exception as message:
             handler.log.error('error al obtener carga: %s', message)
             handler.log.exception(message)

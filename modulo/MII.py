@@ -13,11 +13,11 @@ modprobe iptable_nat
 '''
 
 # importaciones
-from Logger import handler
 from sys import exit
 from time import sleep
-from modulo import MIS
 from commands import getoutput as execute
+from Logger import handler
+from modulo import MIS
 
 # definiciones
 IFACE                   = None
@@ -53,7 +53,13 @@ def CreaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
 def EliminaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
     handler.log.info('eliminando regla: ' + IPORIGEN + ':' + str(PUERTODESTINO) + ' -> ' + IPDESTINO + ':' + str(PUERTODESTINO) + ' ' + PROTO)
     try:
-        pass
+        EXEC='iptables -t ' + TABLENAME + ' -D ' + PRECHAIN + ' -p ' + PROTO + ' -s 0/0 -d ' + IPSBC + ' --dport ' + str(PUERTODESTINO) + ' -j DNAT --to ' + IPDESTINO + ':' + str(PUERTODESTINO)
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        
+        EXEC='iptables -t ' + TABLENAME + ' -D ' + POSTCHAIN + ' -o ' + IFACE + ' -d ' + IPDESTINO + ' -j SNAT --to-source ' + IPSBC
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
         handler.log.info('regla eliminada correctamente')
     except Exception as message:
             handler.log.error('no se pudo eliminar la regla')
@@ -62,7 +68,9 @@ def EliminaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
 def MuestraReglas():
     handler.log.info('mostrando reglas: %s', PRECHAIN)
     try:
-        pass
+        EXEC='iptables -t ' + TABLENAME + ' -nvL'
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
     except Exception as message:
             handler.log.error('error al obtener las reglas')
             handler.log.exception(message)
@@ -93,12 +101,13 @@ def ReglaInicial():
     CreaRegla(IPSBC, IPINICIAL, PROTOCOLODEFECTO, PUERTODEFECTO)
 
 def ReglasEspeciales():
-    pass
+    handler.log.info('aplicando reglas especiales')
 
 def ModificaReglas():
     obtieneMejorServidor = 1
     while obtieneMejorServidor:
         try:
+            ReglasEspeciales()
             handler.log.info('obteniendo mejor servidor para reglas de IPTABLES')
             DESTINO = MIS.ConsultaMejorServidor()
             handler.log.debug('mejor servidor: ' + str(DESTINO))
