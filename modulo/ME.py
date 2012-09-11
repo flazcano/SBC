@@ -37,6 +37,7 @@ class Servidor():
     def open_socket(self):
         try:
             # instanciando el socket
+            handler.log.debug('abriendo el socket de comunicacion')
             self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.server.bind((self.host, self.port))
@@ -80,7 +81,7 @@ class Cliente(Thread):
 
     def run(self):
         try:
-            handler.log.debug('conectado desde ' + self.address[0] + ':' + str(self.address[1]));
+            handler.log.debug('cliente conectado desde ' + self.address[0] + ':' + str(self.address[1]));
             running = 1
             while running:
                 DATA = self.cliente.recv(self.size).decode()
