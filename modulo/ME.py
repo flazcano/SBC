@@ -39,6 +39,7 @@ class Servidor():
             # instanciando el socket
             handler.log.debug('abriendo el socket de comunicacion')
             self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.server.setblocking(0)
             self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.server.bind((self.host, self.port))
             self.server.listen(5)
@@ -51,21 +52,23 @@ class Servidor():
 
     def run(self):
         self.open_socket()
+
         running = 1
+        handler.log.debug('socket de comunicacion abierto')
         while running:
-            inputready  = select([self.server, stdin],[],[])
-            outputready = select([self.server, stdin],[],[]) #@UnusedVariable
-            exceptready = select([self.server, stdin],[],[]) #@UnusedVariable
+            inputready  = select([self.server, stdin], [], [])
+            outputready = select([self.server, stdin], [], []) #@UnusedVariable
+            exceptready = select([self.server, stdin], [], []) #@UnusedVariable
             for server in inputready:
-                if server == self.server:
-                    # manejando el socket del servidor
-                    cliente = Cliente(self.server.accept());
-                    cliente.start();
-                    # creando un hilo
-                    self.threads.append(cliente);
+                # manejando el socket del servidor
+                cliente = Cliente(self.server.accept());
+                cliente.start();
+                # creando un hilo
+                self.threads.append(cliente);
 
         # cerrando los hilos
         if self.server:
+            handler.log.debug('cerrando hilo')
             self.server.close()
         for c in self.threads:
             c.join()

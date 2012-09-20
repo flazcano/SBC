@@ -37,13 +37,13 @@ SLEEPREGLAMEJORSERVIDOR = None
 def CreaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
     handler.log.info('creando regla: ' + IPORIGEN + ':' + str(PUERTODESTINO) + ' -> ' + IPDESTINO + ':' + str(PUERTODESTINO) + ' ' + PROTO)
     try:
-        EXEC='iptables -t ' + TABLENAME + ' -A ' + PRECHAIN + ' -p ' + PROTO + ' -s 0/0 -d ' + IPSBC + ' --dport ' + str(PUERTODESTINO) + ' -j DNAT --to ' + IPDESTINO + ':' + str(PUERTODESTINO)
+        EXEC='iptables -t ' + TABLENAME + ' -R ' + PRECHAIN + ' 1 -p ' + PROTO + ' -s 0/0 -d ' + IPSBC + ' --dport ' + str(PUERTODESTINO) + ' -j DNAT --to ' + IPDESTINO + ':' + str(PUERTODESTINO)
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         
-        EXEC='iptables -t ' + TABLENAME + ' -A ' + POSTCHAIN + ' -o ' + IFACE + ' -d ' + IPDESTINO + ' -j SNAT --to-source ' + IPSBC
+        EXEC='iptables -t ' + TABLENAME + ' -R ' + POSTCHAIN + ' 1 -o ' + IFACE + ' -d ' + IPDESTINO + ' -j SNAT --to-source ' + IPSBC
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         
         handler.log.info('regla aplicada correctamente')
     except Exception as message:
@@ -55,11 +55,11 @@ def EliminaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO):
     try:
         EXEC='iptables -t ' + TABLENAME + ' -D ' + PRECHAIN + ' -p ' + PROTO + ' -s 0/0 -d ' + IPSBC + ' --dport ' + str(PUERTODESTINO) + ' -j DNAT --to ' + IPDESTINO + ':' + str(PUERTODESTINO)
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         
         EXEC='iptables -t ' + TABLENAME + ' -D ' + POSTCHAIN + ' -o ' + IFACE + ' -d ' + IPDESTINO + ' -j SNAT --to-source ' + IPSBC
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         handler.log.info('regla eliminada correctamente')
     except Exception as message:
             handler.log.error('no se pudo eliminar la regla')
@@ -70,7 +70,7 @@ def MuestraReglas():
     try:
         EXEC='iptables -t ' + TABLENAME + ' -nvL'
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
     except Exception as message:
             handler.log.error('error al obtener las reglas')
             handler.log.exception(message)
@@ -80,16 +80,16 @@ def LimpiaReglas():
     try:
         EXEC='iptables -t ' + TABLENAME + ' -F '
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         
         
         EXEC='iptables -t ' + TABLENAME + ' -F ' + PRECHAIN
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         
         EXEC='iptables -t ' + TABLENAME + ' -F ' + POSTCHAIN
         STATUS = execute(EXEC)
-        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
         
         handler.log.info('las reglas fueron limpiadas')
     except Exception as message:
@@ -97,6 +97,24 @@ def LimpiaReglas():
             handler.log.exception(message)  
 
 def ReglaInicial():
+    handler.log.info('aplicando regla inicial')
+
+    handler.log.info('creando regla: ' + IPSBC + ':' + str(PUERTODEFECTO) + ' -> ' + IPINICIAL + ':' + str(PUERTODEFECTO) + ' ' + PROTOCOLODEFECTO)
+    try:
+        EXEC='iptables -t ' + TABLENAME + ' -A ' + PRECHAIN + ' -p ' + PROTOCOLODEFECTO + ' -s 0/0 -d ' + IPSBC + ' --dport ' + str(PUERTODEFECTO) + ' -j DNAT --to ' + IPINICIAL + ':' + str(PUERTODEFECTO)
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
+
+        EXEC='iptables -t ' + TABLENAME + ' -A ' + POSTCHAIN + ' -o ' + IFACE + ' -d ' + IPINICIAL + ' -j SNAT --to-source ' + IPSBC
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS (%s)', EXEC, STATUS)
+
+        handler.log.info('regla aplicada correctamente')
+    except Exception as message:
+        handler.log.error('no se pudo crear la regla inicial')
+        handler.log.exception(message)
+
+def ReglaPorDefecto():
     handler.log.info('aplicando regla por defecto')
     CreaRegla(IPSBC, IPINICIAL, PROTOCOLODEFECTO, PUERTODEFECTO)
 
@@ -111,10 +129,10 @@ def ModificaReglas():
             handler.log.info('obteniendo mejor servidor para reglas de IPTABLES')
             DESTINO = MIS.ConsultaMejorServidor()
             handler.log.debug('mejor servidor: ' + str(DESTINO))
-            LimpiaReglas()
+            #LimpiaReglas()
             if str(DESTINO) == 'None':
                 handler.log.info('modificando reglas de IPTABLES con servidor por defecto')
-                ReglaInicial()
+                ReglaPorDefecto()
             else:
                 handler.log.info('modificando reglas de IPTABLES con mejor servidor %s', DESTINO)
                 CreaRegla(IPSBC, DESTINO, PROTOCOLODEFECTO, PUERTODEFECTO)
@@ -182,4 +200,3 @@ def setSLEEPREGLAMEJORSERVIDOR(VALUE):
 # main
 if __name__ == '__main__':
     run()
-    

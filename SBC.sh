@@ -7,4 +7,4 @@ if [ $? -gt 0 ]; then
 fi
 
 echo "Lanzando SBC"
-$PYTHON SBC.py
+$PYTHON SBC.py $1

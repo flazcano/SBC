@@ -57,7 +57,7 @@ def getNET(): # devuelve un arreglo con la cantidad de bits enviados, la cantida
 
 def getHDD(): # devuelve un arreglo de Devices, el cual contiene un arreglo con el device, el espacio total, el espacio utilizado, el espacio disponible y el % de espacio utilizado
     try:
-        getDEV = psutil.disk_partitions()
+        getDEV = psutil.disk_partitions(all=True)
         miHDD = ''
         for dev in range(0, len(getDEV)):
             getHDD = psutil.disk_usage(getDEV[dev][1])
@@ -132,4 +132,5 @@ def setAOCMRSLEEPTIME(VALUE):
     
 # main
 if __name__ == '__main__':
+    run()
     getCarga()

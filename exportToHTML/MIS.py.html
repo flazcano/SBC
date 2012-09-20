@@ -1,0 +1,315 @@
+<html>
+<head>
+<title>MIS.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MIS.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">&quot;&quot;&quot; 
+<a name="l2"><span class="ln">2    </span></a>Created on 23/10/2011 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a>@author: Fernando 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a>Modulo de Integracion para SQLite3 (MIS) 
+<a name="l7"><span class="ln">7    </span></a>&quot;&quot;&quot;</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0"># importaciones</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s2">from </span><span class="s1">sys </span><span class="s2">import </span><span class="s1">exit 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s2">from </span><span class="s1">os </span><span class="s2">import </span><span class="s1">path 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s2">from </span><span class="s1">time </span><span class="s2">import </span><span class="s1">time 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s2">from </span><span class="s1">sqlite3 </span><span class="s2">import </span><span class="s1">connect  </span><span class="s0">#@UnusedImport</span><span class="s1"> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s2">from </span><span class="s1">Logger </span><span class="s2">import </span><span class="s1">handler 
+<a name="l15"><span class="ln">15   </span></a> 
+<a name="l16"><span class="ln">16   </span></a></span><span class="s0"># definiciones</span><span class="s1"> 
+<a name="l17"><span class="ln">17   </span></a>SBCDB               = None 
+<a name="l18"><span class="ln">18   </span></a>SBCDUMP             = None 
+<a name="l19"><span class="ln">19   </span></a>INTENTOSSERVERDOWN  = None 
+<a name="l20"><span class="ln">20   </span></a>TABLA_CONFIGURACION = None 
+<a name="l21"><span class="ln">21   </span></a>TABLA_SERVIDOR      = None 
+<a name="l22"><span class="ln">22   </span></a>TABLA_CARGAS        = None 
+<a name="l23"><span class="ln">23   </span></a>TABLA_OPERADOR      = None 
+<a name="l24"><span class="ln">24   </span></a>TABLA_ALERTA        = None 
+<a name="l25"><span class="ln">25   </span></a> 
+<a name="l26"><span class="ln">26   </span></a></span><span class="s0"># clases</span><span class="s1"> 
+<a name="l27"><span class="ln">27   </span></a> 
+<a name="l28"><span class="ln">28   </span></a></span><span class="s0"># funciones</span><span class="s1"> 
+<a name="l29"><span class="ln">29   </span></a></span><span class="s2">def </span><span class="s1">CreaEsquema(): 
+<a name="l30"><span class="ln">30   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l31"><span class="ln">31   </span></a>        handler.log.info(</span><span class="s3">'creando esquema en ' </span><span class="s1">+ SBCDB) 
+<a name="l32"><span class="ln">32   </span></a>        fileSBCDUMP = open(SBCDUMP) 
+<a name="l33"><span class="ln">33   </span></a>        ESQUEMA = fileSBCDUMP.read() 
+<a name="l34"><span class="ln">34   </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l35"><span class="ln">35   </span></a>        cursor=conexion.cursor() 
+<a name="l36"><span class="ln">36   </span></a>        </span><span class="s2">for </span><span class="s1">sql </span><span class="s2">in </span><span class="s1">ESQUEMA.split(</span><span class="s3">&quot;;&quot;</span><span class="s1">): 
+<a name="l37"><span class="ln">37   </span></a>            cursor.execute(sql) 
+<a name="l38"><span class="ln">38   </span></a>        handler.log.info(</span><span class="s3">'esquema creado correctamente'</span><span class="s1">) 
+<a name="l39"><span class="ln">39   </span></a>        exit(</span><span class="s4">0</span><span class="s1">) 
+<a name="l40"><span class="ln">40   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l41"><span class="ln">41   </span></a>        handler.log.error(</span><span class="s3">'no se puede crear esquema de ' </span><span class="s1">+ SBCDB + </span><span class="s3">': %s'</span><span class="s1">, message) 
+<a name="l42"><span class="ln">42   </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l43"><span class="ln">43   </span></a>    </span><span class="s2">finally</span><span class="s1">: 
+<a name="l44"><span class="ln">44   </span></a>        </span><span class="s2">if </span><span class="s1">cursor: cursor.close() 
+<a name="l45"><span class="ln">45   </span></a>        </span><span class="s2">if </span><span class="s1">conexion: conexion.close() 
+<a name="l46"><span class="ln">46   </span></a>  
+<a name="l47"><span class="ln">47   </span></a></span><span class="s2">def </span><span class="s1">ConsultaServidoresActivos(): 
+<a name="l48"><span class="ln">48   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l49"><span class="ln">49   </span></a>        handler.log.debug(</span><span class="s3">'consultando servidores activos'</span><span class="s1">) 
+<a name="l50"><span class="ln">50   </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l51"><span class="ln">51   </span></a>        cursor=conexion.cursor() 
+<a name="l52"><span class="ln">52   </span></a>        servidores = cursor.execute(</span><span class="s3">'SELECT fqdn, puerto FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE activo = &quot;TRUE&quot;;'</span><span class="s1">) 
+<a name="l53"><span class="ln">53   </span></a>        </span><span class="s2">return </span><span class="s1">servidores 
+<a name="l54"><span class="ln">54   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l55"><span class="ln">55   </span></a>        handler.log.error(</span><span class="s3">'no se puede obtener servidores activos: %s'</span><span class="s1">, message) 
+<a name="l56"><span class="ln">56   </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l57"><span class="ln">57   </span></a> 
+<a name="l58"><span class="ln">58   </span></a></span><span class="s2">def </span><span class="s1">ConsultaServidoresInactivos(): 
+<a name="l59"><span class="ln">59   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l60"><span class="ln">60   </span></a>        handler.log.debug(</span><span class="s3">'consultando servidores inactivos'</span><span class="s1">) 
+<a name="l61"><span class="ln">61   </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l62"><span class="ln">62   </span></a>        cursor=conexion.cursor() 
+<a name="l63"><span class="ln">63   </span></a>        servidores = cursor.execute(</span><span class="s3">'SELECT fqdn, puerto FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE activo = &quot;FALSE&quot;;'</span><span class="s1">) 
+<a name="l64"><span class="ln">64   </span></a>        </span><span class="s2">return </span><span class="s1">servidores 
+<a name="l65"><span class="ln">65   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l66"><span class="ln">66   </span></a>        handler.log.error(</span><span class="s3">'no se puede obtener servidores inactivos: %s'</span><span class="s1">, message) 
+<a name="l67"><span class="ln">67   </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l68"><span class="ln">68   </span></a> 
+<a name="l69"><span class="ln">69   </span></a></span><span class="s2">def </span><span class="s1">ConsultaTotalServidoresActivos(): 
+<a name="l70"><span class="ln">70   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l71"><span class="ln">71   </span></a>        handler.log.debug(</span><span class="s3">'consultando total de servidores activos'</span><span class="s1">) 
+<a name="l72"><span class="ln">72   </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l73"><span class="ln">73   </span></a>        cursor=conexion.cursor() 
+<a name="l74"><span class="ln">74   </span></a>        total = cursor.execute(</span><span class="s3">'SELECT count(id) FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE activo = &quot;TRUE&quot;;'</span><span class="s1">) 
+<a name="l75"><span class="ln">75   </span></a>        </span><span class="s2">return </span><span class="s1">total 
+<a name="l76"><span class="ln">76   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l77"><span class="ln">77   </span></a>        handler.log.error(</span><span class="s3">'no se puede obtener total de servidores activos: %s'</span><span class="s1">, message) 
+<a name="l78"><span class="ln">78   </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l79"><span class="ln">79   </span></a> 
+<a name="l80"><span class="ln">80   </span></a></span><span class="s2">def </span><span class="s1">ConsultaTotalServidoresInactivos(): 
+<a name="l81"><span class="ln">81   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l82"><span class="ln">82   </span></a>        handler.log.debug(</span><span class="s3">'consultando total de servidores inactivos'</span><span class="s1">) 
+<a name="l83"><span class="ln">83   </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l84"><span class="ln">84   </span></a>        cursor=conexion.cursor() 
+<a name="l85"><span class="ln">85   </span></a>        total = cursor.execute(</span><span class="s3">'SELECT count(id) FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE activo = &quot;FALSE&quot;;'</span><span class="s1">) 
+<a name="l86"><span class="ln">86   </span></a>        </span><span class="s2">return </span><span class="s1">total 
+<a name="l87"><span class="ln">87   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l88"><span class="ln">88   </span></a>        handler.log.error(</span><span class="s3">'no se puede obtener total de servidores inactivos: %s'</span><span class="s1">, message) 
+<a name="l89"><span class="ln">89   </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l90"><span class="ln">90   </span></a> 
+<a name="l91"><span class="ln">91   </span></a></span><span class="s2">def </span><span class="s1">AgregaServidor(FQDN, PUERTO): 
+<a name="l92"><span class="ln">92   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l93"><span class="ln">93   </span></a>        handler.log.debug(</span><span class="s3">'agregando servidor: ' </span><span class="s1">+ FQDN + </span><span class="s3">':' </span><span class="s1">+ str(PUERTO)) 
+<a name="l94"><span class="ln">94   </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l95"><span class="ln">95   </span></a>        cursor=conexion.cursor() 
+<a name="l96"><span class="ln">96   </span></a>        PUERTODB = cursor.execute(</span><span class="s3">'SELECT puerto FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE fqdn = ?;'</span><span class="s1">, ([FQDN])).fetchall() 
+<a name="l97"><span class="ln">97   </span></a>        MODIFICADO = time() 
+<a name="l98"><span class="ln">98   </span></a>        </span><span class="s0"># si el servidor ya existe en la base de datos</span><span class="s1"> 
+<a name="l99"><span class="ln">99   </span></a>        </span><span class="s2">if </span><span class="s1">PUERTODB: 
+<a name="l100"><span class="ln">100  </span></a>            </span><span class="s0"># pero tiene distinto puerto al registrado</span><span class="s1"> 
+<a name="l101"><span class="ln">101  </span></a>            </span><span class="s2">if </span><span class="s1">PUERTO </span><span class="s2">is not </span><span class="s1">str(PUERTODB[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]): 
+<a name="l102"><span class="ln">102  </span></a>                handler.log.debug(</span><span class="s3">'actualizando puerto de servidor existente, de ' </span><span class="s1">+ str(PUERTODB[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]) + </span><span class="s3">' a ' </span><span class="s1">+ PUERTO) 
+<a name="l103"><span class="ln">103  </span></a>                cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET puerto = ? WHERE fqdn = ?;'</span><span class="s1">, (PUERTO, FQDN)) 
+<a name="l104"><span class="ln">104  </span></a>                cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET modificado = ? WHERE fqdn = ?;'</span><span class="s1">, (MODIFICADO, FQDN)) 
+<a name="l105"><span class="ln">105  </span></a>            cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET activo = ? WHERE fqdn = ?;'</span><span class="s1">, (</span><span class="s3">'TRUE'</span><span class="s1">, FQDN)) 
+<a name="l106"><span class="ln">106  </span></a>            cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET intento = ? WHERE fqdn = ?;'</span><span class="s1">, (</span><span class="s4">0</span><span class="s1">, FQDN)) 
+<a name="l107"><span class="ln">107  </span></a>        </span><span class="s0"># si el servidor no existe</span><span class="s1"> 
+<a name="l108"><span class="ln">108  </span></a>        </span><span class="s2">else</span><span class="s1">: 
+<a name="l109"><span class="ln">109  </span></a>            handler.log.debug(</span><span class="s3">'agregando servidor nuevo: ' </span><span class="s1">+ FQDN + </span><span class="s3">':' </span><span class="s1">+ str(PUERTO)) 
+<a name="l110"><span class="ln">110  </span></a>            cursor.execute(</span><span class="s3">'INSERT INTO ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' (fqdn, puerto, activo, modificado, intento) VALUES (?, ?, ?, ?, ?);'</span><span class="s1">, (FQDN, PUERTO, </span><span class="s3">'TRUE'</span><span class="s1">, MODIFICADO, </span><span class="s4">0</span><span class="s1">)) 
+<a name="l111"><span class="ln">111  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l112"><span class="ln">112  </span></a>        handler.log.error(</span><span class="s3">'no se puede agregar servidor: %s'</span><span class="s1">, message) 
+<a name="l113"><span class="ln">113  </span></a>        handler.log.exception(message) 
+<a name="l114"><span class="ln">114  </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l115"><span class="ln">115  </span></a> 
+<a name="l116"><span class="ln">116  </span></a></span><span class="s2">def </span><span class="s1">ServidorVuelveActivo(FQDN, PUERTO): 
+<a name="l117"><span class="ln">117  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l118"><span class="ln">118  </span></a>        handler.log.debug(</span><span class="s3">'servidor vuelve a actividad: ' </span><span class="s1">+ FQDN + </span><span class="s3">':' </span><span class="s1">+ str(PUERTO)) 
+<a name="l119"><span class="ln">119  </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l120"><span class="ln">120  </span></a>        cursor=conexion.cursor() 
+<a name="l121"><span class="ln">121  </span></a>        cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET activo = ? WHERE fqdn = ?;'</span><span class="s1">, (</span><span class="s3">'TRUE'</span><span class="s1">, FQDN)) 
+<a name="l122"><span class="ln">122  </span></a>        cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET intento = ? WHERE fqdn = ?;'</span><span class="s1">, (</span><span class="s4">0</span><span class="s1">, FQDN)) 
+<a name="l123"><span class="ln">123  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l124"><span class="ln">124  </span></a>        handler.log.error(</span><span class="s3">'no se puede agregar servidor: %s'</span><span class="s1">, message) 
+<a name="l125"><span class="ln">125  </span></a>        handler.log.exception(message) 
+<a name="l126"><span class="ln">126  </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l127"><span class="ln">127  </span></a> 
+<a name="l128"><span class="ln">128  </span></a> 
+<a name="l129"><span class="ln">129  </span></a></span><span class="s2">def </span><span class="s1">AgregaLAV(FQDN, LAV): 
+<a name="l130"><span class="ln">130  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l131"><span class="ln">131  </span></a>        miLAV = LAV.split(</span><span class="s3">&quot; &quot;</span><span class="s1">);  
+<a name="l132"><span class="ln">132  </span></a>        </span><span class="s0"># handler.log.debug('LAV: ' + LAV)</span><span class="s1"> 
+<a name="l133"><span class="ln">133  </span></a>         
+<a name="l134"><span class="ln">134  </span></a>        </span><span class="s0"># obtiene HORA</span><span class="s1"> 
+<a name="l135"><span class="ln">135  </span></a>        HORA = None; HORA = str(miLAV[</span><span class="s4">0</span><span class="s1">]); handler.log.debug(</span><span class="s3">'HORA: ' </span><span class="s1">+ HORA) 
+<a name="l136"><span class="ln">136  </span></a>        time_unix = HORA 
+<a name="l137"><span class="ln">137  </span></a>         
+<a name="l138"><span class="ln">138  </span></a>        </span><span class="s0"># obtiene CPU</span><span class="s1"> 
+<a name="l139"><span class="ln">139  </span></a>        CPU = None; CPU = str(miLAV[</span><span class="s4">1</span><span class="s1">]); 
+<a name="l140"><span class="ln">140  </span></a>        handler.log.debug(</span><span class="s3">'CPU: ' </span><span class="s1">+ CPU) 
+<a name="l141"><span class="ln">141  </span></a>        cpu_total = None; cpu_total = str(CPU).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">0</span><span class="s1">]; handler.log.debug(</span><span class="s3">'cpu_total: ' </span><span class="s1">+ cpu_total) 
+<a name="l142"><span class="ln">142  </span></a>        cpu_cores = None; cpu_cores = str(CPU).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, </span><span class="s4">1</span><span class="s1">)[</span><span class="s4">1</span><span class="s1">]; handler.log.debug(</span><span class="s3">'cpu_cores: ' </span><span class="s1">+ cpu_cores) 
+<a name="l143"><span class="ln">143  </span></a>         
+<a name="l144"><span class="ln">144  </span></a>        </span><span class="s0"># obtiene MEM</span><span class="s1"> 
+<a name="l145"><span class="ln">145  </span></a>        MEM = None; MEM = str(miLAV[</span><span class="s4">2</span><span class="s1">]); handler.log.debug(</span><span class="s3">'MEM: ' </span><span class="s1">+ MEM) 
+<a name="l146"><span class="ln">146  </span></a>        mem_total = None; mem_total = str(MEM).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">0</span><span class="s1">]; handler.log.debug(</span><span class="s3">'mem_total: ' </span><span class="s1">+ mem_total) 
+<a name="l147"><span class="ln">147  </span></a>        mem_used = None; mem_used = str(MEM).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">1</span><span class="s1">]; handler.log.debug(</span><span class="s3">'mem_used: ' </span><span class="s1">+ mem_used) 
+<a name="l148"><span class="ln">148  </span></a>        mem_free = None; mem_free = str(MEM).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">2</span><span class="s1">]; handler.log.debug(</span><span class="s3">'mem_free: ' </span><span class="s1">+ mem_free) 
+<a name="l149"><span class="ln">149  </span></a>        mem_percent = None; mem_percent = str(MEM).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">3</span><span class="s1">]; handler.log.debug(</span><span class="s3">'mem_percent: ' </span><span class="s1">+ mem_percent) 
+<a name="l150"><span class="ln">150  </span></a>         
+<a name="l151"><span class="ln">151  </span></a>        </span><span class="s0"># obtiene IO</span><span class="s1"> 
+<a name="l152"><span class="ln">152  </span></a>        IO = None; IO = str(miLAV[</span><span class="s4">3</span><span class="s1">]); handler.log.debug(</span><span class="s3">'IO: ' </span><span class="s1">+ IO) 
+<a name="l153"><span class="ln">153  </span></a>        io_read_count = None; io_read_count = str(IO).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">0</span><span class="s1">]; handler.log.debug(</span><span class="s3">'io_read_count: ' </span><span class="s1">+ io_read_count) 
+<a name="l154"><span class="ln">154  </span></a>        io_write_count = None; io_write_count = str(IO).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">1</span><span class="s1">]; handler.log.debug(</span><span class="s3">'io_write_count: ' </span><span class="s1">+ io_write_count) 
+<a name="l155"><span class="ln">155  </span></a>        io_read_bytes = None; io_read_bytes = str(IO).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">2</span><span class="s1">]; handler.log.debug(</span><span class="s3">'io_read_bytes: ' </span><span class="s1">+ io_read_bytes) 
+<a name="l156"><span class="ln">156  </span></a>        io_write_bytes = None; io_write_bytes = str(IO).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">3</span><span class="s1">]; handler.log.debug(</span><span class="s3">'io_write_bytes: ' </span><span class="s1">+ io_write_bytes) 
+<a name="l157"><span class="ln">157  </span></a>        io_read_time = None; io_read_time = str(IO).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">4</span><span class="s1">]; handler.log.debug(</span><span class="s3">'io_read_time: ' </span><span class="s1">+ io_read_time) 
+<a name="l158"><span class="ln">158  </span></a>        io_write_time = None; io_write_time = str(IO).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">5</span><span class="s1">]; handler.log.debug(</span><span class="s3">'io_write_time: ' </span><span class="s1">+ io_write_time) 
+<a name="l159"><span class="ln">159  </span></a>         
+<a name="l160"><span class="ln">160  </span></a>        </span><span class="s0"># obtiene NET</span><span class="s1"> 
+<a name="l161"><span class="ln">161  </span></a>        NET = None; NET = str(miLAV[</span><span class="s4">4</span><span class="s1">]); handler.log.debug(</span><span class="s3">'NET: ' </span><span class="s1">+ NET) 
+<a name="l162"><span class="ln">162  </span></a>        net_bytes_sent = None; net_bytes_sent = str(NET).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">0</span><span class="s1">]; handler.log.debug(</span><span class="s3">'net_bytes_sent: ' </span><span class="s1">+ net_bytes_sent) 
+<a name="l163"><span class="ln">163  </span></a>        net_bytes_recv = None; net_bytes_recv = str(NET).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">1</span><span class="s1">]; handler.log.debug(</span><span class="s3">'net_bytes_recv: ' </span><span class="s1">+ net_bytes_recv) 
+<a name="l164"><span class="ln">164  </span></a>        net_packets_sent = None; net_packets_sent = str(NET).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">2</span><span class="s1">]; handler.log.debug(</span><span class="s3">'net_packets_sent: ' </span><span class="s1">+ net_packets_sent) 
+<a name="l165"><span class="ln">165  </span></a>        net_packets_recv = None; net_packets_recv = str(NET).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">3</span><span class="s1">]; handler.log.debug(</span><span class="s3">'net_packets_recv: ' </span><span class="s1">+ net_packets_recv) 
+<a name="l166"><span class="ln">166  </span></a>         
+<a name="l167"><span class="ln">167  </span></a>        </span><span class="s0"># obtiene HDD</span><span class="s1"> 
+<a name="l168"><span class="ln">168  </span></a>        HDD = None; HDD = str(miLAV[</span><span class="s4">5</span><span class="s1">]); handler.log.debug(</span><span class="s3">'HDD: ' </span><span class="s1">+ HDD) 
+<a name="l169"><span class="ln">169  </span></a>        hdd_device = None; hdd_device = str(HDD).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">0</span><span class="s1">]; handler.log.debug(</span><span class="s3">'hdd_device: ' </span><span class="s1">+ hdd_device) 
+<a name="l170"><span class="ln">170  </span></a>        hdd_total = None; hdd_total = str(HDD).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">1</span><span class="s1">]; handler.log.debug(</span><span class="s3">'hdd_total: ' </span><span class="s1">+ hdd_total) 
+<a name="l171"><span class="ln">171  </span></a>        hdd_used = None; hdd_used = str(HDD).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">2</span><span class="s1">]; handler.log.debug(</span><span class="s3">'hdd_used: ' </span><span class="s1">+ hdd_used) 
+<a name="l172"><span class="ln">172  </span></a>        hdd_free = None; hdd_free = str(HDD).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">3</span><span class="s1">]; handler.log.debug(</span><span class="s3">'hdd_free: ' </span><span class="s1">+ hdd_free) 
+<a name="l173"><span class="ln">173  </span></a>        hdd_percent = None; hdd_percent = str(HDD).split(</span><span class="s3">&quot;,&quot;</span><span class="s1">, )[</span><span class="s4">4</span><span class="s1">]; handler.log.debug(</span><span class="s3">'hdd_percent: ' </span><span class="s1">+ hdd_percent) 
+<a name="l174"><span class="ln">174  </span></a>         
+<a name="l175"><span class="ln">175  </span></a>        handler.log.debug(</span><span class="s3">'agregando LAV de ' </span><span class="s1">+ FQDN) 
+<a name="l176"><span class="ln">176  </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l177"><span class="ln">177  </span></a>        cursor=conexion.cursor() 
+<a name="l178"><span class="ln">178  </span></a>        </span><span class="s0"># actualiza intentos de chequeo a 0</span><span class="s1"> 
+<a name="l179"><span class="ln">179  </span></a>        cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET intento = ? WHERE fqdn = ?;'</span><span class="s1">, (</span><span class="s4">0</span><span class="s1">, FQDN)) 
+<a name="l180"><span class="ln">180  </span></a>        </span><span class="s0"># obtiene identificador del host, para agregar carga</span><span class="s1"> 
+<a name="l181"><span class="ln">181  </span></a>        ID = cursor.execute(</span><span class="s3">'SELECT id FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE fqdn = ?;'</span><span class="s1">, ([FQDN])).fetchall() 
+<a name="l182"><span class="ln">182  </span></a>        servidorid_id = ID[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] 
+<a name="l183"><span class="ln">183  </span></a>        </span><span class="s0"># agrega carga a la DB</span><span class="s1"> 
+<a name="l184"><span class="ln">184  </span></a>        cursor.execute(</span><span class="s3">'INSERT INTO ' </span><span class="s1">+ TABLA_CARGAS + </span><span class="s3">' (servidorid_id, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);'</span><span class="s1">,  
+<a name="l185"><span class="ln">185  </span></a>                        (servidorid_id, time_unix, cpu_total, cpu_cores, mem_total, mem_used, mem_free, mem_percent, io_read_count, io_write_count, io_read_bytes, io_write_bytes, io_read_time, io_write_time, net_bytes_sent, net_bytes_recv, net_packets_sent, net_packets_recv, hdd_device, hdd_total, hdd_used, hdd_free, hdd_percent)) 
+<a name="l186"><span class="ln">186  </span></a>        handler.log.debug(</span><span class="s3">'LAV agregado correctamente para ' </span><span class="s1">+ FQDN) 
+<a name="l187"><span class="ln">187  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l188"><span class="ln">188  </span></a>        handler.log.error(</span><span class="s3">'no se puede agregar LAV de cliente: %s'</span><span class="s1">, message) 
+<a name="l189"><span class="ln">189  </span></a>        handler.log.exception(message) 
+<a name="l190"><span class="ln">190  </span></a> 
+<a name="l191"><span class="ln">191  </span></a></span><span class="s2">def </span><span class="s1">ServidorConProblemas(FQDN, PUERTO): 
+<a name="l192"><span class="ln">192  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l193"><span class="ln">193  </span></a>        handler.log.debug(</span><span class="s3">'servidor con problemas: ' </span><span class="s1">+ FQDN + </span><span class="s3">':' </span><span class="s1">+ str(PUERTO)) 
+<a name="l194"><span class="ln">194  </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l195"><span class="ln">195  </span></a>        cursor=conexion.cursor() 
+<a name="l196"><span class="ln">196  </span></a>        INTENTO = cursor.execute(</span><span class="s3">'SELECT intento FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' WHERE fqdn = ?;'</span><span class="s1">, ([FQDN])).fetchall() 
+<a name="l197"><span class="ln">197  </span></a>        MODIFICADO = time() 
+<a name="l198"><span class="ln">198  </span></a>        </span><span class="s2">if </span><span class="s1">INTENTO: 
+<a name="l199"><span class="ln">199  </span></a>            </span><span class="s0"># si se ha intentado menos de NUMEROINTENTOS veces consultar el servidor</span><span class="s1"> 
+<a name="l200"><span class="ln">200  </span></a>            </span><span class="s2">if </span><span class="s1">INTENTO &lt; INTENTOSSERVERDOWN: 
+<a name="l201"><span class="ln">201  </span></a>                handler.log.debug(</span><span class="s3">'actualizando intentos con problemas de servidor a ' </span><span class="s1">+ (INTENTO + </span><span class="s4">1</span><span class="s1">)) 
+<a name="l202"><span class="ln">202  </span></a>                cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET intento = ? WHERE fqdn = ?;'</span><span class="s1">, ((INTENTO + </span><span class="s4">1</span><span class="s1">), FQDN)) 
+<a name="l203"><span class="ln">203  </span></a>                cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET modificado = ? WHERE fqdn = ?;'</span><span class="s1">, (MODIFICADO, FQDN)) 
+<a name="l204"><span class="ln">204  </span></a>            </span><span class="s0"># si se ha intentado menos de NUMEROINTENTOS veces consultar el servidor</span><span class="s1"> 
+<a name="l205"><span class="ln">205  </span></a>            </span><span class="s2">else</span><span class="s1">: 
+<a name="l206"><span class="ln">206  </span></a>                handler.log.debug(</span><span class="s3">'actualizando a inactivo estado de servidor'</span><span class="s1">) 
+<a name="l207"><span class="ln">207  </span></a>                cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET activo = ? WHERE fqdn = ?;'</span><span class="s1">, (</span><span class="s3">'FALSE'</span><span class="s1">, FQDN)) 
+<a name="l208"><span class="ln">208  </span></a>                cursor.execute(</span><span class="s3">'UPDATE ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' SET modificado = ? WHERE fqdn = ?;'</span><span class="s1">, (MODIFICADO, FQDN)) 
+<a name="l209"><span class="ln">209  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l210"><span class="ln">210  </span></a>        handler.log.error(</span><span class="s3">'no se puede modificar estado de servidor: %s'</span><span class="s1">, message) 
+<a name="l211"><span class="ln">211  </span></a>        handler.log.exception(message) 
+<a name="l212"><span class="ln">212  </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l213"><span class="ln">213  </span></a> 
+<a name="l214"><span class="ln">214  </span></a></span><span class="s2">def </span><span class="s1">ConsultaMejorServidor(): 
+<a name="l215"><span class="ln">215  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l216"><span class="ln">216  </span></a>        handler.log.info(</span><span class="s3">'consultando por mejor servidor'</span><span class="s1">) 
+<a name="l217"><span class="ln">217  </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l218"><span class="ln">218  </span></a>        cursor=conexion.cursor() 
+<a name="l219"><span class="ln">219  </span></a>        </span><span class="s0"># se obtiene el mejor servidor del momento en base a las cargas entregadas</span><span class="s1"> 
+<a name="l220"><span class="ln">220  </span></a>        </span><span class="s0"># QUERY='SELECT fqdn FROM (SELECT fqdn, min(cpu) AS cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento &lt;= 1 AND servidor.activo = &quot;TRUE&quot; GROUP BY servidor.id));'</span><span class="s1"> 
+<a name="l221"><span class="ln">221  </span></a>        QUERY=</span><span class="s3">'SELECT fqdn FROM (SELECT fqdn, cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' </span><span class="s1">+ TABLA_SERVIDOR + </span><span class="s3">' AS servidor, ' </span><span class="s1">+ TABLA_CARGAS + </span><span class="s3">' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento &lt;= 1 AND servidor.activo = &quot;TRUE&quot; GROUP BY servidor.id ORDER BY cpu) LIMIT 1);'</span><span class="s1"> 
+<a name="l222"><span class="ln">222  </span></a>        handler.log.debug(</span><span class="s3">'QUERY=%s'</span><span class="s1">, QUERY) 
+<a name="l223"><span class="ln">223  </span></a>        mejorservidor = cursor.execute(QUERY).fetchall() 
+<a name="l224"><span class="ln">224  </span></a>        handler.log.debug(</span><span class="s3">'mejor servidor obtenido: %s'</span><span class="s1">, mejorservidor) 
+<a name="l225"><span class="ln">225  </span></a>        </span><span class="s2">if </span><span class="s1">mejorservidor == []: 
+<a name="l226"><span class="ln">226  </span></a>            </span><span class="s2">return </span><span class="s1">None 
+<a name="l227"><span class="ln">227  </span></a>        </span><span class="s2">else</span><span class="s1">: 
+<a name="l228"><span class="ln">228  </span></a>            </span><span class="s2">return </span><span class="s1">mejorservidor[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] 
+<a name="l229"><span class="ln">229  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l230"><span class="ln">230  </span></a>        handler.log.error(</span><span class="s3">'no se puede obtener mejor servidor: %s'</span><span class="s1">, message) 
+<a name="l231"><span class="ln">231  </span></a>        handler.log.exception(message) 
+<a name="l232"><span class="ln">232  </span></a>        </span><span class="s2">return </span><span class="s1">None 
+<a name="l233"><span class="ln">233  </span></a> 
+<a name="l234"><span class="ln">234  </span></a></span><span class="s2">def </span><span class="s1">Valida(): 
+<a name="l235"><span class="ln">235  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l236"><span class="ln">236  </span></a>        </span><span class="s0"># comprobando que la db existe</span><span class="s1"> 
+<a name="l237"><span class="ln">237  </span></a>        </span><span class="s2">if not </span><span class="s1">path.exists(SBCDB): 
+<a name="l238"><span class="ln">238  </span></a>            </span><span class="s2">raise </span><span class="s1">ValueError(</span><span class="s3">&quot;no existe la BD en &quot; </span><span class="s1">+ path.abspath(SBCDB)) 
+<a name="l239"><span class="ln">239  </span></a>         
+<a name="l240"><span class="ln">240  </span></a>        </span><span class="s0"># se conecta a la db</span><span class="s1"> 
+<a name="l241"><span class="ln">241  </span></a>        conexion = connect(SBCDB, isolation_level=None) 
+<a name="l242"><span class="ln">242  </span></a>        cursor=conexion.cursor() 
+<a name="l243"><span class="ln">243  </span></a>         
+<a name="l244"><span class="ln">244  </span></a>        </span><span class="s0"># comprobando tabla configuracion</span><span class="s1"> 
+<a name="l245"><span class="ln">245  </span></a>        </span><span class="s2">for </span><span class="s1">TABLA </span><span class="s2">in </span><span class="s1">(TABLA_CONFIGURACION, TABLA_SERVIDOR, TABLA_CARGAS, TABLA_OPERADOR, TABLA_ALERTA): 
+<a name="l246"><span class="ln">246  </span></a>            cont = cursor.execute(</span><span class="s3">'pragma table_info(' </span><span class="s1">+ TABLA + </span><span class="s3">');'</span><span class="s1">).fetchall() 
+<a name="l247"><span class="ln">247  </span></a>            </span><span class="s2">if </span><span class="s1">cont: handler.log.debug(</span><span class="s3">'la tabla %s parece estar bien'</span><span class="s1">, TABLA) 
+<a name="l248"><span class="ln">248  </span></a>            </span><span class="s2">else</span><span class="s1">: 
+<a name="l249"><span class="ln">249  </span></a>                </span><span class="s2">raise </span><span class="s1">ValueError, </span><span class="s3">&quot;no existe la tabla &quot; </span><span class="s1">+ TABLA       
+<a name="l250"><span class="ln">250  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l251"><span class="ln">251  </span></a>        handler.log.error(</span><span class="s3">'ha ocurrido un problema al validar la integridad del modulo: %s'</span><span class="s1">, message) 
+<a name="l252"><span class="ln">252  </span></a>        handler.log.exception(message) 
+<a name="l253"><span class="ln">253  </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l254"><span class="ln">254  </span></a> 
+<a name="l255"><span class="ln">255  </span></a></span><span class="s2">def </span><span class="s1">run(): 
+<a name="l256"><span class="ln">256  </span></a>    handler.log.info(</span><span class="s3">'iniciando modulo'</span><span class="s1">) 
+<a name="l257"><span class="ln">257  </span></a> 
+<a name="l258"><span class="ln">258  </span></a></span><span class="s2">def </span><span class="s1">setSBCDB(VALUE): 
+<a name="l259"><span class="ln">259  </span></a>    </span><span class="s2">global </span><span class="s1">SBCDB; SBCDB = VALUE 
+<a name="l260"><span class="ln">260  </span></a>    handler.log.debug(</span><span class="s3">'SBCDB: ' </span><span class="s1">+ SBCDB) 
+<a name="l261"><span class="ln">261  </span></a> 
+<a name="l262"><span class="ln">262  </span></a></span><span class="s2">def </span><span class="s1">setSBCDUMP(VALUE): 
+<a name="l263"><span class="ln">263  </span></a>    </span><span class="s2">global </span><span class="s1">SBCDUMP; SBCDUMP = VALUE 
+<a name="l264"><span class="ln">264  </span></a>    handler.log.debug(</span><span class="s3">'SBCDUMP: ' </span><span class="s1">+ SBCDUMP) 
+<a name="l265"><span class="ln">265  </span></a> 
+<a name="l266"><span class="ln">266  </span></a></span><span class="s2">def </span><span class="s1">setINTENTOSSERVERDOWN(VALUE): 
+<a name="l267"><span class="ln">267  </span></a>    </span><span class="s2">global </span><span class="s1">INTENTOSSERVERDOWN; INTENTOSSERVERDOWN = VALUE 
+<a name="l268"><span class="ln">268  </span></a>    handler.log.debug(</span><span class="s3">'INTENTOSSERVERDOWN: ' </span><span class="s1">+ str(INTENTOSSERVERDOWN)) 
+<a name="l269"><span class="ln">269  </span></a> 
+<a name="l270"><span class="ln">270  </span></a></span><span class="s2">def </span><span class="s1">setTABLA_CONFIGURACION(VALUE): 
+<a name="l271"><span class="ln">271  </span></a>    </span><span class="s2">global </span><span class="s1">TABLA_CONFIGURACION; TABLA_CONFIGURACION = VALUE 
+<a name="l272"><span class="ln">272  </span></a>    handler.log.debug(</span><span class="s3">'TABLA_CONFIGURACION: ' </span><span class="s1">+ TABLA_CONFIGURACION) 
+<a name="l273"><span class="ln">273  </span></a> 
+<a name="l274"><span class="ln">274  </span></a></span><span class="s2">def </span><span class="s1">setTABLA_SERVIDOR(VALUE): 
+<a name="l275"><span class="ln">275  </span></a>    </span><span class="s2">global </span><span class="s1">TABLA_SERVIDOR; TABLA_SERVIDOR = VALUE 
+<a name="l276"><span class="ln">276  </span></a>    handler.log.debug(</span><span class="s3">'TABLA_SERVIDOR: ' </span><span class="s1">+ TABLA_SERVIDOR) 
+<a name="l277"><span class="ln">277  </span></a> 
+<a name="l278"><span class="ln">278  </span></a></span><span class="s2">def </span><span class="s1">setTABLA_CARGAS(VALUE): 
+<a name="l279"><span class="ln">279  </span></a>    </span><span class="s2">global </span><span class="s1">TABLA_CARGAS; TABLA_CARGAS = VALUE 
+<a name="l280"><span class="ln">280  </span></a>    handler.log.debug(</span><span class="s3">'TABLA_CARGAS: ' </span><span class="s1">+ TABLA_CARGAS) 
+<a name="l281"><span class="ln">281  </span></a> 
+<a name="l282"><span class="ln">282  </span></a></span><span class="s2">def </span><span class="s1">setTABLA_OPERADOR(VALUE): 
+<a name="l283"><span class="ln">283  </span></a>    </span><span class="s2">global </span><span class="s1">TABLA_OPERADOR; TABLA_OPERADOR = VALUE 
+<a name="l284"><span class="ln">284  </span></a>    handler.log.debug(</span><span class="s3">'TABLA_OPERADOR: ' </span><span class="s1">+ TABLA_OPERADOR) 
+<a name="l285"><span class="ln">285  </span></a> 
+<a name="l286"><span class="ln">286  </span></a></span><span class="s2">def </span><span class="s1">setTABLA_ALERTA(VALUE): 
+<a name="l287"><span class="ln">287  </span></a>    </span><span class="s2">global </span><span class="s1">TABLA_ALERTA; TABLA_ALERTA = VALUE 
+<a name="l288"><span class="ln">288  </span></a>    handler.log.debug(</span><span class="s3">'TABLA_ALERTA: ' </span><span class="s1">+ TABLA_ALERTA) 
+<a name="l289"><span class="ln">289  </span></a> 
+<a name="l290"><span class="ln">290  </span></a></span><span class="s0"># main</span><span class="s1"> 
+<a name="l291"><span class="ln">291  </span></a></span><span class="s2">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">: 
+<a name="l292"><span class="ln">292  </span></a>    Valida()</span></pre>
+</body>
+</html>

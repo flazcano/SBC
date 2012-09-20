@@ -8,4 +8,3 @@ urlpatterns = patterns('',
     url(r'^alertas/detalle/(?P<id>\d+)/$', 'MIW.Web.views.detallealerta',),
     url(r'^servidor', 'MIW.Web.views.servidor',),
 )
-

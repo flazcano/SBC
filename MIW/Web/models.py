@@ -70,4 +70,3 @@ class alerta(models.Model):
 
     def getOpEn(self):
         return "%d, %s" % (self.operadorid, self.enviado)
-

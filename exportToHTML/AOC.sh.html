@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>AOC.sh</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+AOC.sh</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">#!/bin/bash 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a>PYTHON=`which python` 
+<a name="l4"><span class="ln">4    </span></a>if [ $? -gt 0 ]; then 
+<a name="l5"><span class="ln">5    </span></a>    echo &quot;No se encuentra 'python' en el PATH, esta instalado?&quot; 
+<a name="l6"><span class="ln">6    </span></a>    exit 1 
+<a name="l7"><span class="ln">7    </span></a>fi 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a>echo &quot;Lanzando AOC&quot; 
+<a name="l10"><span class="ln">10   </span></a>$PYTHON AOC.py</span></pre>
+</body>
+</html>

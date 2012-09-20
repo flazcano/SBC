@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>MIW.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MIW.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">''' 
+<a name="l2"><span class="ln">2    </span></a>Created on 29/10/2011 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a>@author: Fernando 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a>Modulo de Interfas Web (MIW) 
+<a name="l7"><span class="ln">7    </span></a>'''</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0"># importaciones</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s2">from </span><span class="s1">commands </span><span class="s2">import </span><span class="s1">getoutput </span><span class="s2">as </span><span class="s1">execute 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s2">from </span><span class="s1">Logger </span><span class="s2">import </span><span class="s1">handler 
+<a name="l12"><span class="ln">12   </span></a> 
+<a name="l13"><span class="ln">13   </span></a> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s0"># definiciones</span><span class="s1"> 
+<a name="l15"><span class="ln">15   </span></a>DJANGOAPP          = None 
+<a name="l16"><span class="ln">16   </span></a>DJANGOBINDADDRESSS = None 
+<a name="l17"><span class="ln">17   </span></a>DJANGOPORT         = None 
+<a name="l18"><span class="ln">18   </span></a> 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s0"># clases</span><span class="s1"> 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a></span><span class="s0"># funciones</span><span class="s1"> 
+<a name="l22"><span class="ln">22   </span></a></span><span class="s2">def </span><span class="s1">LevantaDjango(): 
+<a name="l23"><span class="ln">23   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l24"><span class="ln">24   </span></a>        handler.log.info(</span><span class="s3">'sincronizando esquema para django'</span><span class="s1">) 
+<a name="l25"><span class="ln">25   </span></a>        </span><span class="s0">#run('python ../MIW/manage.py syncdb')</span><span class="s1"> 
+<a name="l26"><span class="ln">26   </span></a>     
+<a name="l27"><span class="ln">27   </span></a>        handler.log.info(</span><span class="s3">'iniciando servidor django para aplicacion %s'</span><span class="s1">, DJANGOAPP) 
+<a name="l28"><span class="ln">28   </span></a>        EXEC = </span><span class="s3">&quot;cd .. &amp;&amp; sh MIW.sh &quot; </span><span class="s1">+ DJANGOBINDADDRESSS + </span><span class="s3">&quot; &quot; </span><span class="s1">+ str(DJANGOPORT)  
+<a name="l29"><span class="ln">29   </span></a>        STATUS = execute(EXEC) 
+<a name="l30"><span class="ln">30   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS %s'</span><span class="s1">, EXEC, STATUS) 
+<a name="l31"><span class="ln">31   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l32"><span class="ln">32   </span></a>        handler.log.error(</span><span class="s3">'no se pudo levantar el servidor: %s'</span><span class="s1">, message) 
+<a name="l33"><span class="ln">33   </span></a> 
+<a name="l34"><span class="ln">34   </span></a></span><span class="s2">def </span><span class="s1">BajaDjango(): 
+<a name="l35"><span class="ln">35   </span></a>    </span><span class="s2">pass</span><span class="s1"> 
+<a name="l36"><span class="ln">36   </span></a> 
+<a name="l37"><span class="ln">37   </span></a></span><span class="s2">def </span><span class="s1">RecargaDjango(): 
+<a name="l38"><span class="ln">38   </span></a>    </span><span class="s2">pass</span><span class="s1"> 
+<a name="l39"><span class="ln">39   </span></a> 
+<a name="l40"><span class="ln">40   </span></a></span><span class="s2">def </span><span class="s1">Valida(): 
+<a name="l41"><span class="ln">41   </span></a>    </span><span class="s2">pass</span><span class="s1"> 
+<a name="l42"><span class="ln">42   </span></a> 
+<a name="l43"><span class="ln">43   </span></a></span><span class="s2">def </span><span class="s1">run(): 
+<a name="l44"><span class="ln">44   </span></a>    handler.log.info(</span><span class="s3">'iniciando modulo'</span><span class="s1">) 
+<a name="l45"><span class="ln">45   </span></a>    LevantaDjango() 
+<a name="l46"><span class="ln">46   </span></a> 
+<a name="l47"><span class="ln">47   </span></a></span><span class="s2">def </span><span class="s1">setDJANGOAPP(VALUE): 
+<a name="l48"><span class="ln">48   </span></a>    </span><span class="s2">global </span><span class="s1">DJANGOAPP; DJANGOAPP = VALUE 
+<a name="l49"><span class="ln">49   </span></a>    handler.log.debug(</span><span class="s3">'DJANGOAPP: ' </span><span class="s1">+ DJANGOAPP) 
+<a name="l50"><span class="ln">50   </span></a> 
+<a name="l51"><span class="ln">51   </span></a></span><span class="s2">def </span><span class="s1">setDJANGOBINDADDRESSS(VALUE): 
+<a name="l52"><span class="ln">52   </span></a>    </span><span class="s2">global </span><span class="s1">DJANGOBINDADDRESSS; DJANGOBINDADDRESSS = VALUE 
+<a name="l53"><span class="ln">53   </span></a>    handler.log.debug(</span><span class="s3">'DJANGOBINDADDRESSS: ' </span><span class="s1">+ DJANGOBINDADDRESSS) 
+<a name="l54"><span class="ln">54   </span></a> 
+<a name="l55"><span class="ln">55   </span></a></span><span class="s2">def </span><span class="s1">setDJANGOPORT(VALUE): 
+<a name="l56"><span class="ln">56   </span></a>    </span><span class="s2">global </span><span class="s1">DJANGOPORT; DJANGOPORT = VALUE 
+<a name="l57"><span class="ln">57   </span></a>    handler.log.debug(</span><span class="s3">'DJANGOPORT: ' </span><span class="s1">+ str(DJANGOPORT)) 
+<a name="l58"><span class="ln">58   </span></a> 
+<a name="l59"><span class="ln">59   </span></a></span><span class="s0"># main</span><span class="s1"> 
+<a name="l60"><span class="ln">60   </span></a></span><span class="s2">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">: 
+<a name="l61"><span class="ln">61   </span></a>    run()</span></pre>
+</body>
+</html>

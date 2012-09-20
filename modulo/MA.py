@@ -153,7 +153,7 @@ def setSMTPUSER(VALUE):
 
 def setSMTPPASS(VALUE):
     global SMTPPASS; SMTPPASS = VALUE
-    handler.log.debug('SMTPPASS: ' + SMTPPASS)
+    handler.log.debug('SMTPPASS: [OMITIDO]')
 
 def setSMTPDEBUGLEVEL(VALUE):
     global SMTPDEBUGLEVEL; SMTPDEBUGLEVEL = VALUE
@@ -181,6 +181,6 @@ def setXMPPUSER(VALUE):
 
 def setXMPPPASS(VALUE):
     global XMPPPASS; XMPPPASS = VALUE
-    handler.log.debug('XMPPPASS: ' + XMPPPASS)
+    handler.log.debug('XMPPPASS: [OMITIDO]')
 
 # main

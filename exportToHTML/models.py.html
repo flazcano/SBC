@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>models.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+models.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">from </span><span class="s1">django.db </span><span class="s0">import </span><span class="s1">models 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">class </span><span class="s1">configuracion(models.Model): 
+<a name="l4"><span class="ln">4    </span></a>    agente              = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l5"><span class="ln">5    </span></a>    clave               = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False, unique=True) 
+<a name="l6"><span class="ln">6    </span></a>    valor               = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l7"><span class="ln">7    </span></a>    modificado          = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l8"><span class="ln">8    </span></a>    defvalor            = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l9"><span class="ln">9    </span></a>    prevalor            = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l10"><span class="ln">10   </span></a> 
+<a name="l11"><span class="ln">11   </span></a>    </span><span class="s0">def </span><span class="s1">__str__(self): 
+<a name="l12"><span class="ln">12   </span></a>        </span><span class="s0">return </span><span class="s3">&quot;%s, %s, %s, %s&quot; </span><span class="s1">% (self.agente, self.clave, self.valor, self.modificado) 
+<a name="l13"><span class="ln">13   </span></a> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s0">class </span><span class="s1">servidor(models.Model): 
+<a name="l15"><span class="ln">15   </span></a>    fqdn                = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False, unique=True) 
+<a name="l16"><span class="ln">16   </span></a>    puerto              = models.IntegerField(null=False, default=</span><span class="s2">54321</span><span class="s1">) 
+<a name="l17"><span class="ln">17   </span></a>    activo              = models.BooleanField(null=False, blank=False, default=True) 
+<a name="l18"><span class="ln">18   </span></a>    modificado          = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l19"><span class="ln">19   </span></a>    intento             = models.IntegerField(null=False, default=</span><span class="s2">0</span><span class="s1">) 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a>    </span><span class="s0">def </span><span class="s1">__str__(self): 
+<a name="l22"><span class="ln">22   </span></a>        </span><span class="s0">return </span><span class="s3">&quot;%d, %s, %d, %s, %s&quot; </span><span class="s1">% (self.id, self.fqdn, self.puerto, self.activo, self.modificado) 
+<a name="l23"><span class="ln">23   </span></a> 
+<a name="l24"><span class="ln">24   </span></a></span><span class="s0">class </span><span class="s1">cargas(models.Model): 
+<a name="l25"><span class="ln">25   </span></a>    servidorid          = models.ForeignKey(servidor) 
+<a name="l26"><span class="ln">26   </span></a>    time_unix           = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l27"><span class="ln">27   </span></a>    cpu_total           = models.FloatField(null=False) 
+<a name="l28"><span class="ln">28   </span></a>    cpu_cores           = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l29"><span class="ln">29   </span></a>    mem_total           = models.IntegerField(null=False) 
+<a name="l30"><span class="ln">30   </span></a>    mem_used            = models.IntegerField(null=False) 
+<a name="l31"><span class="ln">31   </span></a>    mem_free            = models.IntegerField(null=False) 
+<a name="l32"><span class="ln">32   </span></a>    mem_percent         = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l33"><span class="ln">33   </span></a>    io_read_count       = models.IntegerField(null=False) 
+<a name="l34"><span class="ln">34   </span></a>    io_write_count      = models.IntegerField(null=False) 
+<a name="l35"><span class="ln">35   </span></a>    io_read_bytes       = models.IntegerField(null=False) 
+<a name="l36"><span class="ln">36   </span></a>    io_write_bytes      = models.IntegerField(null=False) 
+<a name="l37"><span class="ln">37   </span></a>    io_read_time        = models.IntegerField(null=False) 
+<a name="l38"><span class="ln">38   </span></a>    io_write_time       = models.IntegerField(null=False) 
+<a name="l39"><span class="ln">39   </span></a>    net_bytes_sent      = models.IntegerField(null=False) 
+<a name="l40"><span class="ln">40   </span></a>    net_bytes_recv      = models.IntegerField(null=False) 
+<a name="l41"><span class="ln">41   </span></a>    net_packets_sent    = models.IntegerField(null=False) 
+<a name="l42"><span class="ln">42   </span></a>    net_packets_recv    = models.IntegerField(null=False) 
+<a name="l43"><span class="ln">43   </span></a>    hdd_device          = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l44"><span class="ln">44   </span></a>    hdd_total           = models.IntegerField(null=False) 
+<a name="l45"><span class="ln">45   </span></a>    hdd_used            = models.IntegerField(null=False) 
+<a name="l46"><span class="ln">46   </span></a>    hdd_free            = models.IntegerField(null=False) 
+<a name="l47"><span class="ln">47   </span></a>    hdd_percent         = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l48"><span class="ln">48   </span></a> 
+<a name="l49"><span class="ln">49   </span></a>    </span><span class="s0">def </span><span class="s1">__str__(self): 
+<a name="l50"><span class="ln">50   </span></a>        </span><span class="s0">return </span><span class="s3">&quot;%d, %s, %f, %s&quot; </span><span class="s1">% (self.servidorid, self.puerto, self.cpu_total, self.cpu_cores) 
+<a name="l51"><span class="ln">51   </span></a> 
+<a name="l52"><span class="ln">52   </span></a></span><span class="s0">class </span><span class="s1">operador(models.Model): 
+<a name="l53"><span class="ln">53   </span></a>    nombre              = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False, unique=True) 
+<a name="l54"><span class="ln">54   </span></a>    clave               = models.CharField(max_length=</span><span class="s2">10</span><span class="s1">, null=False, blank=False) 
+<a name="l55"><span class="ln">55   </span></a>    correo              = models.CharField(max_length=</span><span class="s2">20</span><span class="s1">, null=False, blank=False) 
+<a name="l56"><span class="ln">56   </span></a>    jid                 = models.CharField(max_length=</span><span class="s2">20</span><span class="s1">, null=False, blank=False) 
+<a name="l57"><span class="ln">57   </span></a> 
+<a name="l58"><span class="ln">58   </span></a>    </span><span class="s0">def </span><span class="s1">__str__(self): 
+<a name="l59"><span class="ln">59   </span></a>        </span><span class="s0">return </span><span class="s3">&quot;%d, %s, %s, %s, %s&quot; </span><span class="s1">% (self.id, self.time_unix, self.clave, self.correo, self.jid) 
+<a name="l60"><span class="ln">60   </span></a> 
+<a name="l61"><span class="ln">61   </span></a></span><span class="s0">class </span><span class="s1">alerta(models.Model): 
+<a name="l62"><span class="ln">62   </span></a>    operadorid          = models.ForeignKey(operador) 
+<a name="l63"><span class="ln">63   </span></a>    tipo                = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l64"><span class="ln">64   </span></a>    nivel               = models.CharField(max_length=</span><span class="s2">30</span><span class="s1">, null=False, blank=False) 
+<a name="l65"><span class="ln">65   </span></a>    mensaje             = models.TextField() 
+<a name="l66"><span class="ln">66   </span></a>    enviado             = models.DateField() 
+<a name="l67"><span class="ln">67   </span></a> 
+<a name="l68"><span class="ln">68   </span></a>    </span><span class="s0">def </span><span class="s1">__str__(self): 
+<a name="l69"><span class="ln">69   </span></a>        </span><span class="s0">return </span><span class="s3">&quot;%d, %s, %s, %s, %s&quot; </span><span class="s1">% (self.operadorid, self.tipo, self.nivel, self.mensaje, self.enviado) 
+<a name="l70"><span class="ln">70   </span></a> 
+<a name="l71"><span class="ln">71   </span></a>    </span><span class="s0">def </span><span class="s1">getOpEn(self): 
+<a name="l72"><span class="ln">72   </span></a>        </span><span class="s0">return </span><span class="s3">&quot;%d, %s&quot; </span><span class="s1">% (self.operadorid, self.enviado)</span></pre>
+</body>
+</html>

@@ -213,17 +213,23 @@ def ServidorConProblemas(FQDN, PUERTO):
 
 def ConsultaMejorServidor():
     try:
-        handler.log.debug('consultando por mejor servidores')
+        handler.log.info('consultando por mejor servidor')
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
         # se obtiene el mejor servidor del momento en base a las cargas entregadas
-        mejorservidor = cursor.execute('SELECT fqdn FROM (SELECT fqdn, min(cpu) AS cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id));').fetchall()
+        # QUERY='SELECT fqdn FROM (SELECT fqdn, min(cpu) AS cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id));'
+        QUERY='SELECT fqdn FROM (SELECT fqdn, cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id ORDER BY cpu) LIMIT 1);'
+        handler.log.debug('QUERY=%s', QUERY)
+        mejorservidor = cursor.execute(QUERY).fetchall()
+        handler.log.debug('mejor servidor obtenido: %s', mejorservidor)
+        if mejorservidor == []:
+            return None
+        else:
+            return mejorservidor[0][0]
     except Exception as message:
         handler.log.error('no se puede obtener mejor servidor: %s', message)
         handler.log.exception(message)
-        exit(1)
-    finally:
-        return mejorservidor[0][0]
+        return None
 
 def Valida():
     try:

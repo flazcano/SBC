@@ -1,0 +1,225 @@
+<html>
+<head>
+<title>MII.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MII.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">''' 
+<a name="l2"><span class="ln">2    </span></a>Created on 29/10/2011 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a>@author: Fernando 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a>Modulo de Integracion para IPTables (MII) 
+<a name="l7"><span class="ln">7    </span></a> 
+<a name="l8"><span class="ln">8    </span></a>es necesario tener cargados los modulos: 
+<a name="l9"><span class="ln">9    </span></a> 
+<a name="l10"><span class="ln">10   </span></a>modprobe ip_conntrack 
+<a name="l11"><span class="ln">11   </span></a>modprobe ip_conntrack_ftp 
+<a name="l12"><span class="ln">12   </span></a>modprobe iptable_nat 
+<a name="l13"><span class="ln">13   </span></a>'''</span><span class="s1"> 
+<a name="l14"><span class="ln">14   </span></a> 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s0"># importaciones</span><span class="s1"> 
+<a name="l16"><span class="ln">16   </span></a></span><span class="s2">from </span><span class="s1">sys </span><span class="s2">import </span><span class="s1">exit 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s2">from </span><span class="s1">time </span><span class="s2">import </span><span class="s1">sleep 
+<a name="l18"><span class="ln">18   </span></a></span><span class="s2">from </span><span class="s1">commands </span><span class="s2">import </span><span class="s1">getoutput </span><span class="s2">as </span><span class="s1">execute 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s2">from </span><span class="s1">Logger </span><span class="s2">import </span><span class="s1">handler 
+<a name="l20"><span class="ln">20   </span></a></span><span class="s2">from </span><span class="s1">modulo </span><span class="s2">import </span><span class="s1">MIS 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a></span><span class="s0"># definiciones</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a>IFACE                   = None 
+<a name="l24"><span class="ln">24   </span></a>IPSBC                   = None 
+<a name="l25"><span class="ln">25   </span></a>PRECHAIN                = None 
+<a name="l26"><span class="ln">26   </span></a>POSTCHAIN               = None 
+<a name="l27"><span class="ln">27   </span></a>TABLENAME               = None 
+<a name="l28"><span class="ln">28   </span></a>TARGETNAME              = None 
+<a name="l29"><span class="ln">29   </span></a>IPINICIAL               = None 
+<a name="l30"><span class="ln">30   </span></a>PUERTODEFECTO           = None </span><span class="s0"># puerto a redireccionar</span><span class="s1"> 
+<a name="l31"><span class="ln">31   </span></a>PROTOCOLODEFECTO        = None 
+<a name="l32"><span class="ln">32   </span></a>SLEEPREGLAMEJORSERVIDOR = None 
+<a name="l33"><span class="ln">33   </span></a> 
+<a name="l34"><span class="ln">34   </span></a></span><span class="s0"># clases</span><span class="s1"> 
+<a name="l35"><span class="ln">35   </span></a> 
+<a name="l36"><span class="ln">36   </span></a></span><span class="s0"># funciones</span><span class="s1"> 
+<a name="l37"><span class="ln">37   </span></a></span><span class="s2">def </span><span class="s1">CreaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO): 
+<a name="l38"><span class="ln">38   </span></a>    handler.log.info(</span><span class="s3">'creando regla: ' </span><span class="s1">+ IPORIGEN + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODESTINO) + </span><span class="s3">' -&gt; ' </span><span class="s1">+ IPDESTINO + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODESTINO) + </span><span class="s3">' ' </span><span class="s1">+ PROTO) 
+<a name="l39"><span class="ln">39   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l40"><span class="ln">40   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -R ' </span><span class="s1">+ PRECHAIN + </span><span class="s3">' 1 -p ' </span><span class="s1">+ PROTO + </span><span class="s3">' -s 0/0 -d ' </span><span class="s1">+ IPSBC + </span><span class="s3">' --dport ' </span><span class="s1">+ str(PUERTODESTINO) + </span><span class="s3">' -j DNAT --to ' </span><span class="s1">+ IPDESTINO + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODESTINO) 
+<a name="l41"><span class="ln">41   </span></a>        STATUS = execute(EXEC) 
+<a name="l42"><span class="ln">42   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l43"><span class="ln">43   </span></a>         
+<a name="l44"><span class="ln">44   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -R ' </span><span class="s1">+ POSTCHAIN + </span><span class="s3">' 1 -o ' </span><span class="s1">+ IFACE + </span><span class="s3">' -d ' </span><span class="s1">+ IPDESTINO + </span><span class="s3">' -j SNAT --to-source ' </span><span class="s1">+ IPSBC 
+<a name="l45"><span class="ln">45   </span></a>        STATUS = execute(EXEC) 
+<a name="l46"><span class="ln">46   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l47"><span class="ln">47   </span></a>         
+<a name="l48"><span class="ln">48   </span></a>        handler.log.info(</span><span class="s3">'regla aplicada correctamente'</span><span class="s1">) 
+<a name="l49"><span class="ln">49   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l50"><span class="ln">50   </span></a>            handler.log.error(</span><span class="s3">'no se pudo crear la regla'</span><span class="s1">) 
+<a name="l51"><span class="ln">51   </span></a>            handler.log.exception(message) 
+<a name="l52"><span class="ln">52   </span></a> 
+<a name="l53"><span class="ln">53   </span></a></span><span class="s2">def </span><span class="s1">EliminaRegla(IPORIGEN, IPDESTINO, PROTO, PUERTODESTINO): 
+<a name="l54"><span class="ln">54   </span></a>    handler.log.info(</span><span class="s3">'eliminando regla: ' </span><span class="s1">+ IPORIGEN + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODESTINO) + </span><span class="s3">' -&gt; ' </span><span class="s1">+ IPDESTINO + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODESTINO) + </span><span class="s3">' ' </span><span class="s1">+ PROTO) 
+<a name="l55"><span class="ln">55   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l56"><span class="ln">56   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -D ' </span><span class="s1">+ PRECHAIN + </span><span class="s3">' -p ' </span><span class="s1">+ PROTO + </span><span class="s3">' -s 0/0 -d ' </span><span class="s1">+ IPSBC + </span><span class="s3">' --dport ' </span><span class="s1">+ str(PUERTODESTINO) + </span><span class="s3">' -j DNAT --to ' </span><span class="s1">+ IPDESTINO + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODESTINO) 
+<a name="l57"><span class="ln">57   </span></a>        STATUS = execute(EXEC) 
+<a name="l58"><span class="ln">58   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l59"><span class="ln">59   </span></a>         
+<a name="l60"><span class="ln">60   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -D ' </span><span class="s1">+ POSTCHAIN + </span><span class="s3">' -o ' </span><span class="s1">+ IFACE + </span><span class="s3">' -d ' </span><span class="s1">+ IPDESTINO + </span><span class="s3">' -j SNAT --to-source ' </span><span class="s1">+ IPSBC 
+<a name="l61"><span class="ln">61   </span></a>        STATUS = execute(EXEC) 
+<a name="l62"><span class="ln">62   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l63"><span class="ln">63   </span></a>        handler.log.info(</span><span class="s3">'regla eliminada correctamente'</span><span class="s1">) 
+<a name="l64"><span class="ln">64   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l65"><span class="ln">65   </span></a>            handler.log.error(</span><span class="s3">'no se pudo eliminar la regla'</span><span class="s1">) 
+<a name="l66"><span class="ln">66   </span></a>            handler.log.exception(message) 
+<a name="l67"><span class="ln">67   </span></a>     
+<a name="l68"><span class="ln">68   </span></a></span><span class="s2">def </span><span class="s1">MuestraReglas(): 
+<a name="l69"><span class="ln">69   </span></a>    handler.log.info(</span><span class="s3">'mostrando reglas: %s'</span><span class="s1">, PRECHAIN) 
+<a name="l70"><span class="ln">70   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l71"><span class="ln">71   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -nvL'</span><span class="s1"> 
+<a name="l72"><span class="ln">72   </span></a>        STATUS = execute(EXEC) 
+<a name="l73"><span class="ln">73   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l74"><span class="ln">74   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l75"><span class="ln">75   </span></a>            handler.log.error(</span><span class="s3">'error al obtener las reglas'</span><span class="s1">) 
+<a name="l76"><span class="ln">76   </span></a>            handler.log.exception(message) 
+<a name="l77"><span class="ln">77   </span></a> 
+<a name="l78"><span class="ln">78   </span></a></span><span class="s2">def </span><span class="s1">LimpiaReglas(): 
+<a name="l79"><span class="ln">79   </span></a>    handler.log.info(</span><span class="s3">'limpiando reglas: %s'</span><span class="s1">, PRECHAIN) 
+<a name="l80"><span class="ln">80   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l81"><span class="ln">81   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -F '</span><span class="s1"> 
+<a name="l82"><span class="ln">82   </span></a>        STATUS = execute(EXEC) 
+<a name="l83"><span class="ln">83   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l84"><span class="ln">84   </span></a>         
+<a name="l85"><span class="ln">85   </span></a>         
+<a name="l86"><span class="ln">86   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -F ' </span><span class="s1">+ PRECHAIN 
+<a name="l87"><span class="ln">87   </span></a>        STATUS = execute(EXEC) 
+<a name="l88"><span class="ln">88   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l89"><span class="ln">89   </span></a>         
+<a name="l90"><span class="ln">90   </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -F ' </span><span class="s1">+ POSTCHAIN 
+<a name="l91"><span class="ln">91   </span></a>        STATUS = execute(EXEC) 
+<a name="l92"><span class="ln">92   </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l93"><span class="ln">93   </span></a>         
+<a name="l94"><span class="ln">94   </span></a>        handler.log.info(</span><span class="s3">'las reglas fueron limpiadas'</span><span class="s1">) 
+<a name="l95"><span class="ln">95   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l96"><span class="ln">96   </span></a>            handler.log.error(</span><span class="s3">'error al limpiar las reglas'</span><span class="s1">) 
+<a name="l97"><span class="ln">97   </span></a>            handler.log.exception(message)   
+<a name="l98"><span class="ln">98   </span></a> 
+<a name="l99"><span class="ln">99   </span></a></span><span class="s2">def </span><span class="s1">ReglaInicial(): 
+<a name="l100"><span class="ln">100  </span></a>    handler.log.info(</span><span class="s3">'aplicando regla inicial'</span><span class="s1">) 
+<a name="l101"><span class="ln">101  </span></a> 
+<a name="l102"><span class="ln">102  </span></a>    handler.log.info(</span><span class="s3">'creando regla: ' </span><span class="s1">+ IPSBC + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODEFECTO) + </span><span class="s3">' -&gt; ' </span><span class="s1">+ IPINICIAL + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODEFECTO) + </span><span class="s3">' ' </span><span class="s1">+ PROTOCOLODEFECTO) 
+<a name="l103"><span class="ln">103  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l104"><span class="ln">104  </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -A ' </span><span class="s1">+ PRECHAIN + </span><span class="s3">' -p ' </span><span class="s1">+ PROTOCOLODEFECTO + </span><span class="s3">' -s 0/0 -d ' </span><span class="s1">+ IPSBC + </span><span class="s3">' --dport ' </span><span class="s1">+ str(PUERTODEFECTO) + </span><span class="s3">' -j DNAT --to ' </span><span class="s1">+ IPINICIAL + </span><span class="s3">':' </span><span class="s1">+ str(PUERTODEFECTO) 
+<a name="l105"><span class="ln">105  </span></a>        STATUS = execute(EXEC) 
+<a name="l106"><span class="ln">106  </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l107"><span class="ln">107  </span></a> 
+<a name="l108"><span class="ln">108  </span></a>        EXEC=</span><span class="s3">'iptables -t ' </span><span class="s1">+ TABLENAME + </span><span class="s3">' -A ' </span><span class="s1">+ POSTCHAIN + </span><span class="s3">' -o ' </span><span class="s1">+ IFACE + </span><span class="s3">' -d ' </span><span class="s1">+ IPINICIAL + </span><span class="s3">' -j SNAT --to-source ' </span><span class="s1">+ IPSBC 
+<a name="l109"><span class="ln">109  </span></a>        STATUS = execute(EXEC) 
+<a name="l110"><span class="ln">110  </span></a>        handler.log.debug(</span><span class="s3">'ejecutado: %s STATUS (%s)'</span><span class="s1">, EXEC, STATUS) 
+<a name="l111"><span class="ln">111  </span></a> 
+<a name="l112"><span class="ln">112  </span></a>        handler.log.info(</span><span class="s3">'regla aplicada correctamente'</span><span class="s1">) 
+<a name="l113"><span class="ln">113  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l114"><span class="ln">114  </span></a>        handler.log.error(</span><span class="s3">'no se pudo crear la regla inicial'</span><span class="s1">) 
+<a name="l115"><span class="ln">115  </span></a>        handler.log.exception(message) 
+<a name="l116"><span class="ln">116  </span></a> 
+<a name="l117"><span class="ln">117  </span></a></span><span class="s2">def </span><span class="s1">ReglaPorDefecto(): 
+<a name="l118"><span class="ln">118  </span></a>    handler.log.info(</span><span class="s3">'aplicando regla por defecto'</span><span class="s1">) 
+<a name="l119"><span class="ln">119  </span></a>    CreaRegla(IPSBC, IPINICIAL, PROTOCOLODEFECTO, PUERTODEFECTO) 
+<a name="l120"><span class="ln">120  </span></a> 
+<a name="l121"><span class="ln">121  </span></a></span><span class="s2">def </span><span class="s1">ReglasEspeciales(): 
+<a name="l122"><span class="ln">122  </span></a>    handler.log.info(</span><span class="s3">'aplicando reglas especiales'</span><span class="s1">) 
+<a name="l123"><span class="ln">123  </span></a> 
+<a name="l124"><span class="ln">124  </span></a></span><span class="s2">def </span><span class="s1">ModificaReglas(): 
+<a name="l125"><span class="ln">125  </span></a>    obtieneMejorServidor = </span><span class="s4">1</span><span class="s1"> 
+<a name="l126"><span class="ln">126  </span></a>    </span><span class="s2">while </span><span class="s1">obtieneMejorServidor: 
+<a name="l127"><span class="ln">127  </span></a>        </span><span class="s2">try</span><span class="s1">: 
+<a name="l128"><span class="ln">128  </span></a>            ReglasEspeciales() 
+<a name="l129"><span class="ln">129  </span></a>            handler.log.info(</span><span class="s3">'obteniendo mejor servidor para reglas de IPTABLES'</span><span class="s1">) 
+<a name="l130"><span class="ln">130  </span></a>            DESTINO = MIS.ConsultaMejorServidor() 
+<a name="l131"><span class="ln">131  </span></a>            handler.log.debug(</span><span class="s3">'mejor servidor: ' </span><span class="s1">+ str(DESTINO)) 
+<a name="l132"><span class="ln">132  </span></a>            </span><span class="s0">#LimpiaReglas()</span><span class="s1"> 
+<a name="l133"><span class="ln">133  </span></a>            </span><span class="s2">if </span><span class="s1">str(DESTINO) == </span><span class="s3">'None'</span><span class="s1">: 
+<a name="l134"><span class="ln">134  </span></a>                handler.log.info(</span><span class="s3">'modificando reglas de IPTABLES con servidor por defecto'</span><span class="s1">) 
+<a name="l135"><span class="ln">135  </span></a>                ReglaPorDefecto() 
+<a name="l136"><span class="ln">136  </span></a>            </span><span class="s2">else</span><span class="s1">: 
+<a name="l137"><span class="ln">137  </span></a>                handler.log.info(</span><span class="s3">'modificando reglas de IPTABLES con mejor servidor %s'</span><span class="s1">, DESTINO) 
+<a name="l138"><span class="ln">138  </span></a>                CreaRegla(IPSBC, DESTINO, PROTOCOLODEFECTO, PUERTODEFECTO) 
+<a name="l139"><span class="ln">139  </span></a>            handler.log.info(</span><span class="s3">'aplicando reglas especiales en IPTABLES'</span><span class="s1">) 
+<a name="l140"><span class="ln">140  </span></a>            </span><span class="s0">#ReglasEspeciales()</span><span class="s1"> 
+<a name="l141"><span class="ln">141  </span></a>        </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l142"><span class="ln">142  </span></a>            handler.log.error(</span><span class="s3">'error al aplicar la reglas en IPTABLES'</span><span class="s1">) 
+<a name="l143"><span class="ln">143  </span></a>            handler.log.exception(message) 
+<a name="l144"><span class="ln">144  </span></a>        </span><span class="s2">finally</span><span class="s1">: 
+<a name="l145"><span class="ln">145  </span></a>            </span><span class="s0">#MuestraReglas()</span><span class="s1"> 
+<a name="l146"><span class="ln">146  </span></a>            sleep(float(SLEEPREGLAMEJORSERVIDOR)) 
+<a name="l147"><span class="ln">147  </span></a> 
+<a name="l148"><span class="ln">148  </span></a></span><span class="s2">def </span><span class="s1">Valida(): 
+<a name="l149"><span class="ln">149  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l150"><span class="ln">150  </span></a>        LimpiaReglas() 
+<a name="l151"><span class="ln">151  </span></a>        ReglaInicial() 
+<a name="l152"><span class="ln">152  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l153"><span class="ln">153  </span></a>        handler.log.error(</span><span class="s3">'error al validar IPTABLES'</span><span class="s1">) 
+<a name="l154"><span class="ln">154  </span></a>        handler.log.exception(message) 
+<a name="l155"><span class="ln">155  </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l156"><span class="ln">156  </span></a> 
+<a name="l157"><span class="ln">157  </span></a></span><span class="s2">def </span><span class="s1">run(): 
+<a name="l158"><span class="ln">158  </span></a>    handler.log.info(</span><span class="s3">'iniciando modulo'</span><span class="s1">) 
+<a name="l159"><span class="ln">159  </span></a> 
+<a name="l160"><span class="ln">160  </span></a></span><span class="s2">def </span><span class="s1">setIFACE(VALUE): 
+<a name="l161"><span class="ln">161  </span></a>    </span><span class="s2">global </span><span class="s1">IFACE; IFACE = VALUE 
+<a name="l162"><span class="ln">162  </span></a>    handler.log.debug(</span><span class="s3">'IFACE: ' </span><span class="s1">+ IFACE) 
+<a name="l163"><span class="ln">163  </span></a> 
+<a name="l164"><span class="ln">164  </span></a></span><span class="s2">def </span><span class="s1">setIPSBC(VALUE): 
+<a name="l165"><span class="ln">165  </span></a>    </span><span class="s2">global </span><span class="s1">IPSBC; IPSBC = VALUE 
+<a name="l166"><span class="ln">166  </span></a>    handler.log.debug(</span><span class="s3">'IPSBC: ' </span><span class="s1">+ IPSBC) 
+<a name="l167"><span class="ln">167  </span></a> 
+<a name="l168"><span class="ln">168  </span></a></span><span class="s2">def </span><span class="s1">setPRECHAIN(VALUE): 
+<a name="l169"><span class="ln">169  </span></a>    </span><span class="s2">global </span><span class="s1">PRECHAIN; PRECHAIN = VALUE 
+<a name="l170"><span class="ln">170  </span></a>    handler.log.debug(</span><span class="s3">'PRECHAIN: ' </span><span class="s1">+ PRECHAIN) 
+<a name="l171"><span class="ln">171  </span></a> 
+<a name="l172"><span class="ln">172  </span></a></span><span class="s2">def </span><span class="s1">setPOSTCHAIN(VALUE): 
+<a name="l173"><span class="ln">173  </span></a>    </span><span class="s2">global </span><span class="s1">POSTCHAIN; POSTCHAIN = VALUE 
+<a name="l174"><span class="ln">174  </span></a>    handler.log.debug(</span><span class="s3">'POSTCHAIN: ' </span><span class="s1">+ POSTCHAIN) 
+<a name="l175"><span class="ln">175  </span></a> 
+<a name="l176"><span class="ln">176  </span></a></span><span class="s2">def </span><span class="s1">setTABLENAME(VALUE): 
+<a name="l177"><span class="ln">177  </span></a>    </span><span class="s2">global </span><span class="s1">TABLENAME; TABLENAME = VALUE 
+<a name="l178"><span class="ln">178  </span></a>    handler.log.debug(</span><span class="s3">'TABLENAME: ' </span><span class="s1">+ TABLENAME) 
+<a name="l179"><span class="ln">179  </span></a> 
+<a name="l180"><span class="ln">180  </span></a></span><span class="s2">def </span><span class="s1">setTARGETNAME(VALUE): 
+<a name="l181"><span class="ln">181  </span></a>    </span><span class="s2">global </span><span class="s1">TARGETNAME; TARGETNAME = VALUE 
+<a name="l182"><span class="ln">182  </span></a>    handler.log.debug(</span><span class="s3">'TARGETNAME: ' </span><span class="s1">+ TARGETNAME) 
+<a name="l183"><span class="ln">183  </span></a> 
+<a name="l184"><span class="ln">184  </span></a></span><span class="s2">def </span><span class="s1">setIPINICIAL(VALUE): 
+<a name="l185"><span class="ln">185  </span></a>    </span><span class="s2">global </span><span class="s1">IPINICIAL; IPINICIAL = VALUE 
+<a name="l186"><span class="ln">186  </span></a>    handler.log.debug(</span><span class="s3">'IPINICIAL: ' </span><span class="s1">+ IPINICIAL) 
+<a name="l187"><span class="ln">187  </span></a> 
+<a name="l188"><span class="ln">188  </span></a></span><span class="s2">def </span><span class="s1">setPUERTODEFECTO(VALUE): 
+<a name="l189"><span class="ln">189  </span></a>    </span><span class="s2">global </span><span class="s1">PUERTODEFECTO; PUERTODEFECTO = VALUE 
+<a name="l190"><span class="ln">190  </span></a>    handler.log.debug(</span><span class="s3">'PUERTODEFECTO: ' </span><span class="s1">+ str(PUERTODEFECTO)) 
+<a name="l191"><span class="ln">191  </span></a> 
+<a name="l192"><span class="ln">192  </span></a></span><span class="s2">def </span><span class="s1">setPROTOCOLODEFECTO(VALUE): 
+<a name="l193"><span class="ln">193  </span></a>    </span><span class="s2">global </span><span class="s1">PROTOCOLODEFECTO; PROTOCOLODEFECTO = VALUE 
+<a name="l194"><span class="ln">194  </span></a>    handler.log.debug(</span><span class="s3">'PROTOCOLODEFECTO: ' </span><span class="s1">+ PROTOCOLODEFECTO) 
+<a name="l195"><span class="ln">195  </span></a> 
+<a name="l196"><span class="ln">196  </span></a></span><span class="s2">def </span><span class="s1">setSLEEPREGLAMEJORSERVIDOR(VALUE): 
+<a name="l197"><span class="ln">197  </span></a>    </span><span class="s2">global </span><span class="s1">SLEEPREGLAMEJORSERVIDOR; SLEEPREGLAMEJORSERVIDOR = VALUE 
+<a name="l198"><span class="ln">198  </span></a>    handler.log.debug(</span><span class="s3">'SLEEPREGLAMEJORSERVIDOR: ' </span><span class="s1">+ str(SLEEPREGLAMEJORSERVIDOR)) 
+<a name="l199"><span class="ln">199  </span></a> 
+<a name="l200"><span class="ln">200  </span></a></span><span class="s0"># main</span><span class="s1"> 
+<a name="l201"><span class="ln">201  </span></a></span><span class="s2">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">: 
+<a name="l202"><span class="ln">202  </span></a>    run()</span></pre>
+</body>
+</html>

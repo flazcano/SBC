@@ -33,6 +33,7 @@ class Servidor():
     def open_socket(self):
         try:
             # instanciando el socket
+            handler.log.debug('abriendo el socket de comunicacion')
             self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.server.bind((self.host, self.port))
@@ -47,22 +48,24 @@ class Servidor():
     def run(self):
         self.open_socket()
         running = 1
+        handler.log.debug('socket de comunicacion abierto, esperando clientes')
         while running:
             inputready  = select([self.server, stdin], [], [])
             outputready = select([self.server, stdin], [], []) #@UnusedVariable
             exceptready = select([self.server, stdin], [], []) #@UnusedVariable
             for server in inputready:
-                if server == self.server:
-                    # manejando el socket del servidor
-                    cliente = Cliente(self.server.accept());
-                    cliente.start();
-                    # creando un hilo
-                    self.threads.append(cliente);
+                # manejando el socket del servidor
+                cliente = Cliente(self.server.accept());
+                cliente.start();
+                # creando un hilo
+                self.threads.append(cliente);
 
         # cerrando los hilos
         if self.server:
+            handler.log.debug('cerrando servidor')
             self.server.close()
         for c in self.threads:
+            handler.log.debug('cerrando hilo')
             c.join()
 
 class Cliente(Thread):
@@ -117,11 +120,14 @@ def AgenteVivo(SBCHOST, SBCPORT, PORT):
             sleep(float(AOCMESLEEPTIME))
         finally:
             if sbccon:
+                handler.log.debug('cerrando conexion con SBC')
                 sbccon.close()
 
 def run(HOST, PORT):
     handler.log.info('iniciando el modulo')
+    handler.log.debug('creando servidor')
     myservidor = Servidor(HOST, PORT)
+    handler.log.info('corriendo servidor')
     myservidor.run()
     
 def setAOCMESLEEPTIME(VALUE):

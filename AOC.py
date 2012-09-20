@@ -10,7 +10,7 @@ Agente de Obtencion de Cargas
 
 # importaciones
 from threading import Thread
-from Logger import setLOGFILE, setLOGLEVEL
+from modulo.Logger import setLOGFILE, setLOGLEVEL
 from Config import Load
 from modulo import AOCMR, AOCME
 
@@ -64,7 +64,7 @@ try:
     LOGFILE = cfg["LOGFILE"]; setLOGFILE(LOGFILE)
     LOGLEVEL = cfg["LOGLEVEL"]; setLOGLEVEL(LOGLEVEL)
     # se importa el Logger una ves instanciados los parametros necesarios para su ejecucion
-    from Logger import handler
+    from modulo.Logger import handler
 
     handler.log.info('cargando configuraciones')
     AOCHOST = cfg["AOCHOST"]; setAOCHOST(AOCHOST)
@@ -118,4 +118,3 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al obtener la carga del sistema')
         handler.log.exception(message)
         exit(1);
-        

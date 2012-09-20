@@ -13,7 +13,7 @@ from sys import exit, argv
 from threading import Thread;
 try: from argparse import ArgumentParser #@UnresolvedImport
 except: print 'no se encuentra python::argparse necesario para correr el SBC'; exit(1)
-from Logger import handler
+from modulo.Logger import handler
 from modulo import MC, MIS, MII, ME, MA, MIW #@UnusedImport
 
 # definiciones

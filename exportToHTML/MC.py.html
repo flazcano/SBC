@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>MC.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MC.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">''' 
+<a name="l2"><span class="ln">2    </span></a>Created on 29/10/2011 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a>@author: Fernando 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a>Modulo de Configuracion (MC) 
+<a name="l7"><span class="ln">7    </span></a>'''</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0"># importaciones</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s2">from </span><span class="s1">sys </span><span class="s2">import </span><span class="s1">exit 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s2">from </span><span class="s1">Config </span><span class="s2">import </span><span class="s1">Load 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s2">from </span><span class="s1">Logger </span><span class="s2">import </span><span class="s1">handler, setLOGFILE, setLOGLEVEL 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s2">from </span><span class="s1">modulo </span><span class="s2">import </span><span class="s1">MIS, MII, ME, MIW, MA 
+<a name="l14"><span class="ln">14   </span></a> 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s0"># definiciones</span><span class="s1"> 
+<a name="l16"><span class="ln">16   </span></a> 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s0"># clases</span><span class="s1"> 
+<a name="l18"><span class="ln">18   </span></a> 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s0"># funciones</span><span class="s1"> 
+<a name="l20"><span class="ln">20   </span></a></span><span class="s2">def </span><span class="s1">CargaParametros(ConfigFile): 
+<a name="l21"><span class="ln">21   </span></a>    </span><span class="s0"># cargando configuraciones del sistema</span><span class="s1"> 
+<a name="l22"><span class="ln">22   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l23"><span class="ln">23   </span></a>        handler.log.info(</span><span class="s3">'cargando configuraciones desde ' </span><span class="s1">+ ConfigFile) 
+<a name="l24"><span class="ln">24   </span></a>        cfg = Load(ConfigFile) 
+<a name="l25"><span class="ln">25   </span></a>        LOGFILE = cfg[</span><span class="s3">&quot;LOGFILE&quot;</span><span class="s1">]; setLOGFILE(LOGFILE) 
+<a name="l26"><span class="ln">26   </span></a>        LOGLEVEL = cfg[</span><span class="s3">&quot;LOGLEVEL&quot;</span><span class="s1">]; setLOGLEVEL(LOGLEVEL) 
+<a name="l27"><span class="ln">27   </span></a>     
+<a name="l28"><span class="ln">28   </span></a>        SBCDB = cfg[</span><span class="s3">&quot;SBCDB&quot;</span><span class="s1">]; MIS.setSBCDB(SBCDB) 
+<a name="l29"><span class="ln">29   </span></a>        SBCDUMP = cfg[</span><span class="s3">&quot;SBCDUMP&quot;</span><span class="s1">]; MIS.setSBCDUMP(SBCDUMP) 
+<a name="l30"><span class="ln">30   </span></a>        INTENTOSSERVERDOWN = int(cfg[</span><span class="s3">&quot;INTENTOSSERVERDOWN&quot;</span><span class="s1">]); MIS.setINTENTOSSERVERDOWN(INTENTOSSERVERDOWN) 
+<a name="l31"><span class="ln">31   </span></a>        TABLA_CONFIGURACION = cfg[</span><span class="s3">&quot;TABLA_CONFIGURACION&quot;</span><span class="s1">]; MIS.setTABLA_CONFIGURACION(TABLA_CONFIGURACION) 
+<a name="l32"><span class="ln">32   </span></a>        TABLA_SERVIDOR = cfg[</span><span class="s3">&quot;TABLA_SERVIDOR&quot;</span><span class="s1">]; MIS.setTABLA_SERVIDOR(TABLA_SERVIDOR) 
+<a name="l33"><span class="ln">33   </span></a>        TABLA_CARGAS = cfg[</span><span class="s3">&quot;TABLA_CARGAS&quot;</span><span class="s1">]; MIS.setTABLA_CARGAS(TABLA_CARGAS) 
+<a name="l34"><span class="ln">34   </span></a>        TABLA_OPERADOR = cfg[</span><span class="s3">&quot;TABLA_OPERADOR&quot;</span><span class="s1">]; MIS.setTABLA_OPERADOR(TABLA_OPERADOR) 
+<a name="l35"><span class="ln">35   </span></a>        TABLA_ALERTA = cfg[</span><span class="s3">&quot;TABLA_ALERTA&quot;</span><span class="s1">]; MIS.setTABLA_ALERTA(TABLA_ALERTA) 
+<a name="l36"><span class="ln">36   </span></a>         
+<a name="l37"><span class="ln">37   </span></a>        IFACE = cfg[</span><span class="s3">&quot;IFACE&quot;</span><span class="s1">]; MII.setIFACE(IFACE) 
+<a name="l38"><span class="ln">38   </span></a>        IPSBC = cfg[</span><span class="s3">&quot;IPSBC&quot;</span><span class="s1">]; MII.setIPSBC(IPSBC) 
+<a name="l39"><span class="ln">39   </span></a>        PRECHAIN = cfg[</span><span class="s3">&quot;PRECHAIN&quot;</span><span class="s1">]; MII.setPRECHAIN(PRECHAIN) 
+<a name="l40"><span class="ln">40   </span></a>        POSTCHAIN = cfg[</span><span class="s3">&quot;POSTCHAIN&quot;</span><span class="s1">]; MII.setPOSTCHAIN(POSTCHAIN) 
+<a name="l41"><span class="ln">41   </span></a>        TABLENAME = cfg[</span><span class="s3">&quot;TABLENAME&quot;</span><span class="s1">]; MII.setTABLENAME(TABLENAME) 
+<a name="l42"><span class="ln">42   </span></a>        TARGETNAME = cfg[</span><span class="s3">&quot;TARGETNAME&quot;</span><span class="s1">]; MII.setTARGETNAME(TARGETNAME)           
+<a name="l43"><span class="ln">43   </span></a>        IPINICIAL = cfg[</span><span class="s3">&quot;IPINICIAL&quot;</span><span class="s1">]; MII.setIPINICIAL(IPINICIAL)    
+<a name="l44"><span class="ln">44   </span></a>        PUERTODEFECTO = int(cfg[</span><span class="s3">&quot;PUERTODEFECTO&quot;</span><span class="s1">]); MII.setPUERTODEFECTO(PUERTODEFECTO) 
+<a name="l45"><span class="ln">45   </span></a>        PROTOCOLODEFECTO = cfg[</span><span class="s3">&quot;PROTOCOLODEFECTO&quot;</span><span class="s1">]; MII.setPROTOCOLODEFECTO(PROTOCOLODEFECTO) 
+<a name="l46"><span class="ln">46   </span></a>        SLEEPREGLAMEJORSERVIDOR = int(cfg[</span><span class="s3">&quot;SLEEPREGLAMEJORSERVIDOR&quot;</span><span class="s1">]); MII.setSLEEPREGLAMEJORSERVIDOR(SLEEPREGLAMEJORSERVIDOR) 
+<a name="l47"><span class="ln">47   </span></a>         
+<a name="l48"><span class="ln">48   </span></a>        CLIENTTIMEOUT = int(cfg[</span><span class="s3">&quot;CLIENTTIMEOUT&quot;</span><span class="s1">]); ME.setCLIENTTIMEOUT(CLIENTTIMEOUT) 
+<a name="l49"><span class="ln">49   </span></a>        SLEEPSERVERACTIVOS = int(cfg[</span><span class="s3">&quot;SLEEPSERVERACTIVOS&quot;</span><span class="s1">]); ME.setSLEEPSERVERACTIVOS(SLEEPSERVERACTIVOS) 
+<a name="l50"><span class="ln">50   </span></a>        SLEEPSERVERINACTIVOS = int(cfg[</span><span class="s3">&quot;SLEEPSERVERINACTIVOS&quot;</span><span class="s1">]); ME.setSLEEPSERVERINACTIVOS(SLEEPSERVERINACTIVOS) 
+<a name="l51"><span class="ln">51   </span></a>        BINDADDRESS = cfg[</span><span class="s3">&quot;BINDADDRESS&quot;</span><span class="s1">]; ME.setBINDADDRESS(BINDADDRESS) 
+<a name="l52"><span class="ln">52   </span></a>        MEPORT = int(cfg[</span><span class="s3">&quot;MEPORT&quot;</span><span class="s1">]); ME.setMEPORT(MEPORT) 
+<a name="l53"><span class="ln">53   </span></a>        SMTPHOST = cfg[</span><span class="s3">&quot;SMTPHOST&quot;</span><span class="s1">]; MA.setSMTPHOST(SMTPHOST) 
+<a name="l54"><span class="ln">54   </span></a>         
+<a name="l55"><span class="ln">55   </span></a>        SMTPPORT = int(cfg[</span><span class="s3">&quot;SMTPPORT&quot;</span><span class="s1">]); MA.setSMTPPORT(SMTPPORT) 
+<a name="l56"><span class="ln">56   </span></a>        SMTPUSER = cfg[</span><span class="s3">&quot;SMTPUSER&quot;</span><span class="s1">]; MA.setSMTPUSER(SMTPUSER) 
+<a name="l57"><span class="ln">57   </span></a>        SMTPPASS = cfg[</span><span class="s3">&quot;SMTPPASS&quot;</span><span class="s1">]; MA.setSMTPPASS(SMTPPASS) 
+<a name="l58"><span class="ln">58   </span></a>        SMTPDEBUGLEVEL = int(cfg[</span><span class="s3">&quot;SMTPDEBUGLEVEL&quot;</span><span class="s1">]); MA.setSMTPDEBUGLEVEL(SMTPDEBUGLEVEL) 
+<a name="l59"><span class="ln">59   </span></a>        XMPPCLIENT = cfg[</span><span class="s3">&quot;XMPPCLIENT&quot;</span><span class="s1">]; MA.setXMPPCLIENT(XMPPCLIENT) 
+<a name="l60"><span class="ln">60   </span></a>        XMPPHOST = cfg[</span><span class="s3">&quot;XMPPHOST&quot;</span><span class="s1">]; MA.setXMPPHOST(XMPPHOST) 
+<a name="l61"><span class="ln">61   </span></a>        XMPPRESOURCE = cfg[</span><span class="s3">&quot;XMPPRESOURCE&quot;</span><span class="s1">]; MA.setXMPPRESOURCE(XMPPRESOURCE) 
+<a name="l62"><span class="ln">62   </span></a>        XMPPPORT = int(cfg[</span><span class="s3">&quot;XMPPPORT&quot;</span><span class="s1">]); MA.setXMPPPORT(XMPPPORT) 
+<a name="l63"><span class="ln">63   </span></a>        XMPPUSER = cfg[</span><span class="s3">&quot;XMPPUSER&quot;</span><span class="s1">]; MA.setXMPPUSER(XMPPUSER) 
+<a name="l64"><span class="ln">64   </span></a>        XMPPPASS = cfg[</span><span class="s3">&quot;XMPPPASS&quot;</span><span class="s1">]; MA.setXMPPPASS(XMPPPASS) 
+<a name="l65"><span class="ln">65   </span></a>         
+<a name="l66"><span class="ln">66   </span></a>        DJANGOAPP = cfg[</span><span class="s3">&quot;DJANGOAPP&quot;</span><span class="s1">]; MIW.setDJANGOAPP(DJANGOAPP) 
+<a name="l67"><span class="ln">67   </span></a>        DJANGOBINDADDRESSS = cfg[</span><span class="s3">&quot;DJANGOBINDADDRESSS&quot;</span><span class="s1">]; MIW.setDJANGOBINDADDRESSS(DJANGOBINDADDRESSS) 
+<a name="l68"><span class="ln">68   </span></a>        DJANGOPORT = int(cfg[</span><span class="s3">&quot;DJANGOPORT&quot;</span><span class="s1">]); MIW.setDJANGOPORT(DJANGOPORT)      
+<a name="l69"><span class="ln">69   </span></a>    </span><span class="s2">except </span><span class="s1">KeyError </span><span class="s2">as </span><span class="s1">message: 
+<a name="l70"><span class="ln">70   </span></a>        handler.log.critical(</span><span class="s3">'no se ha podido encontrar una variable de confifguracion necesaria: %s'</span><span class="s1">, message) 
+<a name="l71"><span class="ln">71   </span></a>        handler.log.exception(message) 
+<a name="l72"><span class="ln">72   </span></a>        exit(</span><span class="s4">1</span><span class="s1">); 
+<a name="l73"><span class="ln">73   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l74"><span class="ln">74   </span></a>        handler.log.error(</span><span class="s3">'ha ocurrido un error al cargar el archivo de configuracion: ' </span><span class="s1">+ ConfigFile) 
+<a name="l75"><span class="ln">75   </span></a>        handler.log.exception(message) 
+<a name="l76"><span class="ln">76   </span></a>        exit(</span><span class="s4">1</span><span class="s1">); 
+<a name="l77"><span class="ln">77   </span></a>    </span><span class="s2">else</span><span class="s1">: handler.log.info(</span><span class="s3">'configuraciones cargadas correctamente'</span><span class="s1">) 
+<a name="l78"><span class="ln">78   </span></a> 
+<a name="l79"><span class="ln">79   </span></a></span><span class="s2">def </span><span class="s1">Valida(): 
+<a name="l80"><span class="ln">80   </span></a>    handler.log.info(</span><span class="s3">'iniciando validacion de modulos'</span><span class="s1">) 
+<a name="l81"><span class="ln">81   </span></a>     
+<a name="l82"><span class="ln">82   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l83"><span class="ln">83   </span></a>        </span><span class="s0"># validando MIS</span><span class="s1"> 
+<a name="l84"><span class="ln">84   </span></a>        handler.log.debug(</span><span class="s3">'validando integridad de MIS'</span><span class="s1">) 
+<a name="l85"><span class="ln">85   </span></a>        MIS.Valida() 
+<a name="l86"><span class="ln">86   </span></a>         
+<a name="l87"><span class="ln">87   </span></a>        </span><span class="s0"># validando MII</span><span class="s1"> 
+<a name="l88"><span class="ln">88   </span></a>        handler.log.debug(</span><span class="s3">'validando integridad de MII'</span><span class="s1">) 
+<a name="l89"><span class="ln">89   </span></a>        MII.Valida() 
+<a name="l90"><span class="ln">90   </span></a>         
+<a name="l91"><span class="ln">91   </span></a>        </span><span class="s0"># validando ME</span><span class="s1"> 
+<a name="l92"><span class="ln">92   </span></a>        handler.log.debug(</span><span class="s3">'validando integridad de ME'</span><span class="s1">) 
+<a name="l93"><span class="ln">93   </span></a>        ME.Valida() 
+<a name="l94"><span class="ln">94   </span></a>         
+<a name="l95"><span class="ln">95   </span></a>        </span><span class="s0"># validando MIW</span><span class="s1"> 
+<a name="l96"><span class="ln">96   </span></a>        handler.log.debug(</span><span class="s3">'validando integridad de MIW'</span><span class="s1">) 
+<a name="l97"><span class="ln">97   </span></a>        MIW.Valida() 
+<a name="l98"><span class="ln">98   </span></a>         
+<a name="l99"><span class="ln">99   </span></a>        </span><span class="s0"># validando MA</span><span class="s1"> 
+<a name="l100"><span class="ln">100  </span></a>        handler.log.debug(</span><span class="s3">'validando integridad de MA'</span><span class="s1">) 
+<a name="l101"><span class="ln">101  </span></a>        MA.Valida() 
+<a name="l102"><span class="ln">102  </span></a>     
+<a name="l103"><span class="ln">103  </span></a>        handler.log.info(</span><span class="s3">'validacion de los modulos finalizada'</span><span class="s1">) 
+<a name="l104"><span class="ln">104  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l105"><span class="ln">105  </span></a>        handler.log.error(</span><span class="s3">'la validacion finalizo con problemas: %s'</span><span class="s1">, message) 
+<a name="l106"><span class="ln">106  </span></a>        exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l107"><span class="ln">107  </span></a> 
+<a name="l108"><span class="ln">108  </span></a></span><span class="s0"># main</span><span class="s1"> 
+<a name="l109"><span class="ln">109  </span></a></span><span class="s2">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">: 
+<a name="l110"><span class="ln">110  </span></a>    miValidacion = Valida()</span></pre>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Config.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Config.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">''' 
+<a name="l2"><span class="ln">2    </span></a>Created on 30/10/2011 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a>@author: Fernando 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a>Sub-Modulo de Gestion de Archivos de Configuracion 
+<a name="l7"><span class="ln">7    </span></a>'''</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0"># importaciones</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s2">from </span><span class="s1">re </span><span class="s2">import </span><span class="s1">compile, findall 
+<a name="l11"><span class="ln">11   </span></a> 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0"># definiciones</span><span class="s1"> 
+<a name="l13"><span class="ln">13   </span></a> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s0"># clases</span><span class="s1"> 
+<a name="l15"><span class="ln">15   </span></a> 
+<a name="l16"><span class="ln">16   </span></a></span><span class="s0"># funciones</span><span class="s1"> 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s2">def </span><span class="s1">Load(filename): </span><span class="s0"># carga un archivo de configuracion</span><span class="s1"> 
+<a name="l18"><span class="ln">18   </span></a>    </span><span class="s2">try</span><span class="s1">: configfile = open(filename, </span><span class="s3">&quot;r&quot;</span><span class="s1">) 
+<a name="l19"><span class="ln">19   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">e: </span><span class="s2">raise </span><span class="s1">e 
+<a name="l20"><span class="ln">20   </span></a>    </span><span class="s2">try</span><span class="s1">: configtext = configfile.read() 
+<a name="l21"><span class="ln">21   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">e: </span><span class="s2">raise </span><span class="s1">e 
+<a name="l22"><span class="ln">22   </span></a>     
+<a name="l23"><span class="ln">23   </span></a>    </span><span class="s0"># Compile a pattern that matches our key-value line structure</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a>    pattern = compile(</span><span class="s3">&quot;</span><span class="s2">\\</span><span class="s3">n([\w_]+)[</span><span class="s2">\t</span><span class="s3"> ]*([\w: </span><span class="s2">\\</span><span class="s3">\/~.-]+)&quot;</span><span class="s1">) 
+<a name="l25"><span class="ln">25   </span></a>     
+<a name="l26"><span class="ln">26   </span></a>    </span><span class="s0"># Find all matches to this pattern in the text of the config file</span><span class="s1"> 
+<a name="l27"><span class="ln">27   </span></a>    tuples = findall(pattern, configtext) 
+<a name="l28"><span class="ln">28   </span></a>     
+<a name="l29"><span class="ln">29   </span></a>    </span><span class="s0"># Create a new dictionary and fill it: for every tuple (key, value) in</span><span class="s1"> 
+<a name="l30"><span class="ln">30   </span></a>    </span><span class="s0"># the 'tuples' list, set ret[key] to value </span><span class="s1"> 
+<a name="l31"><span class="ln">31   </span></a>    configuraciones = dict() 
+<a name="l32"><span class="ln">32   </span></a>    </span><span class="s2">for </span><span class="s1">x </span><span class="s2">in </span><span class="s1">tuples: 
+<a name="l33"><span class="ln">33   </span></a>        configuraciones[x[</span><span class="s4">0</span><span class="s1">]] = x[</span><span class="s4">1</span><span class="s1">] 
+<a name="l34"><span class="ln">34   </span></a>     
+<a name="l35"><span class="ln">35   </span></a>    </span><span class="s0"># Return the fully-loaded dictionary object</span><span class="s1"> 
+<a name="l36"><span class="ln">36   </span></a>    </span><span class="s2">return </span><span class="s1">configuraciones 
+<a name="l37"><span class="ln">37   </span></a> 
+<a name="l38"><span class="ln">38   </span></a></span><span class="s0"># main</span></pre>
+</body>
+</html>

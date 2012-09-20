@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>MA.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MA.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">''' 
+<a name="l2"><span class="ln">2    </span></a>Created on 29/10/2011 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a>@author: Fernando 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a>Modulo de Alertas (MA) 
+<a name="l7"><span class="ln">7    </span></a>'''</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0"># importaciones</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s2">import </span><span class="s1">warnings 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s2">try</span><span class="s1">: </span><span class="s2">from </span><span class="s1">smtplib </span><span class="s2">import </span><span class="s1">SMTP 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s2">except</span><span class="s1">: </span><span class="s2">print </span><span class="s3">'no se encuentra python-smtplib necesario para correr el modulo MA'</span><span class="s1">; exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s2">try</span><span class="s1">: </span><span class="s2">from </span><span class="s1">email </span><span class="s2">import </span><span class="s1">Utils; </span><span class="s2">from </span><span class="s1">email.mime.multipart </span><span class="s2">import </span><span class="s1">MIMEMultipart; </span><span class="s2">from </span><span class="s1">email.mime.text </span><span class="s2">import </span><span class="s1">MIMEText </span><span class="s0">#@UnresolvedImport</span><span class="s1"> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s2">except</span><span class="s1">: </span><span class="s2">print </span><span class="s3">'no se encuentra python-email necesario para correr el modulo MA'</span><span class="s1">; exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s2">with </span><span class="s1">warnings.catch_warnings(): 
+<a name="l16"><span class="ln">16   </span></a>    warnings.simplefilter(</span><span class="s3">&quot;ignore&quot;</span><span class="s1">, category=DeprecationWarning) 
+<a name="l17"><span class="ln">17   </span></a>    </span><span class="s2">try</span><span class="s1">: </span><span class="s2">import </span><span class="s1">xmpp </span><span class="s0">#@UnresolvedImport</span><span class="s1"> 
+<a name="l18"><span class="ln">18   </span></a>    </span><span class="s2">except</span><span class="s1">: </span><span class="s2">print </span><span class="s3">'no se encuentra python-xmpp necesario para correr el modulo MA'</span><span class="s1">; exit(</span><span class="s4">1</span><span class="s1">) 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s2">from </span><span class="s1">Logger </span><span class="s2">import </span><span class="s1">handler 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a></span><span class="s0"># definiciones</span><span class="s1"> 
+<a name="l22"><span class="ln">22   </span></a>XMPPDEBUG      = </span><span class="s4">0</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a>SMTPHOST       = None 
+<a name="l24"><span class="ln">24   </span></a>SMTPPORT       = None 
+<a name="l25"><span class="ln">25   </span></a>SMTPUSER       = None 
+<a name="l26"><span class="ln">26   </span></a>SMTPPASS       = None 
+<a name="l27"><span class="ln">27   </span></a>SMTPDEBUGLEVEL = None 
+<a name="l28"><span class="ln">28   </span></a>XMPPCLIENT     = None 
+<a name="l29"><span class="ln">29   </span></a>XMPPHOST       = None 
+<a name="l30"><span class="ln">30   </span></a>XMPPRESOURCE   = None 
+<a name="l31"><span class="ln">31   </span></a>XMPPPORT       = None 
+<a name="l32"><span class="ln">32   </span></a>XMPPUSER       = None 
+<a name="l33"><span class="ln">33   </span></a>XMPPPASS       = None 
+<a name="l34"><span class="ln">34   </span></a> 
+<a name="l35"><span class="ln">35   </span></a></span><span class="s0"># clases</span><span class="s1"> 
+<a name="l36"><span class="ln">36   </span></a> 
+<a name="l37"><span class="ln">37   </span></a></span><span class="s0"># funciones</span><span class="s1"> 
+<a name="l38"><span class="ln">38   </span></a></span><span class="s2">def </span><span class="s1">EnviaCorreo(TOADDRESS, HOST, TIPO): 
+<a name="l39"><span class="ln">39   </span></a>    handler.log.info(</span><span class="s3">'enviando alerta por correo a ' </span><span class="s1">+ TOADDRESS) 
+<a name="l40"><span class="ln">40   </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l41"><span class="ln">41   </span></a>        mailServer = SMTP(SMTPHOST, SMTPPORT) 
+<a name="l42"><span class="ln">42   </span></a>        mailServer.set_debuglevel(SMTPDEBUGLEVEL) 
+<a name="l43"><span class="ln">43   </span></a>        mailServer.ehlo() 
+<a name="l44"><span class="ln">44   </span></a>        mailServer.starttls() 
+<a name="l45"><span class="ln">45   </span></a>        mailServer.ehlo() 
+<a name="l46"><span class="ln">46   </span></a>        mailServer.login(SMTPUSER, SMTPPASS) 
+<a name="l47"><span class="ln">47   </span></a>     
+<a name="l48"><span class="ln">48   </span></a>        </span><span class="s0"># creo el mensaje</span><span class="s1"> 
+<a name="l49"><span class="ln">49   </span></a>        msg = MIMEMultipart(</span><span class="s3">'alternative'</span><span class="s1">) 
+<a name="l50"><span class="ln">50   </span></a>        msg[</span><span class="s3">'From'</span><span class="s1">] = SMTPUSER 
+<a name="l51"><span class="ln">51   </span></a>        msg[</span><span class="s3">'To'</span><span class="s1">] = TOADDRESS 
+<a name="l52"><span class="ln">52   </span></a>        msg[</span><span class="s3">'Date'</span><span class="s1">] = Utils.formatdate(localtime = </span><span class="s4">1</span><span class="s1">) 
+<a name="l53"><span class="ln">53   </span></a>        msg[</span><span class="s3">'Message-ID'</span><span class="s1">] = Utils.make_msgid() 
+<a name="l54"><span class="ln">54   </span></a>        msg[</span><span class="s3">'Subject'</span><span class="s1">] = </span><span class="s3">&quot;Alerta SBC - &quot; </span><span class="s1">+ HOST 
+<a name="l55"><span class="ln">55   </span></a>        </span><span class="s2">if </span><span class="s1">TIPO == </span><span class="s4">0</span><span class="s1">: 
+<a name="l56"><span class="ln">56   </span></a>             
+<a name="l57"><span class="ln">57   </span></a>            </span><span class="s0"># Create the body of the message (a plain-text and an HTML version).</span><span class="s1"> 
+<a name="l58"><span class="ln">58   </span></a>            text = </span><span class="s3">&quot;Estimado &quot; </span><span class="s1">+ TOADDRESS + </span><span class="s3">&quot;!</span><span class="s2">\n\n</span><span class="s3"> el servidor &quot; </span><span class="s1">+ HOST + </span><span class="s3">&quot; ha vuelto a estar en linea&quot;</span><span class="s1"> 
+<a name="l59"><span class="ln">59   </span></a>            html = </span><span class="s3">&quot;&quot;&quot;</span><span class="s2">\ 
+<a name="l60"><span class="ln">60   </span></a></span><span class="s3">            &lt;html&gt; 
+<a name="l61"><span class="ln">61   </span></a>              &lt;head&gt;&lt;/head&gt; 
+<a name="l62"><span class="ln">62   </span></a>              &lt;body&gt; 
+<a name="l63"><span class="ln">63   </span></a>                &lt;p&gt;Estimado usuario!&lt;br&gt;&lt;br&gt; 
+<a name="l64"><span class="ln">64   </span></a>                   el servidor ha vuelto a estar en linea 
+<a name="l65"><span class="ln">65   </span></a>                &lt;/p&gt; 
+<a name="l66"><span class="ln">66   </span></a>              &lt;/body&gt; 
+<a name="l67"><span class="ln">67   </span></a>            &lt;/html&gt; 
+<a name="l68"><span class="ln">68   </span></a>            &quot;&quot;&quot;</span><span class="s1"> 
+<a name="l69"><span class="ln">69   </span></a>        </span><span class="s2">elif </span><span class="s1">TIPO == </span><span class="s4">1</span><span class="s1">: 
+<a name="l70"><span class="ln">70   </span></a>            </span><span class="s0"># Create the body of the message (a plain-text and an HTML version).</span><span class="s1"> 
+<a name="l71"><span class="ln">71   </span></a>            text = </span><span class="s3">&quot;Estimado &quot; </span><span class="s1">+ TOADDRESS + </span><span class="s3">&quot;!</span><span class="s2">\n\n</span><span class="s3"> el servidor &quot; </span><span class="s1">+ HOST + </span><span class="s3">&quot; esta fuera de linea&quot;</span><span class="s1"> 
+<a name="l72"><span class="ln">72   </span></a>            html = </span><span class="s3">&quot;&quot;&quot;</span><span class="s2">\ 
+<a name="l73"><span class="ln">73   </span></a></span><span class="s3">            &lt;html&gt; 
+<a name="l74"><span class="ln">74   </span></a>              &lt;head&gt;&lt;/head&gt; 
+<a name="l75"><span class="ln">75   </span></a>              &lt;body&gt; 
+<a name="l76"><span class="ln">76   </span></a>                &lt;p&gt;Estimado usuario!&lt;br&gt;&lt;br&gt; 
+<a name="l77"><span class="ln">77   </span></a>                   el servidor esta fuera de linea 
+<a name="l78"><span class="ln">78   </span></a>                &lt;/p&gt; 
+<a name="l79"><span class="ln">79   </span></a>              &lt;/body&gt; 
+<a name="l80"><span class="ln">80   </span></a>            &lt;/html&gt; 
+<a name="l81"><span class="ln">81   </span></a>            &quot;&quot;&quot;</span><span class="s1"> 
+<a name="l82"><span class="ln">82   </span></a>        </span><span class="s2">else</span><span class="s1">: 
+<a name="l83"><span class="ln">83   </span></a>            handler.log.info(</span><span class="s3">'el tipo ' </span><span class="s1">+ TIPO + </span><span class="s3">' no es un valor valido'</span><span class="s1">) 
+<a name="l84"><span class="ln">84   </span></a>         
+<a name="l85"><span class="ln">85   </span></a>        </span><span class="s0"># Record the MIME types of both parts - text/plain and text/html.</span><span class="s1"> 
+<a name="l86"><span class="ln">86   </span></a>        part1 = MIMEText(text, </span><span class="s3">'plain'</span><span class="s1">) 
+<a name="l87"><span class="ln">87   </span></a>        part2 = MIMEText(html, </span><span class="s3">'html'</span><span class="s1">) 
+<a name="l88"><span class="ln">88   </span></a>         
+<a name="l89"><span class="ln">89   </span></a>        </span><span class="s0"># Attach parts into message container.</span><span class="s1"> 
+<a name="l90"><span class="ln">90   </span></a>        </span><span class="s0"># According to RFC 2046, the last part of a multipart message, in this case</span><span class="s1"> 
+<a name="l91"><span class="ln">91   </span></a>        </span><span class="s0"># the HTML message, is best and preferred.</span><span class="s1"> 
+<a name="l92"><span class="ln">92   </span></a>        msg.attach(part1) 
+<a name="l93"><span class="ln">93   </span></a>        msg.attach(part2) 
+<a name="l94"><span class="ln">94   </span></a>         
+<a name="l95"><span class="ln">95   </span></a>        </span><span class="s0"># envio del mensaje</span><span class="s1"> 
+<a name="l96"><span class="ln">96   </span></a>        mailServer.sendmail(msg[</span><span class="s3">'From'</span><span class="s1">], [msg[</span><span class="s3">'To'</span><span class="s1">]], msg.as_string()) 
+<a name="l97"><span class="ln">97   </span></a>        mailServer.quit() 
+<a name="l98"><span class="ln">98   </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l99"><span class="ln">99   </span></a>        handler.log.error(</span><span class="s3">'error al enviar alerta por correo'</span><span class="s1">) 
+<a name="l100"><span class="ln">100  </span></a>        handler.log.exception(message) 
+<a name="l101"><span class="ln">101  </span></a>    </span><span class="s2">finally</span><span class="s1">: 
+<a name="l102"><span class="ln">102  </span></a>        mailServer.close() 
+<a name="l103"><span class="ln">103  </span></a> 
+<a name="l104"><span class="ln">104  </span></a></span><span class="s2">def </span><span class="s1">EnviaJabber(TOJID, HOST, TIPO): 
+<a name="l105"><span class="ln">105  </span></a>    handler.log.info(</span><span class="s3">'enviando alerta por Jabber a ' </span><span class="s1">+ TOJID) 
+<a name="l106"><span class="ln">106  </span></a>    </span><span class="s2">try</span><span class="s1">: 
+<a name="l107"><span class="ln">107  </span></a>        </span><span class="s2">with </span><span class="s1">warnings.catch_warnings(): 
+<a name="l108"><span class="ln">108  </span></a>            warnings.simplefilter(</span><span class="s3">&quot;ignore&quot;</span><span class="s1">, category=DeprecationWarning) 
+<a name="l109"><span class="ln">109  </span></a>            jid  = xmpp.protocol.JID(TOJID) 
+<a name="l110"><span class="ln">110  </span></a>            jabber = xmpp.Client(XMPPCLIENT, debug=XMPPDEBUG) 
+<a name="l111"><span class="ln">111  </span></a>            handler.log.debug(</span><span class="s3">'domain: ' </span><span class="s1">+ jid.getDomain()) 
+<a name="l112"><span class="ln">112  </span></a>            connection = jabber.connect((XMPPHOST, XMPPPORT)) 
+<a name="l113"><span class="ln">113  </span></a>            </span><span class="s2">if not </span><span class="s1">connection: 
+<a name="l114"><span class="ln">114  </span></a>                </span><span class="s2">raise </span><span class="s1">IOError(</span><span class="s3">'no se pudo conectar a ' </span><span class="s1">+ XMPPCLIENT) 
+<a name="l115"><span class="ln">115  </span></a>            jabber.auth(XMPPUSER, XMPPPASS, XMPPRESOURCE) 
+<a name="l116"><span class="ln">116  </span></a>            </span><span class="s2">if not </span><span class="s1">jabber.auth: 
+<a name="l117"><span class="ln">117  </span></a>                </span><span class="s2">raise </span><span class="s1">IOError(</span><span class="s3">'no se pudo autentificar con ' </span><span class="s1">+ XMPPCLIENT) 
+<a name="l118"><span class="ln">118  </span></a>            jabber.sendInitPresence(requestRoster=</span><span class="s4">1</span><span class="s1">) 
+<a name="l119"><span class="ln">119  </span></a>            </span><span class="s2">if </span><span class="s1">int(TIPO) == </span><span class="s4">0</span><span class="s1">: 
+<a name="l120"><span class="ln">120  </span></a>                MSG = xmpp.Message(TOJID, </span><span class="s3">'El Servidor ' </span><span class="s1">+ HOST + </span><span class="s3">' se encuentra en linea'</span><span class="s1">) 
+<a name="l121"><span class="ln">121  </span></a>                MSG.setAttr(</span><span class="s3">'type'</span><span class="s1">, </span><span class="s3">'chat'</span><span class="s1">) 
+<a name="l122"><span class="ln">122  </span></a>                jabber.send(MSG) 
+<a name="l123"><span class="ln">123  </span></a>            </span><span class="s2">elif </span><span class="s1">int(TIPO) == </span><span class="s4">1</span><span class="s1">: 
+<a name="l124"><span class="ln">124  </span></a>                MSG = xmpp.Message(TOJID, </span><span class="s3">'El Servidor ' </span><span class="s1">+ HOST + </span><span class="s3">' se encuentra fuera de linea'</span><span class="s1">) 
+<a name="l125"><span class="ln">125  </span></a>                MSG.setAttr(</span><span class="s3">'type'</span><span class="s1">, </span><span class="s3">'chat'</span><span class="s1">) 
+<a name="l126"><span class="ln">126  </span></a>                jabber.send(MSG) 
+<a name="l127"><span class="ln">127  </span></a>            </span><span class="s2">else</span><span class="s1">: 
+<a name="l128"><span class="ln">128  </span></a>                handler.log.error(</span><span class="s3">'el tipo ' </span><span class="s1">+ TIPO + </span><span class="s3">' no es un valor valido'</span><span class="s1">) 
+<a name="l129"><span class="ln">129  </span></a>    </span><span class="s2">except </span><span class="s1">Exception </span><span class="s2">as </span><span class="s1">message: 
+<a name="l130"><span class="ln">130  </span></a>        handler.log.error(</span><span class="s3">'error al enviar alerta por Jabber'</span><span class="s1">) 
+<a name="l131"><span class="ln">131  </span></a>        handler.log.exception(message) 
+<a name="l132"><span class="ln">132  </span></a> 
+<a name="l133"><span class="ln">133  </span></a></span><span class="s2">def </span><span class="s1">EnviaSMS(TONUMBER, HOST, TIPO): 
+<a name="l134"><span class="ln">134  </span></a>    </span><span class="s2">pass</span><span class="s1"> 
+<a name="l135"><span class="ln">135  </span></a>     
+<a name="l136"><span class="ln">136  </span></a></span><span class="s2">def </span><span class="s1">Valida(): 
+<a name="l137"><span class="ln">137  </span></a>    </span><span class="s2">pass</span><span class="s1"> 
+<a name="l138"><span class="ln">138  </span></a> 
+<a name="l139"><span class="ln">139  </span></a></span><span class="s2">def </span><span class="s1">run(): 
+<a name="l140"><span class="ln">140  </span></a>    handler.log.info(</span><span class="s3">'iniciando modulo'</span><span class="s1">) 
+<a name="l141"><span class="ln">141  </span></a> 
+<a name="l142"><span class="ln">142  </span></a></span><span class="s2">def </span><span class="s1">setSMTPHOST(VALUE): 
+<a name="l143"><span class="ln">143  </span></a>    </span><span class="s2">global </span><span class="s1">SMTPHOST; SMTPHOST = VALUE 
+<a name="l144"><span class="ln">144  </span></a>    handler.log.debug(</span><span class="s3">'SMTPHOST: ' </span><span class="s1">+ SMTPHOST) 
+<a name="l145"><span class="ln">145  </span></a> 
+<a name="l146"><span class="ln">146  </span></a></span><span class="s2">def </span><span class="s1">setSMTPPORT(VALUE): 
+<a name="l147"><span class="ln">147  </span></a>    </span><span class="s2">global </span><span class="s1">SMTPPORT; SMTPPORT = VALUE 
+<a name="l148"><span class="ln">148  </span></a>    handler.log.debug(</span><span class="s3">'SMTPPORT: ' </span><span class="s1">+ str(SMTPPORT)) 
+<a name="l149"><span class="ln">149  </span></a> 
+<a name="l150"><span class="ln">150  </span></a></span><span class="s2">def </span><span class="s1">setSMTPUSER(VALUE): 
+<a name="l151"><span class="ln">151  </span></a>    </span><span class="s2">global </span><span class="s1">SMTPUSER; SMTPUSER = VALUE 
+<a name="l152"><span class="ln">152  </span></a>    handler.log.debug(</span><span class="s3">'SMTPUSER: ' </span><span class="s1">+ SMTPUSER) 
+<a name="l153"><span class="ln">153  </span></a> 
+<a name="l154"><span class="ln">154  </span></a></span><span class="s2">def </span><span class="s1">setSMTPPASS(VALUE): 
+<a name="l155"><span class="ln">155  </span></a>    </span><span class="s2">global </span><span class="s1">SMTPPASS; SMTPPASS = VALUE 
+<a name="l156"><span class="ln">156  </span></a>    handler.log.debug(</span><span class="s3">'SMTPPASS: [OMITIDO]'</span><span class="s1">) 
+<a name="l157"><span class="ln">157  </span></a> 
+<a name="l158"><span class="ln">158  </span></a></span><span class="s2">def </span><span class="s1">setSMTPDEBUGLEVEL(VALUE): 
+<a name="l159"><span class="ln">159  </span></a>    </span><span class="s2">global </span><span class="s1">SMTPDEBUGLEVEL; SMTPDEBUGLEVEL = VALUE 
+<a name="l160"><span class="ln">160  </span></a>    handler.log.debug(</span><span class="s3">'SMTPDEBUGLEVEL: ' </span><span class="s1">+ str(SMTPDEBUGLEVEL)) 
+<a name="l161"><span class="ln">161  </span></a> 
+<a name="l162"><span class="ln">162  </span></a></span><span class="s2">def </span><span class="s1">setXMPPCLIENT(VALUE): 
+<a name="l163"><span class="ln">163  </span></a>    </span><span class="s2">global </span><span class="s1">XMPPCLIENT; XMPPCLIENT = VALUE 
+<a name="l164"><span class="ln">164  </span></a>    handler.log.debug(</span><span class="s3">'XMPPCLIENT: ' </span><span class="s1">+ XMPPCLIENT) 
+<a name="l165"><span class="ln">165  </span></a> 
+<a name="l166"><span class="ln">166  </span></a></span><span class="s2">def </span><span class="s1">setXMPPHOST(VALUE): 
+<a name="l167"><span class="ln">167  </span></a>    </span><span class="s2">global </span><span class="s1">XMPPHOST; XMPPHOST = VALUE 
+<a name="l168"><span class="ln">168  </span></a>    handler.log.debug(</span><span class="s3">'XMPPHOST: ' </span><span class="s1">+ XMPPHOST) 
+<a name="l169"><span class="ln">169  </span></a> 
+<a name="l170"><span class="ln">170  </span></a></span><span class="s2">def </span><span class="s1">setXMPPRESOURCE(VALUE): 
+<a name="l171"><span class="ln">171  </span></a>    </span><span class="s2">global </span><span class="s1">XMPPRESOURCE; XMPPRESOURCE = VALUE 
+<a name="l172"><span class="ln">172  </span></a>    handler.log.debug(</span><span class="s3">'XMPPRESOURCE: ' </span><span class="s1">+ XMPPRESOURCE) 
+<a name="l173"><span class="ln">173  </span></a> 
+<a name="l174"><span class="ln">174  </span></a></span><span class="s2">def </span><span class="s1">setXMPPPORT(VALUE): 
+<a name="l175"><span class="ln">175  </span></a>    </span><span class="s2">global </span><span class="s1">XMPPPORT; XMPPPORT = VALUE 
+<a name="l176"><span class="ln">176  </span></a>    handler.log.debug(</span><span class="s3">'XMPPPORT: ' </span><span class="s1">+ str(XMPPPORT)) 
+<a name="l177"><span class="ln">177  </span></a> 
+<a name="l178"><span class="ln">178  </span></a></span><span class="s2">def </span><span class="s1">setXMPPUSER(VALUE): 
+<a name="l179"><span class="ln">179  </span></a>    </span><span class="s2">global </span><span class="s1">XMPPUSER; XMPPUSER = VALUE 
+<a name="l180"><span class="ln">180  </span></a>    handler.log.debug(</span><span class="s3">'XMPPUSER: ' </span><span class="s1">+ XMPPUSER) 
+<a name="l181"><span class="ln">181  </span></a> 
+<a name="l182"><span class="ln">182  </span></a></span><span class="s2">def </span><span class="s1">setXMPPPASS(VALUE): 
+<a name="l183"><span class="ln">183  </span></a>    </span><span class="s2">global </span><span class="s1">XMPPPASS; XMPPPASS = VALUE 
+<a name="l184"><span class="ln">184  </span></a>    handler.log.debug(</span><span class="s3">'XMPPPASS: [OMITIDO]'</span><span class="s1">) 
+<a name="l185"><span class="ln">185  </span></a> 
+<a name="l186"><span class="ln">186  </span></a></span><span class="s0"># main</span></pre>
+</body>
+</html>
