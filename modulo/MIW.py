@@ -22,10 +22,12 @@ DJANGOPORT         = None
 def LevantaDjango():
     try:
         handler.log.info('sincronizando esquema para django')
-        #run('python ../MIW/manage.py syncdb')
-    
+        EXEC = "cd MIW; python manage.py syncdb --noinput"
+        STATUS = execute(EXEC)
+        handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
+
         handler.log.info('iniciando servidor django para aplicacion %s', DJANGOAPP)
-        EXEC = "cd .. && sh MIW.sh " + DJANGOBINDADDRESSS + " " + str(DJANGOPORT) 
+        EXEC = "sh MIW.sh " + DJANGOBINDADDRESSS + " " + str(DJANGOPORT)
         STATUS = execute(EXEC)
         handler.log.debug('ejecutado: %s STATUS %s', EXEC, STATUS)
     except Exception as message:

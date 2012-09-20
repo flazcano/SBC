@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class configuracion(models.Model):
     agente              = models.CharField(max_length=30, null=False, blank=False)
@@ -8,18 +9,27 @@ class configuracion(models.Model):
     defvalor            = models.CharField(max_length=30, null=False, blank=False)
     prevalor            = models.CharField(max_length=30, null=False, blank=False)
 
-    def __str__(self):
-        return "%s, %s, %s, %s" % (self.agente, self.clave, self.valor, self.modificado)
+    def __unicode__(self):
+        return self.agente
+
+    class Meta:
+        verbose_name = "Configuracion"
+        verbose_name_plural = "Configuraciones"
 
 class servidor(models.Model):
     fqdn                = models.CharField(max_length=30, null=False, blank=False, unique=True)
     puerto              = models.IntegerField(null=False, default=54321)
     activo              = models.BooleanField(null=False, blank=False, default=True)
-    modificado          = models.CharField(max_length=30, null=False, blank=False)
+    habilitado          = models.BooleanField(null=False, blank=False, default=True)
+    modificado          = models.DateTimeField(default=datetime.now, null=False, blank=False)
     intento             = models.IntegerField(null=False, default=0)
 
-    def __str__(self):
-        return "%d, %s, %d, %s, %s" % (self.id, self.fqdn, self.puerto, self.activo, self.modificado)
+    def __unicode__(self):
+        return self.fqdn
+
+    class Meta:
+        verbose_name = "Servidor"
+        verbose_name_plural = "Servidores"
 
 class cargas(models.Model):
     servidorid          = models.ForeignKey(servidor)
@@ -46,8 +56,12 @@ class cargas(models.Model):
     hdd_free            = models.IntegerField(null=False)
     hdd_percent         = models.CharField(max_length=30, null=False, blank=False)
 
-    def __str__(self):
-        return "%d, %s, %f, %s" % (self.servidorid, self.puerto, self.cpu_total, self.cpu_cores)
+    def __unicode__(self):
+        return u'%s' % (unicode(self.time_unix))
+
+    class Meta:
+        verbose_name = "Carga"
+        verbose_name_plural = "Cargas"
 
 class operador(models.Model):
     nombre              = models.CharField(max_length=30, null=False, blank=False, unique=True)
@@ -55,8 +69,12 @@ class operador(models.Model):
     correo              = models.CharField(max_length=20, null=False, blank=False)
     jid                 = models.CharField(max_length=20, null=False, blank=False)
 
-    def __str__(self):
-        return "%d, %s, %s, %s, %s" % (self.id, self.time_unix, self.clave, self.correo, self.jid)
+    def __unicode__(self):
+        return self.nombre
+
+    class Meta:
+        verbose_name = "Operador"
+        verbose_name_plural = "Operadores"
 
 class alerta(models.Model):
     operadorid          = models.ForeignKey(operador)
@@ -65,8 +83,9 @@ class alerta(models.Model):
     mensaje             = models.TextField()
     enviado             = models.DateField()
 
-    def __str__(self):
-        return "%d, %s, %s, %s, %s" % (self.operadorid, self.tipo, self.nivel, self.mensaje, self.enviado)
+    def __unicode__(self):
+        return self.operadorid
 
-    def getOpEn(self):
-        return "%d, %s" % (self.operadorid, self.enviado)
+    class Meta:
+        verbose_name = "Alerta"
+        verbose_name_plural = "Alertas"

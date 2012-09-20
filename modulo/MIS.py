@@ -49,7 +49,7 @@ def ConsultaServidoresActivos():
         handler.log.debug('consultando servidores activos')
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        servidores = cursor.execute('SELECT fqdn, puerto FROM ' + TABLA_SERVIDOR + ' WHERE activo = "TRUE";')
+        servidores = cursor.execute('SELECT fqdn, puerto FROM ' + TABLA_SERVIDOR + ' WHERE activo = 1 AND habilitado = 1;')
         return servidores
     except Exception as message:
         handler.log.error('no se puede obtener servidores activos: %s', message)
@@ -60,7 +60,7 @@ def ConsultaServidoresInactivos():
         handler.log.debug('consultando servidores inactivos')
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        servidores = cursor.execute('SELECT fqdn, puerto FROM ' + TABLA_SERVIDOR + ' WHERE activo = "FALSE";')
+        servidores = cursor.execute('SELECT fqdn, puerto FROM ' + TABLA_SERVIDOR + ' WHERE activo = 0 AND habilitado = 0;')
         return servidores
     except Exception as message:
         handler.log.error('no se puede obtener servidores inactivos: %s', message)
@@ -71,7 +71,7 @@ def ConsultaTotalServidoresActivos():
         handler.log.debug('consultando total de servidores activos')
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        total = cursor.execute('SELECT count(id) FROM ' + TABLA_SERVIDOR + ' WHERE activo = "TRUE";')
+        total = cursor.execute('SELECT count(id) FROM ' + TABLA_SERVIDOR + ' WHERE activo = 1 AND habilitado = 1;')
         return total
     except Exception as message:
         handler.log.error('no se puede obtener total de servidores activos: %s', message)
@@ -82,7 +82,7 @@ def ConsultaTotalServidoresInactivos():
         handler.log.debug('consultando total de servidores inactivos')
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        total = cursor.execute('SELECT count(id) FROM ' + TABLA_SERVIDOR + ' WHERE activo = "FALSE";')
+        total = cursor.execute('SELECT count(id) FROM ' + TABLA_SERVIDOR + ' WHERE activo = 0 AND habilitado = 1;')
         return total
     except Exception as message:
         handler.log.error('no se puede obtener total de servidores inactivos: %s', message)
@@ -102,12 +102,12 @@ def AgregaServidor(FQDN, PUERTO):
                 handler.log.debug('actualizando puerto de servidor existente, de ' + str(PUERTODB[0][0]) + ' a ' + PUERTO)
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET puerto = ? WHERE fqdn = ?;', (PUERTO, FQDN))
                 cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET modificado = ? WHERE fqdn = ?;', (MODIFICADO, FQDN))
-            cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
+            cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', (1, FQDN))
             cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
         # si el servidor no existe
         else:
             handler.log.debug('agregando servidor nuevo: ' + FQDN + ':' + str(PUERTO))
-            cursor.execute('INSERT INTO ' + TABLA_SERVIDOR + ' (fqdn, puerto, activo, modificado, intento) VALUES (?, ?, ?, ?, ?);', (FQDN, PUERTO, 'TRUE', MODIFICADO, 0))
+            cursor.execute('INSERT INTO ' + TABLA_SERVIDOR + ' (fqdn, puerto, activo, habilitado, modificado, intento) VALUES (?, ?, ?, ?, ?, ?);', (FQDN, PUERTO, 1, 1, MODIFICADO, 0))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
         handler.log.exception(message)
@@ -118,7 +118,7 @@ def ServidorVuelveActivo(FQDN, PUERTO):
         handler.log.debug('servidor vuelve a actividad: ' + FQDN + ':' + str(PUERTO))
         conexion = connect(SBCDB, isolation_level=None)
         cursor=conexion.cursor()
-        cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', ('TRUE', FQDN))
+        cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET activo = ? WHERE fqdn = ?;', (1, FQDN))
         cursor.execute('UPDATE ' + TABLA_SERVIDOR + ' SET intento = ? WHERE fqdn = ?;', (0, FQDN))
     except Exception as message:
         handler.log.error('no se puede agregar servidor: %s', message)
@@ -218,7 +218,7 @@ def ConsultaMejorServidor():
         cursor=conexion.cursor()
         # se obtiene el mejor servidor del momento en base a las cargas entregadas
         # QUERY='SELECT fqdn FROM (SELECT fqdn, min(cpu) AS cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id));'
-        QUERY='SELECT fqdn FROM (SELECT fqdn, cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = "TRUE" GROUP BY servidor.id ORDER BY cpu) LIMIT 1);'
+        QUERY='SELECT fqdn FROM (SELECT fqdn, cpu FROM (SELECT servidor.id, servidor.fqdn, sum(carga.cpu_total)/count(carga.id) AS cpu FROM ' + TABLA_SERVIDOR + ' AS servidor, ' + TABLA_CARGAS + ' AS carga WHERE servidor.id = carga.servidorid_id AND servidor.intento <= 1 AND servidor.activo = 1 AND servidor.habilitado = 1 GROUP BY servidor.id ORDER BY cpu) LIMIT 1);'
         handler.log.debug('QUERY=%s', QUERY)
         mejorservidor = cursor.execute(QUERY).fetchall()
         handler.log.debug('mejor servidor obtenido: %s', mejorservidor)

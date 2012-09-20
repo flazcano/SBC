@@ -38,6 +38,12 @@ class ThreadxMII(Thread):
         def run(self):
             MII.run()
 
+class ThreadxMIW(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+    def run(self):
+        MIW.run()
+
 class ThreadxObtieneEstadoServidoresActivos(Thread):
         def __init__(self):
             Thread.__init__(self)
@@ -98,7 +104,14 @@ if __name__ == '__main__':
         handler.log.error('ha ocurrido un error al cargar el modulo ME')
         handler.log.exception(message)
         exit(1);
-        
+
+    # ejecutando el modulo ME como hilo
+    try: tMIW = ThreadxMIW().start()
+    except Exception as message:
+        handler.log.error('ha ocurrido un error al cargar el modulo MIW')
+        handler.log.exception(message)
+        exit(1);
+
     handler.log.info('el sistema se ha iniciado correctamente')
  
     # ejecutando el proceso de obtencion de estado de los servidores activos como hilo

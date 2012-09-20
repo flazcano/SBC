@@ -9,7 +9,7 @@
 ----
 
 :Dev: `git repo <http://github.com/flazcano/SBC>`_
-:Source: `sources code https://github.com/flazcano/SBC/tarball/master`
+:Source: `sources code <https://github.com/flazcano/SBC/tarball/master/LEEME.rst>`_
 
 ----
 
@@ -75,7 +75,11 @@ installing system dependencies.
 
     $ cd SBC/; sh SBC.sh
 
-   
+* browse http://$IPSBC:DJANGOPORT/instalar and this redirect to http://$IPSBC:DJANGOPORT/admin/Web which is configured the Admin Web
+
+:User: `admin`_
+:Password: `4dm1n15tr4t0r`_
+
 ----------------------
     AOC Client Install
 ----------------------

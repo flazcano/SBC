@@ -2,30 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a04e115-b9c3-4c2f-a16d-350b5cb4a7df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MIW/1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index.rst" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Logger.py" afterPath="$PROJECT_DIR$/modulo/Logger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MIW/Web/admin.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MIW/sbc.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MIW/settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MIW/urls.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/MIW/sbc.sql" afterPath="$PROJECT_DIR$/sbc.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AOC.py" afterPath="$PROJECT_DIR$/AOC.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AOC.sh" afterPath="$PROJECT_DIR$/AOC.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW.sh" afterPath="$PROJECT_DIR$/MIW.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/.idea/MIW.iml" afterPath="$PROJECT_DIR$/MIW/.idea/MIW.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/MIW/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/.idea/misc.xml" afterPath="$PROJECT_DIR$/MIW/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/.idea/workspace.xml" afterPath="$PROJECT_DIR$/MIW/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/Web/models.py" afterPath="$PROJECT_DIR$/MIW/Web/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/Web/urls.py" afterPath="$PROJECT_DIR$/MIW/Web/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/Web/views.py" afterPath="$PROJECT_DIR$/MIW/Web/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/settings.py" afterPath="$PROJECT_DIR$/MIW/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/urls.py" afterPath="$PROJECT_DIR$/MIW/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MIW/manage.py" afterPath="$PROJECT_DIR$/MIW/manage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rst" afterPath="$PROJECT_DIR$/README.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SBC.py" afterPath="$PROJECT_DIR$/SBC.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SBC.sh" afterPath="$PROJECT_DIR$/SBC.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aoc.conf" afterPath="$PROJECT_DIR$/aoc.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/AOCME.py" afterPath="$PROJECT_DIR$/modulo/AOCME.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/AOCMR.py" afterPath="$PROJECT_DIR$/modulo/AOCMR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/MA.py" afterPath="$PROJECT_DIR$/modulo/MA.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/ME.py" afterPath="$PROJECT_DIR$/modulo/ME.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/MII.py" afterPath="$PROJECT_DIR$/modulo/MII.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/LEEME.rst" afterPath="$PROJECT_DIR$/doc/LEEME.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/MIS.py" afterPath="$PROJECT_DIR$/modulo/MIS.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modulo/MIW.py" afterPath="$PROJECT_DIR$/modulo/MIW.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.log" afterPath="$PROJECT_DIR$/run.log" />
     </list>
     <ignored path="SBC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,30 +46,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MIW/settings.py">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MIW/Web/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="1" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.0">
+            <state line="22" column="45" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MIW/Web/views.py">
+      <file leaf-file-name="MIS.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modulo/MIS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="80" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
+            <state line="219" column="313" selection-start="11984" selection-end="11988" vertical-scroll-proportion="-8.384615">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MIW/Web/models.py">
+      <file leaf-file-name="LEEME.rst" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/LEEME.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="57" selection-start="3905" selection-end="3905" vertical-scroll-proportion="0.870317">
+            <state line="80" column="22" selection-start="2294" selection-end="2294" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.rst" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="25" selection-start="2058" selection-end="2071" vertical-scroll-proportion="0.48126802">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MIW.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MIW.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="7" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SBC.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SBC.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="22" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MIW.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modulo/MIW.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="16" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SBC.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SBC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="133" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AOC.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AOC.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="9" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,22 +141,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/modulo/MA.py" />
-        <option value="$PROJECT_DIR$/aoc.conf" />
-        <option value="$PROJECT_DIR$/modulo/AOCME.py" />
-        <option value="$PROJECT_DIR$/modulo/ME.py" />
-        <option value="$PROJECT_DIR$/SBC.py" />
-        <option value="$PROJECT_DIR$/modulo/AOCMR.py" />
-        <option value="$PROJECT_DIR$/SBC.sh" />
-        <option value="$PROJECT_DIR$/AOC.py" />
-        <option value="$PROJECT_DIR$/modulo/MIW.py" />
-        <option value="$PROJECT_DIR$/modulo/MII.py" />
-        <option value="$PROJECT_DIR$/modulo/MIS.py" />
         <option value="$PROJECT_DIR$/MIW/urls.py" />
         <option value="$PROJECT_DIR$/MIW/Web/urls.py" />
         <option value="$PROJECT_DIR$/MIW/settings.py" />
         <option value="$PROJECT_DIR$/MIW/Web/views.py" />
         <option value="$PROJECT_DIR$/MIW/Web/models.py" />
+        <option value="$PROJECT_DIR$/MIW/Web/admin.py" />
+        <option value="$PROJECT_DIR$/SBC.py" />
+        <option value="$PROJECT_DIR$/sbc.sql" />
+        <option value="$PROJECT_DIR$/MIW.sh" />
+        <option value="$PROJECT_DIR$/SBC.sh" />
+        <option value="$PROJECT_DIR$/AOC.sh" />
+        <option value="$PROJECT_DIR$/modulo/MIW.py" />
+        <option value="$PROJECT_DIR$/modulo/MIS.py" />
+        <option value="$PROJECT_DIR$/README.rst" />
+        <option value="$PROJECT_DIR$/MIW/Web/instalar.py" />
+        <option value="$PROJECT_DIR$/doc/LEEME.rst" />
       </list>
     </option>
   </component>
@@ -141,7 +191,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -170,7 +219,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modulo" />
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -208,6 +257,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -229,7 +279,11 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MIW/Web" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/modulo" />
     </key>
   </component>
@@ -351,10 +405,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18938307" sideWeight="0.67128986" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2123386" sideWeight="0.67128986" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -364,6 +417,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DatabaseBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -424,118 +478,106 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modulo/MA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="37" selection-start="5218" selection-end="5218" vertical-scroll-proportion="3.242075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modulo/MC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="39" selection-start="618" selection-end="618" vertical-scroll-proportion="0.518732">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modulo/ME.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="27" selection-start="420" selection-end="420" vertical-scroll-proportion="0.30259365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modulo/MII.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="9" selection-start="7581" selection-end="7581" vertical-scroll-proportion="0.8678414">
-          <folding>
-            <element signature="e#221#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modulo/MIS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="12" selection-start="14820" selection-end="14820" vertical-scroll-proportion="6.321586">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modulo/MIW.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="64" selection-end="64" vertical-scroll-proportion="0.10806917">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modulo/AOCME.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="16" selection-start="1806" selection-end="1806" vertical-scroll-proportion="1.1239194">
-          <folding />
-        </state>
+        <state line="58" column="16" selection-start="1806" selection-end="1806" vertical-scroll-proportion="1.1239194" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modulo/AOCMR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="4" selection-start="4787" selection-end="4787" vertical-scroll-proportion="0.7797357">
+        <state line="131" column="4" selection-start="4787" selection-end="4787" vertical-scroll-proportion="0.7797357" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MIW/Web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="1" selection-start="364" selection-end="364" vertical-scroll-proportion="0.1945245" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MIW/Web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="46" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MIW/Web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="311" selection-end="311" vertical-scroll-proportion="0.021613833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MIW/Web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="45" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbc.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="15" selection-start="2922" selection-end="2922" vertical-scroll-proportion="0.43227667" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SBC.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="129" selection-end="129" vertical-scroll-proportion="0.15129682">
+        <state line="2" column="22" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AOC.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="2" column="9" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MIW.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="26" column="7" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIW/Web/urls.py">
+    <entry file="file://$PROJECT_DIR$/SBC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="1" selection-start="364" selection-end="364" vertical-scroll-proportion="0.1945245">
+        <state line="77" column="133" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIW/urls.py">
+    <entry file="file://$PROJECT_DIR$/modulo/MIW.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="1" selection-start="551" selection-end="551" vertical-scroll-proportion="0.34582132">
+        <state line="29" column="16" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIW/settings.py">
+    <entry file="file://$PROJECT_DIR$/modulo/MIS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="1" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.0">
+        <state line="219" column="313" selection-start="11984" selection-end="11988" vertical-scroll-proportion="-8.384615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIW/Web/views.py">
+    <entry file="file://$PROJECT_DIR$/doc/LEEME.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="80" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
+        <state line="80" column="22" selection-start="2294" selection-end="2294" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIW/Web/models.py">
+    <entry file="file://$PROJECT_DIR$/MIW/Web/instalar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="57" selection-start="3905" selection-end="3905" vertical-scroll-proportion="0.870317">
+        <state line="35" column="95" selection-start="881" selection-end="881" vertical-scroll-proportion="0.75648415">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="25" selection-start="2058" selection-end="2071" vertical-scroll-proportion="0.48126802">
           <folding />
         </state>
       </provider>

@@ -9,7 +9,7 @@
 ----
 
 :Desarrollo: `git repo <http://github.com/flazcano/SBC>`_
-:Fuentes: `sources code https://github.com/flazcano/SBC/tarball/master`
+:Fuentes: `sources code <https://github.com/flazcano/SBC/tarball/master>`_
 
 ----
 
@@ -75,6 +75,10 @@ installing system dependencies.
 
     $ cd SBC/; sh SBC.sh
 
+* ingrese a http://$IPSBC:DJANGOPORT/instalar y lo cual lo redirijirá a http://$IPSBC:DJANGOPORT/admin/Web con lo cual está configurada la administración Web:
+
+:Usuario: `admin`_
+:Clave: `4dm1n15tr4t0r`_
    
 ---------------------------
     AOC Instalación Cliente
